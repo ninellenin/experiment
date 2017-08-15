@@ -16,6 +16,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.emftext.language.presentation.Definition;
 import org.emftext.language.presentation.Literal;
 import org.emftext.language.presentation.Parameter;
@@ -47,14 +49,14 @@ public class DefinitionImpl extends StatementImpl implements Definition {
 	protected Parameter parameter;
 
 	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected Literal value;
+	protected EList<Literal> value;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,42 +125,11 @@ public class DefinitionImpl extends StatementImpl implements Definition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Literal getValue() {
+	public EList<Literal> getValue() {
+		if (value == null) {
+			value = new EObjectContainmentEList<Literal>(Literal.class, this, PresentationPackage.DEFINITION__VALUE);
+		}
 		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetValue(Literal newValue, NotificationChain msgs) {
-		Literal oldValue = value;
-		value = newValue;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PresentationPackage.DEFINITION__VALUE, oldValue, newValue);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValue(Literal newValue) {
-		if (newValue != value) {
-			NotificationChain msgs = null;
-			if (value != null)
-				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PresentationPackage.DEFINITION__VALUE, null, msgs);
-			if (newValue != null)
-				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PresentationPackage.DEFINITION__VALUE, null, msgs);
-			msgs = basicSetValue(newValue, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PresentationPackage.DEFINITION__VALUE, newValue, newValue));
 	}
 
 	/**
@@ -172,7 +143,7 @@ public class DefinitionImpl extends StatementImpl implements Definition {
 			case PresentationPackage.DEFINITION__PARAMETER:
 				return basicSetParameter(null, msgs);
 			case PresentationPackage.DEFINITION__VALUE:
-				return basicSetValue(null, msgs);
+				return ((InternalEList<?>)getValue()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -206,7 +177,8 @@ public class DefinitionImpl extends StatementImpl implements Definition {
 				setParameter((Parameter)newValue);
 				return;
 			case PresentationPackage.DEFINITION__VALUE:
-				setValue((Literal)newValue);
+				getValue().clear();
+				getValue().addAll((Collection<? extends Literal>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -224,7 +196,7 @@ public class DefinitionImpl extends StatementImpl implements Definition {
 				setParameter((Parameter)null);
 				return;
 			case PresentationPackage.DEFINITION__VALUE:
-				setValue((Literal)null);
+				getValue().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -241,7 +213,7 @@ public class DefinitionImpl extends StatementImpl implements Definition {
 			case PresentationPackage.DEFINITION__PARAMETER:
 				return parameter != null;
 			case PresentationPackage.DEFINITION__VALUE:
-				return value != null;
+				return value != null && !value.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

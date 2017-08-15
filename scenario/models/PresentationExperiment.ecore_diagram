@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_vwc6kHf-EeeZCNmeBpNL4A" type="Ecore" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_vxnYMHf-EeeZCNmeBpNL4A" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_vxnYMnf-EeeZCNmeBpNL4A" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_vxnYM3f-EeeZCNmeBpNL4A" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_vxnYNHf-EeeZCNmeBpNL4A"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_vxnYNXf-EeeZCNmeBpNL4A"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_vxnYNnf-EeeZCNmeBpNL4A" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_vxnYN3f-EeeZCNmeBpNL4A"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_vxnYOHf-EeeZCNmeBpNL4A"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_vxnYOXf-EeeZCNmeBpNL4A" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_vxnYOnf-EeeZCNmeBpNL4A"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_vxnYO3f-EeeZCNmeBpNL4A"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="PresentationExperiment.ecore#//Trial"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vxnYMXf-EeeZCNmeBpNL4A" x="336" y="258"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_vxn_QHf-EeeZCNmeBpNL4A" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_vxn_Qnf-EeeZCNmeBpNL4A" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_vxn_Q3f-EeeZCNmeBpNL4A" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_vxn_RHf-EeeZCNmeBpNL4A"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_vxn_RXf-EeeZCNmeBpNL4A"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_vxn_Rnf-EeeZCNmeBpNL4A" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_vxn_R3f-EeeZCNmeBpNL4A"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_vxn_SHf-EeeZCNmeBpNL4A"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_vxn_SXf-EeeZCNmeBpNL4A" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_vxn_Snf-EeeZCNmeBpNL4A"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_vxn_S3f-EeeZCNmeBpNL4A"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="PresentationExperiment.ecore#//Experiment"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vxn_QXf-EeeZCNmeBpNL4A" x="300" y="84"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_260aEHf_EeeZCNmeBpNL4A" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_261BIHf_EeeZCNmeBpNL4A" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_261BIXf_EeeZCNmeBpNL4A" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_261BInf_EeeZCNmeBpNL4A"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_261oMHf_EeeZCNmeBpNL4A"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_261oMXf_EeeZCNmeBpNL4A" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_261oMnf_EeeZCNmeBpNL4A"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_261oM3f_EeeZCNmeBpNL4A"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_261oNHf_EeeZCNmeBpNL4A" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_261oNXf_EeeZCNmeBpNL4A"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_261oNnf_EeeZCNmeBpNL4A"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="PresentationExperiment.ecore#//Stimulus"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_260aEXf_EeeZCNmeBpNL4A" x="768" y="288"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_vwc6kXf-EeeZCNmeBpNL4A"/>
+  <element xmi:type="ecore:EPackage" href="PresentationExperiment.ecore#/"/>
+</notation:Diagram>

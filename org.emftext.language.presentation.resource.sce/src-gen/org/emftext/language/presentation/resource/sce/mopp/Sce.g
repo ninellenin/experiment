@@ -358,7 +358,7 @@ options {
 				break;
 			}
 		}
-		int followSetID = 19;
+		int followSetID = 22;
 		int i;
 		for (i = tokenIndexOfLastCompleteElement; i < tokenStream.size(); i++) {
 			org.antlr.runtime3_4_0.CommonToken nextToken = (org.antlr.runtime3_4_0.CommonToken) tokenStream.get(i);
@@ -638,33 +638,43 @@ parse_org_emftext_language_presentation_Header returns [org.emftext.language.pre
 :
 	(
 		(
-			a0_0 = parse_org_emftext_language_presentation_Definition			{
-				if (terminateParsing) {
-					throw new org.emftext.language.presentation.resource.sce.mopp.SceTerminateParsingException();
-				}
-				if (element == null) {
-					element = org.emftext.language.presentation.PresentationFactory.eINSTANCE.createHeader();
-					startIncompleteElement(element);
-				}
-				if (a0_0 != null) {
-					if (a0_0 != null) {
-						Object value = a0_0;
-						addObjectToList(element, org.emftext.language.presentation.PresentationPackage.HEADER__DEFINITION, value);
-						completedElement(value, true);
+			(
+				a0_0 = parse_org_emftext_language_presentation_Definition				{
+					if (terminateParsing) {
+						throw new org.emftext.language.presentation.resource.sce.mopp.SceTerminateParsingException();
 					}
-					collectHiddenTokens(element);
-					retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_1_0_0_0, a0_0, true);
-					copyLocalizationInfos(a0_0, element);
+					if (element == null) {
+						element = org.emftext.language.presentation.PresentationFactory.eINSTANCE.createHeader();
+						startIncompleteElement(element);
+					}
+					if (a0_0 != null) {
+						if (a0_0 != null) {
+							Object value = a0_0;
+							addObjectToList(element, org.emftext.language.presentation.PresentationPackage.HEADER__DEFINITION, value);
+							completedElement(value, true);
+						}
+						collectHiddenTokens(element);
+						retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_1_0_0_0_0_0_0, a0_0, true);
+						copyLocalizationInfos(a0_0, element);
+					}
 				}
+			)
+			{
+				// expected elements (follow set)
+				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[9]);
+				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[10]);
+				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[11]);
+				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[12]);
 			}
+			
 		)
 		
 	)*	{
 		// expected elements (follow set)
-		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[9]);
-		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[10]);
-		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[11]);
-		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[12]);
+		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[13]);
+		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[14]);
+		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[15]);
+		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[16]);
 	}
 	
 ;
@@ -673,7 +683,7 @@ parse_org_emftext_language_presentation_SDL returns [org.emftext.language.presen
 @init{
 }
 :
-	a0 = 'begin;' {
+	a0 = 'begin' {
 		if (element == null) {
 			element = org.emftext.language.presentation.PresentationFactory.eINSTANCE.createSDL();
 			startIncompleteElement(element);
@@ -684,8 +694,22 @@ parse_org_emftext_language_presentation_SDL returns [org.emftext.language.presen
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[13]);
-		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[14]);
+		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[17]);
+	}
+	
+	a1 = ';' {
+		if (element == null) {
+			element = org.emftext.language.presentation.PresentationFactory.eINSTANCE.createSDL();
+			startIncompleteElement(element);
+		}
+		collectHiddenTokens(element);
+		retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_2_0_0_1, null, true);
+		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a1, element);
+	}
+	{
+		// expected elements (follow set)
+		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[18]);
+		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[19]);
 	}
 	
 ;
@@ -694,7 +718,7 @@ parse_org_emftext_language_presentation_PCL returns [org.emftext.language.presen
 @init{
 }
 :
-	a0 = 'begin_pcl;' {
+	a0 = 'begin_pcl' {
 		if (element == null) {
 			element = org.emftext.language.presentation.PresentationFactory.eINSTANCE.createPCL();
 			startIncompleteElement(element);
@@ -705,7 +729,21 @@ parse_org_emftext_language_presentation_PCL returns [org.emftext.language.presen
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[15]);
+		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[20]);
+	}
+	
+	a1 = ';' {
+		if (element == null) {
+			element = org.emftext.language.presentation.PresentationFactory.eINSTANCE.createPCL();
+			startIncompleteElement(element);
+		}
+		collectHiddenTokens(element);
+		retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_3_0_0_1, null, true);
+		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a1, element);
+	}
+	{
+		// expected elements (follow set)
+		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[21]);
 	}
 	
 ;
@@ -737,7 +775,7 @@ parse_org_emftext_language_presentation_Definition returns [org.emftext.language
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[16]);
+		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[22]);
 	}
 	
 	a1 = '=' {
@@ -746,14 +784,14 @@ parse_org_emftext_language_presentation_Definition returns [org.emftext.language
 			startIncompleteElement(element);
 		}
 		collectHiddenTokens(element);
-		retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_1, null, true);
+		retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_2, null, true);
 		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a1, element);
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[17]);
-		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[18]);
-		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[19]);
+		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[23]);
+		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[24]);
+		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[25]);
 	}
 	
 	(
@@ -768,19 +806,19 @@ parse_org_emftext_language_presentation_Definition returns [org.emftext.language
 			if (a2_0 != null) {
 				if (a2_0 != null) {
 					Object value = a2_0;
-					element.eSet(element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.DEFINITION__VALUE), value);
+					addObjectToList(element, org.emftext.language.presentation.PresentationPackage.DEFINITION__VALUE, value);
 					completedElement(value, true);
 				}
 				collectHiddenTokens(element);
-				retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_2, a2_0, true);
+				retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_3, a2_0, true);
 				copyLocalizationInfos(a2_0, element);
 			}
 		}
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[20]);
-		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[21]);
+		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[26]);
+		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[27]);
 	}
 	
 	(
@@ -791,14 +829,14 @@ parse_org_emftext_language_presentation_Definition returns [org.emftext.language
 					startIncompleteElement(element);
 				}
 				collectHiddenTokens(element);
-				retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_3_0_0_0, null, true);
+				retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_4_0_0_0, null, true);
 				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a3, element);
 			}
 			{
 				// expected elements (follow set)
-				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[22]);
-				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[23]);
-				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[24]);
+				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[28]);
+				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[29]);
+				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[30]);
 			}
 			
 			(
@@ -813,27 +851,27 @@ parse_org_emftext_language_presentation_Definition returns [org.emftext.language
 					if (a4_0 != null) {
 						if (a4_0 != null) {
 							Object value = a4_0;
-							element.eSet(element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.DEFINITION__VALUE), value);
+							addObjectToList(element, org.emftext.language.presentation.PresentationPackage.DEFINITION__VALUE, value);
 							completedElement(value, true);
 						}
 						collectHiddenTokens(element);
-						retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_3_0_0_1, a4_0, true);
+						retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_4_0_0_2, a4_0, true);
 						copyLocalizationInfos(a4_0, element);
 					}
 				}
 			)
 			{
 				// expected elements (follow set)
-				addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[25]);
-				addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[26]);
+				addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[31]);
+				addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[32]);
 			}
 			
 		)
 		
 	)*	{
 		// expected elements (follow set)
-		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[27]);
-		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[28]);
+		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[33]);
+		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[34]);
 	}
 	
 	a5 = ';' {
@@ -842,15 +880,15 @@ parse_org_emftext_language_presentation_Definition returns [org.emftext.language
 			startIncompleteElement(element);
 		}
 		collectHiddenTokens(element);
-		retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_4, null, true);
+		retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_5, null, true);
 		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a5, element);
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[29]);
-		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[30]);
-		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[31]);
-		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[32]);
+		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[35]);
+		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[36]);
+		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[37]);
+		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[38]);
 	}
 	
 ;
@@ -860,7 +898,7 @@ parse_org_emftext_language_presentation_NumberLiteral returns [org.emftext.langu
 }
 :
 	(
-		a0 = NUMBER		
+		a0 = SIGNED_INTEGER		
 		{
 			if (terminateParsing) {
 				throw new org.emftext.language.presentation.resource.sce.mopp.SceTerminateParsingException();
@@ -870,7 +908,7 @@ parse_org_emftext_language_presentation_NumberLiteral returns [org.emftext.langu
 				startIncompleteElement(element);
 			}
 			if (a0 != null) {
-				org.emftext.language.presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("NUMBER");
+				org.emftext.language.presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("SIGNED_INTEGER");
 				tokenResolver.setOptions(getOptions());
 				org.emftext.language.presentation.resource.sce.ISceTokenResolveResult result = getFreshTokenResolveResult();
 				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.NUMBER_LITERAL__VALUE), result);
@@ -892,8 +930,8 @@ parse_org_emftext_language_presentation_NumberLiteral returns [org.emftext.langu
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[33]);
-		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[34]);
+		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[39]);
+		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[40]);
 	}
 	
 ;
@@ -903,7 +941,7 @@ parse_org_emftext_language_presentation_NameLiteral returns [org.emftext.languag
 }
 :
 	(
-		a0 = NAME		
+		a0 = QUOTED_NAME		
 		{
 			if (terminateParsing) {
 				throw new org.emftext.language.presentation.resource.sce.mopp.SceTerminateParsingException();
@@ -913,7 +951,7 @@ parse_org_emftext_language_presentation_NameLiteral returns [org.emftext.languag
 				startIncompleteElement(element);
 			}
 			if (a0 != null) {
-				org.emftext.language.presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("NAME");
+				org.emftext.language.presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUOTED_NAME");
 				tokenResolver.setOptions(getOptions());
 				org.emftext.language.presentation.resource.sce.ISceTokenResolveResult result = getFreshTokenResolveResult();
 				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.NAME_LITERAL__VALUE), result);
@@ -935,8 +973,8 @@ parse_org_emftext_language_presentation_NameLiteral returns [org.emftext.languag
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[35]);
-		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[36]);
+		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[41]);
+		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[42]);
 	}
 	
 ;
@@ -978,8 +1016,8 @@ parse_org_emftext_language_presentation_BooleanLiteral returns [org.emftext.lang
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[37]);
-		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[38]);
+		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[43]);
+		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[44]);
 	}
 	
 ;
@@ -999,7 +1037,7 @@ parse_org_emftext_language_presentation_ScenarioNameParameter returns [org.emfte
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[39]);
+		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[45]);
 	}
 	
 ;
@@ -1019,7 +1057,7 @@ parse_org_emftext_language_presentation_ActiveButtonsParameter returns [org.emft
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[40]);
+		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[46]);
 	}
 	
 ;
@@ -1047,25 +1085,13 @@ WHITESPACE:
 	(('\u0009'|'\u000A'|'\u000B'|'\u000C'|'\u000D'|'\u0020'|'\u00A0'|'\u2000'|'\u2001'|'\u2002'|'\u2003'|'\u2004'|'\u2005'|'\u2006'|'\u2007'|'\u2008'|'\u2009'|'\u200A'|'\u200B'|'\u200C'|'\u200D'|'\u200E'|'\u200F'|'\u2028'|'\u2029'|'\u3000'|'\uFEFF'))
 	{ _channel = 99; }
 ;
-UNSIGNED_INTEGER:
-	((('0'..'9'))+)
-	{ _channel = 99; }
-;
-NUMBER:
-	(((('0'..'9'))+|('+'|'-')?(('0'..'9'))+))
+SIGNED_INTEGER:
+	(('+'|'-')?(('0'..'9'))+)
 ;
 BOOLEAN:
 	(('true' | 'false'))
 ;
-NAME:
-	(('A'..'Z'|'a'..'z')(('A'..'Z'|'a'..'z')|('0'..'9')|'-'|'_')*)
-;
 QUOTED_NAME:
 	('"'('A'..'Z'|'a'..'z')(('A'..'Z'|'a'..'z')|('0'..'9')|'-'|'_')*'"')
-	{ _channel = 99; }
-;
-QUOTED_STRING:
-	('"'~('"'|('\r\n'|'\r'|'\n'))*'"')
-	{ _channel = 99; }
 ;
 

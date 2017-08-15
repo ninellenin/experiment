@@ -215,26 +215,56 @@ public class ScePrinter implements org.emftext.language.presentation.resource.sc
 		temp = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.HEADER__DEFINITION));
 		printCountingMap.put("definition", temp == null ? 0 : ((java.util.Collection<?>) temp).size());
 		// print collected hidden tokens
+		boolean iterate = true;
+		java.io.StringWriter sWriter = null;
+		java.io.PrintWriter out1 = null;
+		java.util.Map<String, Integer> printCountingMap1 = null;
+		// DEFINITION PART BEGINS (CompoundDefinition)
+		iterate = true;
+		while (iterate) {
+			sWriter = new java.io.StringWriter();
+			out1 = new java.io.PrintWriter(sWriter);
+			printCountingMap1 = new java.util.LinkedHashMap<String, Integer>(printCountingMap);
+			print_org_emftext_language_presentation_Header_0(element, localtab, out1, printCountingMap1);
+			if (printCountingMap.equals(printCountingMap1)) {
+				iterate = false;
+				out1.close();
+			} else {
+				out1.flush();
+				out1.close();
+				out.print(sWriter.toString());
+				printCountingMap.putAll(printCountingMap1);
+			}
+		}
+	}
+	
+	public void print_org_emftext_language_presentation_Header_0(org.emftext.language.presentation.Header element, String outertab, java.io.PrintWriter out, java.util.Map<String, Integer> printCountingMap) {
+		String localtab = outertab;
 		int count;
 		// DEFINITION PART BEGINS (Containment)
 		count = printCountingMap.get("definition");
 		if (count > 0) {
-			java.util.List<?> list = (java.util.List<?>)element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.HEADER__DEFINITION));
-			int index  = list.size() - count;
-			if (index < 0) {
-				index = 0;
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.HEADER__DEFINITION));
+			java.util.List<?> list = (java.util.List<?>) o;
+			int index = list.size() - count;
+			if (index >= 0) {
+				o = list.get(index);
+			} else {
+				o = null;
 			}
-			java.util.ListIterator<?> it  = list.listIterator(index);
-			while (it.hasNext()) {
-				Object o = it.next();
+			if (o != null) {
 				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
 			}
-			printCountingMap.put("definition", 0);
+			printCountingMap.put("definition", count - 1);
 		}
+		// DEFINITION PART BEGINS (LineBreak)
+		out.println();
+		out.print(localtab);
 	}
 	
 	
 	public void print_org_emftext_language_presentation_SDL(org.emftext.language.presentation.SDL element, String outertab, java.io.PrintWriter out) {
+		String localtab = outertab;
 		// The printCountingMap contains a mapping from feature names to the number of
 		// remaining elements that still need to be printed. The map is initialized with
 		// the number of elements stored in each structural feature. For lists this is the
@@ -242,12 +272,19 @@ public class ScePrinter implements org.emftext.language.presentation.resource.sc
 		// 0 (if the feature is null).
 		// print collected hidden tokens
 		// DEFINITION PART BEGINS (CsString)
-		out.print("begin;");
+		out.print("begin");
 		out.print(" ");
+		// DEFINITION PART BEGINS (CsString)
+		out.print(";");
+		out.print(" ");
+		// DEFINITION PART BEGINS (LineBreak)
+		out.println();
+		out.print(localtab);
 	}
 	
 	
 	public void print_org_emftext_language_presentation_PCL(org.emftext.language.presentation.PCL element, String outertab, java.io.PrintWriter out) {
+		String localtab = outertab;
 		// The printCountingMap contains a mapping from feature names to the number of
 		// remaining elements that still need to be printed. The map is initialized with
 		// the number of elements stored in each structural feature. For lists this is the
@@ -255,8 +292,14 @@ public class ScePrinter implements org.emftext.language.presentation.resource.sc
 		// 0 (if the feature is null).
 		// print collected hidden tokens
 		// DEFINITION PART BEGINS (CsString)
-		out.print("begin_pcl;");
+		out.print("begin_pcl");
 		out.print(" ");
+		// DEFINITION PART BEGINS (CsString)
+		out.print(";");
+		out.print(" ");
+		// DEFINITION PART BEGINS (LineBreak)
+		out.println();
+		out.print(localtab);
 	}
 	
 	
@@ -272,7 +315,7 @@ public class ScePrinter implements org.emftext.language.presentation.resource.sc
 		temp = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.DEFINITION__PARAMETER));
 		printCountingMap.put("parameter", temp == null ? 0 : 1);
 		temp = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.DEFINITION__VALUE));
-		printCountingMap.put("value", temp == null ? 0 : 1);
+		printCountingMap.put("value", temp == null ? 0 : ((java.util.Collection<?>) temp).size());
 		// print collected hidden tokens
 		int count;
 		boolean iterate = true;
@@ -288,6 +331,8 @@ public class ScePrinter implements org.emftext.language.presentation.resource.sc
 			}
 			printCountingMap.put("parameter", count - 1);
 		}
+		// DEFINITION PART BEGINS (WhiteSpaces)
+		out.print(" ");
 		// DEFINITION PART BEGINS (CsString)
 		out.print("=");
 		out.print(" ");
@@ -295,6 +340,13 @@ public class ScePrinter implements org.emftext.language.presentation.resource.sc
 		count = printCountingMap.get("value");
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.DEFINITION__VALUE));
+			java.util.List<?> list = (java.util.List<?>) o;
+			int index = list.size() - count;
+			if (index >= 0) {
+				o = list.get(index);
+			} else {
+				o = null;
+			}
 			if (o != null) {
 				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
 			}
@@ -327,11 +379,19 @@ public class ScePrinter implements org.emftext.language.presentation.resource.sc
 		int count;
 		// DEFINITION PART BEGINS (CsString)
 		out.print(",");
+		// DEFINITION PART BEGINS (WhiteSpaces)
 		out.print(" ");
 		// DEFINITION PART BEGINS (Containment)
 		count = printCountingMap.get("value");
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.DEFINITION__VALUE));
+			java.util.List<?> list = (java.util.List<?>) o;
+			int index = list.size() - count;
+			if (index >= 0) {
+				o = list.get(index);
+			} else {
+				o = null;
+			}
 			if (o != null) {
 				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
 			}
@@ -357,7 +417,7 @@ public class ScePrinter implements org.emftext.language.presentation.resource.sc
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.NUMBER_LITERAL__VALUE));
 			if (o != null) {
-				org.emftext.language.presentation.resource.sce.ISceTokenResolver resolver = tokenResolverFactory.createTokenResolver("NUMBER");
+				org.emftext.language.presentation.resource.sce.ISceTokenResolver resolver = tokenResolverFactory.createTokenResolver("SIGNED_INTEGER");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.NUMBER_LITERAL__VALUE), element));
 				out.print(" ");
@@ -384,7 +444,7 @@ public class ScePrinter implements org.emftext.language.presentation.resource.sc
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.NAME_LITERAL__VALUE));
 			if (o != null) {
-				org.emftext.language.presentation.resource.sce.ISceTokenResolver resolver = tokenResolverFactory.createTokenResolver("NAME");
+				org.emftext.language.presentation.resource.sce.ISceTokenResolver resolver = tokenResolverFactory.createTokenResolver("QUOTED_NAME");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.NAME_LITERAL__VALUE), element));
 				out.print(" ");

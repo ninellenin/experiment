@@ -199,7 +199,7 @@ public interface PresentationPackage extends EPackage {
 	int DEFINITION__PARAMETER = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -590,10 +590,10 @@ public interface PresentationPackage extends EPackage {
 	EReference getDefinition_Parameter();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.emftext.language.presentation.Definition#getValue <em>Value</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.emftext.language.presentation.Definition#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @return the meta object for the containment reference list '<em>Value</em>'.
 	 * @see org.emftext.language.presentation.Definition#getValue()
 	 * @see #getDefinition()
 	 * @generated
@@ -896,7 +896,7 @@ public interface PresentationPackage extends EPackage {
 		EReference DEFINITION__PARAMETER = eINSTANCE.getDefinition_Parameter();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

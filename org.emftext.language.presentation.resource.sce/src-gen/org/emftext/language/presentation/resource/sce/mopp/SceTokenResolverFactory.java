@@ -23,9 +23,9 @@ public class SceTokenResolverFactory implements org.emftext.language.presentatio
 	public SceTokenResolverFactory() {
 		tokenName2TokenResolver = new java.util.LinkedHashMap<String, org.emftext.language.presentation.resource.sce.ISceTokenResolver>();
 		featureName2CollectInTokenResolver = new java.util.LinkedHashMap<String, org.emftext.language.presentation.resource.sce.ISceTokenResolver>();
-		registerTokenResolver("NUMBER", new org.emftext.language.presentation.resource.sce.analysis.SceNUMBERTokenResolver());
+		registerTokenResolver("SIGNED_INTEGER", new org.emftext.language.presentation.resource.sce.analysis.SceSIGNED_INTEGERTokenResolver());
 		registerTokenResolver("BOOLEAN", new org.emftext.language.presentation.resource.sce.analysis.SceBOOLEANTokenResolver());
-		registerTokenResolver("NAME", new org.emftext.language.presentation.resource.sce.analysis.SceNAMETokenResolver());
+		registerTokenResolver("QUOTED_NAME", new org.emftext.language.presentation.resource.sce.analysis.SceQUOTED_NAMETokenResolver());
 	}
 	
 	public org.emftext.language.presentation.resource.sce.ISceTokenResolver createTokenResolver(String tokenName) {

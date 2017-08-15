@@ -13,25 +13,22 @@ import java.util.HashMap;
 @SuppressWarnings({"all", "warnings", "unchecked"})
 public class SceParser extends SceANTLRParserBase {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "BOOLEAN", "LINEBREAK", "NAME", "NUMBER", "QUOTED_NAME", "QUOTED_STRING", "UNSIGNED_INTEGER", "WHITESPACE", "','", "';'", "'='", "'active_buttons'", "'begin;'", "'begin_pcl;'", "'scenario'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "BOOLEAN", "LINEBREAK", "QUOTED_NAME", "SIGNED_INTEGER", "WHITESPACE", "','", "';'", "'='", "'active_buttons'", "'begin'", "'begin_pcl'", "'scenario'"
     };
 
     public static final int EOF=-1;
+    public static final int T__9=9;
+    public static final int T__10=10;
+    public static final int T__11=11;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int T__15=15;
-    public static final int T__16=16;
-    public static final int T__17=17;
-    public static final int T__18=18;
     public static final int BOOLEAN=4;
     public static final int LINEBREAK=5;
-    public static final int NAME=6;
-    public static final int NUMBER=7;
-    public static final int QUOTED_NAME=8;
-    public static final int QUOTED_STRING=9;
-    public static final int UNSIGNED_INTEGER=10;
-    public static final int WHITESPACE=11;
+    public static final int QUOTED_NAME=6;
+    public static final int SIGNED_INTEGER=7;
+    public static final int WHITESPACE=8;
 
     // delegates
     public SceANTLRParserBase[] getDelegates() {
@@ -389,7 +386,7 @@ public class SceParser extends SceANTLRParserBase {
     				break;
     			}
     		}
-    		int followSetID = 19;
+    		int followSetID = 22;
     		int i;
     		for (i = tokenIndexOfLastCompleteElement; i < tokenStream.size(); i++) {
     			org.antlr.runtime3_4_0.CommonToken nextToken = (org.antlr.runtime3_4_0.CommonToken) tokenStream.get(i);
@@ -685,7 +682,7 @@ public class SceParser extends SceANTLRParserBase {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==16) ) {
+                if ( (LA1_0==13) ) {
                     alt1=1;
                 }
 
@@ -747,7 +744,7 @@ public class SceParser extends SceANTLRParserBase {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==17) ) {
+                if ( (LA2_0==14) ) {
                     alt2=1;
                 }
 
@@ -822,7 +819,7 @@ public class SceParser extends SceANTLRParserBase {
 
 
     // $ANTLR start "parse_org_emftext_language_presentation_Header"
-    // Sce.g:635:1: parse_org_emftext_language_presentation_Header returns [org.emftext.language.presentation.Header element = null] : ( (a0_0= parse_org_emftext_language_presentation_Definition ) )* ;
+    // Sce.g:635:1: parse_org_emftext_language_presentation_Header returns [org.emftext.language.presentation.Header element = null] : ( ( (a0_0= parse_org_emftext_language_presentation_Definition ) ) )* ;
     public final org.emftext.language.presentation.Header parse_org_emftext_language_presentation_Header() throws RecognitionException {
         org.emftext.language.presentation.Header element =  null;
 
@@ -836,51 +833,65 @@ public class SceParser extends SceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 3) ) { return element; }
 
-            // Sce.g:638:2: ( ( (a0_0= parse_org_emftext_language_presentation_Definition ) )* )
-            // Sce.g:639:2: ( (a0_0= parse_org_emftext_language_presentation_Definition ) )*
+            // Sce.g:638:2: ( ( ( (a0_0= parse_org_emftext_language_presentation_Definition ) ) )* )
+            // Sce.g:639:2: ( ( (a0_0= parse_org_emftext_language_presentation_Definition ) ) )*
             {
-            // Sce.g:639:2: ( (a0_0= parse_org_emftext_language_presentation_Definition ) )*
+            // Sce.g:639:2: ( ( (a0_0= parse_org_emftext_language_presentation_Definition ) ) )*
             loop3:
             do {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==15||LA3_0==18) ) {
+                if ( (LA3_0==12||LA3_0==15) ) {
                     alt3=1;
                 }
 
 
                 switch (alt3) {
             	case 1 :
-            	    // Sce.g:640:3: (a0_0= parse_org_emftext_language_presentation_Definition )
+            	    // Sce.g:640:3: ( (a0_0= parse_org_emftext_language_presentation_Definition ) )
             	    {
-            	    // Sce.g:640:3: (a0_0= parse_org_emftext_language_presentation_Definition )
-            	    // Sce.g:641:4: a0_0= parse_org_emftext_language_presentation_Definition
+            	    // Sce.g:640:3: ( (a0_0= parse_org_emftext_language_presentation_Definition ) )
+            	    // Sce.g:641:4: (a0_0= parse_org_emftext_language_presentation_Definition )
             	    {
-            	    pushFollow(FOLLOW_parse_org_emftext_language_presentation_Definition_in_parse_org_emftext_language_presentation_Header231);
+            	    // Sce.g:641:4: (a0_0= parse_org_emftext_language_presentation_Definition )
+            	    // Sce.g:642:5: a0_0= parse_org_emftext_language_presentation_Definition
+            	    {
+            	    pushFollow(FOLLOW_parse_org_emftext_language_presentation_Definition_in_parse_org_emftext_language_presentation_Header237);
             	    a0_0=parse_org_emftext_language_presentation_Definition();
 
             	    state._fsp--;
             	    if (state.failed) return element;
 
             	    if ( state.backtracking==0 ) {
-            	    				if (terminateParsing) {
-            	    					throw new org.emftext.language.presentation.resource.sce.mopp.SceTerminateParsingException();
-            	    				}
-            	    				if (element == null) {
-            	    					element = org.emftext.language.presentation.PresentationFactory.eINSTANCE.createHeader();
-            	    					startIncompleteElement(element);
-            	    				}
-            	    				if (a0_0 != null) {
-            	    					if (a0_0 != null) {
-            	    						Object value = a0_0;
-            	    						addObjectToList(element, org.emftext.language.presentation.PresentationPackage.HEADER__DEFINITION, value);
-            	    						completedElement(value, true);
+            	    					if (terminateParsing) {
+            	    						throw new org.emftext.language.presentation.resource.sce.mopp.SceTerminateParsingException();
             	    					}
-            	    					collectHiddenTokens(element);
-            	    					retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_1_0_0_0, a0_0, true);
-            	    					copyLocalizationInfos(a0_0, element);
+            	    					if (element == null) {
+            	    						element = org.emftext.language.presentation.PresentationFactory.eINSTANCE.createHeader();
+            	    						startIncompleteElement(element);
+            	    					}
+            	    					if (a0_0 != null) {
+            	    						if (a0_0 != null) {
+            	    							Object value = a0_0;
+            	    							addObjectToList(element, org.emftext.language.presentation.PresentationPackage.HEADER__DEFINITION, value);
+            	    							completedElement(value, true);
+            	    						}
+            	    						collectHiddenTokens(element);
+            	    						retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_1_0_0_0_0_0_0, a0_0, true);
+            	    						copyLocalizationInfos(a0_0, element);
+            	    					}
             	    				}
+
+            	    }
+
+
+            	    if ( state.backtracking==0 ) {
+            	    				// expected elements (follow set)
+            	    				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[9]);
+            	    				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[10]);
+            	    				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[11]);
+            	    				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[12]);
             	    			}
 
             	    }
@@ -897,10 +908,10 @@ public class SceParser extends SceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[9]);
-            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[10]);
-            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[11]);
-            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[12]);
+            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[13]);
+            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[14]);
+            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[15]);
+            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[16]);
             	}
 
             }
@@ -923,23 +934,24 @@ public class SceParser extends SceANTLRParserBase {
 
 
     // $ANTLR start "parse_org_emftext_language_presentation_SDL"
-    // Sce.g:672:1: parse_org_emftext_language_presentation_SDL returns [org.emftext.language.presentation.SDL element = null] : a0= 'begin;' ;
+    // Sce.g:682:1: parse_org_emftext_language_presentation_SDL returns [org.emftext.language.presentation.SDL element = null] : a0= 'begin' a1= ';' ;
     public final org.emftext.language.presentation.SDL parse_org_emftext_language_presentation_SDL() throws RecognitionException {
         org.emftext.language.presentation.SDL element =  null;
 
         int parse_org_emftext_language_presentation_SDL_StartIndex = input.index();
 
         Token a0=null;
+        Token a1=null;
 
 
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 4) ) { return element; }
 
-            // Sce.g:675:2: (a0= 'begin;' )
-            // Sce.g:676:2: a0= 'begin;'
+            // Sce.g:685:2: (a0= 'begin' a1= ';' )
+            // Sce.g:686:2: a0= 'begin' a1= ';'
             {
-            a0=(Token)match(input,16,FOLLOW_16_in_parse_org_emftext_language_presentation_SDL272); if (state.failed) return element;
+            a0=(Token)match(input,13,FOLLOW_13_in_parse_org_emftext_language_presentation_SDL293); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -953,8 +965,25 @@ public class SceParser extends SceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[13]);
-            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[14]);
+            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[17]);
+            	}
+
+            a1=(Token)match(input,10,FOLLOW_10_in_parse_org_emftext_language_presentation_SDL307); if (state.failed) return element;
+
+            if ( state.backtracking==0 ) {
+            		if (element == null) {
+            			element = org.emftext.language.presentation.PresentationFactory.eINSTANCE.createSDL();
+            			startIncompleteElement(element);
+            		}
+            		collectHiddenTokens(element);
+            		retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_2_0_0_1, null, true);
+            		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a1, element);
+            	}
+
+            if ( state.backtracking==0 ) {
+            		// expected elements (follow set)
+            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[18]);
+            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[19]);
             	}
 
             }
@@ -977,23 +1006,24 @@ public class SceParser extends SceANTLRParserBase {
 
 
     // $ANTLR start "parse_org_emftext_language_presentation_PCL"
-    // Sce.g:693:1: parse_org_emftext_language_presentation_PCL returns [org.emftext.language.presentation.PCL element = null] : a0= 'begin_pcl;' ;
+    // Sce.g:717:1: parse_org_emftext_language_presentation_PCL returns [org.emftext.language.presentation.PCL element = null] : a0= 'begin_pcl' a1= ';' ;
     public final org.emftext.language.presentation.PCL parse_org_emftext_language_presentation_PCL() throws RecognitionException {
         org.emftext.language.presentation.PCL element =  null;
 
         int parse_org_emftext_language_presentation_PCL_StartIndex = input.index();
 
         Token a0=null;
+        Token a1=null;
 
 
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 5) ) { return element; }
 
-            // Sce.g:696:2: (a0= 'begin_pcl;' )
-            // Sce.g:697:2: a0= 'begin_pcl;'
+            // Sce.g:720:2: (a0= 'begin_pcl' a1= ';' )
+            // Sce.g:721:2: a0= 'begin_pcl' a1= ';'
             {
-            a0=(Token)match(input,17,FOLLOW_17_in_parse_org_emftext_language_presentation_PCL301); if (state.failed) return element;
+            a0=(Token)match(input,14,FOLLOW_14_in_parse_org_emftext_language_presentation_PCL336); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -1007,7 +1037,24 @@ public class SceParser extends SceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[15]);
+            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[20]);
+            	}
+
+            a1=(Token)match(input,10,FOLLOW_10_in_parse_org_emftext_language_presentation_PCL350); if (state.failed) return element;
+
+            if ( state.backtracking==0 ) {
+            		if (element == null) {
+            			element = org.emftext.language.presentation.PresentationFactory.eINSTANCE.createPCL();
+            			startIncompleteElement(element);
+            		}
+            		collectHiddenTokens(element);
+            		retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_3_0_0_1, null, true);
+            		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a1, element);
+            	}
+
+            if ( state.backtracking==0 ) {
+            		// expected elements (follow set)
+            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[21]);
             	}
 
             }
@@ -1030,7 +1077,7 @@ public class SceParser extends SceANTLRParserBase {
 
 
     // $ANTLR start "parse_org_emftext_language_presentation_Definition"
-    // Sce.g:713:1: parse_org_emftext_language_presentation_Definition returns [org.emftext.language.presentation.Definition element = null] : (a0_0= parse_org_emftext_language_presentation_Parameter ) a1= '=' (a2_0= parse_org_emftext_language_presentation_Literal ) ( (a3= ',' (a4_0= parse_org_emftext_language_presentation_Literal ) ) )* a5= ';' ;
+    // Sce.g:751:1: parse_org_emftext_language_presentation_Definition returns [org.emftext.language.presentation.Definition element = null] : (a0_0= parse_org_emftext_language_presentation_Parameter ) a1= '=' (a2_0= parse_org_emftext_language_presentation_Literal ) ( (a3= ',' (a4_0= parse_org_emftext_language_presentation_Literal ) ) )* a5= ';' ;
     public final org.emftext.language.presentation.Definition parse_org_emftext_language_presentation_Definition() throws RecognitionException {
         org.emftext.language.presentation.Definition element =  null;
 
@@ -1051,13 +1098,13 @@ public class SceParser extends SceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 6) ) { return element; }
 
-            // Sce.g:716:2: ( (a0_0= parse_org_emftext_language_presentation_Parameter ) a1= '=' (a2_0= parse_org_emftext_language_presentation_Literal ) ( (a3= ',' (a4_0= parse_org_emftext_language_presentation_Literal ) ) )* a5= ';' )
-            // Sce.g:717:2: (a0_0= parse_org_emftext_language_presentation_Parameter ) a1= '=' (a2_0= parse_org_emftext_language_presentation_Literal ) ( (a3= ',' (a4_0= parse_org_emftext_language_presentation_Literal ) ) )* a5= ';'
+            // Sce.g:754:2: ( (a0_0= parse_org_emftext_language_presentation_Parameter ) a1= '=' (a2_0= parse_org_emftext_language_presentation_Literal ) ( (a3= ',' (a4_0= parse_org_emftext_language_presentation_Literal ) ) )* a5= ';' )
+            // Sce.g:755:2: (a0_0= parse_org_emftext_language_presentation_Parameter ) a1= '=' (a2_0= parse_org_emftext_language_presentation_Literal ) ( (a3= ',' (a4_0= parse_org_emftext_language_presentation_Literal ) ) )* a5= ';'
             {
-            // Sce.g:717:2: (a0_0= parse_org_emftext_language_presentation_Parameter )
-            // Sce.g:718:3: a0_0= parse_org_emftext_language_presentation_Parameter
+            // Sce.g:755:2: (a0_0= parse_org_emftext_language_presentation_Parameter )
+            // Sce.g:756:3: a0_0= parse_org_emftext_language_presentation_Parameter
             {
-            pushFollow(FOLLOW_parse_org_emftext_language_presentation_Parameter_in_parse_org_emftext_language_presentation_Definition334);
+            pushFollow(FOLLOW_parse_org_emftext_language_presentation_Parameter_in_parse_org_emftext_language_presentation_Definition383);
             a0_0=parse_org_emftext_language_presentation_Parameter();
 
             state._fsp--;
@@ -1088,10 +1135,10 @@ public class SceParser extends SceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[16]);
+            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[22]);
             	}
 
-            a1=(Token)match(input,14,FOLLOW_14_in_parse_org_emftext_language_presentation_Definition352); if (state.failed) return element;
+            a1=(Token)match(input,11,FOLLOW_11_in_parse_org_emftext_language_presentation_Definition401); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -1099,21 +1146,21 @@ public class SceParser extends SceANTLRParserBase {
             			startIncompleteElement(element);
             		}
             		collectHiddenTokens(element);
-            		retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_1, null, true);
+            		retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_2, null, true);
             		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a1, element);
             	}
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[17]);
-            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[18]);
-            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[19]);
+            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[23]);
+            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[24]);
+            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[25]);
             	}
 
-            // Sce.g:759:2: (a2_0= parse_org_emftext_language_presentation_Literal )
-            // Sce.g:760:3: a2_0= parse_org_emftext_language_presentation_Literal
+            // Sce.g:797:2: (a2_0= parse_org_emftext_language_presentation_Literal )
+            // Sce.g:798:3: a2_0= parse_org_emftext_language_presentation_Literal
             {
-            pushFollow(FOLLOW_parse_org_emftext_language_presentation_Literal_in_parse_org_emftext_language_presentation_Definition370);
+            pushFollow(FOLLOW_parse_org_emftext_language_presentation_Literal_in_parse_org_emftext_language_presentation_Definition419);
             a2_0=parse_org_emftext_language_presentation_Literal();
 
             state._fsp--;
@@ -1130,11 +1177,11 @@ public class SceParser extends SceANTLRParserBase {
             			if (a2_0 != null) {
             				if (a2_0 != null) {
             					Object value = a2_0;
-            					element.eSet(element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.DEFINITION__VALUE), value);
+            					addObjectToList(element, org.emftext.language.presentation.PresentationPackage.DEFINITION__VALUE, value);
             					completedElement(value, true);
             				}
             				collectHiddenTokens(element);
-            				retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_2, a2_0, true);
+            				retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_3, a2_0, true);
             				copyLocalizationInfos(a2_0, element);
             			}
             		}
@@ -1144,29 +1191,29 @@ public class SceParser extends SceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[20]);
-            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[21]);
+            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[26]);
+            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[27]);
             	}
 
-            // Sce.g:786:2: ( (a3= ',' (a4_0= parse_org_emftext_language_presentation_Literal ) ) )*
+            // Sce.g:824:2: ( (a3= ',' (a4_0= parse_org_emftext_language_presentation_Literal ) ) )*
             loop4:
             do {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==12) ) {
+                if ( (LA4_0==9) ) {
                     alt4=1;
                 }
 
 
                 switch (alt4) {
             	case 1 :
-            	    // Sce.g:787:3: (a3= ',' (a4_0= parse_org_emftext_language_presentation_Literal ) )
+            	    // Sce.g:825:3: (a3= ',' (a4_0= parse_org_emftext_language_presentation_Literal ) )
             	    {
-            	    // Sce.g:787:3: (a3= ',' (a4_0= parse_org_emftext_language_presentation_Literal ) )
-            	    // Sce.g:788:4: a3= ',' (a4_0= parse_org_emftext_language_presentation_Literal )
+            	    // Sce.g:825:3: (a3= ',' (a4_0= parse_org_emftext_language_presentation_Literal ) )
+            	    // Sce.g:826:4: a3= ',' (a4_0= parse_org_emftext_language_presentation_Literal )
             	    {
-            	    a3=(Token)match(input,12,FOLLOW_12_in_parse_org_emftext_language_presentation_Definition397); if (state.failed) return element;
+            	    a3=(Token)match(input,9,FOLLOW_9_in_parse_org_emftext_language_presentation_Definition446); if (state.failed) return element;
 
             	    if ( state.backtracking==0 ) {
             	    				if (element == null) {
@@ -1174,21 +1221,21 @@ public class SceParser extends SceANTLRParserBase {
             	    					startIncompleteElement(element);
             	    				}
             	    				collectHiddenTokens(element);
-            	    				retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_3_0_0_0, null, true);
+            	    				retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_4_0_0_0, null, true);
             	    				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a3, element);
             	    			}
 
             	    if ( state.backtracking==0 ) {
             	    				// expected elements (follow set)
-            	    				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[22]);
-            	    				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[23]);
-            	    				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[24]);
+            	    				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[28]);
+            	    				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[29]);
+            	    				addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[30]);
             	    			}
 
-            	    // Sce.g:804:4: (a4_0= parse_org_emftext_language_presentation_Literal )
-            	    // Sce.g:805:5: a4_0= parse_org_emftext_language_presentation_Literal
+            	    // Sce.g:842:4: (a4_0= parse_org_emftext_language_presentation_Literal )
+            	    // Sce.g:843:5: a4_0= parse_org_emftext_language_presentation_Literal
             	    {
-            	    pushFollow(FOLLOW_parse_org_emftext_language_presentation_Literal_in_parse_org_emftext_language_presentation_Definition423);
+            	    pushFollow(FOLLOW_parse_org_emftext_language_presentation_Literal_in_parse_org_emftext_language_presentation_Definition472);
             	    a4_0=parse_org_emftext_language_presentation_Literal();
 
             	    state._fsp--;
@@ -1205,11 +1252,11 @@ public class SceParser extends SceANTLRParserBase {
             	    					if (a4_0 != null) {
             	    						if (a4_0 != null) {
             	    							Object value = a4_0;
-            	    							element.eSet(element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.DEFINITION__VALUE), value);
+            	    							addObjectToList(element, org.emftext.language.presentation.PresentationPackage.DEFINITION__VALUE, value);
             	    							completedElement(value, true);
             	    						}
             	    						collectHiddenTokens(element);
-            	    						retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_3_0_0_1, a4_0, true);
+            	    						retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_4_0_0_2, a4_0, true);
             	    						copyLocalizationInfos(a4_0, element);
             	    					}
             	    				}
@@ -1219,8 +1266,8 @@ public class SceParser extends SceANTLRParserBase {
 
             	    if ( state.backtracking==0 ) {
             	    				// expected elements (follow set)
-            	    				addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[25]);
-            	    				addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[26]);
+            	    				addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[31]);
+            	    				addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[32]);
             	    			}
 
             	    }
@@ -1237,11 +1284,11 @@ public class SceParser extends SceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[27]);
-            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[28]);
+            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[33]);
+            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[34]);
             	}
 
-            a5=(Token)match(input,13,FOLLOW_13_in_parse_org_emftext_language_presentation_Definition464); if (state.failed) return element;
+            a5=(Token)match(input,10,FOLLOW_10_in_parse_org_emftext_language_presentation_Definition513); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -1249,16 +1296,16 @@ public class SceParser extends SceANTLRParserBase {
             			startIncompleteElement(element);
             		}
             		collectHiddenTokens(element);
-            		retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_4, null, true);
+            		retrieveLayoutInformation(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_5, null, true);
             		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a5, element);
             	}
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[29]);
-            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[30]);
-            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[31]);
-            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[32]);
+            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[35]);
+            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[36]);
+            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[37]);
+            		addExpectedElement(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[38]);
             	}
 
             }
@@ -1281,7 +1328,7 @@ public class SceParser extends SceANTLRParserBase {
 
 
     // $ANTLR start "parse_org_emftext_language_presentation_NumberLiteral"
-    // Sce.g:858:1: parse_org_emftext_language_presentation_NumberLiteral returns [org.emftext.language.presentation.NumberLiteral element = null] : (a0= NUMBER ) ;
+    // Sce.g:896:1: parse_org_emftext_language_presentation_NumberLiteral returns [org.emftext.language.presentation.NumberLiteral element = null] : (a0= SIGNED_INTEGER ) ;
     public final org.emftext.language.presentation.NumberLiteral parse_org_emftext_language_presentation_NumberLiteral() throws RecognitionException {
         org.emftext.language.presentation.NumberLiteral element =  null;
 
@@ -1294,13 +1341,13 @@ public class SceParser extends SceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 7) ) { return element; }
 
-            // Sce.g:861:2: ( (a0= NUMBER ) )
-            // Sce.g:862:2: (a0= NUMBER )
+            // Sce.g:899:2: ( (a0= SIGNED_INTEGER ) )
+            // Sce.g:900:2: (a0= SIGNED_INTEGER )
             {
-            // Sce.g:862:2: (a0= NUMBER )
-            // Sce.g:863:3: a0= NUMBER
+            // Sce.g:900:2: (a0= SIGNED_INTEGER )
+            // Sce.g:901:3: a0= SIGNED_INTEGER
             {
-            a0=(Token)match(input,NUMBER,FOLLOW_NUMBER_in_parse_org_emftext_language_presentation_NumberLiteral497); if (state.failed) return element;
+            a0=(Token)match(input,SIGNED_INTEGER,FOLLOW_SIGNED_INTEGER_in_parse_org_emftext_language_presentation_NumberLiteral546); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -1311,7 +1358,7 @@ public class SceParser extends SceANTLRParserBase {
             				startIncompleteElement(element);
             			}
             			if (a0 != null) {
-            				org.emftext.language.presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("NUMBER");
+            				org.emftext.language.presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("SIGNED_INTEGER");
             				tokenResolver.setOptions(getOptions());
             				org.emftext.language.presentation.resource.sce.ISceTokenResolveResult result = getFreshTokenResolveResult();
             				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.NUMBER_LITERAL__VALUE), result);
@@ -1336,8 +1383,8 @@ public class SceParser extends SceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[33]);
-            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[34]);
+            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[39]);
+            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[40]);
             	}
 
             }
@@ -1360,7 +1407,7 @@ public class SceParser extends SceANTLRParserBase {
 
 
     // $ANTLR start "parse_org_emftext_language_presentation_NameLiteral"
-    // Sce.g:901:1: parse_org_emftext_language_presentation_NameLiteral returns [org.emftext.language.presentation.NameLiteral element = null] : (a0= NAME ) ;
+    // Sce.g:939:1: parse_org_emftext_language_presentation_NameLiteral returns [org.emftext.language.presentation.NameLiteral element = null] : (a0= QUOTED_NAME ) ;
     public final org.emftext.language.presentation.NameLiteral parse_org_emftext_language_presentation_NameLiteral() throws RecognitionException {
         org.emftext.language.presentation.NameLiteral element =  null;
 
@@ -1373,13 +1420,13 @@ public class SceParser extends SceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 8) ) { return element; }
 
-            // Sce.g:904:2: ( (a0= NAME ) )
-            // Sce.g:905:2: (a0= NAME )
+            // Sce.g:942:2: ( (a0= QUOTED_NAME ) )
+            // Sce.g:943:2: (a0= QUOTED_NAME )
             {
-            // Sce.g:905:2: (a0= NAME )
-            // Sce.g:906:3: a0= NAME
+            // Sce.g:943:2: (a0= QUOTED_NAME )
+            // Sce.g:944:3: a0= QUOTED_NAME
             {
-            a0=(Token)match(input,NAME,FOLLOW_NAME_in_parse_org_emftext_language_presentation_NameLiteral537); if (state.failed) return element;
+            a0=(Token)match(input,QUOTED_NAME,FOLLOW_QUOTED_NAME_in_parse_org_emftext_language_presentation_NameLiteral586); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -1390,7 +1437,7 @@ public class SceParser extends SceANTLRParserBase {
             				startIncompleteElement(element);
             			}
             			if (a0 != null) {
-            				org.emftext.language.presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("NAME");
+            				org.emftext.language.presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUOTED_NAME");
             				tokenResolver.setOptions(getOptions());
             				org.emftext.language.presentation.resource.sce.ISceTokenResolveResult result = getFreshTokenResolveResult();
             				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(org.emftext.language.presentation.PresentationPackage.NAME_LITERAL__VALUE), result);
@@ -1415,8 +1462,8 @@ public class SceParser extends SceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[35]);
-            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[36]);
+            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[41]);
+            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[42]);
             	}
 
             }
@@ -1439,7 +1486,7 @@ public class SceParser extends SceANTLRParserBase {
 
 
     // $ANTLR start "parse_org_emftext_language_presentation_BooleanLiteral"
-    // Sce.g:944:1: parse_org_emftext_language_presentation_BooleanLiteral returns [org.emftext.language.presentation.BooleanLiteral element = null] : (a0= BOOLEAN ) ;
+    // Sce.g:982:1: parse_org_emftext_language_presentation_BooleanLiteral returns [org.emftext.language.presentation.BooleanLiteral element = null] : (a0= BOOLEAN ) ;
     public final org.emftext.language.presentation.BooleanLiteral parse_org_emftext_language_presentation_BooleanLiteral() throws RecognitionException {
         org.emftext.language.presentation.BooleanLiteral element =  null;
 
@@ -1452,13 +1499,13 @@ public class SceParser extends SceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 9) ) { return element; }
 
-            // Sce.g:947:2: ( (a0= BOOLEAN ) )
-            // Sce.g:948:2: (a0= BOOLEAN )
+            // Sce.g:985:2: ( (a0= BOOLEAN ) )
+            // Sce.g:986:2: (a0= BOOLEAN )
             {
-            // Sce.g:948:2: (a0= BOOLEAN )
-            // Sce.g:949:3: a0= BOOLEAN
+            // Sce.g:986:2: (a0= BOOLEAN )
+            // Sce.g:987:3: a0= BOOLEAN
             {
-            a0=(Token)match(input,BOOLEAN,FOLLOW_BOOLEAN_in_parse_org_emftext_language_presentation_BooleanLiteral577); if (state.failed) return element;
+            a0=(Token)match(input,BOOLEAN,FOLLOW_BOOLEAN_in_parse_org_emftext_language_presentation_BooleanLiteral626); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -1494,8 +1541,8 @@ public class SceParser extends SceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[37]);
-            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[38]);
+            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[43]);
+            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[44]);
             	}
 
             }
@@ -1518,7 +1565,7 @@ public class SceParser extends SceANTLRParserBase {
 
 
     // $ANTLR start "parse_org_emftext_language_presentation_ScenarioNameParameter"
-    // Sce.g:987:1: parse_org_emftext_language_presentation_ScenarioNameParameter returns [org.emftext.language.presentation.ScenarioNameParameter element = null] : a0= 'scenario' ;
+    // Sce.g:1025:1: parse_org_emftext_language_presentation_ScenarioNameParameter returns [org.emftext.language.presentation.ScenarioNameParameter element = null] : a0= 'scenario' ;
     public final org.emftext.language.presentation.ScenarioNameParameter parse_org_emftext_language_presentation_ScenarioNameParameter() throws RecognitionException {
         org.emftext.language.presentation.ScenarioNameParameter element =  null;
 
@@ -1531,10 +1578,10 @@ public class SceParser extends SceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 10) ) { return element; }
 
-            // Sce.g:990:2: (a0= 'scenario' )
-            // Sce.g:991:2: a0= 'scenario'
+            // Sce.g:1028:2: (a0= 'scenario' )
+            // Sce.g:1029:2: a0= 'scenario'
             {
-            a0=(Token)match(input,18,FOLLOW_18_in_parse_org_emftext_language_presentation_ScenarioNameParameter613); if (state.failed) return element;
+            a0=(Token)match(input,15,FOLLOW_15_in_parse_org_emftext_language_presentation_ScenarioNameParameter662); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -1548,7 +1595,7 @@ public class SceParser extends SceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[39]);
+            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[45]);
             	}
 
             }
@@ -1571,7 +1618,7 @@ public class SceParser extends SceANTLRParserBase {
 
 
     // $ANTLR start "parse_org_emftext_language_presentation_ActiveButtonsParameter"
-    // Sce.g:1007:1: parse_org_emftext_language_presentation_ActiveButtonsParameter returns [org.emftext.language.presentation.ActiveButtonsParameter element = null] : a0= 'active_buttons' ;
+    // Sce.g:1045:1: parse_org_emftext_language_presentation_ActiveButtonsParameter returns [org.emftext.language.presentation.ActiveButtonsParameter element = null] : a0= 'active_buttons' ;
     public final org.emftext.language.presentation.ActiveButtonsParameter parse_org_emftext_language_presentation_ActiveButtonsParameter() throws RecognitionException {
         org.emftext.language.presentation.ActiveButtonsParameter element =  null;
 
@@ -1584,10 +1631,10 @@ public class SceParser extends SceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 11) ) { return element; }
 
-            // Sce.g:1010:2: (a0= 'active_buttons' )
-            // Sce.g:1011:2: a0= 'active_buttons'
+            // Sce.g:1048:2: (a0= 'active_buttons' )
+            // Sce.g:1049:2: a0= 'active_buttons'
             {
-            a0=(Token)match(input,15,FOLLOW_15_in_parse_org_emftext_language_presentation_ActiveButtonsParameter642); if (state.failed) return element;
+            a0=(Token)match(input,12,FOLLOW_12_in_parse_org_emftext_language_presentation_ActiveButtonsParameter691); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -1601,7 +1648,7 @@ public class SceParser extends SceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[40]);
+            		addExpectedElement(null, org.emftext.language.presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[46]);
             	}
 
             }
@@ -1624,7 +1671,7 @@ public class SceParser extends SceANTLRParserBase {
 
 
     // $ANTLR start "parse_org_emftext_language_presentation_Parameter"
-    // Sce.g:1027:1: parse_org_emftext_language_presentation_Parameter returns [org.emftext.language.presentation.Parameter element = null] : (c0= parse_org_emftext_language_presentation_ScenarioNameParameter |c1= parse_org_emftext_language_presentation_ActiveButtonsParameter );
+    // Sce.g:1065:1: parse_org_emftext_language_presentation_Parameter returns [org.emftext.language.presentation.Parameter element = null] : (c0= parse_org_emftext_language_presentation_ScenarioNameParameter |c1= parse_org_emftext_language_presentation_ActiveButtonsParameter );
     public final org.emftext.language.presentation.Parameter parse_org_emftext_language_presentation_Parameter() throws RecognitionException {
         org.emftext.language.presentation.Parameter element =  null;
 
@@ -1638,14 +1685,14 @@ public class SceParser extends SceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 12) ) { return element; }
 
-            // Sce.g:1028:2: (c0= parse_org_emftext_language_presentation_ScenarioNameParameter |c1= parse_org_emftext_language_presentation_ActiveButtonsParameter )
+            // Sce.g:1066:2: (c0= parse_org_emftext_language_presentation_ScenarioNameParameter |c1= parse_org_emftext_language_presentation_ActiveButtonsParameter )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==18) ) {
+            if ( (LA5_0==15) ) {
                 alt5=1;
             }
-            else if ( (LA5_0==15) ) {
+            else if ( (LA5_0==12) ) {
                 alt5=2;
             }
             else {
@@ -1658,9 +1705,9 @@ public class SceParser extends SceANTLRParserBase {
             }
             switch (alt5) {
                 case 1 :
-                    // Sce.g:1029:2: c0= parse_org_emftext_language_presentation_ScenarioNameParameter
+                    // Sce.g:1067:2: c0= parse_org_emftext_language_presentation_ScenarioNameParameter
                     {
-                    pushFollow(FOLLOW_parse_org_emftext_language_presentation_ScenarioNameParameter_in_parse_org_emftext_language_presentation_Parameter667);
+                    pushFollow(FOLLOW_parse_org_emftext_language_presentation_ScenarioNameParameter_in_parse_org_emftext_language_presentation_Parameter716);
                     c0=parse_org_emftext_language_presentation_ScenarioNameParameter();
 
                     state._fsp--;
@@ -1671,9 +1718,9 @@ public class SceParser extends SceANTLRParserBase {
                     }
                     break;
                 case 2 :
-                    // Sce.g:1030:4: c1= parse_org_emftext_language_presentation_ActiveButtonsParameter
+                    // Sce.g:1068:4: c1= parse_org_emftext_language_presentation_ActiveButtonsParameter
                     {
-                    pushFollow(FOLLOW_parse_org_emftext_language_presentation_ActiveButtonsParameter_in_parse_org_emftext_language_presentation_Parameter677);
+                    pushFollow(FOLLOW_parse_org_emftext_language_presentation_ActiveButtonsParameter_in_parse_org_emftext_language_presentation_Parameter726);
                     c1=parse_org_emftext_language_presentation_ActiveButtonsParameter();
 
                     state._fsp--;
@@ -1703,7 +1750,7 @@ public class SceParser extends SceANTLRParserBase {
 
 
     // $ANTLR start "parse_org_emftext_language_presentation_Literal"
-    // Sce.g:1034:1: parse_org_emftext_language_presentation_Literal returns [org.emftext.language.presentation.Literal element = null] : (c0= parse_org_emftext_language_presentation_NumberLiteral |c1= parse_org_emftext_language_presentation_NameLiteral |c2= parse_org_emftext_language_presentation_BooleanLiteral );
+    // Sce.g:1072:1: parse_org_emftext_language_presentation_Literal returns [org.emftext.language.presentation.Literal element = null] : (c0= parse_org_emftext_language_presentation_NumberLiteral |c1= parse_org_emftext_language_presentation_NameLiteral |c2= parse_org_emftext_language_presentation_BooleanLiteral );
     public final org.emftext.language.presentation.Literal parse_org_emftext_language_presentation_Literal() throws RecognitionException {
         org.emftext.language.presentation.Literal element =  null;
 
@@ -1719,15 +1766,15 @@ public class SceParser extends SceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 13) ) { return element; }
 
-            // Sce.g:1035:2: (c0= parse_org_emftext_language_presentation_NumberLiteral |c1= parse_org_emftext_language_presentation_NameLiteral |c2= parse_org_emftext_language_presentation_BooleanLiteral )
+            // Sce.g:1073:2: (c0= parse_org_emftext_language_presentation_NumberLiteral |c1= parse_org_emftext_language_presentation_NameLiteral |c2= parse_org_emftext_language_presentation_BooleanLiteral )
             int alt6=3;
             switch ( input.LA(1) ) {
-            case NUMBER:
+            case SIGNED_INTEGER:
                 {
                 alt6=1;
                 }
                 break;
-            case NAME:
+            case QUOTED_NAME:
                 {
                 alt6=2;
                 }
@@ -1748,9 +1795,9 @@ public class SceParser extends SceANTLRParserBase {
 
             switch (alt6) {
                 case 1 :
-                    // Sce.g:1036:2: c0= parse_org_emftext_language_presentation_NumberLiteral
+                    // Sce.g:1074:2: c0= parse_org_emftext_language_presentation_NumberLiteral
                     {
-                    pushFollow(FOLLOW_parse_org_emftext_language_presentation_NumberLiteral_in_parse_org_emftext_language_presentation_Literal698);
+                    pushFollow(FOLLOW_parse_org_emftext_language_presentation_NumberLiteral_in_parse_org_emftext_language_presentation_Literal747);
                     c0=parse_org_emftext_language_presentation_NumberLiteral();
 
                     state._fsp--;
@@ -1761,9 +1808,9 @@ public class SceParser extends SceANTLRParserBase {
                     }
                     break;
                 case 2 :
-                    // Sce.g:1037:4: c1= parse_org_emftext_language_presentation_NameLiteral
+                    // Sce.g:1075:4: c1= parse_org_emftext_language_presentation_NameLiteral
                     {
-                    pushFollow(FOLLOW_parse_org_emftext_language_presentation_NameLiteral_in_parse_org_emftext_language_presentation_Literal708);
+                    pushFollow(FOLLOW_parse_org_emftext_language_presentation_NameLiteral_in_parse_org_emftext_language_presentation_Literal757);
                     c1=parse_org_emftext_language_presentation_NameLiteral();
 
                     state._fsp--;
@@ -1774,9 +1821,9 @@ public class SceParser extends SceANTLRParserBase {
                     }
                     break;
                 case 3 :
-                    // Sce.g:1038:4: c2= parse_org_emftext_language_presentation_BooleanLiteral
+                    // Sce.g:1076:4: c2= parse_org_emftext_language_presentation_BooleanLiteral
                     {
-                    pushFollow(FOLLOW_parse_org_emftext_language_presentation_BooleanLiteral_in_parse_org_emftext_language_presentation_Literal718);
+                    pushFollow(FOLLOW_parse_org_emftext_language_presentation_BooleanLiteral_in_parse_org_emftext_language_presentation_Literal767);
                     c2=parse_org_emftext_language_presentation_BooleanLiteral();
 
                     state._fsp--;
@@ -1810,27 +1857,29 @@ public class SceParser extends SceANTLRParserBase {
 
     public static final BitSet FOLLOW_parse_org_emftext_language_presentation_Scenario_in_start82 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_start89 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_Header_in_parse_org_emftext_language_presentation_Scenario119 = new BitSet(new long[]{0x0000000000030002L});
-    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_SDL_in_parse_org_emftext_language_presentation_Scenario146 = new BitSet(new long[]{0x0000000000030002L});
-    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_PCL_in_parse_org_emftext_language_presentation_Scenario181 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_Definition_in_parse_org_emftext_language_presentation_Header231 = new BitSet(new long[]{0x0000000000048002L});
-    public static final BitSet FOLLOW_16_in_parse_org_emftext_language_presentation_SDL272 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_parse_org_emftext_language_presentation_PCL301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_Parameter_in_parse_org_emftext_language_presentation_Definition334 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_parse_org_emftext_language_presentation_Definition352 = new BitSet(new long[]{0x00000000000000D0L});
-    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_Literal_in_parse_org_emftext_language_presentation_Definition370 = new BitSet(new long[]{0x0000000000003000L});
-    public static final BitSet FOLLOW_12_in_parse_org_emftext_language_presentation_Definition397 = new BitSet(new long[]{0x00000000000000D0L});
-    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_Literal_in_parse_org_emftext_language_presentation_Definition423 = new BitSet(new long[]{0x0000000000003000L});
-    public static final BitSet FOLLOW_13_in_parse_org_emftext_language_presentation_Definition464 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NUMBER_in_parse_org_emftext_language_presentation_NumberLiteral497 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NAME_in_parse_org_emftext_language_presentation_NameLiteral537 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BOOLEAN_in_parse_org_emftext_language_presentation_BooleanLiteral577 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_parse_org_emftext_language_presentation_ScenarioNameParameter613 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_parse_org_emftext_language_presentation_ActiveButtonsParameter642 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_ScenarioNameParameter_in_parse_org_emftext_language_presentation_Parameter667 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_ActiveButtonsParameter_in_parse_org_emftext_language_presentation_Parameter677 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_NumberLiteral_in_parse_org_emftext_language_presentation_Literal698 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_NameLiteral_in_parse_org_emftext_language_presentation_Literal708 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_BooleanLiteral_in_parse_org_emftext_language_presentation_Literal718 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_Header_in_parse_org_emftext_language_presentation_Scenario119 = new BitSet(new long[]{0x0000000000006002L});
+    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_SDL_in_parse_org_emftext_language_presentation_Scenario146 = new BitSet(new long[]{0x0000000000006002L});
+    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_PCL_in_parse_org_emftext_language_presentation_Scenario181 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_Definition_in_parse_org_emftext_language_presentation_Header237 = new BitSet(new long[]{0x0000000000009002L});
+    public static final BitSet FOLLOW_13_in_parse_org_emftext_language_presentation_SDL293 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_10_in_parse_org_emftext_language_presentation_SDL307 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_parse_org_emftext_language_presentation_PCL336 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_10_in_parse_org_emftext_language_presentation_PCL350 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_Parameter_in_parse_org_emftext_language_presentation_Definition383 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_11_in_parse_org_emftext_language_presentation_Definition401 = new BitSet(new long[]{0x00000000000000D0L});
+    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_Literal_in_parse_org_emftext_language_presentation_Definition419 = new BitSet(new long[]{0x0000000000000600L});
+    public static final BitSet FOLLOW_9_in_parse_org_emftext_language_presentation_Definition446 = new BitSet(new long[]{0x00000000000000D0L});
+    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_Literal_in_parse_org_emftext_language_presentation_Definition472 = new BitSet(new long[]{0x0000000000000600L});
+    public static final BitSet FOLLOW_10_in_parse_org_emftext_language_presentation_Definition513 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SIGNED_INTEGER_in_parse_org_emftext_language_presentation_NumberLiteral546 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_QUOTED_NAME_in_parse_org_emftext_language_presentation_NameLiteral586 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BOOLEAN_in_parse_org_emftext_language_presentation_BooleanLiteral626 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_parse_org_emftext_language_presentation_ScenarioNameParameter662 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_parse_org_emftext_language_presentation_ActiveButtonsParameter691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_ScenarioNameParameter_in_parse_org_emftext_language_presentation_Parameter716 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_ActiveButtonsParameter_in_parse_org_emftext_language_presentation_Parameter726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_NumberLiteral_in_parse_org_emftext_language_presentation_Literal747 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_NameLiteral_in_parse_org_emftext_language_presentation_Literal757 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_parse_org_emftext_language_presentation_BooleanLiteral_in_parse_org_emftext_language_presentation_Literal767 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -8,7 +8,7 @@ OPTIONS {
     disableBuilder = "true";
     disableDebugSupport = "true";
     disableLaunchSupport = "true";
-    disableTokenSorting = "true";
+ //   disableTokenSorting = "true";
 //    overrideProposalPostProcessor = "false";
 //    overrideManifest = "false";
 //    overrideUIManifest = "false";
@@ -43,41 +43,39 @@ TOKENS {
     DEFINE FRAGMENT NONDOUBLEQUOTE_CHARACTER $~($ + DOUBLE_QUOTE + $|$ + NEWLINE + $)$;
    
     // Literals
-    DEFINE UNSIGNED_INTEGER $($ + DIGIT + $)+$;
-    DEFINE FRAGMENT SIGNED_INTEGER SIGN + $?$ + UNSIGNED_INTEGER;
-    DEFINE NUMBER $($ + UNSIGNED_INTEGER + $|$ + SIGNED_INTEGER + $)$;
+    DEFINE FRAGMENT UNSIGNED_INTEGER $($ + DIGIT + $)+$;
+    DEFINE SIGNED_INTEGER SIGN + $?$ + UNSIGNED_INTEGER;
 	DEFINE BOOLEAN $('true' | 'false')$;
 
 	// Text
 	DEFINE FRAGMENT NAME_BODY $($ + LATIN_LETTER + $|$ + DIGIT + $|$ + MINUS_SIGN + $|$ + UNDERSCORE + $)$;
-	DEFINE NAME LATIN_LETTER + NAME_BODY + $*$;
+	DEFINE FRAGMENT NAME LATIN_LETTER + NAME_BODY + $*$;
 	DEFINE QUOTED_NAME DOUBLE_QUOTE + NAME + DOUBLE_QUOTE;
-	DEFINE QUOTED_STRING DOUBLE_QUOTE + NONDOUBLEQUOTE_CHARACTER + $*$ +  DOUBLE_QUOTE;
 }
 
 TOKENSTYLES {
-	"begin;", "begin_pcl;" 
+	"begin", "begin_pcl" 
 	COLOR #00802A, BOLD;
 	
-	"NUMBER", "BOOLEAN"
-	COLOR #0a4500;
+	"SIGNED_INTEGER", "BOOLEAN"
+	COLOR #0A4500;
 	
 	 "=", ";"
-	 COLOR #00005c, BOLD;
+	 COLOR #00005C, BOLD;
 	
-	"NAME" 
+	"QUOTED_NAME" 
 	COLOR  #000099, ITALIC;
 }
 
 RULES {
 	Scenario ::= header sdl* pcl*;
-	Header ::= definition* !0;
-	SDL ::= "begin;" !0;
-	PCL ::= "begin_pcl;" !0;
+	Header ::= (definition !0)*;
+	SDL ::= "begin" ";" !0;
+	PCL ::= "begin_pcl" ";" !0;
 	
-	Definition ::= parameter #1 "=" #1 value ("," #1 value)*  ";" !0;
-	NumberLiteral ::= value[NUMBER];
-	NameLiteral ::= value[NAME];
+	Definition ::= parameter #1 "=" value ("," #1 value)*  ";";
+	NumberLiteral ::= value[SIGNED_INTEGER];
+	NameLiteral ::= value[QUOTED_NAME];
 	BooleanLiteral ::= value[BOOLEAN];
 	ScenarioNameParameter ::= "scenario";
 	ActiveButtonsParameter ::= "active_buttons";

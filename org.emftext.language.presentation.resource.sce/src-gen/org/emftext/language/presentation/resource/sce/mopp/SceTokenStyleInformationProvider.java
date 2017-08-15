@@ -11,25 +11,25 @@ public class SceTokenStyleInformationProvider {
 	public static String TASK_ITEM_TOKEN_NAME = "TASK_ITEM";
 	
 	public org.emftext.language.presentation.resource.sce.ISceTokenStyle getDefaultTokenStyle(String tokenName) {
-		if ("begin;".equals(tokenName)) {
+		if ("begin".equals(tokenName)) {
 			return new org.emftext.language.presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x00, 0x80, 0x2A}, null, true, false, false, false);
 		}
-		if ("begin_pcl;".equals(tokenName)) {
+		if ("begin_pcl".equals(tokenName)) {
 			return new org.emftext.language.presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x00, 0x80, 0x2A}, null, true, false, false, false);
 		}
-		if ("NUMBER".equals(tokenName)) {
-			return new org.emftext.language.presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x0a, 0x45, 0x00}, null, false, false, false, false);
+		if ("SIGNED_INTEGER".equals(tokenName)) {
+			return new org.emftext.language.presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x0A, 0x45, 0x00}, null, false, false, false, false);
 		}
 		if ("BOOLEAN".equals(tokenName)) {
-			return new org.emftext.language.presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x0a, 0x45, 0x00}, null, false, false, false, false);
+			return new org.emftext.language.presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x0A, 0x45, 0x00}, null, false, false, false, false);
 		}
 		if ("=".equals(tokenName)) {
-			return new org.emftext.language.presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x00, 0x00, 0x5c}, null, true, false, false, false);
+			return new org.emftext.language.presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x00, 0x00, 0x5C}, null, true, false, false, false);
 		}
 		if (";".equals(tokenName)) {
-			return new org.emftext.language.presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x00, 0x00, 0x5c}, null, true, false, false, false);
+			return new org.emftext.language.presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x00, 0x00, 0x5C}, null, true, false, false, false);
 		}
-		if ("NAME".equals(tokenName)) {
+		if ("QUOTED_NAME".equals(tokenName)) {
 			return new org.emftext.language.presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x00, 0x00, 0x99}, null, false, true, false, false);
 		}
 		if ("scenario".equals(tokenName)) {

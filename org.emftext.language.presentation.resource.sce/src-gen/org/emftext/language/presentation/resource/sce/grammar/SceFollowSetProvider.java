@@ -12,11 +12,11 @@ package org.emftext.language.presentation.resource.sce.grammar;
  */
 public class SceFollowSetProvider {
 	
-	public final static org.emftext.language.presentation.resource.sce.ISceExpectedElement TERMINALS[] = new org.emftext.language.presentation.resource.sce.ISceExpectedElement[10];
+	public final static org.emftext.language.presentation.resource.sce.ISceExpectedElement TERMINALS[] = new org.emftext.language.presentation.resource.sce.ISceExpectedElement[12];
 	
 	public final static org.eclipse.emf.ecore.EStructuralFeature[] FEATURES = new org.eclipse.emf.ecore.EStructuralFeature[6];
 	
-	public final static org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] LINKS = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[34];
+	public final static org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] LINKS = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[40];
 	
 	public final static org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] EMPTY_LINK_ARRAY = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[0];
 	
@@ -25,12 +25,14 @@ public class SceFollowSetProvider {
 		TERMINALS[1] = new org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_9_0_0_0);
 		TERMINALS[2] = new org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_2_0_0_0);
 		TERMINALS[3] = new org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_3_0_0_0);
-		TERMINALS[4] = new org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_1);
-		TERMINALS[5] = new org.emftext.language.presentation.resource.sce.mopp.SceExpectedStructuralFeature(org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_5_0_0_0);
-		TERMINALS[6] = new org.emftext.language.presentation.resource.sce.mopp.SceExpectedStructuralFeature(org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_6_0_0_0);
-		TERMINALS[7] = new org.emftext.language.presentation.resource.sce.mopp.SceExpectedStructuralFeature(org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_7_0_0_0);
-		TERMINALS[8] = new org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_3_0_0_0);
-		TERMINALS[9] = new org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_4);
+		TERMINALS[4] = new org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_2_0_0_1);
+		TERMINALS[5] = new org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_3_0_0_1);
+		TERMINALS[6] = new org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_2);
+		TERMINALS[7] = new org.emftext.language.presentation.resource.sce.mopp.SceExpectedStructuralFeature(org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_5_0_0_0);
+		TERMINALS[8] = new org.emftext.language.presentation.resource.sce.mopp.SceExpectedStructuralFeature(org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_6_0_0_0);
+		TERMINALS[9] = new org.emftext.language.presentation.resource.sce.mopp.SceExpectedStructuralFeature(org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_7_0_0_0);
+		TERMINALS[10] = new org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_4_0_0_0);
+		TERMINALS[11] = new org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_5);
 	}
 	
 	public static void initializeTerminals() {
@@ -70,21 +72,27 @@ public class SceFollowSetProvider {
 		LINKS[16] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), FEATURES[4]);
 		LINKS[17] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getSDL(), FEATURES[0]);
 		LINKS[18] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getPCL(), FEATURES[1]);
-		LINKS[19] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getSDL(), FEATURES[0]);
-		LINKS[20] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getPCL(), FEATURES[1]);
-		LINKS[21] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getPCL(), FEATURES[1]);
-		LINKS[22] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNumberLiteral(), FEATURES[2]);
-		LINKS[23] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNameLiteral(), FEATURES[2]);
-		LINKS[24] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getBooleanLiteral(), FEATURES[2]);
-		LINKS[25] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNumberLiteral(), FEATURES[2]);
-		LINKS[26] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNameLiteral(), FEATURES[2]);
-		LINKS[27] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getBooleanLiteral(), FEATURES[2]);
-		LINKS[28] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenarioNameParameter(), FEATURES[3]);
-		LINKS[29] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), FEATURES[4]);
-		LINKS[30] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getActiveButtonsParameter(), FEATURES[3]);
-		LINKS[31] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), FEATURES[4]);
-		LINKS[32] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getSDL(), FEATURES[0]);
-		LINKS[33] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getPCL(), FEATURES[1]);
+		LINKS[19] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenarioNameParameter(), FEATURES[3]);
+		LINKS[20] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), FEATURES[4]);
+		LINKS[21] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getActiveButtonsParameter(), FEATURES[3]);
+		LINKS[22] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), FEATURES[4]);
+		LINKS[23] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getSDL(), FEATURES[0]);
+		LINKS[24] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getPCL(), FEATURES[1]);
+		LINKS[25] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getSDL(), FEATURES[0]);
+		LINKS[26] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getPCL(), FEATURES[1]);
+		LINKS[27] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getPCL(), FEATURES[1]);
+		LINKS[28] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNumberLiteral(), FEATURES[2]);
+		LINKS[29] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNameLiteral(), FEATURES[2]);
+		LINKS[30] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getBooleanLiteral(), FEATURES[2]);
+		LINKS[31] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNumberLiteral(), FEATURES[2]);
+		LINKS[32] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNameLiteral(), FEATURES[2]);
+		LINKS[33] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getBooleanLiteral(), FEATURES[2]);
+		LINKS[34] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenarioNameParameter(), FEATURES[3]);
+		LINKS[35] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), FEATURES[4]);
+		LINKS[36] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getActiveButtonsParameter(), FEATURES[3]);
+		LINKS[37] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), FEATURES[4]);
+		LINKS[38] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getSDL(), FEATURES[0]);
+		LINKS[39] = new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getPCL(), FEATURES[1]);
 	}
 	
 	public static void initializeLinks() {
@@ -92,27 +100,29 @@ public class SceFollowSetProvider {
 	}
 	
 	public static void wire0() {
-		TERMINALS[2].addFollower(TERMINALS[2], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getSDL(), FEATURES[0]), });
-		TERMINALS[2].addFollower(TERMINALS[3], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getPCL(), FEATURES[1]), });
-		TERMINALS[3].addFollower(TERMINALS[3], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getPCL(), FEATURES[1]), });
-		TERMINALS[4].addFollower(TERMINALS[5], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNumberLiteral(), FEATURES[2]), });
-		TERMINALS[4].addFollower(TERMINALS[6], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNameLiteral(), FEATURES[2]), });
-		TERMINALS[4].addFollower(TERMINALS[7], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getBooleanLiteral(), FEATURES[2]), });
-		TERMINALS[8].addFollower(TERMINALS[5], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNumberLiteral(), FEATURES[2]), });
-		TERMINALS[8].addFollower(TERMINALS[6], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNameLiteral(), FEATURES[2]), });
-		TERMINALS[8].addFollower(TERMINALS[7], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getBooleanLiteral(), FEATURES[2]), });
-		TERMINALS[9].addFollower(TERMINALS[0], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenarioNameParameter(), FEATURES[3]), new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), FEATURES[4]), });
-		TERMINALS[9].addFollower(TERMINALS[1], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getActiveButtonsParameter(), FEATURES[3]), new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), FEATURES[4]), });
-		TERMINALS[9].addFollower(TERMINALS[2], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getSDL(), FEATURES[0]), });
-		TERMINALS[9].addFollower(TERMINALS[3], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getPCL(), FEATURES[1]), });
-		TERMINALS[5].addFollower(TERMINALS[8], EMPTY_LINK_ARRAY);
-		TERMINALS[5].addFollower(TERMINALS[9], EMPTY_LINK_ARRAY);
-		TERMINALS[6].addFollower(TERMINALS[8], EMPTY_LINK_ARRAY);
-		TERMINALS[6].addFollower(TERMINALS[9], EMPTY_LINK_ARRAY);
-		TERMINALS[7].addFollower(TERMINALS[8], EMPTY_LINK_ARRAY);
-		TERMINALS[7].addFollower(TERMINALS[9], EMPTY_LINK_ARRAY);
-		TERMINALS[0].addFollower(TERMINALS[4], EMPTY_LINK_ARRAY);
-		TERMINALS[1].addFollower(TERMINALS[4], EMPTY_LINK_ARRAY);
+		TERMINALS[2].addFollower(TERMINALS[4], EMPTY_LINK_ARRAY);
+		TERMINALS[4].addFollower(TERMINALS[2], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getSDL(), FEATURES[0]), });
+		TERMINALS[4].addFollower(TERMINALS[3], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getPCL(), FEATURES[1]), });
+		TERMINALS[3].addFollower(TERMINALS[5], EMPTY_LINK_ARRAY);
+		TERMINALS[5].addFollower(TERMINALS[3], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getPCL(), FEATURES[1]), });
+		TERMINALS[6].addFollower(TERMINALS[7], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNumberLiteral(), FEATURES[2]), });
+		TERMINALS[6].addFollower(TERMINALS[8], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNameLiteral(), FEATURES[2]), });
+		TERMINALS[6].addFollower(TERMINALS[9], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getBooleanLiteral(), FEATURES[2]), });
+		TERMINALS[10].addFollower(TERMINALS[7], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNumberLiteral(), FEATURES[2]), });
+		TERMINALS[10].addFollower(TERMINALS[8], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNameLiteral(), FEATURES[2]), });
+		TERMINALS[10].addFollower(TERMINALS[9], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getBooleanLiteral(), FEATURES[2]), });
+		TERMINALS[11].addFollower(TERMINALS[0], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenarioNameParameter(), FEATURES[3]), new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), FEATURES[4]), });
+		TERMINALS[11].addFollower(TERMINALS[1], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getActiveButtonsParameter(), FEATURES[3]), new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(), FEATURES[4]), });
+		TERMINALS[11].addFollower(TERMINALS[2], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getSDL(), FEATURES[0]), });
+		TERMINALS[11].addFollower(TERMINALS[3], new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] {new org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature(org.emftext.language.presentation.PresentationPackage.eINSTANCE.getPCL(), FEATURES[1]), });
+		TERMINALS[7].addFollower(TERMINALS[10], EMPTY_LINK_ARRAY);
+		TERMINALS[7].addFollower(TERMINALS[11], EMPTY_LINK_ARRAY);
+		TERMINALS[8].addFollower(TERMINALS[10], EMPTY_LINK_ARRAY);
+		TERMINALS[8].addFollower(TERMINALS[11], EMPTY_LINK_ARRAY);
+		TERMINALS[9].addFollower(TERMINALS[10], EMPTY_LINK_ARRAY);
+		TERMINALS[9].addFollower(TERMINALS[11], EMPTY_LINK_ARRAY);
+		TERMINALS[0].addFollower(TERMINALS[6], EMPTY_LINK_ARRAY);
+		TERMINALS[1].addFollower(TERMINALS[6], EMPTY_LINK_ARRAY);
 	}
 	
 	public static void wire() {

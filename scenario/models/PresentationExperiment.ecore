@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="PresentationExperiment" nsURI="" nsPrefix="NBS">
+  <eClassifiers xsi:type="ecore:EClass" name="Trial" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stimulus" upperBound="-1"
+        eType="#//Stimulus" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trial" eType="#//Trial"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TrialType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Experiment" eSuperTypes="#//Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Stimulus" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//StimulusType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StimulusType">
+    <eLiterals name="Text"/>
+    <eLiterals name="Picture" value="1"/>
+    <eLiterals name="Sound" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TrialType">
+    <eLiterals name="Start"/>
+    <eLiterals name="Instruction" value="1"/>
+    <eLiterals name="End" value="3"/>
+    <eLiterals name="Test" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

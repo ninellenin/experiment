@@ -1,0 +1,168 @@
+{
+  "type": "object",
+  "properties": {
+    "settings": {
+      "type": "object",
+      "properties": {
+        "param": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "updates": {
+                "type": "string",
+                "enum": [
+                  "constant",
+                  "None",
+                  "setEveryFrame",
+                  "setEveryRepeat"
+                ]
+              },
+              "val": {
+                "type": "string"
+              },
+              "valType": {
+                "type": "string",
+                "enum": [
+                  "bool",
+                  "code",
+                  "extendedCode",
+                  "num",
+                  "str"
+                ]
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "name"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "routines": {
+      "type": "object",
+      "properties": {
+        "routine": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "componentGroup": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "apertureComponent": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "name"
+                  ]
+                }
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "name"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "flow": {
+      "type": "object",
+      "properties": {
+        "flowGroup": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "routine": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "name"
+            ]
+          }
+        },
+        "loopInitiator": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "loopType": {
+                "type": "string",
+                "enum": [
+                  "MultiStairHandler",
+                  "StairHandler",
+                  "TrialHandler"
+                ]
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "loopType",
+              "name"
+            ]
+          }
+        },
+        "loopTerminator": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "name"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "encoding": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "settings",
+    "routines",
+    "flow"
+  ]
+}
