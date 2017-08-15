@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="PyExperiment" nsURI="file:/C:/Users/Student_1/workspace/experiment.xsd"
-    nsPrefix="PyExperiment">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="PyExperiment" nsURI="PyExperiment" nsPrefix="PyExperiment">
   <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
     <details key="qualified" value="false"/>
   </eAnnotations>
@@ -54,7 +53,7 @@
         <details key="name" value="xsi:schemaLocation"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="psychoPy2experiment" upperBound="-2"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Experiment" upperBound="-2"
         eType="#//Experiment" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">

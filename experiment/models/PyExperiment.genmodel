@@ -4,8 +4,8 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>PyExperiment.ecore</foreignModel>
-  <genPackages prefix="PyExperiment" resource="XML" disposableProviderFactory="true"
-      ecorePackage="PyExperiment.ecore#/">
+  <genPackages prefix="PyExperiment" basePackage="PsychoPy" resource="XML" disposableProviderFactory="true"
+      fileExtensions="psyexp" ecorePackage="PyExperiment.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="PyExperiment.ecore#//LoopType">
       <genEnumLiterals ecoreEnumLiteral="PyExperiment.ecore#//LoopType/MultiStairHandler"/>
       <genEnumLiterals ecoreEnumLiteral="PyExperiment.ecore#//LoopType/StairHandler"/>
@@ -36,7 +36,7 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute PyExperiment.ecore#//DocumentRoot/mixed"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PyExperiment.ecore#//DocumentRoot/xMLNSPrefixMap"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PyExperiment.ecore#//DocumentRoot/xSISchemaLocation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PyExperiment.ecore#//DocumentRoot/psychoPy2experiment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PyExperiment.ecore#//DocumentRoot/Experiment"/>
     </genClasses>
     <genClasses ecoreClass="PyExperiment.ecore#//Experiment">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PyExperiment.ecore#//Experiment/settings"/>
