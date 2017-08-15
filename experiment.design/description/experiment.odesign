@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="experiment" version="11.1.1.201610211630">
+  <ownedViewpoints name="Experiment" modelFileExtension="psyexp">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Scenario" domainClass="PyExperiment.DocumentRoot" enablePopupBars="true">
+      <metamodel href="PyExperiment#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Parameter" domainClass="PyExperiment.Param">
+          <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+          </style>
+        </nodeMappings>
+        <containerMappings name="Experiment" domainClass="PyExperiment.Experiment" reusedNodeMappings="//@ownedViewpoints[name='Experiment']/@ownedRepresentations[name='Scenario']/@defaultLayer/@nodeMappings[name='Parameter']">
+          <style xsi:type="style:ShapeContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="" hideLabelByDefault="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Parameters" domainClass="PyExperiment.DocumentRoot">
+      <metamodel href="PyExperiment#/"/>
+      <ownedLineMappings name="Parameter" domainClass="PyExperiment.Param"/>
+      <ownedColumnMappings name="Name" semanticElements="feature:name" headerLabelExpression="Parameter" featureName="name"/>
+      <ownedColumnMappings name="Value" semanticElements="feature:val" headerLabelExpression="Value" initialWidth="5" featureName="val" featureParentExpression="var:self"/>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="experiment.design.Services"/>
+  </ownedViewpoints>
+</description:Group>

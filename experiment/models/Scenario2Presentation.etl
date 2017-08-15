@@ -1,0 +1,9 @@
+rule Param2Param 
+  transform root : PyExperiment!DocumentRoot
+  to scenario : Presentation!Scenario {
+  
+  "hello".println();
+  //for (param in settings.param) {
+  //	param.name.println();
+  //}
+}

@@ -4,7 +4,7 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>PyExperiment.ecore</foreignModel>
-  <genPackages prefix="PyExperiment" basePackage="PsychoPy" resource="XML" disposableProviderFactory="true"
+  <genPackages prefix="PyExperiment" basePackage="PyExperiment" resource="XML" disposableProviderFactory="true"
       fileExtensions="psyexp" ecorePackage="PyExperiment.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="PyExperiment.ecore#//LoopType">
       <genEnumLiterals ecoreEnumLiteral="PyExperiment.ecore#//LoopType/MultiStairHandler"/>
