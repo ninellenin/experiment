@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.emftext.language.presentation/src-gen" modelPluginID="org.emftext.language.presentation"
+    modelName="presentation" complianceLevel="5.0" copyrightFields="false">
+  <genPackages prefix="Presentation" basePackage="org.emftext.language" disposableProviderFactory="true"
+      ecorePackage="presentation.ecore#/">
+    <genClasses ecoreClass="presentation.ecore#//ScenarioFile"/>
+    <genClasses ecoreClass="presentation.ecore#//Header">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//Header/definition"/>
+    </genClasses>
+    <genClasses ecoreClass="presentation.ecore#//SDL"/>
+    <genClasses ecoreClass="presentation.ecore#//PCL"/>
+    <genClasses ecoreClass="presentation.ecore#//Parameter"/>
+    <genClasses ecoreClass="presentation.ecore#//Statement"/>
+    <genClasses ecoreClass="presentation.ecore#//Definition">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference presentation.ecore#//Definition/parameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//Definition/value"/>
+    </genClasses>
+    <genClasses ecoreClass="presentation.ecore#//HeaderParameter"/>
+    <genClasses ecoreClass="presentation.ecore#//ScenarioNameParameter"/>
+    <genClasses image="false" ecoreClass="presentation.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="presentation.ecore#//Scenario">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//Scenario/header"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//Scenario/sdl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//Scenario/pcl"/>
+    </genClasses>
+    <genClasses ecoreClass="presentation.ecore#//ActiveButtonsParameter"/>
+    <genClasses ecoreClass="presentation.ecore#//Literal"/>
+    <genClasses ecoreClass="presentation.ecore#//NumericLiteral"/>
+    <genClasses ecoreClass="presentation.ecore#//NumberLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//NumberLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="presentation.ecore#//GeneralLiteral"/>
+    <genClasses ecoreClass="presentation.ecore#//BooleanLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//BooleanLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="presentation.ecore#//NameLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//NameLiteral/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
