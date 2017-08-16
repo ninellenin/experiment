@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
 /**
  * A container for all bracket pairs.
@@ -16,8 +16,8 @@ public class SceBracketSet {
 	 * character, it will be used as regular expression
 	 */
 	public final static String BRACKET_SEPARATOR = " and ";
-	private final static org.emftext.language.presentation.resource.sce.ui.ScePositionHelper positionHelper = new org.emftext.language.presentation.resource.sce.ui.ScePositionHelper();
-	private java.util.ArrayList<org.emftext.language.presentation.resource.sce.ISceBracketPair> bracketPairs;
+	private final static org.emftext.language.Presentation.resource.sce.ui.ScePositionHelper positionHelper = new org.emftext.language.Presentation.resource.sce.ui.ScePositionHelper();
+	private java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ISceBracketPair> bracketPairs;
 	private org.eclipse.jface.text.source.ISourceViewer viewer;
 	private String languageID;
 	private org.eclipse.swt.custom.StyledText textWidget;
@@ -26,7 +26,7 @@ public class SceBracketSet {
 	/**
 	 * A single pair of brackets.
 	 */
-	private class BracketPair implements org.emftext.language.presentation.resource.sce.ISceBracketPair {
+	private class BracketPair implements org.emftext.language.Presentation.resource.sce.ISceBracketPair {
 		
 		private final String[] brackets;
 		private boolean closingEnabledInside;
@@ -56,7 +56,7 @@ public class SceBracketSet {
 	/**
 	 * A listener for the automatic closing.
 	 */
-	private class ClosingListener implements org.emftext.language.presentation.resource.sce.ui.ISceBracketHandler, org.eclipse.swt.events.VerifyListener, org.eclipse.swt.events.ModifyListener, org.eclipse.swt.custom.VerifyKeyListener {
+	private class ClosingListener implements org.emftext.language.Presentation.resource.sce.ui.ISceBracketHandler, org.eclipse.swt.events.VerifyListener, org.eclipse.swt.events.ModifyListener, org.eclipse.swt.custom.VerifyKeyListener {
 		private int closingLength = -1;
 		private int addedPosition = -1;
 		private boolean closingAdded = false;
@@ -72,7 +72,7 @@ public class SceBracketSet {
 				return;
 			}
 			if (caret > 0 && caret < textWidget.getCharCount()) {
-				org.emftext.language.presentation.resource.sce.ISceBracketPair bracketPair = getBracketPair(textWidget.getTextRange(caret - 1, 1), textWidget.getTextRange(caret, 1));
+				org.emftext.language.Presentation.resource.sce.ISceBracketPair bracketPair = getBracketPair(textWidget.getTextRange(caret - 1, 1), textWidget.getTextRange(caret, 1));
 				if (bracketPair != null && !bracketPair.isClosingEnabledInside()) {
 					return;
 				}
@@ -146,14 +146,14 @@ public class SceBracketSet {
 	 * 
 	 * @param sourceViewer the source viewer for matching brackets
 	 */
-	public SceBracketSet(org.emftext.language.presentation.resource.sce.ui.SceEditor editor, org.eclipse.jface.text.source.ISourceViewer sourceViewer) {
-		languageID = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation().getSyntaxName();
-		this.bracketPairs = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ISceBracketPair>();
+	public SceBracketSet(org.emftext.language.Presentation.resource.sce.ui.SceEditor editor, org.eclipse.jface.text.source.ISourceViewer sourceViewer) {
+		languageID = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation().getSyntaxName();
+		this.bracketPairs = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ISceBracketPair>();
 		if (sourceViewer != null) {
 			viewer = sourceViewer;
 			textWidget = viewer.getTextWidget();
 		}
-		preferenceStore = org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.getDefault().getPreferenceStore();
+		preferenceStore = org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.getDefault().getPreferenceStore();
 		if (sourceViewer != null && preferenceStore != null) {
 			resetBrackets();
 			addListeners(editor);
@@ -164,7 +164,7 @@ public class SceBracketSet {
 	 * Checks whether the given string is an open bracket.
 	 */
 	public boolean isOpeningBracket(String bracket) {
-		for (org.emftext.language.presentation.resource.sce.ISceBracketPair bracketPair : bracketPairs) {
+		for (org.emftext.language.Presentation.resource.sce.ISceBracketPair bracketPair : bracketPairs) {
 			if (bracket.equals(bracketPair.getOpeningBracket())) {
 				return true;
 			}
@@ -176,7 +176,7 @@ public class SceBracketSet {
 	 * Checks whether the string is a bracket.
 	 */
 	public boolean isBracket(String bracket) {
-		for (org.emftext.language.presentation.resource.sce.ISceBracketPair bracketPair : bracketPairs) {
+		for (org.emftext.language.Presentation.resource.sce.ISceBracketPair bracketPair : bracketPairs) {
 			if (bracket.equals(bracketPair.getOpeningBracket()) || bracket.equals(bracketPair.getClosingBracket())) {
 				return true;
 			}
@@ -187,8 +187,8 @@ public class SceBracketSet {
 	/**
 	 * Returns the bracket pair with the given opening and closing.
 	 */
-	public org.emftext.language.presentation.resource.sce.ISceBracketPair getBracketPair(String opening, String closing) {
-		for (org.emftext.language.presentation.resource.sce.ISceBracketPair bracketPair : bracketPairs) {
+	public org.emftext.language.Presentation.resource.sce.ISceBracketPair getBracketPair(String opening, String closing) {
+		for (org.emftext.language.Presentation.resource.sce.ISceBracketPair bracketPair : bracketPairs) {
 			if (bracketPair.getOpeningBracket().equals(opening) && bracketPair.getClosingBracket().equals(closing)) {
 				return bracketPair;
 			}
@@ -196,7 +196,7 @@ public class SceBracketSet {
 		return null;
 	}
 	
-	public org.emftext.language.presentation.resource.sce.ISceBracketPair getBracketPair(int index) {
+	public org.emftext.language.Presentation.resource.sce.ISceBracketPair getBracketPair(int index) {
 		try {
 			return bracketPairs.get(index);
 		} catch (Exception e) {
@@ -219,7 +219,7 @@ public class SceBracketSet {
 	 * Sets whether other bracket pairs shall be automatically closed, when used
 	 * inside of this bracket pair.
 	 */
-	public boolean setClosingEnabledInside(org.emftext.language.presentation.resource.sce.ISceBracketPair bracketPair, boolean closingEnabledInside) {
+	public boolean setClosingEnabledInside(org.emftext.language.Presentation.resource.sce.ISceBracketPair bracketPair, boolean closingEnabledInside) {
 		if (bracketPair instanceof BracketPair) {
 			((BracketPair) bracketPair).setClosingEnabledInside(closingEnabledInside);
 			return true;
@@ -232,7 +232,7 @@ public class SceBracketSet {
 	 * the preference store.
 	 */
 	public boolean resetBrackets() {
-		String bracketPairs = preferenceStore.getString(languageID + org.emftext.language.presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_BRACKETS_SUFFIX);
+		String bracketPairs = preferenceStore.getString(languageID + org.emftext.language.Presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_BRACKETS_SUFFIX);
 		if (bracketPairs == null) {
 			return false;
 		}
@@ -244,7 +244,7 @@ public class SceBracketSet {
 	 * Returns the counter part of a bracket.
 	 */
 	public String getCounterpart(String bracket) {
-		for (org.emftext.language.presentation.resource.sce.ISceBracketPair bracketPair : bracketPairs) {
+		for (org.emftext.language.Presentation.resource.sce.ISceBracketPair bracketPair : bracketPairs) {
 			if (bracket.equals(bracketPair.getOpeningBracket())) {
 				return bracketPair.getClosingBracket();
 			}
@@ -262,8 +262,8 @@ public class SceBracketSet {
 	/**
 	 * Removes the given bracket pair.
 	 */
-	public org.emftext.language.presentation.resource.sce.ISceBracketPair remove(String opening, String closing) {
-		for (org.emftext.language.presentation.resource.sce.ISceBracketPair bracketPair : bracketPairs) {
+	public org.emftext.language.Presentation.resource.sce.ISceBracketPair remove(String opening, String closing) {
+		for (org.emftext.language.Presentation.resource.sce.ISceBracketPair bracketPair : bracketPairs) {
 			if (bracketPair.getOpeningBracket().equals(opening) && bracketPair.getClosingBracket().equals(closing)) {
 				bracketPairs.remove(bracketPair);
 				return bracketPair;
@@ -296,7 +296,7 @@ public class SceBracketSet {
 		if (bracketSet.length() % 3 != 0) {
 			return false;
 		}
-		bracketPairs = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ISceBracketPair>();
+		bracketPairs = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ISceBracketPair>();
 		for (int i = 0; i < bracketSet.length() / 3; i++) {
 			addBracketPair("" + bracketSet.charAt(i * 3), "" + bracketSet.charAt(i * 3 + 1), bracketSet.charAt(i * 3 + 2) != '0');
 		}
@@ -313,7 +313,7 @@ public class SceBracketSet {
 	public String[] getBracketArray() {
 		String[] ret = new String[bracketPairs.size()];
 		int i = 0;
-		for (org.emftext.language.presentation.resource.sce.ISceBracketPair bracketPair : bracketPairs) {
+		for (org.emftext.language.Presentation.resource.sce.ISceBracketPair bracketPair : bracketPairs) {
 			ret[i] = bracketPair.getOpeningBracket() + BRACKET_SEPARATOR + bracketPair.getClosingBracket();
 			i++;
 		}
@@ -333,7 +333,7 @@ public class SceBracketSet {
 			return "";
 		}
 		String result = "";
-		for (org.emftext.language.presentation.resource.sce.ISceBracketPair bracketPair : bracketPairs) {
+		for (org.emftext.language.Presentation.resource.sce.ISceBracketPair bracketPair : bracketPairs) {
 			String isClosingStr = "0";
 			if (bracketPair.isClosingEnabledInside()) {
 				isClosingStr = "1";
@@ -346,7 +346,7 @@ public class SceBracketSet {
 	/**
 	 * Adds listeners to handle bracket automatic closing.
 	 */
-	private void addListeners(org.emftext.language.presentation.resource.sce.ui.SceEditor editor) {
+	private void addListeners(org.emftext.language.Presentation.resource.sce.ui.SceEditor editor) {
 		ClosingListener closingListener = new ClosingListener();
 		textWidget.addVerifyListener(closingListener);
 		textWidget.addVerifyKeyListener(closingListener);
@@ -408,8 +408,8 @@ public class SceBracketSet {
 			return;
 		}
 		if (position != -1 && position != document.getLength()) {
-			positionHelper.addPosition(document, org.emftext.language.presentation.resource.sce.ui.ScePositionCategory.BRACKET.toString(), position, 1);
-			positionHelper.addPosition(document, org.emftext.language.presentation.resource.sce.ui.ScePositionCategory.BRACKET.toString(), caretOffset - 1, 1);
+			positionHelper.addPosition(document, org.emftext.language.Presentation.resource.sce.ui.ScePositionCategory.BRACKET.toString(), position, 1);
+			positionHelper.addPosition(document, org.emftext.language.Presentation.resource.sce.ui.ScePositionCategory.BRACKET.toString(), caretOffset - 1, 1);
 		}
 	}
 	

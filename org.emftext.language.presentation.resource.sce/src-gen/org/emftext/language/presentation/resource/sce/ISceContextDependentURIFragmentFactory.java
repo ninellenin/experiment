@@ -4,11 +4,11 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce;
+package org.emftext.language.Presentation.resource.sce;
 
 /**
  * An interface for factories to create instances of
- * org.emftext.language.presentation.resource.sce.ISceContextDependentURIFragment.
+ * org.emftext.language.Presentation.resource.sce.ISceContextDependentURIFragment.
  * 
  * @param <ContainerType> the type of the class containing the reference to be
  * resolved
@@ -18,7 +18,7 @@ public interface ISceContextDependentURIFragmentFactory<ContainerType extends or
 	
 	/**
 	 * Create a new instance of the
-	 * org.emftext.language.presentation.resource.sce.ISceContextDependentURIFragment
+	 * org.emftext.language.Presentation.resource.sce.ISceContextDependentURIFragment
 	 * interface.
 	 * 
 	 * @param identifier the identifier that references an Object
@@ -29,7 +29,7 @@ public interface ISceContextDependentURIFragmentFactory<ContainerType extends or
 	 * @param proxy the proxy that will be resolved later to the actual EObject
 	 * 
 	 * @return the new instance of
-	 * org.emftext.language.presentation.resource.sce.ISceContextDependentURIFragment
+	 * org.emftext.language.Presentation.resource.sce.ISceContextDependentURIFragment
 	 */
-	public org.emftext.language.presentation.resource.sce.ISceContextDependentURIFragment<?> create(String identifier, ContainerType container, org.eclipse.emf.ecore.EReference reference, int positionInReference, org.eclipse.emf.ecore.EObject proxy);
+	public org.emftext.language.Presentation.resource.sce.ISceContextDependentURIFragment<?> create(String identifier, ContainerType container, org.eclipse.emf.ecore.EReference reference, int positionInReference, org.eclipse.emf.ecore.EObject proxy);
 }

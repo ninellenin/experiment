@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: EMFText Parser Plugin: sce
-Bundle-SymbolicName: org.emftext.language.presentation.resource.sce;singleton:=true
+Bundle-SymbolicName: org.emftext.language.Presentation.resource.sce;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Vendor: Software Technology Group - TU Dresden Germany
 Require-Bundle: org.eclipse.core.runtime;resolution:=optional,
@@ -13,11 +13,11 @@ Require-Bundle: org.eclipse.core.runtime;resolution:=optional,
   org.emftext.language.presentation
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.emftext.language.presentation.resource.sce,
-  org.emftext.language.presentation.resource.sce.analysis,
-  org.emftext.language.presentation.resource.sce.mopp,
-  org.emftext.language.presentation.resource.sce.debug,
-  org.emftext.language.presentation.resource.sce.launch,
-  org.emftext.language.presentation.resource.sce.grammar,
-  org.emftext.language.presentation.resource.sce.util
-Bundle-Activator: org.emftext.language.presentation.resource.sce.mopp.ScePlugin
+Export-Package: org.emftext.language.Presentation.resource.sce,
+  org.emftext.language.Presentation.resource.sce.analysis,
+  org.emftext.language.Presentation.resource.sce.mopp,
+  org.emftext.language.Presentation.resource.sce.debug,
+  org.emftext.language.Presentation.resource.sce.launch,
+  org.emftext.language.Presentation.resource.sce.grammar,
+  org.emftext.language.Presentation.resource.sce.util
+Bundle-Activator: org.emftext.language.Presentation.resource.sce.mopp.ScePlugin

@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce;
+package org.emftext.language.Presentation.resource.sce;
 
 /**
  * A basic interface to convert parsed tokens to the attribute type in the meta
@@ -13,9 +13,9 @@ package org.emftext.language.presentation.resource.sce;
  * on the EMF type conversion. This includes conversion of registered EDataTypes.
  * 
  * @see
- * org.emftext.language.presentation.resource.sce.analysis.SceDefaultTokenResolver
+ * org.emftext.language.Presentation.resource.sce.analysis.SceDefaultTokenResolver
  */
-public interface ISceTokenResolver extends org.emftext.language.presentation.resource.sce.ISceConfigurable {
+public interface ISceTokenResolver extends org.emftext.language.Presentation.resource.sce.ISceConfigurable {
 	
 	/**
 	 * Converts a token into an Object (the value of the attribute).
@@ -25,7 +25,7 @@ public interface ISceTokenResolver extends org.emftext.language.presentation.res
 	 * @param result the result of resolving the lexem, can be used to add processing
 	 * errors
 	 */
-	public void resolve(String lexem, org.eclipse.emf.ecore.EStructuralFeature feature, org.emftext.language.presentation.resource.sce.ISceTokenResolveResult result);
+	public void resolve(String lexem, org.eclipse.emf.ecore.EStructuralFeature feature, org.emftext.language.Presentation.resource.sce.ISceTokenResolveResult result);
 	
 	/**
 	 * Converts an Object (the value of an attribute) to a string which can be

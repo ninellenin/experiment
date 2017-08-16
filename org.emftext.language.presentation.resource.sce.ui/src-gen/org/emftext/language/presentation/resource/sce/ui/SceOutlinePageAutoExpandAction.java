@@ -4,11 +4,11 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
-public class SceOutlinePageAutoExpandAction extends org.emftext.language.presentation.resource.sce.ui.AbstractSceOutlinePageAction {
+public class SceOutlinePageAutoExpandAction extends org.emftext.language.Presentation.resource.sce.ui.AbstractSceOutlinePageAction {
 	
-	public SceOutlinePageAutoExpandAction(org.emftext.language.presentation.resource.sce.ui.SceOutlinePageTreeViewer treeViewer) {
+	public SceOutlinePageAutoExpandAction(org.emftext.language.Presentation.resource.sce.ui.SceOutlinePageTreeViewer treeViewer) {
 		super(treeViewer, "Auto expand", org.eclipse.jface.action.IAction.AS_CHECK_BOX);
 		initialize("icons/auto_expand_icon.gif");
 	}

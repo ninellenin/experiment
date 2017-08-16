@@ -1,6 +1,6 @@
 /**
  */
-package org.emftext.language.presentation.impl;
+package org.emftext.language.Presentation.impl;
 
 import java.util.Collection;
 
@@ -14,14 +14,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.emftext.language.presentation.Definition;
-import org.emftext.language.presentation.Literal;
-import org.emftext.language.presentation.Parameter;
-import org.emftext.language.presentation.PresentationPackage;
+
+import org.emftext.language.Presentation.Definition;
+import org.emftext.language.Presentation.Literal;
+import org.emftext.language.Presentation.Parameter;
+import org.emftext.language.Presentation.PresentationPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,8 +30,8 @@ import org.emftext.language.presentation.PresentationPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.emftext.language.presentation.impl.DefinitionImpl#getParameter <em>Parameter</em>}</li>
- *   <li>{@link org.emftext.language.presentation.impl.DefinitionImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.impl.DefinitionImpl#getParameter <em>Parameter</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.impl.DefinitionImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated

@@ -4,16 +4,16 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.grammar;
+package org.emftext.language.Presentation.resource.sce.grammar;
 
 /**
  * A class to represent an enumeration terminal in the grammar.
  */
-public class SceEnumerationTerminal extends org.emftext.language.presentation.resource.sce.grammar.SceTerminal {
+public class SceEnumerationTerminal extends org.emftext.language.Presentation.resource.sce.grammar.SceTerminal {
 	
 	private java.util.Map<String, String> mapping = new java.util.LinkedHashMap<String, String>();
 	
-	public SceEnumerationTerminal(org.eclipse.emf.ecore.EStructuralFeature attribute, String[] literalMappings, org.emftext.language.presentation.resource.sce.grammar.SceCardinality cardinality, int mandatoryOccurrencesAfter) {
+	public SceEnumerationTerminal(org.eclipse.emf.ecore.EStructuralFeature attribute, String[] literalMappings, org.emftext.language.Presentation.resource.sce.grammar.SceCardinality cardinality, int mandatoryOccurrencesAfter) {
 		super(attribute, cardinality, mandatoryOccurrencesAfter);
 		assert attribute instanceof org.eclipse.emf.ecore.EAttribute;
 		assert literalMappings.length % 2 == 0;

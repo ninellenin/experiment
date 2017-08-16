@@ -4,13 +4,13 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce;
+package org.emftext.language.Presentation.resource.sce;
 
 /**
  * Converts a tree of <code>org.eclipse.emf.ecore.EObject</code>s into a plain
  * text.
  */
-public interface ISceTextPrinter extends org.emftext.language.presentation.resource.sce.ISceConfigurable {
+public interface ISceTextPrinter extends org.emftext.language.Presentation.resource.sce.ISceConfigurable {
 	
 	/**
 	 * Prints the given <code>org.eclipse.emf.ecore.EObject</code> and its content to

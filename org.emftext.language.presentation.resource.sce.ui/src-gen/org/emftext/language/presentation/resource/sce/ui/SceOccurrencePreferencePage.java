@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
 /**
  * The preference page to set the occurrence highlighting is not used anymore.

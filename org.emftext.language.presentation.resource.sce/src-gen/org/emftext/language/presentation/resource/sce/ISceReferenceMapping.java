@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce;
+package org.emftext.language.Presentation.resource.sce;
 
 /**
  * A mapping from an identifier to something else. The &quot;something else&quot;

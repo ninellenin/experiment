@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.util;
+package org.emftext.language.Presentation.resource.sce.util;
 
 /**
  * A utility class to resolve proxy objects that allows to terminate resolving.

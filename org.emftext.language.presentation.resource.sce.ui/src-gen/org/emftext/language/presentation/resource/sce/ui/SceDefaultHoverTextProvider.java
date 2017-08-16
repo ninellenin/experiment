@@ -4,9 +4,9 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
-public class SceDefaultHoverTextProvider implements org.emftext.language.presentation.resource.sce.ISceHoverTextProvider {
+public class SceDefaultHoverTextProvider implements org.emftext.language.Presentation.resource.sce.ISceHoverTextProvider {
 	
 	public String getHoverText(org.eclipse.emf.ecore.EObject container, org.eclipse.emf.ecore.EObject referencedObject) {
 		return getHoverText(referencedObject);

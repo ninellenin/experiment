@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.grammar;
+package org.emftext.language.Presentation.resource.sce.grammar;
 
 /**
  * A SceContainmentTrace represents a specific path to a structural feature by
@@ -23,9 +23,9 @@ public class SceContainmentTrace {
 	/**
 	 * The path of contained features.
 	 */
-	private org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] path;
+	private org.emftext.language.Presentation.resource.sce.mopp.SceContainedFeature[] path;
 	
-	public SceContainmentTrace(org.eclipse.emf.ecore.EClass startClass, org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] path) {
+	public SceContainmentTrace(org.eclipse.emf.ecore.EClass startClass, org.emftext.language.Presentation.resource.sce.mopp.SceContainedFeature[] path) {
 		super();
 		// Verify arguments
 		if (startClass != null) {
@@ -44,12 +44,12 @@ public class SceContainmentTrace {
 		return startClass;
 	}
 	
-	public org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] getPath() {
+	public org.emftext.language.Presentation.resource.sce.mopp.SceContainedFeature[] getPath() {
 		return path;
 	}
 	
 	public String toString() {
-		return (startClass == null ? "null" : startClass.getName()) + "->" + org.emftext.language.presentation.resource.sce.util.SceStringUtil.explode(path, "->");
+		return (startClass == null ? "null" : startClass.getName()) + "->" + org.emftext.language.Presentation.resource.sce.util.SceStringUtil.explode(path, "->");
 	}
 	
 }

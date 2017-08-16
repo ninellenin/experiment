@@ -4,11 +4,11 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
-public class SceOutlinePageCollapseAllAction extends org.emftext.language.presentation.resource.sce.ui.AbstractSceOutlinePageAction {
+public class SceOutlinePageCollapseAllAction extends org.emftext.language.Presentation.resource.sce.ui.AbstractSceOutlinePageAction {
 	
-	public SceOutlinePageCollapseAllAction(org.emftext.language.presentation.resource.sce.ui.SceOutlinePageTreeViewer treeViewer) {
+	public SceOutlinePageCollapseAllAction(org.emftext.language.Presentation.resource.sce.ui.SceOutlinePageTreeViewer treeViewer) {
 		super(treeViewer, "Collapse all", org.eclipse.jface.action.IAction.AS_PUSH_BUTTON);
 		initialize("icons/collapse_all_icon.gif");
 	}

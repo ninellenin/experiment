@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
 /**
  * The IgnoredWordsFilter can be customized to add additional words that must not
@@ -18,7 +18,7 @@ public class SceIgnoredWordsFilter {
 	 */
 	public boolean ignoreWord(String word) {
 		// By default we ignore all keywords that are defined in the syntax
-		return org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.INSTANCE.getKeywords().contains(word);
+		return org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.INSTANCE.getKeywords().contains(word);
 	}
 	
 }

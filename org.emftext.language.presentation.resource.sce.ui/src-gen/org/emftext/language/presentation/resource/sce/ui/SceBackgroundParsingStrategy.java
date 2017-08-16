@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
 /**
  * A background parsing strategy that starts parsing after a amount of time after
@@ -29,21 +29,21 @@ public class SceBackgroundParsingStrategy {
 	/**
 	 * Schedules a task for background parsing that will be started after a delay.
 	 */
-	public void parse(org.eclipse.jface.text.DocumentEvent event, final org.emftext.language.presentation.resource.sce.ISceTextResource resource, final org.emftext.language.presentation.resource.sce.ui.SceEditor editor) {
+	public void parse(org.eclipse.jface.text.DocumentEvent event, final org.emftext.language.Presentation.resource.sce.ISceTextResource resource, final org.emftext.language.Presentation.resource.sce.ui.SceEditor editor) {
 		parse(event.getDocument(), resource, editor, DELAY);
 	}
 	
 	/**
 	 * Schedules a task for background parsing that will be started after a delay.
 	 */
-	public void parse(org.eclipse.jface.text.IDocument document, final org.emftext.language.presentation.resource.sce.ISceTextResource resource, final org.emftext.language.presentation.resource.sce.ui.SceEditor editor, long delay) {
+	public void parse(org.eclipse.jface.text.IDocument document, final org.emftext.language.Presentation.resource.sce.ISceTextResource resource, final org.emftext.language.Presentation.resource.sce.ui.SceEditor editor, long delay) {
 		parse(document.get(), resource, editor, delay);
 	}
 	
 	/**
 	 * Schedules a task for background parsing that will be started after a delay.
 	 */
-	public void parse(final String contents, final org.emftext.language.presentation.resource.sce.ISceTextResource resource, final org.emftext.language.presentation.resource.sce.ui.SceEditor editor, long delay) {
+	public void parse(final String contents, final org.emftext.language.Presentation.resource.sce.ISceTextResource resource, final org.emftext.language.Presentation.resource.sce.ui.SceEditor editor, long delay) {
 		if (resource == null) {
 			return;
 		}
@@ -70,8 +70,8 @@ public class SceBackgroundParsingStrategy {
 	}
 	
 	private class ParsingJob extends org.eclipse.core.runtime.jobs.Job {
-		private org.emftext.language.presentation.resource.sce.ui.SceEditor editor;
-		private org.emftext.language.presentation.resource.sce.ISceTextResource resource;
+		private org.emftext.language.Presentation.resource.sce.ui.SceEditor editor;
+		private org.emftext.language.Presentation.resource.sce.ISceTextResource resource;
 		
 		public ParsingJob() {
 			super("parsing document");
@@ -86,8 +86,8 @@ public class SceBackgroundParsingStrategy {
 						String currentContent = newContents;
 						newContents = null;
 						String encoding = null;
-						if (resource instanceof org.emftext.language.presentation.resource.sce.mopp.SceResource) {
-							org.emftext.language.presentation.resource.sce.mopp.SceResource concreteResource = (org.emftext.language.presentation.resource.sce.mopp.SceResource) resource;
+						if (resource instanceof org.emftext.language.Presentation.resource.sce.mopp.SceResource) {
+							org.emftext.language.Presentation.resource.sce.mopp.SceResource concreteResource = (org.emftext.language.Presentation.resource.sce.mopp.SceResource) resource;
 							encoding = concreteResource.getEncoding(null);
 						}
 						byte[] bytes = null;

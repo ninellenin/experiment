@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.util;
+package org.emftext.language.Presentation.resource.sce.util;
 
 /**
  * This class provides basic infrastructure to interpret models. To implement
@@ -21,7 +21,7 @@ package org.emftext.language.presentation.resource.sce.util;
 public class AbstractSceInterpreter<ResultType, ContextType> {
 	
 	private java.util.Stack<org.eclipse.emf.ecore.EObject> interpretationStack = new java.util.Stack<org.eclipse.emf.ecore.EObject>();
-	private java.util.List<org.emftext.language.presentation.resource.sce.ISceInterpreterListener> listeners = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ISceInterpreterListener>();
+	private java.util.List<org.emftext.language.Presentation.resource.sce.ISceInterpreterListener> listeners = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ISceInterpreterListener>();
 	private org.eclipse.emf.ecore.EObject nextObjectToInterprete;
 	private Object currentContext;
 	
@@ -58,110 +58,110 @@ public class AbstractSceInterpreter<ResultType, ContextType> {
 	
 	public ResultType interprete(org.eclipse.emf.ecore.EObject object, ContextType context) {
 		ResultType result = null;
-		if (object instanceof org.emftext.language.presentation.Header) {
-			result = interprete_org_emftext_language_presentation_Header((org.emftext.language.presentation.Header) object, context);
+		if (object instanceof org.emftext.language.Presentation.Header) {
+			result = interprete_org_emftext_language_Presentation_Header((org.emftext.language.Presentation.Header) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.presentation.SDL) {
-			result = interprete_org_emftext_language_presentation_SDL((org.emftext.language.presentation.SDL) object, context);
+		if (object instanceof org.emftext.language.Presentation.SDL) {
+			result = interprete_org_emftext_language_Presentation_SDL((org.emftext.language.Presentation.SDL) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.presentation.PCL) {
-			result = interprete_org_emftext_language_presentation_PCL((org.emftext.language.presentation.PCL) object, context);
+		if (object instanceof org.emftext.language.Presentation.PCL) {
+			result = interprete_org_emftext_language_Presentation_PCL((org.emftext.language.Presentation.PCL) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.presentation.ScenarioFile) {
-			result = interprete_org_emftext_language_presentation_ScenarioFile((org.emftext.language.presentation.ScenarioFile) object, context);
+		if (object instanceof org.emftext.language.Presentation.ScenarioFile) {
+			result = interprete_org_emftext_language_Presentation_ScenarioFile((org.emftext.language.Presentation.ScenarioFile) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.presentation.ScenarioNameParameter) {
-			result = interprete_org_emftext_language_presentation_ScenarioNameParameter((org.emftext.language.presentation.ScenarioNameParameter) object, context);
+		if (object instanceof org.emftext.language.Presentation.ScenarioNameParameter) {
+			result = interprete_org_emftext_language_Presentation_ScenarioNameParameter((org.emftext.language.Presentation.ScenarioNameParameter) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.presentation.ActiveButtonsParameter) {
-			result = interprete_org_emftext_language_presentation_ActiveButtonsParameter((org.emftext.language.presentation.ActiveButtonsParameter) object, context);
+		if (object instanceof org.emftext.language.Presentation.ActiveButtonsParameter) {
+			result = interprete_org_emftext_language_Presentation_ActiveButtonsParameter((org.emftext.language.Presentation.ActiveButtonsParameter) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.presentation.Parameter) {
-			result = interprete_org_emftext_language_presentation_Parameter((org.emftext.language.presentation.Parameter) object, context);
+		if (object instanceof org.emftext.language.Presentation.Parameter) {
+			result = interprete_org_emftext_language_Presentation_Parameter((org.emftext.language.Presentation.Parameter) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.presentation.Definition) {
-			result = interprete_org_emftext_language_presentation_Definition((org.emftext.language.presentation.Definition) object, context);
+		if (object instanceof org.emftext.language.Presentation.Definition) {
+			result = interprete_org_emftext_language_Presentation_Definition((org.emftext.language.Presentation.Definition) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.presentation.Statement) {
-			result = interprete_org_emftext_language_presentation_Statement((org.emftext.language.presentation.Statement) object, context);
+		if (object instanceof org.emftext.language.Presentation.Statement) {
+			result = interprete_org_emftext_language_Presentation_Statement((org.emftext.language.Presentation.Statement) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.presentation.HeaderParameter) {
-			result = interprete_org_emftext_language_presentation_HeaderParameter((org.emftext.language.presentation.HeaderParameter) object, context);
+		if (object instanceof org.emftext.language.Presentation.HeaderParameter) {
+			result = interprete_org_emftext_language_Presentation_HeaderParameter((org.emftext.language.Presentation.HeaderParameter) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.presentation.Scenario) {
-			result = interprete_org_emftext_language_presentation_Scenario((org.emftext.language.presentation.Scenario) object, context);
+		if (object instanceof org.emftext.language.Presentation.Scenario) {
+			result = interprete_org_emftext_language_Presentation_Scenario((org.emftext.language.Presentation.Scenario) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.presentation.NamedElement) {
-			result = interprete_org_emftext_language_presentation_NamedElement((org.emftext.language.presentation.NamedElement) object, context);
+		if (object instanceof org.emftext.language.Presentation.NamedElement) {
+			result = interprete_org_emftext_language_Presentation_NamedElement((org.emftext.language.Presentation.NamedElement) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.presentation.NumberLiteral) {
-			result = interprete_org_emftext_language_presentation_NumberLiteral((org.emftext.language.presentation.NumberLiteral) object, context);
+		if (object instanceof org.emftext.language.Presentation.NumberLiteral) {
+			result = interprete_org_emftext_language_Presentation_NumberLiteral((org.emftext.language.Presentation.NumberLiteral) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.presentation.NumericLiteral) {
-			result = interprete_org_emftext_language_presentation_NumericLiteral((org.emftext.language.presentation.NumericLiteral) object, context);
+		if (object instanceof org.emftext.language.Presentation.NumericLiteral) {
+			result = interprete_org_emftext_language_Presentation_NumericLiteral((org.emftext.language.Presentation.NumericLiteral) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.presentation.BooleanLiteral) {
-			result = interprete_org_emftext_language_presentation_BooleanLiteral((org.emftext.language.presentation.BooleanLiteral) object, context);
+		if (object instanceof org.emftext.language.Presentation.BooleanLiteral) {
+			result = interprete_org_emftext_language_Presentation_BooleanLiteral((org.emftext.language.Presentation.BooleanLiteral) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.presentation.NameLiteral) {
-			result = interprete_org_emftext_language_presentation_NameLiteral((org.emftext.language.presentation.NameLiteral) object, context);
+		if (object instanceof org.emftext.language.Presentation.NameLiteral) {
+			result = interprete_org_emftext_language_Presentation_NameLiteral((org.emftext.language.Presentation.NameLiteral) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.presentation.GeneralLiteral) {
-			result = interprete_org_emftext_language_presentation_GeneralLiteral((org.emftext.language.presentation.GeneralLiteral) object, context);
+		if (object instanceof org.emftext.language.Presentation.GeneralLiteral) {
+			result = interprete_org_emftext_language_Presentation_GeneralLiteral((org.emftext.language.Presentation.GeneralLiteral) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.presentation.Literal) {
-			result = interprete_org_emftext_language_presentation_Literal((org.emftext.language.presentation.Literal) object, context);
+		if (object instanceof org.emftext.language.Presentation.Literal) {
+			result = interprete_org_emftext_language_Presentation_Literal((org.emftext.language.Presentation.Literal) object, context);
 		}
 		if (result != null) {
 			return result;
@@ -169,80 +169,80 @@ public class AbstractSceInterpreter<ResultType, ContextType> {
 		return result;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_ScenarioFile(org.emftext.language.presentation.ScenarioFile scenarioFile, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_ScenarioFile(org.emftext.language.Presentation.ScenarioFile scenarioFile, ContextType context) {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_Header(org.emftext.language.presentation.Header header, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_Header(org.emftext.language.Presentation.Header header, ContextType context) {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_SDL(org.emftext.language.presentation.SDL sDL, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_SDL(org.emftext.language.Presentation.SDL sDL, ContextType context) {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_PCL(org.emftext.language.presentation.PCL pCL, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_PCL(org.emftext.language.Presentation.PCL pCL, ContextType context) {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_Parameter(org.emftext.language.presentation.Parameter parameter, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_Parameter(org.emftext.language.Presentation.Parameter parameter, ContextType context) {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_Statement(org.emftext.language.presentation.Statement statement, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_Statement(org.emftext.language.Presentation.Statement statement, ContextType context) {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_Definition(org.emftext.language.presentation.Definition definition, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_Definition(org.emftext.language.Presentation.Definition definition, ContextType context) {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_HeaderParameter(org.emftext.language.presentation.HeaderParameter headerParameter, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_HeaderParameter(org.emftext.language.Presentation.HeaderParameter headerParameter, ContextType context) {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_ScenarioNameParameter(org.emftext.language.presentation.ScenarioNameParameter scenarioNameParameter, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_ScenarioNameParameter(org.emftext.language.Presentation.ScenarioNameParameter scenarioNameParameter, ContextType context) {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_NamedElement(org.emftext.language.presentation.NamedElement namedElement, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_NamedElement(org.emftext.language.Presentation.NamedElement namedElement, ContextType context) {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_Scenario(org.emftext.language.presentation.Scenario scenario, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_Scenario(org.emftext.language.Presentation.Scenario scenario, ContextType context) {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_ActiveButtonsParameter(org.emftext.language.presentation.ActiveButtonsParameter activeButtonsParameter, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_ActiveButtonsParameter(org.emftext.language.Presentation.ActiveButtonsParameter activeButtonsParameter, ContextType context) {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_Literal(org.emftext.language.presentation.Literal literal, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_Literal(org.emftext.language.Presentation.Literal literal, ContextType context) {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_NumericLiteral(org.emftext.language.presentation.NumericLiteral numericLiteral, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_NumericLiteral(org.emftext.language.Presentation.NumericLiteral numericLiteral, ContextType context) {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_NumberLiteral(org.emftext.language.presentation.NumberLiteral numberLiteral, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_NumberLiteral(org.emftext.language.Presentation.NumberLiteral numberLiteral, ContextType context) {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_GeneralLiteral(org.emftext.language.presentation.GeneralLiteral generalLiteral, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_GeneralLiteral(org.emftext.language.Presentation.GeneralLiteral generalLiteral, ContextType context) {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_BooleanLiteral(org.emftext.language.presentation.BooleanLiteral booleanLiteral, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_BooleanLiteral(org.emftext.language.Presentation.BooleanLiteral booleanLiteral, ContextType context) {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_presentation_NameLiteral(org.emftext.language.presentation.NameLiteral nameLiteral, ContextType context) {
+	public ResultType interprete_org_emftext_language_Presentation_NameLiteral(org.emftext.language.Presentation.NameLiteral nameLiteral, ContextType context) {
 		return null;
 	}
 	
 	private void notifyListeners(org.eclipse.emf.ecore.EObject element) {
-		for (org.emftext.language.presentation.resource.sce.ISceInterpreterListener listener : listeners) {
+		for (org.emftext.language.Presentation.resource.sce.ISceInterpreterListener listener : listeners) {
 			listener.handleInterpreteObject(element);
 		}
 	}
@@ -291,11 +291,11 @@ public class AbstractSceInterpreter<ResultType, ContextType> {
 		addObjectsToInterpreteInReverseOrder(objects);
 	}
 	
-	public void addListener(org.emftext.language.presentation.resource.sce.ISceInterpreterListener newListener) {
+	public void addListener(org.emftext.language.Presentation.resource.sce.ISceInterpreterListener newListener) {
 		listeners.add(newListener);
 	}
 	
-	public boolean removeListener(org.emftext.language.presentation.resource.sce.ISceInterpreterListener listener) {
+	public boolean removeListener(org.emftext.language.Presentation.resource.sce.ISceInterpreterListener listener) {
 		return listeners.remove(listener);
 	}
 	

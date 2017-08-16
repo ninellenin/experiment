@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.mopp;
+package org.emftext.language.Presentation.resource.sce.mopp;
 
 /**
  * This exception is used to terminate generated parsers. Depending on the state

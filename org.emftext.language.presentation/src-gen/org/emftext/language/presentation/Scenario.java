@@ -1,6 +1,6 @@
 /**
  */
-package org.emftext.language.presentation;
+package org.emftext.language.Presentation;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -13,12 +13,12 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.emftext.language.presentation.Scenario#getHeader <em>Header</em>}</li>
- *   <li>{@link org.emftext.language.presentation.Scenario#getSdl <em>Sdl</em>}</li>
- *   <li>{@link org.emftext.language.presentation.Scenario#getPcl <em>Pcl</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.Scenario#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.Scenario#getSdl <em>Sdl</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.Scenario#getPcl <em>Pcl</em>}</li>
  * </ul>
  *
- * @see org.emftext.language.presentation.PresentationPackage#getScenario()
+ * @see org.emftext.language.Presentation.PresentationPackage#getScenario()
  * @model
  * @generated
  */
@@ -33,14 +33,14 @@ public interface Scenario extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Header</em>' containment reference.
 	 * @see #setHeader(Header)
-	 * @see org.emftext.language.presentation.PresentationPackage#getScenario_Header()
+	 * @see org.emftext.language.Presentation.PresentationPackage#getScenario_Header()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Header getHeader();
 
 	/**
-	 * Sets the value of the '{@link org.emftext.language.presentation.Scenario#getHeader <em>Header</em>}' containment reference.
+	 * Sets the value of the '{@link org.emftext.language.Presentation.Scenario#getHeader <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Header</em>' containment reference.
@@ -51,7 +51,7 @@ public interface Scenario extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Sdl</b></em>' containment reference list.
-	 * The list contents are of type {@link org.emftext.language.presentation.SDL}.
+	 * The list contents are of type {@link org.emftext.language.Presentation.SDL}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sdl</em>' containment reference list isn't clear,
@@ -59,7 +59,7 @@ public interface Scenario extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sdl</em>' containment reference list.
-	 * @see org.emftext.language.presentation.PresentationPackage#getScenario_Sdl()
+	 * @see org.emftext.language.Presentation.PresentationPackage#getScenario_Sdl()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -67,7 +67,7 @@ public interface Scenario extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Pcl</b></em>' containment reference list.
-	 * The list contents are of type {@link org.emftext.language.presentation.PCL}.
+	 * The list contents are of type {@link org.emftext.language.Presentation.PCL}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Pcl</em>' containment reference list isn't clear,
@@ -75,7 +75,7 @@ public interface Scenario extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Pcl</em>' containment reference list.
-	 * @see org.emftext.language.presentation.PresentationPackage#getScenario_Pcl()
+	 * @see org.emftext.language.Presentation.PresentationPackage#getScenario_Pcl()
 	 * @model containment="true"
 	 * @generated
 	 */

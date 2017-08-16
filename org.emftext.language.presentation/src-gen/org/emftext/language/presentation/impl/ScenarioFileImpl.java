@@ -1,13 +1,13 @@
 /**
  */
-package org.emftext.language.presentation.impl;
+package org.emftext.language.Presentation.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.emftext.language.presentation.PresentationPackage;
-import org.emftext.language.presentation.ScenarioFile;
+import org.emftext.language.Presentation.PresentationPackage;
+import org.emftext.language.Presentation.ScenarioFile;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +16,7 @@ import org.emftext.language.presentation.ScenarioFile;
  *
  * @generated
  */
-public abstract class ScenarioFileImpl extends EObjectImpl implements ScenarioFile {
+public abstract class ScenarioFileImpl extends MinimalEObjectImpl.Container implements ScenarioFile {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

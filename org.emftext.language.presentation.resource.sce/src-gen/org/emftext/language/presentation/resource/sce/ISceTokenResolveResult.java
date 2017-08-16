@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce;
+package org.emftext.language.Presentation.resource.sce;
 
 /**
  * Implementations of this interface are used store the result of resolving a

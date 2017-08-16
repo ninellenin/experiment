@@ -1,5 +1,5 @@
 SYNTAXDEF sce
-FOR <http://www.emftext.org/language/presentation>
+FOR <http://www.emftext.org/language/Presentation> 
 START Scenario
 
 OPTIONS {
@@ -69,11 +69,11 @@ TOKENSTYLES {
 
 RULES {
 	Scenario ::= header sdl* pcl*;
-	Header ::= (definition !0)*;
+	Header ::= (definition)* !0;
 	SDL ::= "begin" ";" !0;
 	PCL ::= "begin_pcl" ";" !0;
 	
-	Definition ::= parameter #1 "=" value ("," #1 value)*  ";";
+	Definition ::= parameter #1 "=" value ("," #1 value)*  ";" !0;
 	NumberLiteral ::= value[SIGNED_INTEGER];
 	NameLiteral ::= value[QUOTED_NAME];
 	BooleanLiteral ::= value[BOOLEAN];

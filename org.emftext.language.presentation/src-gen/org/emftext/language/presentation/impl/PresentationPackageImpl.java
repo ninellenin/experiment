@@ -1,40 +1,32 @@
 /**
  */
-package org.emftext.language.presentation.impl;
+package org.emftext.language.Presentation.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.emftext.language.presentation.ActiveButtonsParameter;
-import org.emftext.language.presentation.BooleanLiteral;
-import org.emftext.language.presentation.DataType;
-import org.emftext.language.presentation.Definition;
-import org.emftext.language.presentation.Entity;
-import org.emftext.language.presentation.EntityModel;
-import org.emftext.language.presentation.Feature;
-import org.emftext.language.presentation.FeatureKind;
-import org.emftext.language.presentation.GeneralLiteral;
-import org.emftext.language.presentation.Header;
-import org.emftext.language.presentation.HeaderParameter;
-import org.emftext.language.presentation.Literal;
-import org.emftext.language.presentation.NameLiteral;
-import org.emftext.language.presentation.NamedElement;
-import org.emftext.language.presentation.NumberLiteral;
-import org.emftext.language.presentation.NumericLiteral;
-import org.emftext.language.presentation.Parameter;
-import org.emftext.language.presentation.ParameterType;
-import org.emftext.language.presentation.PresentationFactory;
-import org.emftext.language.presentation.PresentationPackage;
-import org.emftext.language.presentation.Scenario;
-import org.emftext.language.presentation.ScenarioFile;
-import org.emftext.language.presentation.ScenarioNameParameter;
-import org.emftext.language.presentation.Statement;
-import org.emftext.language.presentation.Type;
+import org.emftext.language.Presentation.ActiveButtonsParameter;
+import org.emftext.language.Presentation.BooleanLiteral;
+import org.emftext.language.Presentation.Definition;
+import org.emftext.language.Presentation.GeneralLiteral;
+import org.emftext.language.Presentation.Header;
+import org.emftext.language.Presentation.HeaderParameter;
+import org.emftext.language.Presentation.Literal;
+import org.emftext.language.Presentation.NameLiteral;
+import org.emftext.language.Presentation.NamedElement;
+import org.emftext.language.Presentation.NumberLiteral;
+import org.emftext.language.Presentation.NumericLiteral;
+import org.emftext.language.Presentation.Parameter;
+import org.emftext.language.Presentation.PresentationFactory;
+import org.emftext.language.Presentation.PresentationPackage;
+import org.emftext.language.Presentation.Scenario;
+import org.emftext.language.Presentation.ScenarioFile;
+import org.emftext.language.Presentation.ScenarioNameParameter;
+import org.emftext.language.Presentation.Statement;
 
 /**
  * <!-- begin-user-doc -->
@@ -180,7 +172,7 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see org.emftext.language.presentation.PresentationPackage#eNS_URI
+	 * @see org.emftext.language.Presentation.PresentationPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
@@ -599,15 +591,15 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 		booleanLiteralEClass.getESuperTypes().add(this.getGeneralLiteral());
 		nameLiteralEClass.getESuperTypes().add(this.getGeneralLiteral());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(scenarioFileEClass, ScenarioFile.class, "ScenarioFile", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(headerEClass, Header.class, "Header", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHeader_Definition(), this.getDefinition(), null, "definition", null, 0, -1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(sdlEClass, org.emftext.language.presentation.SDL.class, "SDL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(sdlEClass, org.emftext.language.Presentation.SDL.class, "SDL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(pclEClass, org.emftext.language.presentation.PCL.class, "PCL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(pclEClass, org.emftext.language.Presentation.PCL.class, "PCL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(parameterEClass, Parameter.class, "Parameter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

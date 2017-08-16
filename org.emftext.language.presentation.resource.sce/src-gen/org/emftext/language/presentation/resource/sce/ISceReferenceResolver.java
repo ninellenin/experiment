@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce;
+package org.emftext.language.Presentation.resource.sce;
 
 /**
  * A reference resolver tries to resolve a reference to one or many model elements
@@ -15,7 +15,7 @@ package org.emftext.language.presentation.resource.sce;
  * @param <ReferenceType> the type of the reference that is resolved by this
  * resolver
  */
-public interface ISceReferenceResolver<ContainerType extends org.eclipse.emf.ecore.EObject, ReferenceType extends org.eclipse.emf.ecore.EObject> extends org.emftext.language.presentation.resource.sce.ISceConfigurable {
+public interface ISceReferenceResolver<ContainerType extends org.eclipse.emf.ecore.EObject, ReferenceType extends org.eclipse.emf.ecore.EObject> extends org.emftext.language.Presentation.resource.sce.ISceConfigurable {
 	
 	/**
 	 * Attempts to resolve a reference string.
@@ -30,7 +30,7 @@ public interface ISceReferenceResolver<ContainerType extends org.eclipse.emf.eco
 	 * @param result an object that can be used to store the result of the resolve
 	 * operation.
 	 */
-	public void resolve(String identifier, ContainerType container, org.eclipse.emf.ecore.EReference reference, int position, boolean resolveFuzzy, org.emftext.language.presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> result);
+	public void resolve(String identifier, ContainerType container, org.eclipse.emf.ecore.EReference reference, int position, boolean resolveFuzzy, org.emftext.language.Presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> result);
 	
 	/**
 	 * Reverse of the resolve operation: constructs a String representing the given

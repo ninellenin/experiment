@@ -4,14 +4,14 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.mopp;
+package org.emftext.language.Presentation.resource.sce.mopp;
 
 public class SceSyntaxElementDecorator {
 	
 	/**
 	 * the syntax element to be decorated
 	 */
-	private org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement decoratedElement;
+	private org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement decoratedElement;
 	
 	/**
 	 * an array of child decorators (one decorator per child of the decorated syntax
@@ -24,7 +24,7 @@ public class SceSyntaxElementDecorator {
 	 */
 	private java.util.List<Integer> indicesToPrint = new java.util.ArrayList<Integer>();
 	
-	public SceSyntaxElementDecorator(org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement decoratedElement, SceSyntaxElementDecorator[] childDecorators) {
+	public SceSyntaxElementDecorator(org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement decoratedElement, SceSyntaxElementDecorator[] childDecorators) {
 		super();
 		this.decoratedElement = decoratedElement;
 		this.childDecorators = childDecorators;
@@ -34,7 +34,7 @@ public class SceSyntaxElementDecorator {
 		indicesToPrint.add(index);
 	}
 	
-	public org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement getDecoratedElement() {
+	public org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement getDecoratedElement() {
 		return decoratedElement;
 	}
 	

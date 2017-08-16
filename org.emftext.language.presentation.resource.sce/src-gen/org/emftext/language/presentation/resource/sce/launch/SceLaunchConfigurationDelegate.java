@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.launch;
+package org.emftext.language.Presentation.resource.sce.launch;
 
 /**
  * A class that handles launch configurations.

@@ -1,17 +1,13 @@
 /**
  */
-package org.emftext.language.presentation.impl;
-
-import org.eclipse.emf.common.notify.Notification;
+package org.emftext.language.Presentation.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.emftext.language.presentation.Parameter;
-import org.emftext.language.presentation.ParameterType;
-import org.emftext.language.presentation.PresentationPackage;
+import org.emftext.language.Presentation.Parameter;
+import org.emftext.language.Presentation.PresentationPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +16,7 @@ import org.emftext.language.presentation.PresentationPackage;
  *
  * @generated
  */
-public abstract class ParameterImpl extends EObjectImpl implements Parameter {
+public abstract class ParameterImpl extends MinimalEObjectImpl.Container implements Parameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

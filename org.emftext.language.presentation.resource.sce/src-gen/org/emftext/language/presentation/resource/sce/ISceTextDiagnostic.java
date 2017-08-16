@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce;
+package org.emftext.language.Presentation.resource.sce;
 
 /**
  * An extended diagnostic that gives access to the exact position of the problem
@@ -35,7 +35,7 @@ public interface ISceTextDiagnostic extends org.eclipse.emf.ecore.resource.Resou
 	/**
 	 * Returns the problem that was found.
 	 */
-	public org.emftext.language.presentation.resource.sce.ISceProblem getProblem();
+	public org.emftext.language.Presentation.resource.sce.ISceProblem getProblem();
 	
 	/**
 	 * Checks whether the problem was caused by the given element.

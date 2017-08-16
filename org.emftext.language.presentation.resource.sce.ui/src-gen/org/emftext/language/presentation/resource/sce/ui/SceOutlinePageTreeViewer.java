@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
 /**
  * This custom implementation of a TreeViewer expands the tree automatically up to
@@ -81,7 +81,7 @@ public class SceOutlinePageTreeViewer extends org.eclipse.jface.viewers.TreeView
 			
 			private String getURI(org.eclipse.emf.ecore.EObject eObject) {
 				java.util.List<String> uriFragmentPath = getFragmentPath(eObject);
-				String uriFragment = org.emftext.language.presentation.resource.sce.util.SceStringUtil.explode(uriFragmentPath, "/");
+				String uriFragment = org.emftext.language.Presentation.resource.sce.util.SceStringUtil.explode(uriFragmentPath, "/");
 				return uriFragment;
 			}
 			
@@ -103,7 +103,7 @@ public class SceOutlinePageTreeViewer extends org.eclipse.jface.viewers.TreeView
 		if (!linkWithEditor) {
 			return;
 		}
-		if (selection instanceof org.emftext.language.presentation.resource.sce.ui.SceEObjectSelection) {
+		if (selection instanceof org.emftext.language.Presentation.resource.sce.ui.SceEObjectSelection) {
 			suppressNotifications = true;
 			super.setSelection(selection, reveal);
 			suppressNotifications = false;
@@ -159,7 +159,7 @@ public class SceOutlinePageTreeViewer extends org.eclipse.jface.viewers.TreeView
 		try {
 			super.expandToLevel(level);
 		} catch (Exception e) {
-			org.emftext.language.presentation.resource.sce.mopp.ScePlugin.logError("Exception while refreshing outline view", e);
+			org.emftext.language.Presentation.resource.sce.mopp.ScePlugin.logError("Exception while refreshing outline view", e);
 		}
 	}
 	

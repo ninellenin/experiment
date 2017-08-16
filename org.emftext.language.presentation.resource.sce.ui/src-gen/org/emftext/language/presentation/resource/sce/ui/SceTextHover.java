@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
 /**
  * A class to display the information of an element. Most of the code is taken
@@ -14,8 +14,8 @@ public class SceTextHover implements org.eclipse.jface.text.ITextHover, org.ecli
 	
 	private static final String FONT = org.eclipse.jface.resource.JFaceResources.DIALOG_FONT;
 	
-	private org.emftext.language.presentation.resource.sce.ISceResourceProvider resourceProvider;
-	private org.emftext.language.presentation.resource.sce.ISceHoverTextProvider hoverTextProvider;
+	private org.emftext.language.Presentation.resource.sce.ISceResourceProvider resourceProvider;
+	private org.emftext.language.Presentation.resource.sce.ISceHoverTextProvider hoverTextProvider;
 	/**
 	 * The style sheet (css).
 	 */
@@ -74,7 +74,7 @@ public class SceTextHover implements org.eclipse.jface.text.ITextHover, org.ecli
 	 */
 	public static class OpenDeclarationAction extends org.eclipse.jface.action.Action {
 		
-		private final org.emftext.language.presentation.resource.sce.ui.SceBrowserInformationControl infoControl;
+		private final org.emftext.language.Presentation.resource.sce.ui.SceBrowserInformationControl infoControl;
 		
 		/**
 		 * Creates the action to jump to the declaration.
@@ -82,7 +82,7 @@ public class SceTextHover implements org.eclipse.jface.text.ITextHover, org.ecli
 		 * @param infoControl the info control holds the hover information and the target
 		 * element
 		 */
-		public OpenDeclarationAction(org.emftext.language.presentation.resource.sce.ui.SceBrowserInformationControl infoControl) {
+		public OpenDeclarationAction(org.emftext.language.Presentation.resource.sce.ui.SceBrowserInformationControl infoControl) {
 			this.infoControl = infoControl;
 			setText("Open Declaration");
 			org.eclipse.ui.ISharedImages images = org.eclipse.ui.PlatformUI.getWorkbench().getSharedImages();
@@ -93,13 +93,13 @@ public class SceTextHover implements org.eclipse.jface.text.ITextHover, org.ecli
 		 * Creates, sets, activates a hyperlink.
 		 */
 		public void run() {
-			org.emftext.language.presentation.resource.sce.ui.SceDocBrowserInformationControlInput infoInput = (org.emftext.language.presentation.resource.sce.ui.SceDocBrowserInformationControlInput) infoControl.getInput();
+			org.emftext.language.Presentation.resource.sce.ui.SceDocBrowserInformationControlInput infoInput = (org.emftext.language.Presentation.resource.sce.ui.SceDocBrowserInformationControlInput) infoControl.getInput();
 			infoControl.notifyDelayedInputChange(null);
 			infoControl.dispose();
 			if (infoInput.getInputElement() instanceof org.eclipse.emf.ecore.EObject) {
 				org.eclipse.emf.ecore.EObject decEO = (org.eclipse.emf.ecore.EObject) infoInput.getInputElement();
 				if (decEO != null && decEO.eResource() != null) {
-					org.emftext.language.presentation.resource.sce.ui.SceHyperlink hyperlink = new org.emftext.language.presentation.resource.sce.ui.SceHyperlink(null, decEO, infoInput.getTokenText());
+					org.emftext.language.Presentation.resource.sce.ui.SceHyperlink hyperlink = new org.emftext.language.Presentation.resource.sce.ui.SceHyperlink(null, decEO, infoInput.getTokenText());
 					hyperlink.open();
 				}
 			}
@@ -112,9 +112,9 @@ public class SceTextHover implements org.eclipse.jface.text.ITextHover, org.ecli
 	public static final class PresenterControlCreator extends org.eclipse.jface.text.AbstractReusableInformationControlCreator {
 		
 		public org.eclipse.jface.text.IInformationControl doCreateInformationControl(org.eclipse.swt.widgets.Shell parent) {
-			if (org.emftext.language.presentation.resource.sce.ui.SceBrowserInformationControl.isAvailable(parent)) {
+			if (org.emftext.language.Presentation.resource.sce.ui.SceBrowserInformationControl.isAvailable(parent)) {
 				org.eclipse.jface.action.ToolBarManager tbm = new org.eclipse.jface.action.ToolBarManager(org.eclipse.swt.SWT.FLAT);
-				org.emftext.language.presentation.resource.sce.ui.SceBrowserInformationControl iControl = new org.emftext.language.presentation.resource.sce.ui.SceBrowserInformationControl(parent, FONT, tbm);
+				org.emftext.language.Presentation.resource.sce.ui.SceBrowserInformationControl iControl = new org.emftext.language.Presentation.resource.sce.ui.SceBrowserInformationControl(parent, FONT, tbm);
 				final OpenDeclarationAction openDeclarationAction = new OpenDeclarationAction(iControl);
 				tbm.add(openDeclarationAction);
 				final SimpleSelectionProvider selectionProvider = new SimpleSelectionProvider();
@@ -123,8 +123,8 @@ public class SceTextHover implements org.eclipse.jface.text.ITextHover, org.ecli
 					public void inputChanged(Object newInput) {
 						if (newInput == null) {
 							selectionProvider.setSelection(new org.eclipse.jface.viewers.StructuredSelection());
-						} else if (newInput instanceof org.emftext.language.presentation.resource.sce.ui.SceDocBrowserInformationControlInput) {
-							org.emftext.language.presentation.resource.sce.ui.SceDocBrowserInformationControlInput input = (org.emftext.language.presentation.resource.sce.ui.SceDocBrowserInformationControlInput) newInput;
+						} else if (newInput instanceof org.emftext.language.Presentation.resource.sce.ui.SceDocBrowserInformationControlInput) {
+							org.emftext.language.Presentation.resource.sce.ui.SceDocBrowserInformationControlInput input = (org.emftext.language.Presentation.resource.sce.ui.SceDocBrowserInformationControlInput) newInput;
 							Object inputElement = input.getInputElement();
 							selectionProvider.setSelection(new org.eclipse.jface.viewers.StructuredSelection(inputElement));
 							// If there is an element of type EObject in the input element, the button to open
@@ -169,8 +169,8 @@ public class SceTextHover implements org.eclipse.jface.text.ITextHover, org.ecli
 		
 		public org.eclipse.jface.text.IInformationControl doCreateInformationControl(org.eclipse.swt.widgets.Shell parent) {
 			String tooltipAffordanceString = org.eclipse.ui.editors.text.EditorsUI.getTooltipAffordanceString();
-			if (org.emftext.language.presentation.resource.sce.ui.SceBrowserInformationControl.isAvailable(parent)) {
-				org.emftext.language.presentation.resource.sce.ui.SceBrowserInformationControl iControl = new org.emftext.language.presentation.resource.sce.ui.SceBrowserInformationControl(parent, FONT, tooltipAffordanceString) {
+			if (org.emftext.language.Presentation.resource.sce.ui.SceBrowserInformationControl.isAvailable(parent)) {
+				org.emftext.language.Presentation.resource.sce.ui.SceBrowserInformationControl iControl = new org.emftext.language.Presentation.resource.sce.ui.SceBrowserInformationControl(parent, FONT, tooltipAffordanceString) {
 					public org.eclipse.jface.text.IInformationControlCreator getInformationPresenterControlCreator() {
 						return fInformationPresenterControlCreator;
 					}
@@ -198,10 +198,10 @@ public class SceTextHover implements org.eclipse.jface.text.ITextHover, org.ecli
 	/**
 	 * Creates a new TextHover to collect the information about the hovered element.
 	 */
-	public SceTextHover(org.emftext.language.presentation.resource.sce.ISceResourceProvider resourceProvider) {
+	public SceTextHover(org.emftext.language.Presentation.resource.sce.ISceResourceProvider resourceProvider) {
 		super();
 		this.resourceProvider = resourceProvider;
-		this.hoverTextProvider = new org.emftext.language.presentation.resource.sce.ui.SceUIMetaInformation().getHoverTextProvider();
+		this.hoverTextProvider = new org.emftext.language.Presentation.resource.sce.ui.SceUIMetaInformation().getHoverTextProvider();
 	}
 	
 	// The warning about overriding or implementing a deprecated API cannot be avoided
@@ -211,7 +211,7 @@ public class SceTextHover implements org.eclipse.jface.text.ITextHover, org.ecli
 		if (hoverInfo == null) {
 			return null;
 		}
-		return ((org.emftext.language.presentation.resource.sce.ui.SceDocBrowserInformationControlInput) hoverInfo).getHtml();
+		return ((org.emftext.language.Presentation.resource.sce.ui.SceDocBrowserInformationControlInput) hoverInfo).getHtml();
 	}
 	
 	public org.eclipse.jface.text.IRegion getHoverRegion(org.eclipse.jface.text.ITextViewer textViewer, int offset) {
@@ -240,12 +240,12 @@ public class SceTextHover implements org.eclipse.jface.text.ITextHover, org.ecli
 		return hoverTextProvider == null ? null : internalGetHoverInfo(textViewer, hoverRegion);
 	}
 	
-	private org.emftext.language.presentation.resource.sce.ui.SceDocBrowserInformationControlInput internalGetHoverInfo(org.eclipse.jface.text.ITextViewer textViewer, org.eclipse.jface.text.IRegion hoverRegion) {
-		org.emftext.language.presentation.resource.sce.ISceTextResource textResource = resourceProvider.getResource();
+	private org.emftext.language.Presentation.resource.sce.ui.SceDocBrowserInformationControlInput internalGetHoverInfo(org.eclipse.jface.text.ITextViewer textViewer, org.eclipse.jface.text.IRegion hoverRegion) {
+		org.emftext.language.Presentation.resource.sce.ISceTextResource textResource = resourceProvider.getResource();
 		if (textResource == null) {
 			return null;
 		}
-		org.emftext.language.presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
+		org.emftext.language.Presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
 		java.util.List<org.eclipse.emf.ecore.EObject> elementsAtOffset = locationMap.getElementsAt(hoverRegion.getOffset());
 		if (elementsAtOffset == null || elementsAtOffset.size() == 0) {
 			return null;
@@ -264,7 +264,7 @@ public class SceTextHover implements org.eclipse.jface.text.ITextHover, org.ecli
 	 * @return the HTML hover info for the given element(s) or <code>null</code> if no
 	 * information is available
 	 */
-	private org.emftext.language.presentation.resource.sce.ui.SceDocBrowserInformationControlInput getHoverInfo(java.util.List<org.eclipse.emf.ecore.EObject> elements, org.eclipse.jface.text.ITextViewer textViewer, org.emftext.language.presentation.resource.sce.ui.SceDocBrowserInformationControlInput previousInput) {
+	private org.emftext.language.Presentation.resource.sce.ui.SceDocBrowserInformationControlInput getHoverInfo(java.util.List<org.eclipse.emf.ecore.EObject> elements, org.eclipse.jface.text.ITextViewer textViewer, org.emftext.language.Presentation.resource.sce.ui.SceDocBrowserInformationControlInput previousInput) {
 		StringBuffer buffer = new StringBuffer();
 		org.eclipse.emf.ecore.EObject proxyObject = getFirstProxy(elements);
 		org.eclipse.emf.ecore.EObject containerObject = getFirstNonProxy(elements);
@@ -272,8 +272,8 @@ public class SceTextHover implements org.eclipse.jface.text.ITextHover, org.ecli
 		// get the token text, which is hovered. It is needed to jump to the declaration.
 		String tokenText = "";
 		if (proxyObject != null) {
-			org.emftext.language.presentation.resource.sce.ISceTextResource textResource = resourceProvider.getResource();
-			org.emftext.language.presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
+			org.emftext.language.Presentation.resource.sce.ISceTextResource textResource = resourceProvider.getResource();
+			org.emftext.language.Presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
 			int offset = locationMap.getCharStart(proxyObject);
 			int length = locationMap.getCharEnd(proxyObject) + 1 - offset;
 			try {
@@ -282,15 +282,15 @@ public class SceTextHover implements org.eclipse.jface.text.ITextHover, org.ecli
 			}
 			declarationObject = org.eclipse.emf.ecore.util.EcoreUtil.resolve(proxyObject, resourceProvider.getResource());
 			if (declarationObject != null) {
-				org.emftext.language.presentation.resource.sce.ui.SceHTMLPrinter.addParagraph(buffer, hoverTextProvider.getHoverText(containerObject, declarationObject));
+				org.emftext.language.Presentation.resource.sce.ui.SceHTMLPrinter.addParagraph(buffer, hoverTextProvider.getHoverText(containerObject, declarationObject));
 			}
 		} else {
-			org.emftext.language.presentation.resource.sce.ui.SceHTMLPrinter.addParagraph(buffer, hoverTextProvider.getHoverText(elements.get(0)));
+			org.emftext.language.Presentation.resource.sce.ui.SceHTMLPrinter.addParagraph(buffer, hoverTextProvider.getHoverText(elements.get(0)));
 		}
 		if (buffer.length() > 0) {
-			org.emftext.language.presentation.resource.sce.ui.SceHTMLPrinter.insertPageProlog(buffer, 0, org.emftext.language.presentation.resource.sce.ui.SceTextHover.getStyleSheet());
-			org.emftext.language.presentation.resource.sce.ui.SceHTMLPrinter.addPageEpilog(buffer);
-			return new org.emftext.language.presentation.resource.sce.ui.SceDocBrowserInformationControlInput(previousInput, declarationObject, resourceProvider.getResource(), buffer.toString(), tokenText);
+			org.emftext.language.Presentation.resource.sce.ui.SceHTMLPrinter.insertPageProlog(buffer, 0, org.emftext.language.Presentation.resource.sce.ui.SceTextHover.getStyleSheet());
+			org.emftext.language.Presentation.resource.sce.ui.SceHTMLPrinter.addPageEpilog(buffer);
+			return new org.emftext.language.Presentation.resource.sce.ui.SceDocBrowserInformationControlInput(previousInput, declarationObject, resourceProvider.getResource(), buffer.toString(), tokenText);
 		}
 		return null;
 	}
@@ -308,7 +308,7 @@ public class SceTextHover implements org.eclipse.jface.text.ITextHover, org.ecli
 		// Sets background color for the hover text window
 		css += "body {background-color:#FFFFE1;}\n";
 		org.eclipse.swt.graphics.FontData fontData = org.eclipse.jface.resource.JFaceResources.getFontRegistry().getFontData(FONT)[0];
-		css = org.emftext.language.presentation.resource.sce.ui.SceHTMLPrinter.convertTopLevelFont(css, fontData);
+		css = org.emftext.language.Presentation.resource.sce.ui.SceHTMLPrinter.convertTopLevelFont(css, fontData);
 		
 		return css;
 	}
@@ -319,11 +319,11 @@ public class SceTextHover implements org.eclipse.jface.text.ITextHover, org.ecli
 	 * @return the style sheet, or <code>null</code> if unable to load
 	 */
 	private static String loadStyleSheet() {
-		org.osgi.framework.Bundle bundle = org.eclipse.core.runtime.Platform.getBundle(org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.PLUGIN_ID);
+		org.osgi.framework.Bundle bundle = org.eclipse.core.runtime.Platform.getBundle(org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.PLUGIN_ID);
 		java.net.URL styleSheetURL = bundle.getEntry("/css/hover_style.css");
 		if (styleSheetURL != null) {
 			try {
-				return org.emftext.language.presentation.resource.sce.util.SceStreamUtil.getContent(styleSheetURL.openStream());
+				return org.emftext.language.Presentation.resource.sce.util.SceStreamUtil.getContent(styleSheetURL.openStream());
 			} catch (java.io.IOException ex) {
 				ex.printStackTrace();
 			}

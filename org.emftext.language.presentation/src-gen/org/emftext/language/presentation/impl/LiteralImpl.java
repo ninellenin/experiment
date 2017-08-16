@@ -1,13 +1,13 @@
 /**
  */
-package org.emftext.language.presentation.impl;
+package org.emftext.language.Presentation.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.emftext.language.presentation.Literal;
-import org.emftext.language.presentation.PresentationPackage;
+import org.emftext.language.Presentation.Literal;
+import org.emftext.language.Presentation.PresentationPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +16,7 @@ import org.emftext.language.presentation.PresentationPackage;
  *
  * @generated
  */
-public abstract class LiteralImpl extends EObjectImpl implements Literal {
+public abstract class LiteralImpl extends MinimalEObjectImpl.Container implements Literal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

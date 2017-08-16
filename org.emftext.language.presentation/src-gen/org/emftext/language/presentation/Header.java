@@ -1,6 +1,6 @@
 /**
  */
-package org.emftext.language.presentation;
+package org.emftext.language.Presentation;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -13,17 +13,17 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.emftext.language.presentation.Header#getDefinition <em>Definition</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.Header#getDefinition <em>Definition</em>}</li>
  * </ul>
  *
- * @see org.emftext.language.presentation.PresentationPackage#getHeader()
+ * @see org.emftext.language.Presentation.PresentationPackage#getHeader()
  * @model
  * @generated
  */
 public interface Header extends ScenarioFile {
 	/**
 	 * Returns the value of the '<em><b>Definition</b></em>' containment reference list.
-	 * The list contents are of type {@link org.emftext.language.presentation.Definition}.
+	 * The list contents are of type {@link org.emftext.language.Presentation.Definition}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Definition</em>' containment reference list isn't clear,
@@ -31,7 +31,7 @@ public interface Header extends ScenarioFile {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Definition</em>' containment reference list.
-	 * @see org.emftext.language.presentation.PresentationPackage#getHeader_Definition()
+	 * @see org.emftext.language.Presentation.PresentationPackage#getHeader_Definition()
 	 * @model containment="true"
 	 * @generated
 	 */

@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce;
+package org.emftext.language.Presentation.resource.sce;
 
 /**
  * The result of a single attempt to resolve an identifier. The result can either
@@ -28,13 +28,13 @@ public interface ISceReferenceResolveResult<ReferenceType> {
 	 * Returns an unmodifiable collection of the quick fixes that can be used to
 	 * resolve the resolving error.
 	 */
-	public java.util.Collection<org.emftext.language.presentation.resource.sce.ISceQuickFix> getQuickFixes();
+	public java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceQuickFix> getQuickFixes();
 	
 	/**
 	 * Adds a quick fix to the set of quick fixes that can be used to resolve the
 	 * resolving error.
 	 */
-	public void addQuickFix(org.emftext.language.presentation.resource.sce.ISceQuickFix quickFix);
+	public void addQuickFix(org.emftext.language.Presentation.resource.sce.ISceQuickFix quickFix);
 	
 	/**
 	 * Sets the error message that describes what went wrong while resolving a
@@ -114,6 +114,6 @@ public interface ISceReferenceResolveResult<ReferenceType> {
 	/**
 	 * Returns all mappings that were found while resolving an identifier.
 	 */
-	public java.util.Collection<org.emftext.language.presentation.resource.sce.ISceReferenceMapping<ReferenceType>> getMappings();
+	public java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceReferenceMapping<ReferenceType>> getMappings();
 	
 }

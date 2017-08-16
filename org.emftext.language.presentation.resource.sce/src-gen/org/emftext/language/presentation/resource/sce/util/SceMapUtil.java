@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.util;
+package org.emftext.language.Presentation.resource.sce.util;
 
 public class SceMapUtil {
 	
@@ -60,7 +60,7 @@ public class SceMapUtil {
 			if (currentValue instanceof java.util.List<?>) {
 				// if the current value is a list, we add the new value to this list
 				java.util.List<?> currentValueAsList = (java.util.List<?>) currentValue;
-				java.util.List<Object> currentValueAsObjectList = org.emftext.language.presentation.resource.sce.util.SceListUtil.copySafelyToObjectList(currentValueAsList);
+				java.util.List<Object> currentValueAsObjectList = org.emftext.language.Presentation.resource.sce.util.SceListUtil.copySafelyToObjectList(currentValueAsList);
 				if (value instanceof java.util.Collection<?>) {
 					currentValueAsObjectList.addAll((java.util.Collection<?>) value);
 				} else {

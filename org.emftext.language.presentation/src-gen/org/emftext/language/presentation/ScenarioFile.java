@@ -1,6 +1,6 @@
 /**
  */
-package org.emftext.language.presentation;
+package org.emftext.language.Presentation;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  *
- * @see org.emftext.language.presentation.PresentationPackage#getScenarioFile()
+ * @see org.emftext.language.Presentation.PresentationPackage#getScenarioFile()
  * @model abstract="true"
  * @generated
  */

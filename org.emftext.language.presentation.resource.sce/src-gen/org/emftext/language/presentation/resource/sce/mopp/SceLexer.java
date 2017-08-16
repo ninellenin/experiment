@@ -1,6 +1,6 @@
 // $ANTLR 3.4
 
-	package org.emftext.language.presentation.resource.sce.mopp;
+	package org.emftext.language.Presentation.resource.sce.mopp;
 
 
 import org.antlr.runtime3_4_0.*;

@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.analysis;
+package org.emftext.language.Presentation.resource.sce.analysis;
 
 /**
  * A default implementation for token resolvers. Generated token resolvers
@@ -24,7 +24,7 @@ package org.emftext.language.presentation.resource.sce.analysis;
  * The behavior of this resolving can be customized by either changing the
  * generated token resolver classes or by using custom EMF data type converters.
  */
-public class SceDefaultTokenResolver implements org.emftext.language.presentation.resource.sce.ISceTokenResolver {
+public class SceDefaultTokenResolver implements org.emftext.language.Presentation.resource.sce.ISceTokenResolver {
 	
 	private java.util.Map<?, ?> options;
 	private boolean escapeKeywords;
@@ -47,14 +47,14 @@ public class SceDefaultTokenResolver implements org.emftext.language.presentatio
 		this.escapeKeywords = escapeKeywords;
 	}
 	
-	public void resolve(String lexem, org.eclipse.emf.ecore.EStructuralFeature feature, org.emftext.language.presentation.resource.sce.ISceTokenResolveResult result) {
+	public void resolve(String lexem, org.eclipse.emf.ecore.EStructuralFeature feature, org.emftext.language.Presentation.resource.sce.ISceTokenResolveResult result) {
 		resolve(lexem, feature, result, null, null, null);
 	}
 	
-	public void resolve(String lexem, org.eclipse.emf.ecore.EStructuralFeature feature, org.emftext.language.presentation.resource.sce.ISceTokenResolveResult result, String suffix, String prefix, String escapeCharacter) {
+	public void resolve(String lexem, org.eclipse.emf.ecore.EStructuralFeature feature, org.emftext.language.Presentation.resource.sce.ISceTokenResolveResult result, String suffix, String prefix, String escapeCharacter) {
 		// Step 1: unescape keywords if required
 		if (escapeKeywords && lexem.startsWith("_")) {
-			for (String keyword : org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.INSTANCE.getKeywords()) {
+			for (String keyword : org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.INSTANCE.getKeywords()) {
 				if (lexem.endsWith(keyword)) {
 					String keywordPrefix = lexem.substring(0, lexem.length() - keyword.length());
 					if (keywordPrefix.matches("_+")) {
@@ -159,7 +159,7 @@ public class SceDefaultTokenResolver implements org.emftext.language.presentatio
 		// Step 3: escape keywords if required
 		if (escapeKeywords && result != null) {
 			// Escape keywords if required
-			for (String keyword : org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.INSTANCE.getKeywords()) {
+			for (String keyword : org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.INSTANCE.getKeywords()) {
 				if (result.endsWith(keyword)) {
 					String keywordPrefix = result.substring(0, result.length() - keyword.length());
 					if (keywordPrefix.matches("_*")) {

@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce;
+package org.emftext.language.Presentation.resource.sce;
 
 /**
  * A common interface for scanners to be used by EMFText. A scanner is initialized
@@ -20,6 +20,6 @@ public interface ISceTextScanner {
 	/**
 	 * Returns the next token found in the text.
 	 */
-	public org.emftext.language.presentation.resource.sce.ISceTextToken getNextToken();
+	public org.emftext.language.Presentation.resource.sce.ISceTextToken getNextToken();
 	
 }

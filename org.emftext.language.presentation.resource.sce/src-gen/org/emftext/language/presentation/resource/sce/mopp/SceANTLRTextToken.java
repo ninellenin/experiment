@@ -4,11 +4,11 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.mopp;
+package org.emftext.language.Presentation.resource.sce.mopp;
 
-public class SceANTLRTextToken extends org.emftext.language.presentation.resource.sce.mopp.SceTextToken {
+public class SceANTLRTextToken extends org.emftext.language.Presentation.resource.sce.mopp.SceTextToken {
 	
-	private final static org.emftext.language.presentation.resource.sce.ISceMetaInformation metaInformation = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation();
+	private final static org.emftext.language.Presentation.resource.sce.ISceMetaInformation metaInformation = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation();
 	
 	public SceANTLRTextToken(org.antlr.runtime3_4_0.Token antlrToken) {
 		super(getTokenName(metaInformation.getTokenNames(), antlrToken.getType()), antlrToken.getText(), ((org.antlr.runtime3_4_0.CommonToken) antlrToken).getStartIndex(), ((org.antlr.runtime3_4_0.CommonToken) antlrToken).getStopIndex() - ((org.antlr.runtime3_4_0.CommonToken) antlrToken).getStartIndex() + 1, antlrToken.getLine(), antlrToken.getCharPositionInLine(), canBeUsedForSyntaxHighlighting(antlrToken.getType()));

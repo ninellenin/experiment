@@ -1,6 +1,6 @@
 /**
  */
-package org.emftext.language.presentation;
+package org.emftext.language.Presentation;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -10,10 +10,9 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  *
- * @see org.emftext.language.presentation.PresentationPackage#getParameter()
+ * @see org.emftext.language.Presentation.PresentationPackage#getParameter()
  * @model abstract="true"
  * @generated
  */
 public interface Parameter extends EObject {
-
 } // Parameter

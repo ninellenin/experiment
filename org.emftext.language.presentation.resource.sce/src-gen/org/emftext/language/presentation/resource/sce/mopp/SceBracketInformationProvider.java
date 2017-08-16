@@ -4,11 +4,11 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.mopp;
+package org.emftext.language.Presentation.resource.sce.mopp;
 
 public class SceBracketInformationProvider {
 	
-	public class BracketPair implements org.emftext.language.presentation.resource.sce.ISceBracketPair {
+	public class BracketPair implements org.emftext.language.Presentation.resource.sce.ISceBracketPair {
 		
 		private String opening;
 		private String closing;
@@ -34,8 +34,8 @@ public class SceBracketInformationProvider {
 		}
 	}
 	
-	public java.util.Collection<org.emftext.language.presentation.resource.sce.ISceBracketPair> getBracketPairs() {
-		java.util.Collection<org.emftext.language.presentation.resource.sce.ISceBracketPair> result = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ISceBracketPair>();
+	public java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceBracketPair> getBracketPairs() {
+		java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceBracketPair> result = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ISceBracketPair>();
 		return result;
 	}
 	

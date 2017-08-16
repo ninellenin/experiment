@@ -1,6 +1,6 @@
 /**
  */
-package org.emftext.language.presentation;
+package org.emftext.language.Presentation;
 
 
 /**
@@ -12,10 +12,10 @@ package org.emftext.language.presentation;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.emftext.language.presentation.NumberLiteral#getValue <em>Value</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.NumberLiteral#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see org.emftext.language.presentation.PresentationPackage#getNumberLiteral()
+ * @see org.emftext.language.Presentation.PresentationPackage#getNumberLiteral()
  * @model
  * @generated
  */
@@ -30,14 +30,14 @@ public interface NumberLiteral extends NumericLiteral {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(int)
-	 * @see org.emftext.language.presentation.PresentationPackage#getNumberLiteral_Value()
+	 * @see org.emftext.language.Presentation.PresentationPackage#getNumberLiteral_Value()
 	 * @model required="true"
 	 * @generated
 	 */
 	int getValue();
 
 	/**
-	 * Sets the value of the '{@link org.emftext.language.presentation.NumberLiteral#getValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link org.emftext.language.Presentation.NumberLiteral#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Value</em>' attribute.

@@ -9,9 +9,17 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated presentation -->
       <package
-            uri="http://www.emftext.org/language/presentation"
+            uri="Presentation"
             class="org.emftext.language.presentation.PresentationPackage"
-            genModel="metamodel/presentation.genmodel"/>
+            genModel="metamodel/Presentation.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Presentation -->
+      <package
+            uri="http://www.emftext.org/language/Presentation"
+            class="org.emftext.language.Presentation.PresentationPackage"
+            genModel="metamodel/Presentation.genmodel"/>
    </extension>
 
 </plugin>

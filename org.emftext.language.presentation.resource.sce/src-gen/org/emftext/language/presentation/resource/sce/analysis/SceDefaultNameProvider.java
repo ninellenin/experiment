@@ -4,9 +4,9 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.analysis;
+package org.emftext.language.Presentation.resource.sce.analysis;
 
-public class SceDefaultNameProvider implements org.emftext.language.presentation.resource.sce.ISceNameProvider {
+public class SceDefaultNameProvider implements org.emftext.language.Presentation.resource.sce.ISceNameProvider {
 	
 	public final static String NAME_FEATURE = "name";
 	
@@ -51,7 +51,7 @@ public class SceDefaultNameProvider implements org.emftext.language.presentation
 			// ends with 'name'
 			for (org.eclipse.emf.ecore.EOperation operation : element.eClass().getEAllOperations()) {
 				if (operation.getName().toLowerCase().endsWith(NAME_FEATURE) && operation.getEParameters().size() == 0) {
-					Object result = org.emftext.language.presentation.resource.sce.util.SceEObjectUtil.invokeOperation(element, operation);
+					Object result = org.emftext.language.Presentation.resource.sce.util.SceEObjectUtil.invokeOperation(element, operation);
 					if (result != null) {
 						names.add(result.toString());
 					}

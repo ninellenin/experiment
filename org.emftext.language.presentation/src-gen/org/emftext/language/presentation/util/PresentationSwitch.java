@@ -1,13 +1,13 @@
 /**
  */
-package org.emftext.language.presentation.util;
+package org.emftext.language.Presentation.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import org.emftext.language.presentation.*;
+import org.emftext.language.Presentation.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +19,7 @@ import org.emftext.language.presentation.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see org.emftext.language.presentation.PresentationPackage
+ * @see org.emftext.language.Presentation.PresentationPackage
  * @generated
  */
 public class PresentationSwitch<T> extends Switch<T> {

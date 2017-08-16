@@ -1,6 +1,6 @@
 /**
  */
-package org.emftext.language.presentation.impl;
+package org.emftext.language.Presentation.impl;
 
 import java.util.Collection;
 
@@ -17,11 +17,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.emftext.language.presentation.Header;
-import org.emftext.language.presentation.PCL;
-import org.emftext.language.presentation.PresentationPackage;
-import org.emftext.language.presentation.SDL;
-import org.emftext.language.presentation.Scenario;
+import org.emftext.language.Presentation.Header;
+import org.emftext.language.Presentation.PCL;
+import org.emftext.language.Presentation.PresentationPackage;
+import org.emftext.language.Presentation.SDL;
+import org.emftext.language.Presentation.Scenario;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,9 +31,9 @@ import org.emftext.language.presentation.Scenario;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.emftext.language.presentation.impl.ScenarioImpl#getHeader <em>Header</em>}</li>
- *   <li>{@link org.emftext.language.presentation.impl.ScenarioImpl#getSdl <em>Sdl</em>}</li>
- *   <li>{@link org.emftext.language.presentation.impl.ScenarioImpl#getPcl <em>Pcl</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.impl.ScenarioImpl#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.impl.ScenarioImpl#getSdl <em>Sdl</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.impl.ScenarioImpl#getPcl <em>Pcl</em>}</li>
  * </ul>
  *
  * @generated

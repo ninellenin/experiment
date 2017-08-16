@@ -4,15 +4,15 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.mopp;
+package org.emftext.language.Presentation.resource.sce.mopp;
 
 /**
  * A basic implementation of the
- * org.emftext.language.presentation.resource.sce.ISceElementMapping interface.
+ * org.emftext.language.Presentation.resource.sce.ISceElementMapping interface.
  * 
  * @param <ReferenceType> the type of the reference that can be mapped to
  */
-public class SceElementMapping<ReferenceType> implements org.emftext.language.presentation.resource.sce.ISceElementMapping<ReferenceType> {
+public class SceElementMapping<ReferenceType> implements org.emftext.language.Presentation.resource.sce.ISceElementMapping<ReferenceType> {
 	
 	private final ReferenceType target;
 	private String identifier;

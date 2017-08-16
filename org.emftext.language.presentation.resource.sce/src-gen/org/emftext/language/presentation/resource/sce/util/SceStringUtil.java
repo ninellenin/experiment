@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.util;
+package org.emftext.language.Presentation.resource.sce.util;
 
 /**
  * A utility class that provides some common methods to work with Strings.
@@ -110,7 +110,7 @@ public class SceStringUtil {
 	 * Concatenates the given parts and puts 'glue' between them. The toStringFunction
 	 * is used to convert the parts to strings.
 	 */
-	public static <T> String explode(java.util.Collection<T> parts, String glue, org.emftext.language.presentation.resource.sce.ISceFunction1<String, T> toStringFunction) {
+	public static <T> String explode(java.util.Collection<T> parts, String glue, org.emftext.language.Presentation.resource.sce.ISceFunction1<String, T> toStringFunction) {
 		String[] partsAsArray = new String[parts.size()];
 		int i = 0;
 		for (T part : parts) {
@@ -124,7 +124,7 @@ public class SceStringUtil {
 	 * Concatenates the given parts and puts 'glue' between them. The toStringFunction
 	 * is used to convert the parts to strings.
 	 */
-	public static <T> String explode(T[] parts, String glue, org.emftext.language.presentation.resource.sce.ISceFunction1<String, T> toStringFunction) {
+	public static <T> String explode(T[] parts, String glue, org.emftext.language.Presentation.resource.sce.ISceFunction1<String, T> toStringFunction) {
 		String[] partsAsArray = new String[parts.length];
 		int i = 0;
 		for (T part : parts) {

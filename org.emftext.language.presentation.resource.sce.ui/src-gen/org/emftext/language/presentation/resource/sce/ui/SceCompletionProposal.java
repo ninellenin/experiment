@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
 /**
  * A proposal for completing an incomplete document.
@@ -19,7 +19,7 @@ public class SceCompletionProposal implements java.lang.Comparable<SceCompletion
 	/**
 	 * The terminal that was expected at the cursor position.
 	 */
-	private org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal;
+	private org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal;
 	
 	/**
 	 * The string that will be inserted if the user picks this proposal. This string
@@ -67,7 +67,7 @@ public class SceCompletionProposal implements java.lang.Comparable<SceCompletion
 	 */
 	private org.eclipse.swt.graphics.Image image;
 	
-	public SceCompletionProposal(org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, String insertString, String prefix, boolean matchesPrefix, org.eclipse.emf.ecore.EStructuralFeature structuralFeature, org.eclipse.emf.ecore.EObject container) {
+	public SceCompletionProposal(org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, String insertString, String prefix, boolean matchesPrefix, org.eclipse.emf.ecore.EStructuralFeature structuralFeature, org.eclipse.emf.ecore.EObject container) {
 		super();
 		this.expectedTerminal = expectedTerminal;
 		this.insertString = insertString;
@@ -77,12 +77,12 @@ public class SceCompletionProposal implements java.lang.Comparable<SceCompletion
 		this.container = container;
 	}
 	
-	public SceCompletionProposal(org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, String insertString, String prefix, boolean matchesPrefix, org.eclipse.emf.ecore.EStructuralFeature structuralFeature, org.eclipse.emf.ecore.EObject container, org.eclipse.swt.graphics.Image image) {
+	public SceCompletionProposal(org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, String insertString, String prefix, boolean matchesPrefix, org.eclipse.emf.ecore.EStructuralFeature structuralFeature, org.eclipse.emf.ecore.EObject container, org.eclipse.swt.graphics.Image image) {
 		this(expectedTerminal, insertString, prefix, matchesPrefix, structuralFeature, container);
 		this.image = image;
 	}
 	
-	public SceCompletionProposal(org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, String insertString, String prefix, boolean matchesPrefix, org.eclipse.emf.ecore.EStructuralFeature structuralFeature, org.eclipse.emf.ecore.EObject container, org.eclipse.swt.graphics.Image image, String displayString) {
+	public SceCompletionProposal(org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, String insertString, String prefix, boolean matchesPrefix, org.eclipse.emf.ecore.EStructuralFeature structuralFeature, org.eclipse.emf.ecore.EObject container, org.eclipse.swt.graphics.Image image, String displayString) {
 		this(expectedTerminal, insertString, prefix, matchesPrefix, structuralFeature, container, image);
 		this.displayString = displayString;
 	}
@@ -133,7 +133,7 @@ public class SceCompletionProposal implements java.lang.Comparable<SceCompletion
 		return container;
 	}
 	
-	public org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal getExpectedTerminal() {
+	public org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal getExpectedTerminal() {
 		return expectedTerminal;
 	}
 	

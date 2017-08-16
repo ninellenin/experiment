@@ -1,11 +1,11 @@
 /**
  */
-package org.emftext.language.presentation.impl;
+package org.emftext.language.Presentation.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.emftext.language.presentation.ActiveButtonsParameter;
-import org.emftext.language.presentation.PresentationPackage;
+import org.emftext.language.Presentation.ActiveButtonsParameter;
+import org.emftext.language.Presentation.PresentationPackage;
 
 /**
  * <!-- begin-user-doc -->

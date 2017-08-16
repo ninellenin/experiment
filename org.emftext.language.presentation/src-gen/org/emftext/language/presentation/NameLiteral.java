@@ -1,6 +1,6 @@
 /**
  */
-package org.emftext.language.presentation;
+package org.emftext.language.Presentation;
 
 
 /**
@@ -12,10 +12,10 @@ package org.emftext.language.presentation;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.emftext.language.presentation.NameLiteral#getValue <em>Value</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.NameLiteral#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see org.emftext.language.presentation.PresentationPackage#getNameLiteral()
+ * @see org.emftext.language.Presentation.PresentationPackage#getNameLiteral()
  * @model
  * @generated
  */
@@ -30,14 +30,14 @@ public interface NameLiteral extends GeneralLiteral {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
-	 * @see org.emftext.language.presentation.PresentationPackage#getNameLiteral_Value()
+	 * @see org.emftext.language.Presentation.PresentationPackage#getNameLiteral_Value()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getValue();
 
 	/**
-	 * Sets the value of the '{@link org.emftext.language.presentation.NameLiteral#getValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link org.emftext.language.Presentation.NameLiteral#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Value</em>' attribute.

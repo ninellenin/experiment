@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce;
+package org.emftext.language.Presentation.resource.sce;
 
 /**
  * An interface for builders that can be used to perform operations when resources
@@ -24,7 +24,7 @@ public interface ISceBuilder {
 	/**
 	 * Builds the given resource.
 	 */
-	public org.eclipse.core.runtime.IStatus build(org.emftext.language.presentation.resource.sce.mopp.SceResource resource, org.eclipse.core.runtime.IProgressMonitor monitor);
+	public org.eclipse.core.runtime.IStatus build(org.emftext.language.Presentation.resource.sce.mopp.SceResource resource, org.eclipse.core.runtime.IProgressMonitor monitor);
 	
 	/**
 	 * Handles the deletion of the given resource.

@@ -4,16 +4,16 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.mopp;
+package org.emftext.language.Presentation.resource.sce.mopp;
 
 public class SceBuilderAdapter extends org.eclipse.core.resources.IncrementalProjectBuilder implements org.eclipse.core.resources.IResourceDeltaVisitor, org.eclipse.core.resources.IResourceVisitor {
 	
 	/**
 	 * The ID of the default, generated builder.
 	 */
-	public final static String BUILDER_ID = "org.emftext.language.presentation.resource.sce.builder";
+	public final static String BUILDER_ID = "org.emftext.language.Presentation.resource.sce.builder";
 	
-	private org.emftext.language.presentation.resource.sce.ISceBuilder defaultBuilder = new org.emftext.language.presentation.resource.sce.mopp.SceBuilder();
+	private org.emftext.language.Presentation.resource.sce.ISceBuilder defaultBuilder = new org.emftext.language.Presentation.resource.sce.mopp.SceBuilder();
 	
 	/**
 	 * This resource set is used during the whole build.
@@ -46,10 +46,10 @@ public class SceBuilderAdapter extends org.eclipse.core.resources.IncrementalPro
 	
 	public void build(org.eclipse.core.resources.IFile resource, org.eclipse.emf.ecore.resource.ResourceSet resourceSet, org.eclipse.core.runtime.IProgressMonitor monitor) {
 		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createPlatformResourceURI(resource.getFullPath().toString(), true);
-		org.emftext.language.presentation.resource.sce.ISceBuilder builder = getBuilder();
+		org.emftext.language.Presentation.resource.sce.ISceBuilder builder = getBuilder();
 		if (builder.isBuildingNeeded(uri)) {
-			org.emftext.language.presentation.resource.sce.mopp.SceResource customResource = (org.emftext.language.presentation.resource.sce.mopp.SceResource) resourceSet.getResource(uri, true);
-			new org.emftext.language.presentation.resource.sce.mopp.SceMarkerHelper().removeAllMarkers(resource, getBuilderMarkerId());
+			org.emftext.language.Presentation.resource.sce.mopp.SceResource customResource = (org.emftext.language.Presentation.resource.sce.mopp.SceResource) resourceSet.getResource(uri, true);
+			new org.emftext.language.Presentation.resource.sce.mopp.SceMarkerHelper().removeAllMarkers(resource, getBuilderMarkerId());
 			builder.build(customResource, monitor);
 		}
 	}
@@ -58,7 +58,7 @@ public class SceBuilderAdapter extends org.eclipse.core.resources.IncrementalPro
 	 * Returns the builder that shall be used by this adapter. This allows subclasses
 	 * to perform builds with different builders.
 	 */
-	public org.emftext.language.presentation.resource.sce.ISceBuilder getBuilder() {
+	public org.emftext.language.Presentation.resource.sce.ISceBuilder getBuilder() {
 		return defaultBuilder;
 	}
 	
@@ -67,15 +67,15 @@ public class SceBuilderAdapter extends org.eclipse.core.resources.IncrementalPro
 	 * subclasses to produce different kinds of markers.
 	 */
 	public String getBuilderMarkerId() {
-		return new org.emftext.language.presentation.resource.sce.mopp.SceMarkerHelper().getMarkerID(org.emftext.language.presentation.resource.sce.SceEProblemType.BUILDER_ERROR);
+		return new org.emftext.language.Presentation.resource.sce.mopp.SceMarkerHelper().getMarkerID(org.emftext.language.Presentation.resource.sce.SceEProblemType.BUILDER_ERROR);
 	}
 	
 	/**
 	 * Runs the task item builder to search for new task items in changed resources.
 	 */
 	public void runTaskItemBuilder(org.eclipse.core.resources.IFile resource, org.eclipse.emf.ecore.resource.ResourceSet resourceSet, org.eclipse.core.runtime.IProgressMonitor monitor) {
-		org.emftext.language.presentation.resource.sce.mopp.SceTaskItemBuilder taskItemBuilder = new org.emftext.language.presentation.resource.sce.mopp.SceTaskItemBuilder();
-		new org.emftext.language.presentation.resource.sce.mopp.SceMarkerHelper().removeAllMarkers(resource, taskItemBuilder.getBuilderMarkerId());
+		org.emftext.language.Presentation.resource.sce.mopp.SceTaskItemBuilder taskItemBuilder = new org.emftext.language.Presentation.resource.sce.mopp.SceTaskItemBuilder();
+		new org.emftext.language.Presentation.resource.sce.mopp.SceMarkerHelper().removeAllMarkers(resource, taskItemBuilder.getBuilderMarkerId());
 		taskItemBuilder.build(resource, resourceSet, monitor);
 	}
 	
@@ -93,14 +93,14 @@ public class SceBuilderAdapter extends org.eclipse.core.resources.IncrementalPro
 	protected boolean doVisit(org.eclipse.core.resources.IResource resource, boolean removed) throws org.eclipse.core.runtime.CoreException {
 		if (removed) {
 			org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createPlatformResourceURI(resource.getFullPath().toString(), true);
-			org.emftext.language.presentation.resource.sce.ISceBuilder builder = getBuilder();
+			org.emftext.language.Presentation.resource.sce.ISceBuilder builder = getBuilder();
 			if (builder.isBuildingNeeded(uri)) {
 				builder.handleDeletion(uri, monitor);
 			}
-			new org.emftext.language.presentation.resource.sce.mopp.SceMarkerHelper().removeAllMarkers(resource, getBuilderMarkerId());
+			new org.emftext.language.Presentation.resource.sce.mopp.SceMarkerHelper().removeAllMarkers(resource, getBuilderMarkerId());
 			return false;
 		}
-		if (resource instanceof org.eclipse.core.resources.IFile && resource.getName().endsWith("." + new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation().getSyntaxName())) {
+		if (resource instanceof org.eclipse.core.resources.IFile && resource.getName().endsWith("." + new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation().getSyntaxName())) {
 			// Calling the default generated builder is disabled because of syntax option
 			// 'disableBuilder'.
 			// Second, call the task item builder that searches for task items in DSL

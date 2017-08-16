@@ -4,29 +4,29 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.mopp;
+package org.emftext.language.Presentation.resource.sce.mopp;
 
 /**
  * A representation for a range in a document where a boolean attribute is
  * expected.
  */
-public class SceExpectedBooleanTerminal extends org.emftext.language.presentation.resource.sce.mopp.SceAbstractExpectedElement {
+public class SceExpectedBooleanTerminal extends org.emftext.language.Presentation.resource.sce.mopp.SceAbstractExpectedElement {
 	
-	private org.emftext.language.presentation.resource.sce.grammar.SceBooleanTerminal booleanTerminal;
+	private org.emftext.language.Presentation.resource.sce.grammar.SceBooleanTerminal booleanTerminal;
 	
-	public SceExpectedBooleanTerminal(org.emftext.language.presentation.resource.sce.grammar.SceBooleanTerminal booleanTerminal) {
+	public SceExpectedBooleanTerminal(org.emftext.language.Presentation.resource.sce.grammar.SceBooleanTerminal booleanTerminal) {
 		super(booleanTerminal.getMetaclass());
 		this.booleanTerminal = booleanTerminal;
 	}
 	
-	public org.emftext.language.presentation.resource.sce.grammar.SceBooleanTerminal getBooleanTerminal() {
+	public org.emftext.language.Presentation.resource.sce.grammar.SceBooleanTerminal getBooleanTerminal() {
 		return booleanTerminal;
 	}
 	
 	/**
 	 * Returns the expected boolean terminal.
 	 */
-	public org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement getSymtaxElement() {
+	public org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement getSymtaxElement() {
 		return booleanTerminal;
 	}
 	

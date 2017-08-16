@@ -1,10 +1,9 @@
 /**
  */
-package org.emftext.language.presentation;
+package org.emftext.language.Presentation;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -15,11 +14,12 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see org.emftext.language.presentation.PresentationFactory
+ * @see org.emftext.language.Presentation.PresentationFactory
  * @model kind="package"
  * @generated
  */
@@ -30,7 +30,7 @@ public interface PresentationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "presentation";
+	String eNAME = "Presentation";
 
 	/**
 	 * The package namespace URI.
@@ -38,7 +38,7 @@ public interface PresentationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.emftext.org/language/presentation";
+	String eNS_URI = "http://www.emftext.org/language/Presentation";
 
 	/**
 	 * The package namespace name.
@@ -46,7 +46,7 @@ public interface PresentationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "presentation";
+	String eNS_PREFIX = "Presentation";
 
 	/**
 	 * The singleton instance of the package.
@@ -54,14 +54,14 @@ public interface PresentationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	PresentationPackage eINSTANCE = org.emftext.language.presentation.impl.PresentationPackageImpl.init();
+	PresentationPackage eINSTANCE = org.emftext.language.Presentation.impl.PresentationPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.ScenarioFileImpl <em>Scenario File</em>}' class.
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.ScenarioFileImpl <em>Scenario File</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.ScenarioFileImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getScenarioFile()
+	 * @see org.emftext.language.Presentation.impl.ScenarioFileImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getScenarioFile()
 	 * @generated
 	 */
 	int SCENARIO_FILE = 0;
@@ -76,11 +76,20 @@ public interface PresentationPackage extends EPackage {
 	int SCENARIO_FILE_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.HeaderImpl <em>Header</em>}' class.
+	 * The number of operations of the '<em>Scenario File</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.HeaderImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getHeader()
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO_FILE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.HeaderImpl <em>Header</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.HeaderImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getHeader()
 	 * @generated
 	 */
 	int HEADER = 1;
@@ -104,11 +113,20 @@ public interface PresentationPackage extends EPackage {
 	int HEADER_FEATURE_COUNT = SCENARIO_FILE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.SDLImpl <em>SDL</em>}' class.
+	 * The number of operations of the '<em>Header</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.SDLImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getSDL()
+	 * @generated
+	 * @ordered
+	 */
+	int HEADER_OPERATION_COUNT = SCENARIO_FILE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.SDLImpl <em>SDL</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.SDLImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getSDL()
 	 * @generated
 	 */
 	int SDL = 2;
@@ -123,11 +141,20 @@ public interface PresentationPackage extends EPackage {
 	int SDL_FEATURE_COUNT = SCENARIO_FILE_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.PCLImpl <em>PCL</em>}' class.
+	 * The number of operations of the '<em>SDL</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.PCLImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getPCL()
+	 * @generated
+	 * @ordered
+	 */
+	int SDL_OPERATION_COUNT = SCENARIO_FILE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.PCLImpl <em>PCL</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.PCLImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getPCL()
 	 * @generated
 	 */
 	int PCL = 3;
@@ -142,11 +169,20 @@ public interface PresentationPackage extends EPackage {
 	int PCL_FEATURE_COUNT = SCENARIO_FILE_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.ParameterImpl <em>Parameter</em>}' class.
+	 * The number of operations of the '<em>PCL</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.ParameterImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getParameter()
+	 * @generated
+	 * @ordered
+	 */
+	int PCL_OPERATION_COUNT = SCENARIO_FILE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.ParameterImpl <em>Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.ParameterImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getParameter()
 	 * @generated
 	 */
 	int PARAMETER = 4;
@@ -161,11 +197,20 @@ public interface PresentationPackage extends EPackage {
 	int PARAMETER_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.StatementImpl <em>Statement</em>}' class.
+	 * The number of operations of the '<em>Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.StatementImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getStatement()
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.StatementImpl <em>Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.StatementImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getStatement()
 	 * @generated
 	 */
 	int STATEMENT = 5;
@@ -180,11 +225,20 @@ public interface PresentationPackage extends EPackage {
 	int STATEMENT_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.DefinitionImpl <em>Definition</em>}' class.
+	 * The number of operations of the '<em>Statement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.DefinitionImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getDefinition()
+	 * @generated
+	 * @ordered
+	 */
+	int STATEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.DefinitionImpl <em>Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.DefinitionImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getDefinition()
 	 * @generated
 	 */
 	int DEFINITION = 6;
@@ -217,11 +271,20 @@ public interface PresentationPackage extends EPackage {
 	int DEFINITION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.HeaderParameterImpl <em>Header Parameter</em>}' class.
+	 * The number of operations of the '<em>Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.HeaderParameterImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getHeaderParameter()
+	 * @generated
+	 * @ordered
+	 */
+	int DEFINITION_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.HeaderParameterImpl <em>Header Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.HeaderParameterImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getHeaderParameter()
 	 * @generated
 	 */
 	int HEADER_PARAMETER = 7;
@@ -236,11 +299,20 @@ public interface PresentationPackage extends EPackage {
 	int HEADER_PARAMETER_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.ScenarioNameParameterImpl <em>Scenario Name Parameter</em>}' class.
+	 * The number of operations of the '<em>Header Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.ScenarioNameParameterImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getScenarioNameParameter()
+	 * @generated
+	 * @ordered
+	 */
+	int HEADER_PARAMETER_OPERATION_COUNT = PARAMETER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.ScenarioNameParameterImpl <em>Scenario Name Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.ScenarioNameParameterImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getScenarioNameParameter()
 	 * @generated
 	 */
 	int SCENARIO_NAME_PARAMETER = 8;
@@ -255,11 +327,20 @@ public interface PresentationPackage extends EPackage {
 	int SCENARIO_NAME_PARAMETER_FEATURE_COUNT = HEADER_PARAMETER_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.NamedElementImpl <em>Named Element</em>}' class.
+	 * The number of operations of the '<em>Scenario Name Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.NamedElementImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getNamedElement()
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO_NAME_PARAMETER_OPERATION_COUNT = HEADER_PARAMETER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.NamedElementImpl <em>Named Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.NamedElementImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getNamedElement()
 	 * @generated
 	 */
 	int NAMED_ELEMENT = 9;
@@ -283,11 +364,20 @@ public interface PresentationPackage extends EPackage {
 	int NAMED_ELEMENT_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.ScenarioImpl <em>Scenario</em>}' class.
+	 * The number of operations of the '<em>Named Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.ScenarioImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getScenario()
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.ScenarioImpl <em>Scenario</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.ScenarioImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getScenario()
 	 * @generated
 	 */
 	int SCENARIO = 10;
@@ -338,11 +428,20 @@ public interface PresentationPackage extends EPackage {
 	int SCENARIO_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.ActiveButtonsParameterImpl <em>Active Buttons Parameter</em>}' class.
+	 * The number of operations of the '<em>Scenario</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.ActiveButtonsParameterImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getActiveButtonsParameter()
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.ActiveButtonsParameterImpl <em>Active Buttons Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.ActiveButtonsParameterImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getActiveButtonsParameter()
 	 * @generated
 	 */
 	int ACTIVE_BUTTONS_PARAMETER = 11;
@@ -357,11 +456,20 @@ public interface PresentationPackage extends EPackage {
 	int ACTIVE_BUTTONS_PARAMETER_FEATURE_COUNT = HEADER_PARAMETER_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.LiteralImpl <em>Literal</em>}' class.
+	 * The number of operations of the '<em>Active Buttons Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.LiteralImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getLiteral()
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVE_BUTTONS_PARAMETER_OPERATION_COUNT = HEADER_PARAMETER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.LiteralImpl <em>Literal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.LiteralImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getLiteral()
 	 * @generated
 	 */
 	int LITERAL = 12;
@@ -376,11 +484,20 @@ public interface PresentationPackage extends EPackage {
 	int LITERAL_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.NumericLiteralImpl <em>Numeric Literal</em>}' class.
+	 * The number of operations of the '<em>Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.NumericLiteralImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getNumericLiteral()
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.NumericLiteralImpl <em>Numeric Literal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.NumericLiteralImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getNumericLiteral()
 	 * @generated
 	 */
 	int NUMERIC_LITERAL = 13;
@@ -395,11 +512,20 @@ public interface PresentationPackage extends EPackage {
 	int NUMERIC_LITERAL_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.NumberLiteralImpl <em>Number Literal</em>}' class.
+	 * The number of operations of the '<em>Numeric Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.NumberLiteralImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getNumberLiteral()
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_LITERAL_OPERATION_COUNT = LITERAL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.NumberLiteralImpl <em>Number Literal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.NumberLiteralImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getNumberLiteral()
 	 * @generated
 	 */
 	int NUMBER_LITERAL = 14;
@@ -423,11 +549,20 @@ public interface PresentationPackage extends EPackage {
 	int NUMBER_LITERAL_FEATURE_COUNT = NUMERIC_LITERAL_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.GeneralLiteralImpl <em>General Literal</em>}' class.
+	 * The number of operations of the '<em>Number Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.GeneralLiteralImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getGeneralLiteral()
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_LITERAL_OPERATION_COUNT = NUMERIC_LITERAL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.GeneralLiteralImpl <em>General Literal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.GeneralLiteralImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getGeneralLiteral()
 	 * @generated
 	 */
 	int GENERAL_LITERAL = 15;
@@ -442,11 +577,20 @@ public interface PresentationPackage extends EPackage {
 	int GENERAL_LITERAL_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.BooleanLiteralImpl <em>Boolean Literal</em>}' class.
+	 * The number of operations of the '<em>General Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.BooleanLiteralImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getBooleanLiteral()
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_LITERAL_OPERATION_COUNT = LITERAL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.BooleanLiteralImpl <em>Boolean Literal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.BooleanLiteralImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getBooleanLiteral()
 	 * @generated
 	 */
 	int BOOLEAN_LITERAL = 16;
@@ -470,11 +614,20 @@ public interface PresentationPackage extends EPackage {
 	int BOOLEAN_LITERAL_FEATURE_COUNT = GENERAL_LITERAL_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.presentation.impl.NameLiteralImpl <em>Name Literal</em>}' class.
+	 * The number of operations of the '<em>Boolean Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.presentation.impl.NameLiteralImpl
-	 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getNameLiteral()
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_LITERAL_OPERATION_COUNT = GENERAL_LITERAL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.NameLiteralImpl <em>Name Literal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.NameLiteralImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getNameLiteral()
 	 * @generated
 	 */
 	int NAME_LITERAL = 17;
@@ -498,290 +651,300 @@ public interface PresentationPackage extends EPackage {
 	int NAME_LITERAL_FEATURE_COUNT = GENERAL_LITERAL_FEATURE_COUNT + 1;
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.ScenarioFile <em>Scenario File</em>}'.
+	 * The number of operations of the '<em>Name Literal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_LITERAL_OPERATION_COUNT = GENERAL_LITERAL_OPERATION_COUNT + 0;
+
+
+	/**
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.ScenarioFile <em>Scenario File</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Scenario File</em>'.
-	 * @see org.emftext.language.presentation.ScenarioFile
+	 * @see org.emftext.language.Presentation.ScenarioFile
 	 * @generated
 	 */
 	EClass getScenarioFile();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.Header <em>Header</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.Header <em>Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Header</em>'.
-	 * @see org.emftext.language.presentation.Header
+	 * @see org.emftext.language.Presentation.Header
 	 * @generated
 	 */
 	EClass getHeader();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.emftext.language.presentation.Header#getDefinition <em>Definition</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.emftext.language.Presentation.Header#getDefinition <em>Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Definition</em>'.
-	 * @see org.emftext.language.presentation.Header#getDefinition()
+	 * @see org.emftext.language.Presentation.Header#getDefinition()
 	 * @see #getHeader()
 	 * @generated
 	 */
 	EReference getHeader_Definition();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.SDL <em>SDL</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.SDL <em>SDL</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>SDL</em>'.
-	 * @see org.emftext.language.presentation.SDL
+	 * @see org.emftext.language.Presentation.SDL
 	 * @generated
 	 */
 	EClass getSDL();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.PCL <em>PCL</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.PCL <em>PCL</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>PCL</em>'.
-	 * @see org.emftext.language.presentation.PCL
+	 * @see org.emftext.language.Presentation.PCL
 	 * @generated
 	 */
 	EClass getPCL();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.Parameter <em>Parameter</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.Parameter <em>Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Parameter</em>'.
-	 * @see org.emftext.language.presentation.Parameter
+	 * @see org.emftext.language.Presentation.Parameter
 	 * @generated
 	 */
 	EClass getParameter();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.Statement <em>Statement</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.Statement <em>Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Statement</em>'.
-	 * @see org.emftext.language.presentation.Statement
+	 * @see org.emftext.language.Presentation.Statement
 	 * @generated
 	 */
 	EClass getStatement();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.Definition <em>Definition</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.Definition <em>Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Definition</em>'.
-	 * @see org.emftext.language.presentation.Definition
+	 * @see org.emftext.language.Presentation.Definition
 	 * @generated
 	 */
 	EClass getDefinition();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.emftext.language.presentation.Definition#getParameter <em>Parameter</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.Definition#getParameter <em>Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Parameter</em>'.
-	 * @see org.emftext.language.presentation.Definition#getParameter()
+	 * @see org.emftext.language.Presentation.Definition#getParameter()
 	 * @see #getDefinition()
 	 * @generated
 	 */
 	EReference getDefinition_Parameter();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.emftext.language.presentation.Definition#getValue <em>Value</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.emftext.language.Presentation.Definition#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Value</em>'.
-	 * @see org.emftext.language.presentation.Definition#getValue()
+	 * @see org.emftext.language.Presentation.Definition#getValue()
 	 * @see #getDefinition()
 	 * @generated
 	 */
 	EReference getDefinition_Value();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.HeaderParameter <em>Header Parameter</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.HeaderParameter <em>Header Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Header Parameter</em>'.
-	 * @see org.emftext.language.presentation.HeaderParameter
+	 * @see org.emftext.language.Presentation.HeaderParameter
 	 * @generated
 	 */
 	EClass getHeaderParameter();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.ScenarioNameParameter <em>Scenario Name Parameter</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.ScenarioNameParameter <em>Scenario Name Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Scenario Name Parameter</em>'.
-	 * @see org.emftext.language.presentation.ScenarioNameParameter
+	 * @see org.emftext.language.Presentation.ScenarioNameParameter
 	 * @generated
 	 */
 	EClass getScenarioNameParameter();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.NamedElement <em>Named Element</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Named Element</em>'.
-	 * @see org.emftext.language.presentation.NamedElement
+	 * @see org.emftext.language.Presentation.NamedElement
 	 * @generated
 	 */
 	EClass getNamedElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.emftext.language.presentation.NamedElement#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.emftext.language.Presentation.NamedElement#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.emftext.language.presentation.NamedElement#getName()
+	 * @see org.emftext.language.Presentation.NamedElement#getName()
 	 * @see #getNamedElement()
 	 * @generated
 	 */
 	EAttribute getNamedElement_Name();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.Scenario <em>Scenario</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.Scenario <em>Scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Scenario</em>'.
-	 * @see org.emftext.language.presentation.Scenario
+	 * @see org.emftext.language.Presentation.Scenario
 	 * @generated
 	 */
 	EClass getScenario();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.emftext.language.presentation.Scenario#getHeader <em>Header</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.Scenario#getHeader <em>Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Header</em>'.
-	 * @see org.emftext.language.presentation.Scenario#getHeader()
+	 * @see org.emftext.language.Presentation.Scenario#getHeader()
 	 * @see #getScenario()
 	 * @generated
 	 */
 	EReference getScenario_Header();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.emftext.language.presentation.Scenario#getSdl <em>Sdl</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.emftext.language.Presentation.Scenario#getSdl <em>Sdl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Sdl</em>'.
-	 * @see org.emftext.language.presentation.Scenario#getSdl()
+	 * @see org.emftext.language.Presentation.Scenario#getSdl()
 	 * @see #getScenario()
 	 * @generated
 	 */
 	EReference getScenario_Sdl();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.emftext.language.presentation.Scenario#getPcl <em>Pcl</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.emftext.language.Presentation.Scenario#getPcl <em>Pcl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Pcl</em>'.
-	 * @see org.emftext.language.presentation.Scenario#getPcl()
+	 * @see org.emftext.language.Presentation.Scenario#getPcl()
 	 * @see #getScenario()
 	 * @generated
 	 */
 	EReference getScenario_Pcl();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.ActiveButtonsParameter <em>Active Buttons Parameter</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.ActiveButtonsParameter <em>Active Buttons Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Active Buttons Parameter</em>'.
-	 * @see org.emftext.language.presentation.ActiveButtonsParameter
+	 * @see org.emftext.language.Presentation.ActiveButtonsParameter
 	 * @generated
 	 */
 	EClass getActiveButtonsParameter();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.Literal <em>Literal</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.Literal <em>Literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Literal</em>'.
-	 * @see org.emftext.language.presentation.Literal
+	 * @see org.emftext.language.Presentation.Literal
 	 * @generated
 	 */
 	EClass getLiteral();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.NumericLiteral <em>Numeric Literal</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.NumericLiteral <em>Numeric Literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Numeric Literal</em>'.
-	 * @see org.emftext.language.presentation.NumericLiteral
+	 * @see org.emftext.language.Presentation.NumericLiteral
 	 * @generated
 	 */
 	EClass getNumericLiteral();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.NumberLiteral <em>Number Literal</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.NumberLiteral <em>Number Literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Number Literal</em>'.
-	 * @see org.emftext.language.presentation.NumberLiteral
+	 * @see org.emftext.language.Presentation.NumberLiteral
 	 * @generated
 	 */
 	EClass getNumberLiteral();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.emftext.language.presentation.NumberLiteral#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link org.emftext.language.Presentation.NumberLiteral#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see org.emftext.language.presentation.NumberLiteral#getValue()
+	 * @see org.emftext.language.Presentation.NumberLiteral#getValue()
 	 * @see #getNumberLiteral()
 	 * @generated
 	 */
 	EAttribute getNumberLiteral_Value();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.GeneralLiteral <em>General Literal</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.GeneralLiteral <em>General Literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>General Literal</em>'.
-	 * @see org.emftext.language.presentation.GeneralLiteral
+	 * @see org.emftext.language.Presentation.GeneralLiteral
 	 * @generated
 	 */
 	EClass getGeneralLiteral();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.BooleanLiteral <em>Boolean Literal</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.BooleanLiteral <em>Boolean Literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Boolean Literal</em>'.
-	 * @see org.emftext.language.presentation.BooleanLiteral
+	 * @see org.emftext.language.Presentation.BooleanLiteral
 	 * @generated
 	 */
 	EClass getBooleanLiteral();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.emftext.language.presentation.BooleanLiteral#isValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link org.emftext.language.Presentation.BooleanLiteral#isValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see org.emftext.language.presentation.BooleanLiteral#isValue()
+	 * @see org.emftext.language.Presentation.BooleanLiteral#isValue()
 	 * @see #getBooleanLiteral()
 	 * @generated
 	 */
 	EAttribute getBooleanLiteral_Value();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.presentation.NameLiteral <em>Name Literal</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.NameLiteral <em>Name Literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Name Literal</em>'.
-	 * @see org.emftext.language.presentation.NameLiteral
+	 * @see org.emftext.language.Presentation.NameLiteral
 	 * @generated
 	 */
 	EClass getNameLiteral();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.emftext.language.presentation.NameLiteral#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link org.emftext.language.Presentation.NameLiteral#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see org.emftext.language.presentation.NameLiteral#getValue()
+	 * @see org.emftext.language.Presentation.NameLiteral#getValue()
 	 * @see #getNameLiteral()
 	 * @generated
 	 */
@@ -802,6 +965,7 @@ public interface PresentationPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>
@@ -810,21 +974,21 @@ public interface PresentationPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.ScenarioFileImpl <em>Scenario File</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.ScenarioFileImpl <em>Scenario File</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.ScenarioFileImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getScenarioFile()
+		 * @see org.emftext.language.Presentation.impl.ScenarioFileImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getScenarioFile()
 		 * @generated
 		 */
 		EClass SCENARIO_FILE = eINSTANCE.getScenarioFile();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.HeaderImpl <em>Header</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.HeaderImpl <em>Header</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.HeaderImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getHeader()
+		 * @see org.emftext.language.Presentation.impl.HeaderImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getHeader()
 		 * @generated
 		 */
 		EClass HEADER = eINSTANCE.getHeader();
@@ -838,51 +1002,51 @@ public interface PresentationPackage extends EPackage {
 		EReference HEADER__DEFINITION = eINSTANCE.getHeader_Definition();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.SDLImpl <em>SDL</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.SDLImpl <em>SDL</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.SDLImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getSDL()
+		 * @see org.emftext.language.Presentation.impl.SDLImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getSDL()
 		 * @generated
 		 */
 		EClass SDL = eINSTANCE.getSDL();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.PCLImpl <em>PCL</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.PCLImpl <em>PCL</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.PCLImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getPCL()
+		 * @see org.emftext.language.Presentation.impl.PCLImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getPCL()
 		 * @generated
 		 */
 		EClass PCL = eINSTANCE.getPCL();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.ParameterImpl <em>Parameter</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.ParameterImpl <em>Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.ParameterImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getParameter()
+		 * @see org.emftext.language.Presentation.impl.ParameterImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getParameter()
 		 * @generated
 		 */
 		EClass PARAMETER = eINSTANCE.getParameter();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.StatementImpl <em>Statement</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.StatementImpl <em>Statement</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.StatementImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getStatement()
+		 * @see org.emftext.language.Presentation.impl.StatementImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getStatement()
 		 * @generated
 		 */
 		EClass STATEMENT = eINSTANCE.getStatement();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.DefinitionImpl <em>Definition</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.DefinitionImpl <em>Definition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.DefinitionImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getDefinition()
+		 * @see org.emftext.language.Presentation.impl.DefinitionImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getDefinition()
 		 * @generated
 		 */
 		EClass DEFINITION = eINSTANCE.getDefinition();
@@ -904,31 +1068,31 @@ public interface PresentationPackage extends EPackage {
 		EReference DEFINITION__VALUE = eINSTANCE.getDefinition_Value();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.HeaderParameterImpl <em>Header Parameter</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.HeaderParameterImpl <em>Header Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.HeaderParameterImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getHeaderParameter()
+		 * @see org.emftext.language.Presentation.impl.HeaderParameterImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getHeaderParameter()
 		 * @generated
 		 */
 		EClass HEADER_PARAMETER = eINSTANCE.getHeaderParameter();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.ScenarioNameParameterImpl <em>Scenario Name Parameter</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.ScenarioNameParameterImpl <em>Scenario Name Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.ScenarioNameParameterImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getScenarioNameParameter()
+		 * @see org.emftext.language.Presentation.impl.ScenarioNameParameterImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getScenarioNameParameter()
 		 * @generated
 		 */
 		EClass SCENARIO_NAME_PARAMETER = eINSTANCE.getScenarioNameParameter();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.NamedElementImpl <em>Named Element</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.NamedElementImpl <em>Named Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.NamedElementImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getNamedElement()
+		 * @see org.emftext.language.Presentation.impl.NamedElementImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getNamedElement()
 		 * @generated
 		 */
 		EClass NAMED_ELEMENT = eINSTANCE.getNamedElement();
@@ -942,11 +1106,11 @@ public interface PresentationPackage extends EPackage {
 		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.ScenarioImpl <em>Scenario</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.ScenarioImpl <em>Scenario</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.ScenarioImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getScenario()
+		 * @see org.emftext.language.Presentation.impl.ScenarioImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getScenario()
 		 * @generated
 		 */
 		EClass SCENARIO = eINSTANCE.getScenario();
@@ -976,41 +1140,41 @@ public interface PresentationPackage extends EPackage {
 		EReference SCENARIO__PCL = eINSTANCE.getScenario_Pcl();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.ActiveButtonsParameterImpl <em>Active Buttons Parameter</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.ActiveButtonsParameterImpl <em>Active Buttons Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.ActiveButtonsParameterImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getActiveButtonsParameter()
+		 * @see org.emftext.language.Presentation.impl.ActiveButtonsParameterImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getActiveButtonsParameter()
 		 * @generated
 		 */
 		EClass ACTIVE_BUTTONS_PARAMETER = eINSTANCE.getActiveButtonsParameter();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.LiteralImpl <em>Literal</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.LiteralImpl <em>Literal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.LiteralImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getLiteral()
+		 * @see org.emftext.language.Presentation.impl.LiteralImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getLiteral()
 		 * @generated
 		 */
 		EClass LITERAL = eINSTANCE.getLiteral();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.NumericLiteralImpl <em>Numeric Literal</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.NumericLiteralImpl <em>Numeric Literal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.NumericLiteralImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getNumericLiteral()
+		 * @see org.emftext.language.Presentation.impl.NumericLiteralImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getNumericLiteral()
 		 * @generated
 		 */
 		EClass NUMERIC_LITERAL = eINSTANCE.getNumericLiteral();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.NumberLiteralImpl <em>Number Literal</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.NumberLiteralImpl <em>Number Literal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.NumberLiteralImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getNumberLiteral()
+		 * @see org.emftext.language.Presentation.impl.NumberLiteralImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getNumberLiteral()
 		 * @generated
 		 */
 		EClass NUMBER_LITERAL = eINSTANCE.getNumberLiteral();
@@ -1024,21 +1188,21 @@ public interface PresentationPackage extends EPackage {
 		EAttribute NUMBER_LITERAL__VALUE = eINSTANCE.getNumberLiteral_Value();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.GeneralLiteralImpl <em>General Literal</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.GeneralLiteralImpl <em>General Literal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.GeneralLiteralImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getGeneralLiteral()
+		 * @see org.emftext.language.Presentation.impl.GeneralLiteralImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getGeneralLiteral()
 		 * @generated
 		 */
 		EClass GENERAL_LITERAL = eINSTANCE.getGeneralLiteral();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.BooleanLiteralImpl <em>Boolean Literal</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.BooleanLiteralImpl <em>Boolean Literal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.BooleanLiteralImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getBooleanLiteral()
+		 * @see org.emftext.language.Presentation.impl.BooleanLiteralImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getBooleanLiteral()
 		 * @generated
 		 */
 		EClass BOOLEAN_LITERAL = eINSTANCE.getBooleanLiteral();
@@ -1052,11 +1216,11 @@ public interface PresentationPackage extends EPackage {
 		EAttribute BOOLEAN_LITERAL__VALUE = eINSTANCE.getBooleanLiteral_Value();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.presentation.impl.NameLiteralImpl <em>Name Literal</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.NameLiteralImpl <em>Name Literal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.presentation.impl.NameLiteralImpl
-		 * @see org.emftext.language.presentation.impl.PresentationPackageImpl#getNameLiteral()
+		 * @see org.emftext.language.Presentation.impl.NameLiteralImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getNameLiteral()
 		 * @generated
 		 */
 		EClass NAME_LITERAL = eINSTANCE.getNameLiteral();

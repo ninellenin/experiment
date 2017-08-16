@@ -4,11 +4,11 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.analysis;
+package org.emftext.language.Presentation.resource.sce.analysis;
 
-public class SceBOOLEANTokenResolver implements org.emftext.language.presentation.resource.sce.ISceTokenResolver {
+public class SceBOOLEANTokenResolver implements org.emftext.language.Presentation.resource.sce.ISceTokenResolver {
 	
-	private org.emftext.language.presentation.resource.sce.analysis.SceDefaultTokenResolver defaultTokenResolver = new org.emftext.language.presentation.resource.sce.analysis.SceDefaultTokenResolver(true);
+	private org.emftext.language.Presentation.resource.sce.analysis.SceDefaultTokenResolver defaultTokenResolver = new org.emftext.language.Presentation.resource.sce.analysis.SceDefaultTokenResolver(true);
 	
 	public String deResolve(Object value, org.eclipse.emf.ecore.EStructuralFeature feature, org.eclipse.emf.ecore.EObject container) {
 		// By default token de-resolving is delegated to the DefaultTokenResolver.
@@ -16,7 +16,7 @@ public class SceBOOLEANTokenResolver implements org.emftext.language.presentatio
 		return result;
 	}
 	
-	public void resolve(String lexem, org.eclipse.emf.ecore.EStructuralFeature feature, org.emftext.language.presentation.resource.sce.ISceTokenResolveResult result) {
+	public void resolve(String lexem, org.eclipse.emf.ecore.EStructuralFeature feature, org.emftext.language.Presentation.resource.sce.ISceTokenResolveResult result) {
 		// By default token resolving is delegated to the DefaultTokenResolver.
 		defaultTokenResolver.resolve(lexem, feature, result, null, null, null);
 	}

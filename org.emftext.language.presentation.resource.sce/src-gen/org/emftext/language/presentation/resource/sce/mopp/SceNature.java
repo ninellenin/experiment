@@ -4,18 +4,18 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.mopp;
+package org.emftext.language.Presentation.resource.sce.mopp;
 
 public class SceNature implements org.eclipse.core.resources.IProjectNature {
 	
-	public static final String NATURE_ID = "org.emftext.language.presentation.resource.sce.nature";
+	public static final String NATURE_ID = "org.emftext.language.Presentation.resource.sce.nature";
 	
 	private org.eclipse.core.resources.IProject project;
 	
 	/**
 	 * the IDs of all builders, IDs of additional builders can be added here
 	 */
-	public final static String[] BUILDER_IDS = {org.emftext.language.presentation.resource.sce.mopp.SceBuilderAdapter.BUILDER_ID};
+	public final static String[] BUILDER_IDS = {org.emftext.language.Presentation.resource.sce.mopp.SceBuilderAdapter.BUILDER_ID};
 	
 	public static void activate(org.eclipse.core.resources.IProject project) {
 		try {
@@ -77,7 +77,7 @@ public class SceNature implements org.eclipse.core.resources.IProjectNature {
 		org.eclipse.core.resources.ICommand[] commands = desc.getBuildSpec();
 		
 		for (int i = 0; i < commands.length; ++i) {
-			if (commands[i].getBuilderName().equals(org.emftext.language.presentation.resource.sce.mopp.SceBuilderAdapter.BUILDER_ID)) {
+			if (commands[i].getBuilderName().equals(org.emftext.language.Presentation.resource.sce.mopp.SceBuilderAdapter.BUILDER_ID)) {
 				return;
 			}
 		}

@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.grammar;
+package org.emftext.language.Presentation.resource.sce.grammar;
 
 public enum SceCardinality {
 	

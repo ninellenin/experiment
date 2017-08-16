@@ -1,6 +1,6 @@
 /**
  */
-package org.emftext.language.presentation.impl;
+package org.emftext.language.Presentation.impl;
 
 import java.util.Collection;
 
@@ -14,9 +14,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.emftext.language.presentation.Definition;
-import org.emftext.language.presentation.Header;
-import org.emftext.language.presentation.PresentationPackage;
+import org.emftext.language.Presentation.Definition;
+import org.emftext.language.Presentation.Header;
+import org.emftext.language.Presentation.PresentationPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +26,7 @@ import org.emftext.language.presentation.PresentationPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.emftext.language.presentation.impl.HeaderImpl#getDefinition <em>Definition</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.impl.HeaderImpl#getDefinition <em>Definition</em>}</li>
  * </ul>
  *
  * @generated

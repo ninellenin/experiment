@@ -4,28 +4,28 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.mopp;
+package org.emftext.language.Presentation.resource.sce.mopp;
 
 public class SceSyntaxCoverageInformationProvider {
 	
 	public org.eclipse.emf.ecore.EClass[] getClassesWithSyntax() {
 		return new org.eclipse.emf.ecore.EClass[] {
-			org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(),
-			org.emftext.language.presentation.PresentationPackage.eINSTANCE.getHeader(),
-			org.emftext.language.presentation.PresentationPackage.eINSTANCE.getSDL(),
-			org.emftext.language.presentation.PresentationPackage.eINSTANCE.getPCL(),
-			org.emftext.language.presentation.PresentationPackage.eINSTANCE.getDefinition(),
-			org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNumberLiteral(),
-			org.emftext.language.presentation.PresentationPackage.eINSTANCE.getNameLiteral(),
-			org.emftext.language.presentation.PresentationPackage.eINSTANCE.getBooleanLiteral(),
-			org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenarioNameParameter(),
-			org.emftext.language.presentation.PresentationPackage.eINSTANCE.getActiveButtonsParameter(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getSDL(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getPCL(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getDefinition(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getNumberLiteral(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getNameLiteral(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getBooleanLiteral(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenarioNameParameter(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getActiveButtonsParameter(),
 		};
 	}
 	
 	public org.eclipse.emf.ecore.EClass[] getStartSymbols() {
 		return new org.eclipse.emf.ecore.EClass[] {
-			org.emftext.language.presentation.PresentationPackage.eINSTANCE.getScenario(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(),
 		};
 	}
 	

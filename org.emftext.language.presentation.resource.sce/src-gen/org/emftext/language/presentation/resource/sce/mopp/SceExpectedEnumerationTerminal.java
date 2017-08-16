@@ -4,17 +4,17 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.mopp;
+package org.emftext.language.Presentation.resource.sce.mopp;
 
 /**
  * A representation for a range in a document where an enumeration literal (i.e.,
  * a set of static strings) is expected.
  */
-public class SceExpectedEnumerationTerminal extends org.emftext.language.presentation.resource.sce.mopp.SceAbstractExpectedElement {
+public class SceExpectedEnumerationTerminal extends org.emftext.language.Presentation.resource.sce.mopp.SceAbstractExpectedElement {
 	
-	private org.emftext.language.presentation.resource.sce.grammar.SceEnumerationTerminal enumerationTerminal;
+	private org.emftext.language.Presentation.resource.sce.grammar.SceEnumerationTerminal enumerationTerminal;
 	
-	public SceExpectedEnumerationTerminal(org.emftext.language.presentation.resource.sce.grammar.SceEnumerationTerminal enumerationTerminal) {
+	public SceExpectedEnumerationTerminal(org.emftext.language.Presentation.resource.sce.grammar.SceEnumerationTerminal enumerationTerminal) {
 		super(enumerationTerminal.getMetaclass());
 		this.enumerationTerminal = enumerationTerminal;
 	}
@@ -33,14 +33,14 @@ public class SceExpectedEnumerationTerminal extends org.emftext.language.present
 		return tokenNames;
 	}
 	
-	public org.emftext.language.presentation.resource.sce.grammar.SceEnumerationTerminal getEnumerationTerminal() {
+	public org.emftext.language.Presentation.resource.sce.grammar.SceEnumerationTerminal getEnumerationTerminal() {
 		return this.enumerationTerminal;
 	}
 	
 	/**
 	 * Returns the expected enumeration terminal.
 	 */
-	public org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement getSymtaxElement() {
+	public org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement getSymtaxElement() {
 		return enumerationTerminal;
 	}
 	

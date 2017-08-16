@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
 public class SceAnnotationModelFactory implements org.eclipse.core.filebuffers.IAnnotationModelFactory {
 	
@@ -12,7 +12,7 @@ public class SceAnnotationModelFactory implements org.eclipse.core.filebuffers.I
 		org.eclipse.core.resources.IWorkspace workspace = org.eclipse.core.resources.ResourcesPlugin.getWorkspace();
 		org.eclipse.core.resources.IWorkspaceRoot root = workspace.getRoot();
 		org.eclipse.core.resources.IResource resource = root.findMember(location);
-		return new org.emftext.language.presentation.resource.sce.ui.SceAnnotationModel(resource);
+		return new org.emftext.language.Presentation.resource.sce.ui.SceAnnotationModel(resource);
 	}
 	
 }

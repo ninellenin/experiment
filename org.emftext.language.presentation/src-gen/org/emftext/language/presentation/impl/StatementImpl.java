@@ -1,13 +1,13 @@
 /**
  */
-package org.emftext.language.presentation.impl;
+package org.emftext.language.Presentation.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.emftext.language.presentation.PresentationPackage;
-import org.emftext.language.presentation.Statement;
+import org.emftext.language.Presentation.PresentationPackage;
+import org.emftext.language.Presentation.Statement;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +16,7 @@ import org.emftext.language.presentation.Statement;
  *
  * @generated
  */
-public abstract class StatementImpl extends EObjectImpl implements Statement {
+public abstract class StatementImpl extends MinimalEObjectImpl.Container implements Statement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

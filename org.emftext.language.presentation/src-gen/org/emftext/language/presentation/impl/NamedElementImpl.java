@@ -1,16 +1,16 @@
 /**
  */
-package org.emftext.language.presentation.impl;
+package org.emftext.language.Presentation.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.emftext.language.presentation.NamedElement;
-import org.emftext.language.presentation.PresentationPackage;
+import org.emftext.language.Presentation.NamedElement;
+import org.emftext.language.Presentation.PresentationPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,12 +20,12 @@ import org.emftext.language.presentation.PresentationPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.emftext.language.presentation.impl.NamedElementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.impl.NamedElementImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class NamedElementImpl extends EObjectImpl implements NamedElement {
+public abstract class NamedElementImpl extends MinimalEObjectImpl.Container implements NamedElement {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

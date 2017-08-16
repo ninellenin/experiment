@@ -1,9 +1,29 @@
-rule Param2Param 
-  transform root : PyExperiment!DocumentRoot
-  to scenario : Presentation!Scenario {
+rule DocumentRoot2Scenario
+	transform root: PyExperiment!DocumentRoot
+	to scenario: Presentation!Scenario {
+
+  	scenario.header ::= root.Experiment;
+}
+
+@lazy
+rule Experiment2Header 
+  transform experiment : PyExperiment!Experiment
+  to header : Presentation!Header {
   
-  "hello".println();
-  //for (param in settings.param) {
-  //	param.name.println();
-  //}
+  	(experiment.encoding).println();
+  	for (param in experiment.settings.param) {
+   		var definition : new Presentation!Definition;
+   		definition ::= param;
+   		header.definition.add(definition);
+  }
+}
+
+@lazy
+rule Param2Parameter
+	transform parameter: PyExperiment!Param
+	to definition: Presentation!Definition {
+		definition.parameter = new Presentation!ScenarioNameParameter;
+   		definition.value.add(new Presentation!NameLiteral);
+   		definition.value[0].value = parameter.val;
+  		(param.name + "=" + param.val).println();
 }

@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce;
+package org.emftext.language.Presentation.resource.sce;
 
 /**
  * An <code>IContextDependentURIFragment</code> points at an element referenced
@@ -69,7 +69,7 @@ public interface ISceContextDependentURIFragment<ReferenceType extends org.eclip
 	 * 
 	 * @return result of resolving process
 	 */
-	public org.emftext.language.presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> resolve();
+	public org.emftext.language.Presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> resolve();
 	
 	/**
 	 * 

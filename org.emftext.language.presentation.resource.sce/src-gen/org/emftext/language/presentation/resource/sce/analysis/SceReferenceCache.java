@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.analysis;
+package org.emftext.language.Presentation.resource.sce.analysis;
 
 /**
  * A ReferenceCache can be used to improve the performance of the reference
@@ -14,14 +14,14 @@ package org.emftext.language.presentation.resource.sce.analysis;
  * other one (the nameToObjects map) can be used to retrieve all objects for a
  * given name.
  */
-public class SceReferenceCache extends org.eclipse.emf.common.notify.impl.AdapterImpl implements org.emftext.language.presentation.resource.sce.ISceReferenceCache {
+public class SceReferenceCache extends org.eclipse.emf.common.notify.impl.AdapterImpl implements org.emftext.language.Presentation.resource.sce.ISceReferenceCache {
 	
 	private java.util.Map<org.eclipse.emf.ecore.EClass, java.util.Set<org.eclipse.emf.ecore.EObject>> classToObjectsMap = new java.util.LinkedHashMap<org.eclipse.emf.ecore.EClass, java.util.Set<org.eclipse.emf.ecore.EObject>>();
 	private java.util.Map<String, java.util.Set<org.eclipse.emf.ecore.EObject>> nameToObjectsMap  = new java.util.LinkedHashMap<String, java.util.Set<org.eclipse.emf.ecore.EObject>>();
 	private boolean isInitialized;
-	private org.emftext.language.presentation.resource.sce.ISceNameProvider nameProvider;
+	private org.emftext.language.Presentation.resource.sce.ISceNameProvider nameProvider;
 	
-	public SceReferenceCache(org.emftext.language.presentation.resource.sce.ISceNameProvider nameProvider) {
+	public SceReferenceCache(org.emftext.language.Presentation.resource.sce.ISceNameProvider nameProvider) {
 		super();
 		this.nameProvider = nameProvider;
 	}

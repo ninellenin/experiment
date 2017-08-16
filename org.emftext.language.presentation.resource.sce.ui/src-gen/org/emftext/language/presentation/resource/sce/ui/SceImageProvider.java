@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
 /**
  * A provider class for all images that are required by the generated UI plug-in.
@@ -64,7 +64,7 @@ public class SceImageProvider {
 	
 	public org.eclipse.jface.resource.ImageDescriptor getImageDescriptor(String key) {
 		org.eclipse.core.runtime.IPath path = new org.eclipse.core.runtime.Path(key);
-		org.eclipse.jface.resource.ImageDescriptor descriptor = org.eclipse.jface.resource.ImageDescriptor.createFromURL(org.eclipse.core.runtime.FileLocator.find(org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.getDefault().getBundle(), path, null));
+		org.eclipse.jface.resource.ImageDescriptor descriptor = org.eclipse.jface.resource.ImageDescriptor.createFromURL(org.eclipse.core.runtime.FileLocator.find(org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.getDefault().getBundle(), path, null));
 		if (org.eclipse.jface.resource.ImageDescriptor.getMissingImageDescriptor().equals(descriptor) || descriptor == null) {
 			// try loading image from any bundle
 			try {
@@ -77,7 +77,7 @@ public class SceImageProvider {
 					return null;
 				}
 			} catch (java.net.MalformedURLException mue) {
-				org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.logError("IconProvider can't load image (URL is malformed).", mue);
+				org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.logError("IconProvider can't load image (URL is malformed).", mue);
 			}
 		}
 		return descriptor;

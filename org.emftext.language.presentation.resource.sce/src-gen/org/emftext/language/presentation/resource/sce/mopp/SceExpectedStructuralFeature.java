@@ -4,17 +4,17 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.mopp;
+package org.emftext.language.Presentation.resource.sce.mopp;
 
 /**
  * A representation for a range in a document where a structural feature (e.g., a
  * reference) is expected.
  */
-public class SceExpectedStructuralFeature extends org.emftext.language.presentation.resource.sce.mopp.SceAbstractExpectedElement {
+public class SceExpectedStructuralFeature extends org.emftext.language.Presentation.resource.sce.mopp.SceAbstractExpectedElement {
 	
-	private org.emftext.language.presentation.resource.sce.grammar.ScePlaceholder placeholder;
+	private org.emftext.language.Presentation.resource.sce.grammar.ScePlaceholder placeholder;
 	
-	public SceExpectedStructuralFeature(org.emftext.language.presentation.resource.sce.grammar.ScePlaceholder placeholder) {
+	public SceExpectedStructuralFeature(org.emftext.language.Presentation.resource.sce.grammar.ScePlaceholder placeholder) {
 		super(placeholder.getMetaclass());
 		this.placeholder = placeholder;
 	}
@@ -26,7 +26,7 @@ public class SceExpectedStructuralFeature extends org.emftext.language.presentat
 	/**
 	 * Returns the expected placeholder.
 	 */
-	public org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement getSymtaxElement() {
+	public org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement getSymtaxElement() {
 		return placeholder;
 	}
 	

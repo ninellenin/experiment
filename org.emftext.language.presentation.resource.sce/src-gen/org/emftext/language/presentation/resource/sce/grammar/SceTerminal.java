@@ -4,14 +4,14 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.grammar;
+package org.emftext.language.Presentation.resource.sce.grammar;
 
-public class SceTerminal extends org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement {
+public class SceTerminal extends org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement {
 	
 	private final org.eclipse.emf.ecore.EStructuralFeature feature;
 	private final int mandatoryOccurencesAfter;
 	
-	public SceTerminal(org.eclipse.emf.ecore.EStructuralFeature feature, org.emftext.language.presentation.resource.sce.grammar.SceCardinality cardinality, int mandatoryOccurencesAfter) {
+	public SceTerminal(org.eclipse.emf.ecore.EStructuralFeature feature, org.emftext.language.Presentation.resource.sce.grammar.SceCardinality cardinality, int mandatoryOccurencesAfter) {
 		super(cardinality, null);
 		this.feature = feature;
 		this.mandatoryOccurencesAfter = mandatoryOccurencesAfter;

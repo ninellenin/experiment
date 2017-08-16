@@ -2,73 +2,73 @@
 <?eclipse version="3.2"?>
 <plugin>
 	<extension point="org.emftext.access.syntax.ui">
-		<metaInformationProvider class="org.emftext.language.presentation.resource.sce.ui.SceUIMetaInformation" id="org.emftext.language.presentation.resource.sce.ui.SceUIMetaInformation">
+		<metaInformationProvider class="org.emftext.language.Presentation.resource.sce.ui.SceUIMetaInformation" id="org.emftext.language.Presentation.resource.sce.ui.SceUIMetaInformation">
 		</metaInformationProvider>
 	</extension>
 	
 	<extension point="org.eclipse.ui.editors">
-		<editor class="org.emftext.language.presentation.resource.sce.ui.SceEditor" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="sce" icon="icons/editor_icon.gif" id="org.emftext.language.presentation.resource.sce.ui.SceEditor" name="EMFText sce Editor">
-			<contentTypeBinding contentTypeId="org.emftext.language.presentation.resource.sce">
+		<editor class="org.emftext.language.Presentation.resource.sce.ui.SceEditor" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="sce" icon="icons/editor_icon.gif" id="org.emftext.language.Presentation.resource.sce.ui.SceEditor" name="EMFText sce Editor">
+			<contentTypeBinding contentTypeId="org.emftext.language.Presentation.resource.sce">
 			</contentTypeBinding>
 		</editor>
 	</extension>
 	
 	<extension point="org.eclipse.core.runtime.preferences">
-		<initializer class="org.emftext.language.presentation.resource.sce.ui.ScePreferenceInitializer">
+		<initializer class="org.emftext.language.Presentation.resource.sce.ui.ScePreferenceInitializer">
 		</initializer>
 	</extension>
 	
 	<extension point="org.eclipse.ui.preferencePages">
-		<page name="Sce Text Editor" id="org.emftext.language.presentation.resource.sce.ui.ScePreferencePage" class="org.emftext.language.presentation.resource.sce.ui.ScePreferencePage" category="org.eclipse.ui.preferencePages.GeneralTextEditor">
+		<page name="Sce Text Editor" id="org.emftext.language.Presentation.resource.sce.ui.ScePreferencePage" class="org.emftext.language.Presentation.resource.sce.ui.ScePreferencePage" category="org.eclipse.ui.preferencePages.GeneralTextEditor">
 		</page>
-		<page name="Syntax Coloring" id="org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringPreferencePage" class="org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringPreferencePage" category="org.emftext.language.presentation.resource.sce.ui.ScePreferencePage">
+		<page name="Syntax Coloring" id="org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringPreferencePage" class="org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringPreferencePage" category="org.emftext.language.Presentation.resource.sce.ui.ScePreferencePage">
 		</page>
-		<page name="Brackets" id="org.emftext.language.presentation.resource.sce.ui.SceBracketPreferencePage" class="org.emftext.language.presentation.resource.sce.ui.SceBracketPreferencePage" category="org.emftext.language.presentation.resource.sce.ui.ScePreferencePage">
+		<page name="Brackets" id="org.emftext.language.Presentation.resource.sce.ui.SceBracketPreferencePage" class="org.emftext.language.Presentation.resource.sce.ui.SceBracketPreferencePage" category="org.emftext.language.Presentation.resource.sce.ui.ScePreferencePage">
 		</page>
 	</extension>
 	
 	<extension point="org.eclipse.ui.newWizards">
 		<category id="org.emftext.runtime.ui.EMFTextFileCategory" name="EMFText File">
 		</category>
-		<wizard category="org.emftext.runtime.ui.EMFTextFileCategory" icon="/icons/default_new_icon.gif" class="org.emftext.language.presentation.resource.sce.ui.SceNewFileWizard" id="org.emftext.language.presentation.resource.sce.ui.SceNewFileWizard" name="EMFText .sce file">
+		<wizard category="org.emftext.runtime.ui.EMFTextFileCategory" icon="/icons/default_new_icon.gif" class="org.emftext.language.Presentation.resource.sce.ui.SceNewFileWizard" id="org.emftext.language.Presentation.resource.sce.ui.SceNewFileWizard" name="EMFText .sce file">
 		</wizard>
 		<category id="org.emftext.runtime.ui.EMFTextProjectCategory" name="EMFText Project">
 		</category>
-		<wizard category="org.emftext.runtime.ui.EMFTextProjectCategory" icon="/icons/default_new_icon.gif" class="org.emftext.language.presentation.resource.sce.ui.SceNewProjectWizard" id="org.emftext.language.presentation.resource.sce.ui.SceNewProjectWizard" name="EMFText sce project" project="true">
+		<wizard category="org.emftext.runtime.ui.EMFTextProjectCategory" icon="/icons/default_new_icon.gif" class="org.emftext.language.Presentation.resource.sce.ui.SceNewProjectWizard" id="org.emftext.language.Presentation.resource.sce.ui.SceNewProjectWizard" name="EMFText sce project" project="true">
 		</wizard>
 	</extension>
 	
 	<extension point="org.eclipse.ui.ide.markerResolution">
-		<markerResolutionGenerator class="org.emftext.language.presentation.resource.sce.ui.SceMarkerResolutionGenerator" markerType="org.emftext.language.presentation.resource.sce.problem">
+		<markerResolutionGenerator class="org.emftext.language.Presentation.resource.sce.ui.SceMarkerResolutionGenerator" markerType="org.emftext.language.Presentation.resource.sce.problem">
 		</markerResolutionGenerator>
 	</extension>
 	
 	<extension point="org.eclipse.core.filebuffers.annotationModelCreation">
-		<factory class="org.emftext.language.presentation.resource.sce.ui.SceAnnotationModelFactory" extensions="sce">
+		<factory class="org.emftext.language.Presentation.resource.sce.ui.SceAnnotationModelFactory" extensions="sce">
 		</factory>
 	</extension>
 	
 	<extension point="org.eclipse.core.contenttype.contentTypes">
-		<content-type id="org.emftext.language.presentation.resource.sce" name=".sce File" base-type="org.eclipse.core.runtime.text" file-extensions="sce">
+		<content-type id="org.emftext.language.Presentation.resource.sce" name=".sce File" base-type="org.eclipse.core.runtime.text" file-extensions="sce">
 		</content-type>
 	</extension>
 	
 	<extension point="org.eclipse.ui.editors.documentProviders">
-		<provider class="org.eclipse.ui.editors.text.TextFileDocumentProvider" extensions="sce" id="org.emftext.language.presentation.resource.sce.ui.provider">
+		<provider class="org.eclipse.ui.editors.text.TextFileDocumentProvider" extensions="sce" id="org.emftext.language.Presentation.resource.sce.ui.provider">
 		</provider>
 	</extension>
 	
 	<extension point="org.eclipse.ui.editors.annotationTypes">
-		<type name="org.emftext.language.presentation.resource.sce.ui.occurences">
+		<type name="org.emftext.language.Presentation.resource.sce.ui.occurences">
 		</type>
-		<type name="org.emftext.language.presentation.resource.sce.ui.occurences.declaration" super="org.emftext.language.presentation.resource.sce.ui.occurences">
+		<type name="org.emftext.language.Presentation.resource.sce.ui.occurences.declaration" super="org.emftext.language.Presentation.resource.sce.ui.occurences">
 		</type>
 	</extension>
 	
 	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
-		<specification annotationType="org.emftext.language.presentation.resource.sce.ui.occurences" label="Occurrences (in .sce files)" icon="/icons/occurrence_icon.gif" textPreferenceKey="sce.occurrenceIndication" textPreferenceValue="false" highlightPreferenceKey="sce.occurrenceHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="sce.occurrenceIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="sce.occurrenceIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="sce.occurrenceIndicationColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="sce.showOccurrenceInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="sce.isOccurrenceGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="sce.isOccurrenceGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="sce.occurrenceTextStyle" textStylePreferenceValue="NONE">
+		<specification annotationType="org.emftext.language.Presentation.resource.sce.ui.occurences" label="Occurrences (in .sce files)" icon="/icons/occurrence_icon.gif" textPreferenceKey="sce.occurrenceIndication" textPreferenceValue="false" highlightPreferenceKey="sce.occurrenceHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="sce.occurrenceIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="sce.occurrenceIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="sce.occurrenceIndicationColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="sce.showOccurrenceInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="sce.isOccurrenceGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="sce.isOccurrenceGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="sce.occurrenceTextStyle" textStylePreferenceValue="NONE">
 		</specification>
-		<specification annotationType="org.emftext.language.presentation.resource.sce.ui.occurences.declaration" label="Declarations (in .sce files)" textPreferenceKey="sce.declarationIndication" textPreferenceValue="false" highlightPreferenceKey="sce.declarationHighlighting" highlightPreferenceValue="true" overviewRulerPreferenceKey="sce.declarationIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="sce.declarationIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="sce.declarationIndicationColor" colorPreferenceValue="240,216,168" presentationLayer="4" textStylePreferenceKey="sce.declarationTextStyle" textStylePreferenceValue="NONE">
+		<specification annotationType="org.emftext.language.Presentation.resource.sce.ui.occurences.declaration" label="Declarations (in .sce files)" textPreferenceKey="sce.declarationIndication" textPreferenceValue="false" highlightPreferenceKey="sce.declarationHighlighting" highlightPreferenceValue="true" overviewRulerPreferenceKey="sce.declarationIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="sce.declarationIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="sce.declarationIndicationColor" colorPreferenceValue="240,216,168" presentationLayer="4" textStylePreferenceKey="sce.declarationTextStyle" textStylePreferenceValue="NONE">
 		</specification>
 	</extension>
 	

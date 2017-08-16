@@ -4,14 +4,14 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.mopp;
+package org.emftext.language.Presentation.resource.sce.mopp;
 
 /**
  * A singleton class for the text resource plug-in.
  */
 public class ScePlugin extends org.eclipse.core.runtime.Plugin {
 	
-	public static final String PLUGIN_ID = "org.emftext.language.presentation.resource.sce";
+	public static final String PLUGIN_ID = "org.emftext.language.Presentation.resource.sce";
 	/**
 	 * The version of EMFText that was used to generate this plug-in.
 	 */

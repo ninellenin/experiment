@@ -4,14 +4,14 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
 public class SceQuickAssistProcessor implements org.eclipse.jface.text.quickassist.IQuickAssistProcessor {
 	
-	private org.emftext.language.presentation.resource.sce.ISceResourceProvider resourceProvider;
-	private org.emftext.language.presentation.resource.sce.ui.ISceAnnotationModelProvider annotationModelProvider;
+	private org.emftext.language.Presentation.resource.sce.ISceResourceProvider resourceProvider;
+	private org.emftext.language.Presentation.resource.sce.ui.ISceAnnotationModelProvider annotationModelProvider;
 	
-	public SceQuickAssistProcessor(org.emftext.language.presentation.resource.sce.ISceResourceProvider resourceProvider, org.emftext.language.presentation.resource.sce.ui.ISceAnnotationModelProvider annotationModelProvider) {
+	public SceQuickAssistProcessor(org.emftext.language.Presentation.resource.sce.ISceResourceProvider resourceProvider, org.emftext.language.Presentation.resource.sce.ui.ISceAnnotationModelProvider annotationModelProvider) {
 		super();
 		this.resourceProvider = resourceProvider;
 		this.annotationModelProvider = annotationModelProvider;
@@ -22,7 +22,7 @@ public class SceQuickAssistProcessor implements org.eclipse.jface.text.quickassi
 	}
 	
 	public boolean canFix(org.eclipse.jface.text.source.Annotation annotation) {
-		java.util.Collection<org.emftext.language.presentation.resource.sce.ISceQuickFix> quickFixes = getQuickFixes(annotation);
+		java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceQuickFix> quickFixes = getQuickFixes(annotation);
 		return quickFixes.size() > 0;
 	}
 	
@@ -35,7 +35,7 @@ public class SceQuickAssistProcessor implements org.eclipse.jface.text.quickassi
 			offset = textContext.getOffset();
 			length = textContext.getLength();
 		}
-		java.util.List<org.emftext.language.presentation.resource.sce.ISceQuickFix> quickFixes = getQuickFixes(sourceViewer, offset, length);
+		java.util.List<org.emftext.language.Presentation.resource.sce.ISceQuickFix> quickFixes = getQuickFixes(sourceViewer, offset, length);
 		org.eclipse.jface.text.contentassist.ICompletionProposal[] proposals = new org.eclipse.jface.text.contentassist.ICompletionProposal[quickFixes.size()];
 		for (int i = 0; i < proposals.length; i++) {
 			proposals[i] = createCompletionProposal(sourceViewer, quickFixes.get(i));
@@ -43,7 +43,7 @@ public class SceQuickAssistProcessor implements org.eclipse.jface.text.quickassi
 		return proposals;
 	}
 	
-	private org.eclipse.jface.text.contentassist.ICompletionProposal createCompletionProposal(final org.eclipse.jface.text.source.ISourceViewer sourceViewer, final org.emftext.language.presentation.resource.sce.ISceQuickFix quickFix) {
+	private org.eclipse.jface.text.contentassist.ICompletionProposal createCompletionProposal(final org.eclipse.jface.text.source.ISourceViewer sourceViewer, final org.emftext.language.Presentation.resource.sce.ISceQuickFix quickFix) {
 		return new org.eclipse.jface.text.contentassist.ICompletionProposal() {
 			
 			public org.eclipse.swt.graphics.Point getSelection(org.eclipse.jface.text.IDocument document) {
@@ -51,7 +51,7 @@ public class SceQuickAssistProcessor implements org.eclipse.jface.text.quickassi
 			}
 			
 			public org.eclipse.swt.graphics.Image getImage() {
-				return new org.emftext.language.presentation.resource.sce.ui.SceUIMetaInformation().getImageProvider().getImage(quickFix.getImageKey());
+				return new org.emftext.language.Presentation.resource.sce.ui.SceUIMetaInformation().getImageProvider().getImage(quickFix.getImageKey());
 			}
 			
 			public String getDisplayString() {
@@ -76,8 +76,8 @@ public class SceQuickAssistProcessor implements org.eclipse.jface.text.quickassi
 		};
 	}
 	
-	private java.util.List<org.emftext.language.presentation.resource.sce.ISceQuickFix> getQuickFixes(org.eclipse.jface.text.source.ISourceViewer sourceViewer, int offset, int length) {
-		java.util.List<org.emftext.language.presentation.resource.sce.ISceQuickFix> foundFixes = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ISceQuickFix>();
+	private java.util.List<org.emftext.language.Presentation.resource.sce.ISceQuickFix> getQuickFixes(org.eclipse.jface.text.source.ISourceViewer sourceViewer, int offset, int length) {
+		java.util.List<org.emftext.language.Presentation.resource.sce.ISceQuickFix> foundFixes = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ISceQuickFix>();
 		org.eclipse.jface.text.source.IAnnotationModel model = annotationModelProvider.getAnnotationModel();
 		
 		if (model == null) {
@@ -93,7 +93,7 @@ public class SceQuickAssistProcessor implements org.eclipse.jface.text.quickassi
 					continue;
 				}
 			}
-			java.util.Collection<org.emftext.language.presentation.resource.sce.ISceQuickFix> quickFixes = getQuickFixes(annotation);
+			java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceQuickFix> quickFixes = getQuickFixes(annotation);
 			if (quickFixes != null) {
 				foundFixes.addAll(quickFixes);
 			}
@@ -101,17 +101,17 @@ public class SceQuickAssistProcessor implements org.eclipse.jface.text.quickassi
 		return foundFixes;
 	}
 	
-	private java.util.Collection<org.emftext.language.presentation.resource.sce.ISceQuickFix> getQuickFixes(org.eclipse.jface.text.source.Annotation annotation) {
+	private java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceQuickFix> getQuickFixes(org.eclipse.jface.text.source.Annotation annotation) {
 		
-		java.util.Collection<org.emftext.language.presentation.resource.sce.ISceQuickFix> foundQuickFixes = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ISceQuickFix>();
+		java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceQuickFix> foundQuickFixes = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ISceQuickFix>();
 		if (annotation.isMarkedDeleted()) {
 			return foundQuickFixes;
 		}
 		
-		if (annotation instanceof org.emftext.language.presentation.resource.sce.ui.SceMarkerAnnotation) {
-			org.emftext.language.presentation.resource.sce.ui.SceMarkerAnnotation markerAnnotation = (org.emftext.language.presentation.resource.sce.ui.SceMarkerAnnotation) annotation;
+		if (annotation instanceof org.emftext.language.Presentation.resource.sce.ui.SceMarkerAnnotation) {
+			org.emftext.language.Presentation.resource.sce.ui.SceMarkerAnnotation markerAnnotation = (org.emftext.language.Presentation.resource.sce.ui.SceMarkerAnnotation) annotation;
 			org.eclipse.core.resources.IMarker marker = markerAnnotation.getMarker();
-			foundQuickFixes.addAll(new org.emftext.language.presentation.resource.sce.ui.SceMarkerResolutionGenerator().getQuickFixes(resourceProvider.getResource(), marker));
+			foundQuickFixes.addAll(new org.emftext.language.Presentation.resource.sce.ui.SceMarkerResolutionGenerator().getQuickFixes(resourceProvider.getResource(), marker));
 		}
 		return foundQuickFixes;
 	}

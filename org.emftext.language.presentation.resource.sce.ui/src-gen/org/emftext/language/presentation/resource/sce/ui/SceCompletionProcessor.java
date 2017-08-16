@@ -4,43 +4,43 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
 public class SceCompletionProcessor implements org.eclipse.jface.text.contentassist.IContentAssistProcessor {
 	
-	private org.emftext.language.presentation.resource.sce.ISceResourceProvider resourceProvider;
-	private org.emftext.language.presentation.resource.sce.ui.ISceBracketHandlerProvider bracketHandlerProvider;
+	private org.emftext.language.Presentation.resource.sce.ISceResourceProvider resourceProvider;
+	private org.emftext.language.Presentation.resource.sce.ui.ISceBracketHandlerProvider bracketHandlerProvider;
 	
-	public SceCompletionProcessor(org.emftext.language.presentation.resource.sce.ISceResourceProvider resourceProvider, org.emftext.language.presentation.resource.sce.ui.ISceBracketHandlerProvider bracketHandlerProvider) {
+	public SceCompletionProcessor(org.emftext.language.Presentation.resource.sce.ISceResourceProvider resourceProvider, org.emftext.language.Presentation.resource.sce.ui.ISceBracketHandlerProvider bracketHandlerProvider) {
 		this.resourceProvider = resourceProvider;
 		this.bracketHandlerProvider = bracketHandlerProvider;
 	}
 	
 	public org.eclipse.jface.text.contentassist.ICompletionProposal[] computeCompletionProposals(org.eclipse.jface.text.ITextViewer viewer, int offset) {
-		org.emftext.language.presentation.resource.sce.ISceTextResource textResource = resourceProvider.getResource();
+		org.emftext.language.Presentation.resource.sce.ISceTextResource textResource = resourceProvider.getResource();
 		if (textResource == null) {
 			return new org.eclipse.jface.text.contentassist.ICompletionProposal[0];
 		}
 		String content = viewer.getDocument().get();
-		org.emftext.language.presentation.resource.sce.ui.SceCodeCompletionHelper helper = new org.emftext.language.presentation.resource.sce.ui.SceCodeCompletionHelper();
-		org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal[] computedProposals = helper.computeCompletionProposals(textResource, content, offset);
+		org.emftext.language.Presentation.resource.sce.ui.SceCodeCompletionHelper helper = new org.emftext.language.Presentation.resource.sce.ui.SceCodeCompletionHelper();
+		org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal[] computedProposals = helper.computeCompletionProposals(textResource, content, offset);
 		
 		// call completion proposal post processor to allow for customizing the proposals
-		org.emftext.language.presentation.resource.sce.ui.SceProposalPostProcessor proposalPostProcessor = new org.emftext.language.presentation.resource.sce.ui.SceProposalPostProcessor();
-		java.util.List<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> computedProposalList = java.util.Arrays.asList(computedProposals);
-		java.util.List<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> extendedProposalList = proposalPostProcessor.process(computedProposalList);
+		org.emftext.language.Presentation.resource.sce.ui.SceProposalPostProcessor proposalPostProcessor = new org.emftext.language.Presentation.resource.sce.ui.SceProposalPostProcessor();
+		java.util.List<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> computedProposalList = java.util.Arrays.asList(computedProposals);
+		java.util.List<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> extendedProposalList = proposalPostProcessor.process(computedProposalList);
 		if (extendedProposalList == null) {
 			extendedProposalList = java.util.Collections.emptyList();
 		}
-		java.util.List<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> finalProposalList = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal>();
-		for (org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal proposal : extendedProposalList) {
+		java.util.List<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> finalProposalList = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal>();
+		for (org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal proposal : extendedProposalList) {
 			if (proposal.getMatchesPrefix()) {
 				finalProposalList.add(proposal);
 			}
 		}
 		org.eclipse.jface.text.contentassist.ICompletionProposal[] result = new org.eclipse.jface.text.contentassist.ICompletionProposal[finalProposalList.size()];
 		int i = 0;
-		for (org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal proposal : finalProposalList) {
+		for (org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal proposal : finalProposalList) {
 			String proposalString = proposal.getInsertString();
 			String displayString = proposal.getDisplayString();
 			String prefix = proposal.getPrefix();
@@ -51,7 +51,7 @@ public class SceCompletionProcessor implements org.eclipse.jface.text.contentass
 			int replacementLength = prefix.length();
 			// if a closing bracket was automatically inserted right before, we enlarge the
 			// replacement length in order to overwrite the bracket.
-			org.emftext.language.presentation.resource.sce.ui.ISceBracketHandler bracketHandler = bracketHandlerProvider.getBracketHandler();
+			org.emftext.language.Presentation.resource.sce.ui.ISceBracketHandler bracketHandler = bracketHandlerProvider.getBracketHandler();
 			String closingBracket = bracketHandler.getClosingBracket();
 			if (bracketHandler.addedClosingBracket() && proposalString.endsWith(closingBracket)) {
 				replacementLength += closingBracket.length();

@@ -4,22 +4,22 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
 /**
  * This class finds the positions to highlight and adds them to the document.
  */
 public class SceOccurrence {
 	
-	public final static String OCCURRENCE_ANNOTATION_ID = "org.emftext.language.presentation.resource.sce.ui.occurences";
-	public final static String DECLARATION_ANNOTATION_ID = "org.emftext.language.presentation.resource.sce.ui.occurences.declaration";
+	public final static String OCCURRENCE_ANNOTATION_ID = "org.emftext.language.Presentation.resource.sce.ui.occurences";
+	public final static String DECLARATION_ANNOTATION_ID = "org.emftext.language.Presentation.resource.sce.ui.occurences.declaration";
 	
-	private final static org.emftext.language.presentation.resource.sce.ui.ScePositionHelper positionHelper = new org.emftext.language.presentation.resource.sce.ui.ScePositionHelper();
+	private final static org.emftext.language.Presentation.resource.sce.ui.ScePositionHelper positionHelper = new org.emftext.language.Presentation.resource.sce.ui.ScePositionHelper();
 	
-	private org.emftext.language.presentation.resource.sce.ui.SceTokenScanner tokenScanner;
+	private org.emftext.language.Presentation.resource.sce.ui.SceTokenScanner tokenScanner;
 	private java.util.List<String> quotedTokenArray;
 	private org.eclipse.jface.text.source.projection.ProjectionViewer projectionViewer;
-	private org.emftext.language.presentation.resource.sce.ISceTextResource textResource;
+	private org.emftext.language.Presentation.resource.sce.ISceTextResource textResource;
 	private String tokenText = "";
 	private org.eclipse.jface.text.Region tokenRegion;
 	
@@ -30,12 +30,12 @@ public class SceOccurrence {
 	 * @param sourceViewer the source viewer for the text
 	 * @param tokenScanner the token scanner helps to find the searched tokens
 	 */
-	public SceOccurrence(org.emftext.language.presentation.resource.sce.ISceTextResource textResource, org.eclipse.jface.text.source.projection.ProjectionViewer sourceViewer, org.emftext.language.presentation.resource.sce.ui.SceTokenScanner tokenScanner) {
+	public SceOccurrence(org.emftext.language.Presentation.resource.sce.ISceTextResource textResource, org.eclipse.jface.text.source.projection.ProjectionViewer sourceViewer, org.emftext.language.Presentation.resource.sce.ui.SceTokenScanner tokenScanner) {
 		this.textResource = textResource;
 		this.projectionViewer = sourceViewer;
 		
 		quotedTokenArray = new java.util.ArrayList<String>();
-		String[] tokenNames = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation().getTokenNames();
+		String[] tokenNames = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation().getTokenNames();
 		for (String tokenName : tokenNames) {
 			if (tokenName.startsWith("'") && tokenName.endsWith("'")) {
 				quotedTokenArray.add(tokenName.substring(1, tokenName.length() - 1).trim());
@@ -80,7 +80,7 @@ public class SceOccurrence {
 		if (textResource == null) {
 			return null;
 		}
-		org.emftext.language.presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
+		org.emftext.language.Presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
 		java.util.List<org.eclipse.emf.ecore.EObject> elementsAtOffset = locationMap.getElementsAt(caretOffset);
 		
 		if (elementsAtOffset == null || elementsAtOffset.isEmpty()) {
@@ -110,7 +110,7 @@ public class SceOccurrence {
 	}
 	
 	private int getLength(org.eclipse.emf.ecore.EObject eObject) {
-		org.emftext.language.presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
+		org.emftext.language.Presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
 		return locationMap.getCharEnd(eObject) - locationMap.getCharStart(eObject) + 1;
 	}
 	
@@ -120,7 +120,7 @@ public class SceOccurrence {
 	 * 
 	 * @param bracketSet the set of brackets which have to be ignored.
 	 */
-	public void handleOccurrenceHighlighting(org.emftext.language.presentation.resource.sce.ui.SceBracketSet bracketSet) {
+	public void handleOccurrenceHighlighting(org.emftext.language.Presentation.resource.sce.ui.SceBracketSet bracketSet) {
 		if (textResource == null) {
 			return;
 		}
@@ -136,7 +136,7 @@ public class SceOccurrence {
 			return;
 		}
 		tokenRegion = new org.eclipse.jface.text.Region(-1,0);
-		org.emftext.language.presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
+		org.emftext.language.Presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
 		java.util.List<org.eclipse.emf.ecore.EObject> elementsAtOffset = locationMap.getElementsAt(caretOffset);
 		
 		if (elementsAtOffset == null || elementsAtOffset.size() < 1) {
@@ -183,7 +183,7 @@ public class SceOccurrence {
 	
 	private void setHighlightingPositions(org.eclipse.emf.ecore.EObject definitionElement, java.util.List<org.eclipse.emf.ecore.EObject> elementsAtDefinition) {
 		org.eclipse.jface.text.IDocument document = projectionViewer.getDocument();
-		org.emftext.language.presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
+		org.emftext.language.Presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
 		org.eclipse.jface.text.rules.IToken token;
 		int defPosition = -1;
 		if (definitionElement == null) {
@@ -200,7 +200,7 @@ public class SceOccurrence {
 				String text = tokenScanner.getTokenText();
 				if (text.equals(tokenText)) {
 					defPosition = tokenScanner.getTokenOffset();
-					addAnnotation(document, org.emftext.language.presentation.resource.sce.ui.ScePositionCategory.DEFINTION, text);
+					addAnnotation(document, org.emftext.language.Presentation.resource.sce.ui.ScePositionCategory.DEFINTION, text);
 					break;
 				}
 				token = tokenScanner.nextToken();
@@ -215,7 +215,7 @@ public class SceOccurrence {
 				occEO = tryToResolve(locationMap.getElementsAt(tokenScanner.getTokenOffset()));
 				if (occEO != null) {
 					if (elementsAtDefinition.contains(occEO) || definitionElement.equals(occEO)) {
-						addAnnotation(document, org.emftext.language.presentation.resource.sce.ui.ScePositionCategory.PROXY, text);
+						addAnnotation(document, org.emftext.language.Presentation.resource.sce.ui.ScePositionCategory.PROXY, text);
 					}
 				}
 			}
@@ -223,7 +223,7 @@ public class SceOccurrence {
 		}
 	}
 	
-	private void addAnnotation(org.eclipse.jface.text.IDocument document, org.emftext.language.presentation.resource.sce.ui.ScePositionCategory type, String text) {
+	private void addAnnotation(org.eclipse.jface.text.IDocument document, org.emftext.language.Presentation.resource.sce.ui.ScePositionCategory type, String text) {
 		int tokenOffset = tokenScanner.getTokenOffset();
 		int tokenLength = tokenScanner.getTokenLength();
 		// for declarations and occurrences we do not need to add the position to the
@@ -231,7 +231,7 @@ public class SceOccurrence {
 		org.eclipse.jface.text.Position position = positionHelper.createPosition(tokenOffset, tokenLength);
 		// instead, an annotation is created
 		org.eclipse.jface.text.source.Annotation annotation = new org.eclipse.jface.text.source.Annotation(false);
-		if (type == org.emftext.language.presentation.resource.sce.ui.ScePositionCategory.DEFINTION) {
+		if (type == org.emftext.language.Presentation.resource.sce.ui.ScePositionCategory.DEFINTION) {
 			annotation.setText("Declaration of " + text);
 			annotation.setType(DECLARATION_ANNOTATION_ID);
 		} else {
@@ -242,8 +242,8 @@ public class SceOccurrence {
 	}
 	
 	private void removeAnnotations() {
-		removeAnnotations(org.emftext.language.presentation.resource.sce.ui.SceOccurrence.OCCURRENCE_ANNOTATION_ID);
-		removeAnnotations(org.emftext.language.presentation.resource.sce.ui.SceOccurrence.DECLARATION_ANNOTATION_ID);
+		removeAnnotations(org.emftext.language.Presentation.resource.sce.ui.SceOccurrence.OCCURRENCE_ANNOTATION_ID);
+		removeAnnotations(org.emftext.language.Presentation.resource.sce.ui.SceOccurrence.DECLARATION_ANNOTATION_ID);
 	}
 	
 	private void removeAnnotations(String annotationTypeID) {

@@ -1,6 +1,6 @@
 /**
  */
-package org.emftext.language.presentation.impl;
+package org.emftext.language.Presentation.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -8,8 +8,8 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.emftext.language.presentation.BooleanLiteral;
-import org.emftext.language.presentation.PresentationPackage;
+import org.emftext.language.Presentation.BooleanLiteral;
+import org.emftext.language.Presentation.PresentationPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +19,7 @@ import org.emftext.language.presentation.PresentationPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.emftext.language.presentation.impl.BooleanLiteralImpl#isValue <em>Value</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.impl.BooleanLiteralImpl#isValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated

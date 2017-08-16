@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.debug;
+package org.emftext.language.Presentation.resource.sce.debug;
 
 /**
  * The DebugProxy allows to communicate between the interpreter, which runs in a

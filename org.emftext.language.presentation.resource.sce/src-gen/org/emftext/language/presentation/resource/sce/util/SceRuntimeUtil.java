@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.util;
+package org.emftext.language.Presentation.resource.sce.util;
 
 /**
  * This utility class provides methods to obtain information about the current
@@ -32,7 +32,7 @@ public class SceRuntimeUtil {
 	 */
 	public void logError(String message, Throwable exception) {
 		if (isEclipsePlatformAvailable()) {
-			org.emftext.language.presentation.resource.sce.mopp.ScePlugin.logError(message, exception);
+			org.emftext.language.Presentation.resource.sce.mopp.ScePlugin.logError(message, exception);
 			return;
 		}
 		System.err.println(message);
@@ -47,7 +47,7 @@ public class SceRuntimeUtil {
 	 */
 	public void logWarning(String message, Throwable exception) {
 		if (isEclipsePlatformAvailable()) {
-			org.emftext.language.presentation.resource.sce.mopp.ScePlugin.logWarning(message, exception);
+			org.emftext.language.Presentation.resource.sce.mopp.ScePlugin.logWarning(message, exception);
 			return;
 		}
 		System.err.println(message);

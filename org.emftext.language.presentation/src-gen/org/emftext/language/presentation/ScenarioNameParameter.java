@@ -1,6 +1,6 @@
 /**
  */
-package org.emftext.language.presentation;
+package org.emftext.language.Presentation;
 
 
 /**
@@ -9,7 +9,7 @@ package org.emftext.language.presentation;
  * <!-- end-user-doc -->
  *
  *
- * @see org.emftext.language.presentation.PresentationPackage#getScenarioNameParameter()
+ * @see org.emftext.language.Presentation.PresentationPackage#getScenarioNameParameter()
  * @model
  * @generated
  */

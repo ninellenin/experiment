@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce;
+package org.emftext.language.Presentation.resource.sce;
 
 /**
  * A list of constants that contains the keys for some options that are built into
@@ -16,12 +16,12 @@ public interface ISceOptions {
 	/**
 	 * The key for the option to provide a stream pre-processor.
 	 */
-	public String INPUT_STREAM_PREPROCESSOR_PROVIDER = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation().getInputStreamPreprocessorProviderOptionKey();
+	public String INPUT_STREAM_PREPROCESSOR_PROVIDER = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation().getInputStreamPreprocessorProviderOptionKey();
 	
 	/**
 	 * The key for the option to provide a resource post-processor.
 	 */
-	public String RESOURCE_POSTPROCESSOR_PROVIDER = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation().getResourcePostProcessorProviderOptionKey();
+	public String RESOURCE_POSTPROCESSOR_PROVIDER = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation().getResourcePostProcessorProviderOptionKey();
 	
 	/**
 	 * The key for the option to provide additional reference resolvers. The value for

@@ -4,12 +4,12 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
 public class SceQuickAssistAssistant extends org.eclipse.jface.text.quickassist.QuickAssistAssistant implements org.eclipse.jface.text.quickassist.IQuickAssistAssistant {
 	
-	public SceQuickAssistAssistant(org.emftext.language.presentation.resource.sce.ISceResourceProvider resourceProvider, org.emftext.language.presentation.resource.sce.ui.ISceAnnotationModelProvider annotationModelProvider) {
-		setQuickAssistProcessor(new org.emftext.language.presentation.resource.sce.ui.SceQuickAssistProcessor(resourceProvider, annotationModelProvider));
+	public SceQuickAssistAssistant(org.emftext.language.Presentation.resource.sce.ISceResourceProvider resourceProvider, org.emftext.language.Presentation.resource.sce.ui.ISceAnnotationModelProvider annotationModelProvider) {
+		setQuickAssistProcessor(new org.emftext.language.Presentation.resource.sce.ui.SceQuickAssistProcessor(resourceProvider, annotationModelProvider));
 		setInformationControlCreator(new org.eclipse.jface.text.AbstractReusableInformationControlCreator() {
 			public org.eclipse.jface.text.IInformationControl doCreateInformationControl(org.eclipse.swt.widgets.Shell parent) {
 				return new org.eclipse.jface.text.DefaultInformationControl(parent, (org.eclipse.jface.text.DefaultInformationControl.IInformationPresenter) null);

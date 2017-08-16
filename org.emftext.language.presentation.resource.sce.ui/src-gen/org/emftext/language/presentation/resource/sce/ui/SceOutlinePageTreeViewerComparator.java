@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
 import java.util.Comparator;
 
@@ -81,7 +81,7 @@ public class SceOutlinePageTreeViewerComparator extends org.eclipse.jface.viewer
 		if (sortLexically && o1 instanceof org.eclipse.emf.ecore.EObject && o2 instanceof org.eclipse.emf.ecore.EObject) {
 			org.eclipse.emf.ecore.EObject e1 = (org.eclipse.emf.ecore.EObject) o1;
 			org.eclipse.emf.ecore.EObject e2 = (org.eclipse.emf.ecore.EObject) o2;
-			org.emftext.language.presentation.resource.sce.ISceNameProvider nameProvider = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation().createNameProvider();
+			org.emftext.language.Presentation.resource.sce.ISceNameProvider nameProvider = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation().createNameProvider();
 			java.util.List<String> names1 = nameProvider.getNames(e1);
 			java.util.List<String> names2 = nameProvider.getNames(e2);
 			if (names1 != null && !names1.isEmpty() && names2 != null && !names2.isEmpty()) {

@@ -1,6 +1,6 @@
 /**
  */
-package org.emftext.language.presentation;
+package org.emftext.language.Presentation;
 
 
 /**
@@ -12,10 +12,10 @@ package org.emftext.language.presentation;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.emftext.language.presentation.BooleanLiteral#isValue <em>Value</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.BooleanLiteral#isValue <em>Value</em>}</li>
  * </ul>
  *
- * @see org.emftext.language.presentation.PresentationPackage#getBooleanLiteral()
+ * @see org.emftext.language.Presentation.PresentationPackage#getBooleanLiteral()
  * @model
  * @generated
  */
@@ -30,14 +30,14 @@ public interface BooleanLiteral extends GeneralLiteral {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(boolean)
-	 * @see org.emftext.language.presentation.PresentationPackage#getBooleanLiteral_Value()
+	 * @see org.emftext.language.Presentation.PresentationPackage#getBooleanLiteral_Value()
 	 * @model required="true"
 	 * @generated
 	 */
 	boolean isValue();
 
 	/**
-	 * Sets the value of the '{@link org.emftext.language.presentation.BooleanLiteral#isValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link org.emftext.language.Presentation.BooleanLiteral#isValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Value</em>' attribute.

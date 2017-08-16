@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
 /**
  * The preference page for the bracket setting with following features:
@@ -19,7 +19,7 @@ public class SceBracketPreferencePage extends org.eclipse.jface.preference.Prefe
 	private static final String[] ALL_LEFT_BRACKETS = new String[] { "{", "(", "[", "<", "\"", "'", };
 	private static final String[] ALL_RIGHT_BRACKETS = new String[] { "}", ")", "]", ">", "\"", "'", };
 	
-	private String BRACKETS_COLOR = org.emftext.language.presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_COLOR;
+	private String BRACKETS_COLOR = org.emftext.language.Presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_COLOR;
 	
 	private java.util.Set<String> languageIDs = new java.util.LinkedHashSet<String>();
 	
@@ -35,9 +35,9 @@ public class SceBracketPreferencePage extends org.eclipse.jface.preference.Prefe
 	private org.eclipse.swt.widgets.Button addBracketButton;
 	private org.eclipse.swt.widgets.Button removeBracketButton;
 	private java.util.Map<String, String> bracketSetTemp = new java.util.LinkedHashMap<String, String>();
-	private String language = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation().getSyntaxName();
+	private String language = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation().getSyntaxName();
 	
-	private org.emftext.language.presentation.resource.sce.ui.SceBracketSet bracketsTmp;
+	private org.emftext.language.Presentation.resource.sce.ui.SceBracketSet bracketsTmp;
 	
 	/**
 	 * Creates a preference page for bracket setting.
@@ -45,7 +45,7 @@ public class SceBracketPreferencePage extends org.eclipse.jface.preference.Prefe
 	public SceBracketPreferencePage() {
 		super();
 		
-		org.emftext.language.presentation.resource.sce.ISceMetaInformation metaInformation = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation();
+		org.emftext.language.Presentation.resource.sce.ISceMetaInformation metaInformation = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation();
 		String languageId = metaInformation.getSyntaxName();
 		languageIDs.add(languageId);
 	}
@@ -55,12 +55,12 @@ public class SceBracketPreferencePage extends org.eclipse.jface.preference.Prefe
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */
 	public void init(org.eclipse.ui.IWorkbench workbench) {
-		setPreferenceStore(org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.getDefault().getPreferenceStore());
+		setPreferenceStore(org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.getDefault().getPreferenceStore());
 		setDescription("Define the coloring of matching brackets.");
 		
-		bracketsTmp = new org.emftext.language.presentation.resource.sce.ui.SceBracketSet(null, null);
+		bracketsTmp = new org.emftext.language.Presentation.resource.sce.ui.SceBracketSet(null, null);
 		for (String languageID : languageIDs) {
-			bracketSetTemp.put(languageID, getPreferenceStore().getString(languageID + org.emftext.language.presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_BRACKETS_SUFFIX));
+			bracketSetTemp.put(languageID, getPreferenceStore().getString(languageID + org.emftext.language.Presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_BRACKETS_SUFFIX));
 		}
 	}
 	
@@ -162,16 +162,16 @@ public class SceBracketPreferencePage extends org.eclipse.jface.preference.Prefe
 	 */
 	private void handleMatchingBracketsSelection() {
 		// not for the case of none existing language
-		enableCheckbox.setSelection(getPreferenceStore().getBoolean(		org.emftext.language.presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_CHECKBOX));
+		enableCheckbox.setSelection(getPreferenceStore().getBoolean(		org.emftext.language.Presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_CHECKBOX));
 		enableClosingInside.setSelection(false);
-		matchingBracketsColorButton.setEnabled(getPreferenceStore().getBoolean(		org.emftext.language.presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_CHECKBOX));
+		matchingBracketsColorButton.setEnabled(getPreferenceStore().getBoolean(		org.emftext.language.Presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_CHECKBOX));
 		org.eclipse.swt.graphics.RGB rgb = org.eclipse.jface.preference.PreferenceConverter.getColor(getPreferenceStore(),
 		BRACKETS_COLOR);
 		matchingBracketsColorEditor.setColorValue(rgb);
 		removeBracketButton.setEnabled(false);
 		
 		initializeLanguage();
-		bracketsTmp.setBrackets(getPreferenceStore().getString(language + org.emftext.language.presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_BRACKETS_SUFFIX));
+		bracketsTmp.setBrackets(getPreferenceStore().getString(language + org.emftext.language.Presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_BRACKETS_SUFFIX));
 		String[] brackets = bracketsTmp.getBracketArray();
 		if (brackets != null) {
 			bracketsList.setItems(brackets);
@@ -235,7 +235,7 @@ public class SceBracketPreferencePage extends org.eclipse.jface.preference.Prefe
 				boolean isClosingInside = true;
 				int[] itemIndices = bracketsList.getSelectionIndices();
 				for (int index : itemIndices) {
-					org.emftext.language.presentation.resource.sce.ISceBracketPair bracketPair = bracketsTmp.getBracketPair(index);
+					org.emftext.language.Presentation.resource.sce.ISceBracketPair bracketPair = bracketsTmp.getBracketPair(index);
 					if (bracketPair != null					&& !bracketPair.isClosingEnabledInside()) {
 						isClosingInside = false;
 						break;
@@ -255,7 +255,7 @@ public class SceBracketPreferencePage extends org.eclipse.jface.preference.Prefe
 				boolean isClosingInside = enableClosingInside.getSelection();
 				int[] itemIndices = bracketsList.getSelectionIndices();
 				for (int idx : itemIndices) {
-					org.emftext.language.presentation.resource.sce.ISceBracketPair bracketPair = bracketsTmp.getBracketPair(idx);
+					org.emftext.language.Presentation.resource.sce.ISceBracketPair bracketPair = bracketsTmp.getBracketPair(idx);
 					if (bracketPair != null)					bracketsTmp.setClosingEnabledInside(bracketPair, isClosingInside);
 				}
 				bracketSetTemp.put(language, bracketsTmp.getBracketString());
@@ -270,10 +270,10 @@ public class SceBracketPreferencePage extends org.eclipse.jface.preference.Prefe
 	 * Sets the default values for this preference page.
 	 */
 	protected void performDefaults() {
-		enableCheckbox.setSelection(getPreferenceStore().getDefaultBoolean(org.emftext.language.presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_CHECKBOX));
+		enableCheckbox.setSelection(getPreferenceStore().getDefaultBoolean(org.emftext.language.Presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_CHECKBOX));
 		matchingBracketsColorButton.setEnabled(enableCheckbox.getSelection());
 		matchingBracketsColorEditor.setColorValue(org.eclipse.jface.preference.PreferenceConverter.getDefaultColor(getPreferenceStore(), BRACKETS_COLOR));
-		bracketSetTemp.put(language, getPreferenceStore().getDefaultString(language + org.emftext.language.presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_BRACKETS_SUFFIX));
+		bracketSetTemp.put(language, getPreferenceStore().getDefaultString(language + org.emftext.language.Presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_BRACKETS_SUFFIX));
 		bracketsTmp.setBrackets(bracketSetTemp.get(language));
 		bracketsList.setItems(bracketsTmp.getBracketArray());
 		enableClosingInside.setSelection(false);
@@ -297,12 +297,12 @@ public class SceBracketPreferencePage extends org.eclipse.jface.preference.Prefe
 	private void updateActiveEditor() {
 		// set the values after ok or apply
 		org.eclipse.jface.preference.PreferenceConverter.setValue(getPreferenceStore(), BRACKETS_COLOR, matchingBracketsColorEditor.getColorValue());
-		getPreferenceStore().setValue(org.emftext.language.presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_CHECKBOX, enableCheckbox.getSelection());
-		getPreferenceStore().setValue(language + org.emftext.language.presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_BRACKETS_SUFFIX, bracketSetTemp.get(language));
+		getPreferenceStore().setValue(org.emftext.language.Presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_CHECKBOX, enableCheckbox.getSelection());
+		getPreferenceStore().setValue(language + org.emftext.language.Presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_BRACKETS_SUFFIX, bracketSetTemp.get(language));
 		org.eclipse.ui.IWorkbench workbench = org.eclipse.ui.PlatformUI.getWorkbench();
 		org.eclipse.ui.IEditorPart editor = workbench.getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-		if (editor != null && editor instanceof org.emftext.language.presentation.resource.sce.ui.SceEditor) {
-			((org.emftext.language.presentation.resource.sce.ui.SceEditor) editor).invalidateTextRepresentation();
+		if (editor != null && editor instanceof org.emftext.language.Presentation.resource.sce.ui.SceEditor) {
+			((org.emftext.language.Presentation.resource.sce.ui.SceEditor) editor).invalidateTextRepresentation();
 		}
 	}
 	

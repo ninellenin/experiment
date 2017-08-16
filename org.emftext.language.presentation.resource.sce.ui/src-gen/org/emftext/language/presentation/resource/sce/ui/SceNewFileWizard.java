@@ -4,12 +4,12 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.ui;
+package org.emftext.language.Presentation.resource.sce.ui;
 
 public class SceNewFileWizard extends org.eclipse.jface.wizard.Wizard implements org.eclipse.ui.INewWizard {
 	
 	private String categoryId = null;
-	private org.emftext.language.presentation.resource.sce.ui.SceNewFileWizardPage page;
+	private org.emftext.language.Presentation.resource.sce.ui.SceNewFileWizardPage page;
 	private org.eclipse.jface.viewers.ISelection selection;
 	private String newName = null;
 	
@@ -30,7 +30,7 @@ public class SceNewFileWizard extends org.eclipse.jface.wizard.Wizard implements
 	 * Adds the pages to the wizard.
 	 */
 	public void addPages() {
-		page = new org.emftext.language.presentation.resource.sce.ui.SceNewFileWizardPage(selection, getFileExtension());
+		page = new org.emftext.language.Presentation.resource.sce.ui.SceNewFileWizardPage(selection, getFileExtension());
 		addPage(page);
 	}
 	
@@ -50,7 +50,7 @@ public class SceNewFileWizard extends org.eclipse.jface.wizard.Wizard implements
 		try {
 			file = getFile(fileName, containerName);
 		} catch (org.eclipse.core.runtime.CoreException e1) {
-			org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.logError("Exception while initializing new file", e1);
+			org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.logError("Exception while initializing new file", e1);
 			return false;
 		}
 		
@@ -83,7 +83,7 @@ public class SceNewFileWizard extends org.eclipse.jface.wizard.Wizard implements
 		} catch (java.lang.reflect.InvocationTargetException e) {
 			Throwable realException = e.getTargetException();
 			org.eclipse.jface.dialogs.MessageDialog.openError(getShell(), "Error", realException.getMessage());
-			org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.logError("Exception while initializing new file", e);
+			org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.logError("Exception while initializing new file", e);
 			return false;
 		}
 		return true;
@@ -136,7 +136,7 @@ public class SceNewFileWizard extends org.eclipse.jface.wizard.Wizard implements
 	 * We will initialize file contents with a sample text.
 	 */
 	private java.io.InputStream openContentStream() {
-		return new java.io.ByteArrayInputStream(new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation().getNewFileContentProvider().getNewFileContent(newName).getBytes());
+		return new java.io.ByteArrayInputStream(new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation().getNewFileContentProvider().getNewFileContent(newName).getBytes());
 	}
 	
 	private void throwCoreException(String message) throws org.eclipse.core.runtime.CoreException {
@@ -156,11 +156,11 @@ public class SceNewFileWizard extends org.eclipse.jface.wizard.Wizard implements
 	}
 	
 	public String getFileExtension() {
-		return new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation().getSyntaxName();
+		return new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation().getSyntaxName();
 	}
 	
-	public org.emftext.language.presentation.resource.sce.ISceMetaInformation getMetaInformation() {
-		return new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation();
+	public org.emftext.language.Presentation.resource.sce.ISceMetaInformation getMetaInformation() {
+		return new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation();
 	}
 	
 }

@@ -1,6 +1,6 @@
 /**
  */
-package org.emftext.language.presentation;
+package org.emftext.language.Presentation;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -13,10 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.emftext.language.presentation.NamedElement#getName <em>Name</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.NamedElement#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see org.emftext.language.presentation.PresentationPackage#getNamedElement()
+ * @see org.emftext.language.Presentation.PresentationPackage#getNamedElement()
  * @model abstract="true"
  * @generated
  */
@@ -31,14 +31,14 @@ public interface NamedElement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see org.emftext.language.presentation.PresentationPackage#getNamedElement_Name()
+	 * @see org.emftext.language.Presentation.PresentationPackage#getNamedElement_Name()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link org.emftext.language.presentation.NamedElement#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link org.emftext.language.Presentation.NamedElement#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.

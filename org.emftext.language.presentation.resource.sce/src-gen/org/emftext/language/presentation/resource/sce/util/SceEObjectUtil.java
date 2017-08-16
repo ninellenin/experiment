@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.presentation.resource.sce.util;
+package org.emftext.language.Presentation.resource.sce.util;
 
 /**
  * A utility class that can be used to work with EObjects. While many similar
@@ -50,15 +50,15 @@ public class SceEObjectUtil {
 				return result;
 			}
 		} catch (SecurityException e) {
-			new org.emftext.language.presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while matching proxy URI.", e);
+			new org.emftext.language.Presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while matching proxy URI.", e);
 		} catch (NoSuchMethodException e) {
-			new org.emftext.language.presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while matching proxy URI.", e);
+			new org.emftext.language.Presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while matching proxy URI.", e);
 		} catch (IllegalArgumentException e) {
-			new org.emftext.language.presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while matching proxy URI.", e);
+			new org.emftext.language.Presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while matching proxy URI.", e);
 		} catch (IllegalAccessException e) {
-			new org.emftext.language.presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while matching proxy URI.", e);
+			new org.emftext.language.Presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while matching proxy URI.", e);
 		} catch (java.lang.reflect.InvocationTargetException e) {
-			new org.emftext.language.presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while matching proxy URI.", e);
+			new org.emftext.language.Presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while matching proxy URI.", e);
 		}
 		return null;
 	}
