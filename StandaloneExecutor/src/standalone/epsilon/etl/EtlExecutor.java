@@ -29,8 +29,9 @@ public class EtlExecutor  extends EpsilonStandalone {
 	@Override
 	public List<IModel> getModels() throws Exception {
 		List<IModel> models = new ArrayList<IModel>();
-		models.add(createEmfModel(source.getName(), source.getModel(), source.getMetamodel(), true, false));
-		models.add(createEmfModel(target.getName(), target.getModel(), target.getMetamodel(), false, true));
+		models.add(createInputEmfModel(source));
+		models.add(createOutputEmfModel(target));
+		
 		return models;
 	}
 

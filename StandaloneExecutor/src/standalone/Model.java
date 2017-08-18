@@ -1,24 +1,31 @@
 package standalone;
 
+import org.eclipse.emf.ecore.EPackage;
+
 public class Model {
 	protected String name;
 	protected String model;
-	protected String metamodel;
+	protected String metamodelUri;
 	
-	public Model(String name, String model, String metamodel) {
+	public Model(String name, String model, EPackage ePackage) {
 		setName(name);
 		setModel(model);
-		setMetamodel(metamodel);
+		EPackage.Registry.INSTANCE.put(ePackage.getNsURI(), ePackage);
+		setMetamodelUri(ePackage.getNsURI());
+	}
+	
+	public String toAbsolutePath(String relativePath) {
+		return getClass().getResource(relativePath).getPath();
 	}
 	
 	protected void setName(String name) {
 		this.name = name;
 	}
 	protected void setModel(String model) {
-		this.model = model;
+		this.model = toAbsolutePath(model);
 	}
-	protected void setMetamodel(String metamodel) {
-		this.metamodel = metamodel;
+	protected void setMetamodelUri(String metamodel) {
+		this.metamodelUri = metamodel;
 	}
 	
 	public String getName() {
@@ -27,7 +34,7 @@ public class Model {
 	public String getModel() {
 		return model;
 	}
-	public String getMetamodel() {
-		return metamodel;
+	public String getMetamodelUri() {
+		return metamodelUri;
 	}
 }

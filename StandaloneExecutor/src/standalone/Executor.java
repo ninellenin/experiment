@@ -3,15 +3,13 @@ package standalone;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.net.URL;
 import java.util.Properties;
 
 import org.emftext.language.Presentation.PresentationPackage;
 import org.emftext.language.Presentation.resource.sce.mopp.SceResourceFactory;
 
+import PyExperiment.PyExperimentPackage;
 import standalone.emftext.DomainSpecificLanguage;
 import standalone.emftext.EmfTextExecutor;
 import standalone.epsilon.etl.EtlExecutor;
@@ -86,9 +84,9 @@ public class Executor {
 	
 	public void executePIM2PSMTransformation() {
 		String[] model  = getProperties(PIM);
-		platformIndependentModel = new Model(model[0], model[1], model[2]);
+		platformIndependentModel = new Model(model[0], model[1], PyExperimentPackage.eINSTANCE);
 		model = getProperties(PSM);
-		platformSpecificModel = new Model(model[0], model[1], model[2]);
+		platformSpecificModel = new Model(model[0], model[1], PresentationPackage.eINSTANCE);
 		String transformation = getProperty(TRANSFORMATION);
 
 		try {
