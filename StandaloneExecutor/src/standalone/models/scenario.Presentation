@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Presentation:Scenario xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Presentation="http://www.emftext.org/language/Presentation">
+  <header>
+    <definition>
+      <parameter xsi:type="Presentation:ScenarioNameParameter"/>
+      <value xsi:type="Presentation:NameLiteral" value="&quot;scenario10&quot;"/>
+    </definition>
+    <definition>
+      <parameter xsi:type="Presentation:ActiveButtonsParameter"/>
+      <value xsi:type="Presentation:NumberLiteral" value="11"/>
+      <value xsi:type="Presentation:NumberLiteral" value="12"/>
+      <value xsi:type="Presentation:NumberLiteral" value="44"/>
+    </definition>
+  </header>
+  <sdl/>
+  <pcl/>
+</Presentation:Scenario>

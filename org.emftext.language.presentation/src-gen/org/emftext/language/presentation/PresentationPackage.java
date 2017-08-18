@@ -46,7 +46,7 @@ public interface PresentationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "Presentation";
+	String eNS_PREFIX = "presentation";
 
 	/**
 	 * The singleton instance of the package.
