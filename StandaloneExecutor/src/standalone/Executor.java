@@ -47,6 +47,7 @@ public class Executor {
 		Executor executor = new Executor(DEFAULT_CONFIGURATION);
 		
 		executor.executePIM2PSMTransformation();
+		executor.executeTextGeneration();
 	}
 
 	public void loadConfiguration(String configurationFile) {
@@ -99,8 +100,12 @@ public class Executor {
 
 	public void executeTextGeneration() {
 		DomainSpecificLanguage presentationDsl = new DomainSpecificLanguage("sce", new SceResourceFactory(), PresentationPackage.eINSTANCE);
+		String text = configuration.getProperty(TEXT);
+		System.out.println(text);
+		text = Model.class.getResource(text).getPath();
+		System.out.println(text);
 		try {
-			new EmfTextExecutor().generateText(platformSpecificModel, configuration.getProperty(TEXT), presentationDsl);
+			new EmfTextExecutor().generateText(platformSpecificModel, text, presentationDsl);
 		} catch (IOException e) {
 			printErrorMessage(GENERATION_TEXT_FAILED);
 			e.printStackTrace();

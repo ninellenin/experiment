@@ -31,10 +31,17 @@ public class EmfTextExecutor {
 			
 		 EPackage.Registry.INSTANCE.put(dsl.getEPackage().getNsURI(), dsl.getEPackage());
 		 Resource xmiResource = resourceSet.getResource(URI.createFileURI(source.getModel()), true);
-		 Resource dslResource = resourceSet.createResource(URI.createFileURI(getClass().getResource(target).getPath()));
+		 // TO DO: Create file if it not exist.
+		 try {
+			 Resource dslResource = resourceSet.createResource(URI.createFileURI(target));
+			 
+			 dslResource.getContents().addAll(xmiResource.getContents());
+			 dslResource.save(null);
+		 } catch (NullPointerException exception) {
+			 System.err.println(String.format("DSL file \"%s\" not found.", target));
+		 }
 		 
-		 dslResource.getContents().addAll(xmiResource.getContents());
-		 dslResource.save(null);
+		 
 	}
 	
 	protected void registerResourceFactory(String name, Object factory) {
