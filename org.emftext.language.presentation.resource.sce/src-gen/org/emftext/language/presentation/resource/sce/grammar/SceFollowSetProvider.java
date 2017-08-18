@@ -31,8 +31,8 @@ public class SceFollowSetProvider {
 		TERMINALS[7] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedStructuralFeature(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_5_0_0_0);
 		TERMINALS[8] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedStructuralFeature(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_6_0_0_0);
 		TERMINALS[9] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedStructuralFeature(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_7_0_0_0);
-		TERMINALS[10] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_4_0_0_0);
-		TERMINALS[11] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_5);
+		TERMINALS[10] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_5_0_0_0);
+		TERMINALS[11] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_6);
 	}
 	
 	public static void initializeTerminals() {

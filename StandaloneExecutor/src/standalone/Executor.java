@@ -101,9 +101,7 @@ public class Executor {
 	public void executeTextGeneration() {
 		DomainSpecificLanguage presentationDsl = new DomainSpecificLanguage("sce", new SceResourceFactory(), PresentationPackage.eINSTANCE);
 		String text = configuration.getProperty(TEXT);
-		System.out.println(text);
 		text = Model.class.getResource(text).getPath();
-		System.out.println(text);
 		try {
 			new EmfTextExecutor().generateText(platformSpecificModel, text, presentationDsl);
 		} catch (IOException e) {

@@ -335,6 +335,7 @@ public class ScePrinter implements org.emftext.language.Presentation.resource.sc
 		out.print(" ");
 		// DEFINITION PART BEGINS (CsString)
 		out.print("=");
+		// DEFINITION PART BEGINS (WhiteSpaces)
 		out.print(" ");
 		// DEFINITION PART BEGINS (Containment)
 		count = printCountingMap.get("value");

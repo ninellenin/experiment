@@ -1181,7 +1181,7 @@ public class SceParser extends SceANTLRParserBase {
             					completedElement(value, true);
             				}
             				collectHiddenTokens(element);
-            				retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_3, a2_0, true);
+            				retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_4, a2_0, true);
             				copyLocalizationInfos(a2_0, element);
             			}
             		}
@@ -1221,7 +1221,7 @@ public class SceParser extends SceANTLRParserBase {
             	    					startIncompleteElement(element);
             	    				}
             	    				collectHiddenTokens(element);
-            	    				retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_4_0_0_0, null, true);
+            	    				retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_5_0_0_0, null, true);
             	    				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a3, element);
             	    			}
 
@@ -1256,7 +1256,7 @@ public class SceParser extends SceANTLRParserBase {
             	    							completedElement(value, true);
             	    						}
             	    						collectHiddenTokens(element);
-            	    						retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_4_0_0_2, a4_0, true);
+            	    						retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_5_0_0_2, a4_0, true);
             	    						copyLocalizationInfos(a4_0, element);
             	    					}
             	    				}
@@ -1296,7 +1296,7 @@ public class SceParser extends SceANTLRParserBase {
             			startIncompleteElement(element);
             		}
             		collectHiddenTokens(element);
-            		retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_5, null, true);
+            		retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_6, null, true);
             		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a5, element);
             	}
 
