@@ -3,19 +3,14 @@
 package org.emftext.language.Presentation.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.emftext.language.Presentation.Definition;
 import org.emftext.language.Presentation.Header;
+import org.emftext.language.Presentation.HeaderParameter;
 import org.emftext.language.Presentation.PresentationPackage;
 
 /**
@@ -26,22 +21,21 @@ import org.emftext.language.Presentation.PresentationPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.emftext.language.Presentation.impl.HeaderImpl#getDefinition <em>Definition</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.impl.HeaderImpl#getParameter <em>Parameter</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class HeaderImpl extends ScenarioFileImpl implements Header {
 	/**
-	 * The cached value of the '{@link #getDefinition() <em>Definition</em>}' containment reference list.
+	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDefinition()
+	 * @see #getParameter()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Definition> definition;
-
+	protected EList<HeaderParameter> parameter;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,11 +60,11 @@ public class HeaderImpl extends ScenarioFileImpl implements Header {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Definition> getDefinition() {
-		if (definition == null) {
-			definition = new EObjectContainmentEList<Definition>(Definition.class, this, PresentationPackage.HEADER__DEFINITION);
+	public EList<HeaderParameter> getParameter() {
+		if (parameter == null) {
+			parameter = new EObjectContainmentEList<HeaderParameter>(HeaderParameter.class, this, PresentationPackage.HEADER__PARAMETER);
 		}
-		return definition;
+		return parameter;
 	}
 
 	/**
@@ -81,8 +75,8 @@ public class HeaderImpl extends ScenarioFileImpl implements Header {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PresentationPackage.HEADER__DEFINITION:
-				return ((InternalEList<?>)getDefinition()).basicRemove(otherEnd, msgs);
+			case PresentationPackage.HEADER__PARAMETER:
+				return ((InternalEList<?>)getParameter()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -95,8 +89,8 @@ public class HeaderImpl extends ScenarioFileImpl implements Header {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PresentationPackage.HEADER__DEFINITION:
-				return getDefinition();
+			case PresentationPackage.HEADER__PARAMETER:
+				return getParameter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,9 +104,9 @@ public class HeaderImpl extends ScenarioFileImpl implements Header {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PresentationPackage.HEADER__DEFINITION:
-				getDefinition().clear();
-				getDefinition().addAll((Collection<? extends Definition>)newValue);
+			case PresentationPackage.HEADER__PARAMETER:
+				getParameter().clear();
+				getParameter().addAll((Collection<? extends HeaderParameter>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,8 +120,8 @@ public class HeaderImpl extends ScenarioFileImpl implements Header {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PresentationPackage.HEADER__DEFINITION:
-				getDefinition().clear();
+			case PresentationPackage.HEADER__PARAMETER:
+				getParameter().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -141,8 +135,8 @@ public class HeaderImpl extends ScenarioFileImpl implements Header {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PresentationPackage.HEADER__DEFINITION:
-				return definition != null && !definition.isEmpty();
+			case PresentationPackage.HEADER__PARAMETER:
+				return parameter != null && !parameter.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

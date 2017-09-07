@@ -14,12 +14,12 @@ public class SceSyntaxCoverageInformationProvider {
 			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(),
 			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getSDL(),
 			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getPCL(),
-			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getDefinition(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenarioNameParameter(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getActiveButtonsParameter(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getButtonCodesParameter(),
 			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getNumberLiteral(),
 			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getNameLiteral(),
 			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getBooleanLiteral(),
-			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenarioNameParameter(),
-			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getActiveButtonsParameter(),
 		};
 	}
 	

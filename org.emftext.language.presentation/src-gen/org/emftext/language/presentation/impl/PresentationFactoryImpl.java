@@ -59,13 +59,23 @@ public class PresentationFactoryImpl extends EFactoryImpl implements Presentatio
 			case PresentationPackage.HEADER: return createHeader();
 			case PresentationPackage.SDL: return createSDL();
 			case PresentationPackage.PCL: return createPCL();
-			case PresentationPackage.DEFINITION: return createDefinition();
-			case PresentationPackage.SCENARIO_NAME_PARAMETER: return createScenarioNameParameter();
 			case PresentationPackage.SCENARIO: return createScenario();
-			case PresentationPackage.ACTIVE_BUTTONS_PARAMETER: return createActiveButtonsParameter();
 			case PresentationPackage.NUMBER_LITERAL: return createNumberLiteral();
 			case PresentationPackage.BOOLEAN_LITERAL: return createBooleanLiteral();
 			case PresentationPackage.NAME_LITERAL: return createNameLiteral();
+			case PresentationPackage.TRIAL: return createTrial();
+			case PresentationPackage.STIMULUS_LIST: return createStimulusList();
+			case PresentationPackage.BITMAP: return createBitmap();
+			case PresentationPackage.TEXT: return createText();
+			case PresentationPackage.PICTURE: return createPicture();
+			case PresentationPackage.BOX: return createBox();
+			case PresentationPackage.TEXT_LITERAL: return createTextLiteral();
+			case PresentationPackage.ACTIVE_BUTTONS_PARAMETER: return createActiveButtonsParameter();
+			case PresentationPackage.BUTTON_CODES_PARAMETER: return createButtonCodesParameter();
+			case PresentationPackage.SCENARIO_NAME_PARAMETER: return createScenarioNameParameter();
+			case PresentationPackage.TIME_PARAMETER: return createTimeParameter();
+			case PresentationPackage.TARGET_BUTTON_PARAMETER: return createTargetButtonParameter();
+			case PresentationPackage.CODE_PARAMETER: return createCodeParameter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -106,9 +116,9 @@ public class PresentationFactoryImpl extends EFactoryImpl implements Presentatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Definition createDefinition() {
-		DefinitionImpl definition = new DefinitionImpl();
-		return definition;
+	public ScenarioNameParameter createScenarioNameParameter() {
+		ScenarioNameParameterImpl scenarioNameParameter = new ScenarioNameParameterImpl();
+		return scenarioNameParameter;
 	}
 
 	/**
@@ -116,9 +126,29 @@ public class PresentationFactoryImpl extends EFactoryImpl implements Presentatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ScenarioNameParameter createScenarioNameParameter() {
-		ScenarioNameParameterImpl scenarioNameParameter = new ScenarioNameParameterImpl();
-		return scenarioNameParameter;
+	public TimeParameter createTimeParameter() {
+		TimeParameterImpl timeParameter = new TimeParameterImpl();
+		return timeParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TargetButtonParameter createTargetButtonParameter() {
+		TargetButtonParameterImpl targetButtonParameter = new TargetButtonParameterImpl();
+		return targetButtonParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CodeParameter createCodeParameter() {
+		CodeParameterImpl codeParameter = new CodeParameterImpl();
+		return codeParameter;
 	}
 
 	/**
@@ -139,6 +169,16 @@ public class PresentationFactoryImpl extends EFactoryImpl implements Presentatio
 	public ActiveButtonsParameter createActiveButtonsParameter() {
 		ActiveButtonsParameterImpl activeButtonsParameter = new ActiveButtonsParameterImpl();
 		return activeButtonsParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ButtonCodesParameter createButtonCodesParameter() {
+		ButtonCodesParameterImpl buttonCodesParameter = new ButtonCodesParameterImpl();
+		return buttonCodesParameter;
 	}
 
 	/**
@@ -169,6 +209,76 @@ public class PresentationFactoryImpl extends EFactoryImpl implements Presentatio
 	public NameLiteral createNameLiteral() {
 		NameLiteralImpl nameLiteral = new NameLiteralImpl();
 		return nameLiteral;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Trial createTrial() {
+		TrialImpl trial = new TrialImpl();
+		return trial;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StimulusList createStimulusList() {
+		StimulusListImpl stimulusList = new StimulusListImpl();
+		return stimulusList;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Bitmap createBitmap() {
+		BitmapImpl bitmap = new BitmapImpl();
+		return bitmap;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Text createText() {
+		TextImpl text = new TextImpl();
+		return text;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Picture createPicture() {
+		PictureImpl picture = new PictureImpl();
+		return picture;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Box createBox() {
+		BoxImpl box = new BoxImpl();
+		return box;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TextLiteral createTextLiteral() {
+		TextLiteralImpl textLiteral = new TextLiteralImpl();
+		return textLiteral;
 	}
 
 	/**

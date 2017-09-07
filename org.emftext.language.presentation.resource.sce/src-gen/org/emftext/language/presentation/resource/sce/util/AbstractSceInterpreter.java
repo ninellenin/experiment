@@ -82,42 +82,6 @@ public class AbstractSceInterpreter<ResultType, ContextType> {
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof org.emftext.language.Presentation.ScenarioNameParameter) {
-			result = interprete_org_emftext_language_Presentation_ScenarioNameParameter((org.emftext.language.Presentation.ScenarioNameParameter) object, context);
-		}
-		if (result != null) {
-			return result;
-		}
-		if (object instanceof org.emftext.language.Presentation.ActiveButtonsParameter) {
-			result = interprete_org_emftext_language_Presentation_ActiveButtonsParameter((org.emftext.language.Presentation.ActiveButtonsParameter) object, context);
-		}
-		if (result != null) {
-			return result;
-		}
-		if (object instanceof org.emftext.language.Presentation.Parameter) {
-			result = interprete_org_emftext_language_Presentation_Parameter((org.emftext.language.Presentation.Parameter) object, context);
-		}
-		if (result != null) {
-			return result;
-		}
-		if (object instanceof org.emftext.language.Presentation.Definition) {
-			result = interprete_org_emftext_language_Presentation_Definition((org.emftext.language.Presentation.Definition) object, context);
-		}
-		if (result != null) {
-			return result;
-		}
-		if (object instanceof org.emftext.language.Presentation.Statement) {
-			result = interprete_org_emftext_language_Presentation_Statement((org.emftext.language.Presentation.Statement) object, context);
-		}
-		if (result != null) {
-			return result;
-		}
-		if (object instanceof org.emftext.language.Presentation.HeaderParameter) {
-			result = interprete_org_emftext_language_Presentation_HeaderParameter((org.emftext.language.Presentation.HeaderParameter) object, context);
-		}
-		if (result != null) {
-			return result;
-		}
 		if (object instanceof org.emftext.language.Presentation.Scenario) {
 			result = interprete_org_emftext_language_Presentation_Scenario((org.emftext.language.Presentation.Scenario) object, context);
 		}
@@ -166,6 +130,132 @@ public class AbstractSceInterpreter<ResultType, ContextType> {
 		if (result != null) {
 			return result;
 		}
+		if (object instanceof org.emftext.language.Presentation.Trial) {
+			result = interprete_org_emftext_language_Presentation_Trial((org.emftext.language.Presentation.Trial) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.StimulusEvent) {
+			result = interprete_org_emftext_language_Presentation_StimulusEvent((org.emftext.language.Presentation.StimulusEvent) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.StimulusList) {
+			result = interprete_org_emftext_language_Presentation_StimulusList((org.emftext.language.Presentation.StimulusList) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.ListNode) {
+			result = interprete_org_emftext_language_Presentation_ListNode((org.emftext.language.Presentation.ListNode) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.ScenarioObject) {
+			result = interprete_org_emftext_language_Presentation_ScenarioObject((org.emftext.language.Presentation.ScenarioObject) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.Bitmap) {
+			result = interprete_org_emftext_language_Presentation_Bitmap((org.emftext.language.Presentation.Bitmap) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.Text) {
+			result = interprete_org_emftext_language_Presentation_Text((org.emftext.language.Presentation.Text) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.Picture) {
+			result = interprete_org_emftext_language_Presentation_Picture((org.emftext.language.Presentation.Picture) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.Box) {
+			result = interprete_org_emftext_language_Presentation_Box((org.emftext.language.Presentation.Box) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.Stimulus2D) {
+			result = interprete_org_emftext_language_Presentation_Stimulus2D((org.emftext.language.Presentation.Stimulus2D) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.PicturePart) {
+			result = interprete_org_emftext_language_Presentation_PicturePart((org.emftext.language.Presentation.PicturePart) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.TextLiteral) {
+			result = interprete_org_emftext_language_Presentation_TextLiteral((org.emftext.language.Presentation.TextLiteral) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.HeaderParameter) {
+			result = interprete_org_emftext_language_Presentation_HeaderParameter((org.emftext.language.Presentation.HeaderParameter) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.SDLParameter) {
+			result = interprete_org_emftext_language_Presentation_SDLParameter((org.emftext.language.Presentation.SDLParameter) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.ActiveButtonsParameter) {
+			result = interprete_org_emftext_language_Presentation_ActiveButtonsParameter((org.emftext.language.Presentation.ActiveButtonsParameter) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.ButtonCodesParameter) {
+			result = interprete_org_emftext_language_Presentation_ButtonCodesParameter((org.emftext.language.Presentation.ButtonCodesParameter) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.ScenarioNameParameter) {
+			result = interprete_org_emftext_language_Presentation_ScenarioNameParameter((org.emftext.language.Presentation.ScenarioNameParameter) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.TimeParameter) {
+			result = interprete_org_emftext_language_Presentation_TimeParameter((org.emftext.language.Presentation.TimeParameter) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.TargetButtonParameter) {
+			result = interprete_org_emftext_language_Presentation_TargetButtonParameter((org.emftext.language.Presentation.TargetButtonParameter) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.CodeParameter) {
+			result = interprete_org_emftext_language_Presentation_CodeParameter((org.emftext.language.Presentation.CodeParameter) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.Parameter) {
+			result = interprete_org_emftext_language_Presentation_Parameter((org.emftext.language.Presentation.Parameter) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
 		return result;
 	}
 	
@@ -185,35 +275,11 @@ public class AbstractSceInterpreter<ResultType, ContextType> {
 		return null;
 	}
 	
-	public ResultType interprete_org_emftext_language_Presentation_Parameter(org.emftext.language.Presentation.Parameter parameter, ContextType context) {
-		return null;
-	}
-	
-	public ResultType interprete_org_emftext_language_Presentation_Statement(org.emftext.language.Presentation.Statement statement, ContextType context) {
-		return null;
-	}
-	
-	public ResultType interprete_org_emftext_language_Presentation_Definition(org.emftext.language.Presentation.Definition definition, ContextType context) {
-		return null;
-	}
-	
-	public ResultType interprete_org_emftext_language_Presentation_HeaderParameter(org.emftext.language.Presentation.HeaderParameter headerParameter, ContextType context) {
-		return null;
-	}
-	
-	public ResultType interprete_org_emftext_language_Presentation_ScenarioNameParameter(org.emftext.language.Presentation.ScenarioNameParameter scenarioNameParameter, ContextType context) {
-		return null;
-	}
-	
 	public ResultType interprete_org_emftext_language_Presentation_NamedElement(org.emftext.language.Presentation.NamedElement namedElement, ContextType context) {
 		return null;
 	}
 	
 	public ResultType interprete_org_emftext_language_Presentation_Scenario(org.emftext.language.Presentation.Scenario scenario, ContextType context) {
-		return null;
-	}
-	
-	public ResultType interprete_org_emftext_language_Presentation_ActiveButtonsParameter(org.emftext.language.Presentation.ActiveButtonsParameter activeButtonsParameter, ContextType context) {
 		return null;
 	}
 	
@@ -238,6 +304,90 @@ public class AbstractSceInterpreter<ResultType, ContextType> {
 	}
 	
 	public ResultType interprete_org_emftext_language_Presentation_NameLiteral(org.emftext.language.Presentation.NameLiteral nameLiteral, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_Trial(org.emftext.language.Presentation.Trial trial, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_StimulusEvent(org.emftext.language.Presentation.StimulusEvent stimulusEvent, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_ListNode(org.emftext.language.Presentation.ListNode listNode, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_StimulusList(org.emftext.language.Presentation.StimulusList stimulusList, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_ScenarioObject(org.emftext.language.Presentation.ScenarioObject scenarioObject, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_Bitmap(org.emftext.language.Presentation.Bitmap bitmap, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_Text(org.emftext.language.Presentation.Text text, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_Picture(org.emftext.language.Presentation.Picture picture, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_PicturePart(org.emftext.language.Presentation.PicturePart picturePart, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_Stimulus2D(org.emftext.language.Presentation.Stimulus2D stimulus2D, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_Box(org.emftext.language.Presentation.Box box, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_TextLiteral(org.emftext.language.Presentation.TextLiteral textLiteral, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_Parameter(org.emftext.language.Presentation.Parameter parameter, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_HeaderParameter(org.emftext.language.Presentation.HeaderParameter headerParameter, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_SDLParameter(org.emftext.language.Presentation.SDLParameter sDLParameter, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_ActiveButtonsParameter(org.emftext.language.Presentation.ActiveButtonsParameter activeButtonsParameter, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_ButtonCodesParameter(org.emftext.language.Presentation.ButtonCodesParameter buttonCodesParameter, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_ScenarioNameParameter(org.emftext.language.Presentation.ScenarioNameParameter scenarioNameParameter, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_TimeParameter(org.emftext.language.Presentation.TimeParameter timeParameter, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_TargetButtonParameter(org.emftext.language.Presentation.TargetButtonParameter targetButtonParameter, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_CodeParameter(org.emftext.language.Presentation.CodeParameter codeParameter, ContextType context) {
 		return null;
 	}
 	

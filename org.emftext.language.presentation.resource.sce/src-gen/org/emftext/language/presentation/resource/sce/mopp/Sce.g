@@ -246,8 +246,14 @@ options {
 			if (type.getInstanceClass() == org.emftext.language.Presentation.PCL.class) {
 				return parse_org_emftext_language_Presentation_PCL();
 			}
-			if (type.getInstanceClass() == org.emftext.language.Presentation.Definition.class) {
-				return parse_org_emftext_language_Presentation_Definition();
+			if (type.getInstanceClass() == org.emftext.language.Presentation.ScenarioNameParameter.class) {
+				return parse_org_emftext_language_Presentation_ScenarioNameParameter();
+			}
+			if (type.getInstanceClass() == org.emftext.language.Presentation.ActiveButtonsParameter.class) {
+				return parse_org_emftext_language_Presentation_ActiveButtonsParameter();
+			}
+			if (type.getInstanceClass() == org.emftext.language.Presentation.ButtonCodesParameter.class) {
+				return parse_org_emftext_language_Presentation_ButtonCodesParameter();
 			}
 			if (type.getInstanceClass() == org.emftext.language.Presentation.NumberLiteral.class) {
 				return parse_org_emftext_language_Presentation_NumberLiteral();
@@ -257,12 +263,6 @@ options {
 			}
 			if (type.getInstanceClass() == org.emftext.language.Presentation.BooleanLiteral.class) {
 				return parse_org_emftext_language_Presentation_BooleanLiteral();
-			}
-			if (type.getInstanceClass() == org.emftext.language.Presentation.ScenarioNameParameter.class) {
-				return parse_org_emftext_language_Presentation_ScenarioNameParameter();
-			}
-			if (type.getInstanceClass() == org.emftext.language.Presentation.ActiveButtonsParameter.class) {
-				return parse_org_emftext_language_Presentation_ActiveButtonsParameter();
 			}
 		}
 		throw new org.emftext.language.Presentation.resource.sce.mopp.SceUnexpectedContentTypeException(typeObject);
@@ -358,7 +358,7 @@ options {
 				break;
 			}
 		}
-		int followSetID = 22;
+		int followSetID = 28;
 		int i;
 		for (i = tokenIndexOfLastCompleteElement; i < tokenStream.size(); i++) {
 			org.antlr.runtime3_4_0.CommonToken nextToken = (org.antlr.runtime3_4_0.CommonToken) tokenStream.get(i);
@@ -531,6 +531,7 @@ start returns [ org.eclipse.emf.ecore.EObject element = null]
 		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[1]);
 		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[2]);
 		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[3]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[4]);
 		expectedElementsIndexOfLastCompleteElement = 0;
 	}
 	(
@@ -569,8 +570,8 @@ parse_org_emftext_language_Presentation_Scenario returns [org.emftext.language.P
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[4]);
 		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[5]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[6]);
 	}
 	
 	(
@@ -598,8 +599,8 @@ parse_org_emftext_language_Presentation_Scenario returns [org.emftext.language.P
 		
 	)*	{
 		// expected elements (follow set)
-		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[6]);
 		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[7]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[8]);
 	}
 	
 	(
@@ -627,7 +628,7 @@ parse_org_emftext_language_Presentation_Scenario returns [org.emftext.language.P
 		
 	)*	{
 		// expected elements (follow set)
-		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[8]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[9]);
 	}
 	
 ;
@@ -639,7 +640,7 @@ parse_org_emftext_language_Presentation_Header returns [org.emftext.language.Pre
 	(
 		(
 			(
-				a0_0 = parse_org_emftext_language_Presentation_Definition				{
+				a0_0 = parse_org_emftext_language_Presentation_HeaderParameter				{
 					if (terminateParsing) {
 						throw new org.emftext.language.Presentation.resource.sce.mopp.SceTerminateParsingException();
 					}
@@ -650,7 +651,7 @@ parse_org_emftext_language_Presentation_Header returns [org.emftext.language.Pre
 					if (a0_0 != null) {
 						if (a0_0 != null) {
 							Object value = a0_0;
-							addObjectToList(element, org.emftext.language.Presentation.PresentationPackage.HEADER__DEFINITION, value);
+							addObjectToList(element, org.emftext.language.Presentation.PresentationPackage.HEADER__PARAMETER, value);
 							completedElement(value, true);
 						}
 						collectHiddenTokens(element);
@@ -661,20 +662,22 @@ parse_org_emftext_language_Presentation_Header returns [org.emftext.language.Pre
 			)
 			{
 				// expected elements (follow set)
-				addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[9]);
 				addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[10]);
-				addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[11]);
-				addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[12]);
+				addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[11]);
+				addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[12]);
+				addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[13]);
+				addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[14]);
 			}
 			
 		)
 		
 	)*	{
 		// expected elements (follow set)
-		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[13]);
-		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[14]);
-		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[15]);
-		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[16]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[15]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[16]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[17]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[18]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[19]);
 	}
 	
 ;
@@ -694,7 +697,7 @@ parse_org_emftext_language_Presentation_SDL returns [org.emftext.language.Presen
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[17]);
+		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[20]);
 	}
 	
 	a1 = ';' {
@@ -708,8 +711,8 @@ parse_org_emftext_language_Presentation_SDL returns [org.emftext.language.Presen
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[18]);
-		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[19]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[21]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[22]);
 	}
 	
 ;
@@ -729,7 +732,7 @@ parse_org_emftext_language_Presentation_PCL returns [org.emftext.language.Presen
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[20]);
+		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[23]);
 	}
 	
 	a1 = ';' {
@@ -743,44 +746,32 @@ parse_org_emftext_language_Presentation_PCL returns [org.emftext.language.Presen
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[21]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[24]);
 	}
 	
 ;
 
-parse_org_emftext_language_Presentation_Definition returns [org.emftext.language.Presentation.Definition element = null]
+parse_org_emftext_language_Presentation_ScenarioNameParameter returns [org.emftext.language.Presentation.ScenarioNameParameter element = null]
 @init{
 }
 :
-	(
-		a0_0 = parse_org_emftext_language_Presentation_Parameter		{
-			if (terminateParsing) {
-				throw new org.emftext.language.Presentation.resource.sce.mopp.SceTerminateParsingException();
-			}
-			if (element == null) {
-				element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createDefinition();
-				startIncompleteElement(element);
-			}
-			if (a0_0 != null) {
-				if (a0_0 != null) {
-					Object value = a0_0;
-					element.eSet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.DEFINITION__PARAMETER), value);
-					completedElement(value, true);
-				}
-				collectHiddenTokens(element);
-				retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_0, a0_0, true);
-				copyLocalizationInfos(a0_0, element);
-			}
+	a0 = 'scenario' {
+		if (element == null) {
+			element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createScenarioNameParameter();
+			startIncompleteElement(element);
 		}
-	)
+		collectHiddenTokens(element);
+		retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_0, null, true);
+		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a0, element);
+	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[22]);
+		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[25]);
 	}
 	
 	a1 = '=' {
 		if (element == null) {
-			element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createDefinition();
+			element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createScenarioNameParameter();
 			startIncompleteElement(element);
 		}
 		collectHiddenTokens(element);
@@ -789,24 +780,22 @@ parse_org_emftext_language_Presentation_Definition returns [org.emftext.language
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[23]);
-		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[24]);
-		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[25]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenarioNameParameter(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[26]);
 	}
 	
 	(
-		a2_0 = parse_org_emftext_language_Presentation_Literal		{
+		a2_0 = parse_org_emftext_language_Presentation_NameLiteral		{
 			if (terminateParsing) {
 				throw new org.emftext.language.Presentation.resource.sce.mopp.SceTerminateParsingException();
 			}
 			if (element == null) {
-				element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createDefinition();
+				element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createScenarioNameParameter();
 				startIncompleteElement(element);
 			}
 			if (a2_0 != null) {
 				if (a2_0 != null) {
 					Object value = a2_0;
-					addObjectToList(element, org.emftext.language.Presentation.PresentationPackage.DEFINITION__VALUE, value);
+					element.eSet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.SCENARIO_NAME_PARAMETER__SCENARIO_NAME), value);
 					completedElement(value, true);
 				}
 				collectHiddenTokens(element);
@@ -817,78 +806,228 @@ parse_org_emftext_language_Presentation_Definition returns [org.emftext.language
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[26]);
 		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[27]);
 	}
 	
-	(
-		(
-			a3 = ',' {
-				if (element == null) {
-					element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createDefinition();
-					startIncompleteElement(element);
-				}
-				collectHiddenTokens(element);
-				retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_5_0_0_0, null, true);
-				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a3, element);
-			}
-			{
-				// expected elements (follow set)
-				addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[28]);
-				addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[29]);
-				addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getDefinition(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[30]);
-			}
-			
-			(
-				a4_0 = parse_org_emftext_language_Presentation_Literal				{
-					if (terminateParsing) {
-						throw new org.emftext.language.Presentation.resource.sce.mopp.SceTerminateParsingException();
-					}
-					if (element == null) {
-						element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createDefinition();
-						startIncompleteElement(element);
-					}
-					if (a4_0 != null) {
-						if (a4_0 != null) {
-							Object value = a4_0;
-							addObjectToList(element, org.emftext.language.Presentation.PresentationPackage.DEFINITION__VALUE, value);
-							completedElement(value, true);
-						}
-						collectHiddenTokens(element);
-						retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_5_0_0_2, a4_0, true);
-						copyLocalizationInfos(a4_0, element);
-					}
-				}
-			)
-			{
-				// expected elements (follow set)
-				addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[31]);
-				addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[32]);
-			}
-			
-		)
-		
-	)*	{
+	a3 = ';' {
+		if (element == null) {
+			element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createScenarioNameParameter();
+			startIncompleteElement(element);
+		}
+		collectHiddenTokens(element);
+		retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_5, null, true);
+		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a3, element);
+	}
+	{
+		// expected elements (follow set)
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[28]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[29]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[30]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[31]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[32]);
+	}
+	
+;
+
+parse_org_emftext_language_Presentation_ActiveButtonsParameter returns [org.emftext.language.Presentation.ActiveButtonsParameter element = null]
+@init{
+}
+:
+	a0 = 'active_buttons' {
+		if (element == null) {
+			element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createActiveButtonsParameter();
+			startIncompleteElement(element);
+		}
+		collectHiddenTokens(element);
+		retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_5_0_0_0, null, true);
+		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a0, element);
+	}
+	{
 		// expected elements (follow set)
 		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[33]);
-		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[34]);
+	}
+	
+	a1 = '=' {
+		if (element == null) {
+			element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createActiveButtonsParameter();
+			startIncompleteElement(element);
+		}
+		collectHiddenTokens(element);
+		retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_5_0_0_2, null, true);
+		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a1, element);
+	}
+	{
+		// expected elements (follow set)
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getActiveButtonsParameter(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[34]);
+	}
+	
+	(
+		a2_0 = parse_org_emftext_language_Presentation_NumberLiteral		{
+			if (terminateParsing) {
+				throw new org.emftext.language.Presentation.resource.sce.mopp.SceTerminateParsingException();
+			}
+			if (element == null) {
+				element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createActiveButtonsParameter();
+				startIncompleteElement(element);
+			}
+			if (a2_0 != null) {
+				if (a2_0 != null) {
+					Object value = a2_0;
+					element.eSet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.ACTIVE_BUTTONS_PARAMETER__ACTIVE_BUTTONS), value);
+					completedElement(value, true);
+				}
+				collectHiddenTokens(element);
+				retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_5_0_0_4, a2_0, true);
+				copyLocalizationInfos(a2_0, element);
+			}
+		}
+	)
+	{
+		// expected elements (follow set)
+		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[35]);
+	}
+	
+	a3 = ';' {
+		if (element == null) {
+			element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createActiveButtonsParameter();
+			startIncompleteElement(element);
+		}
+		collectHiddenTokens(element);
+		retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_5_0_0_5, null, true);
+		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a3, element);
+	}
+	{
+		// expected elements (follow set)
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[36]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[37]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[38]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[39]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[40]);
+	}
+	
+;
+
+parse_org_emftext_language_Presentation_ButtonCodesParameter returns [org.emftext.language.Presentation.ButtonCodesParameter element = null]
+@init{
+}
+:
+	a0 = 'button_codes' {
+		if (element == null) {
+			element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createButtonCodesParameter();
+			startIncompleteElement(element);
+		}
+		collectHiddenTokens(element);
+		retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_6_0_0_0, null, true);
+		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a0, element);
+	}
+	{
+		// expected elements (follow set)
+		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[41]);
+	}
+	
+	a1 = '=' {
+		if (element == null) {
+			element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createButtonCodesParameter();
+			startIncompleteElement(element);
+		}
+		collectHiddenTokens(element);
+		retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_6_0_0_2, null, true);
+		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a1, element);
+	}
+	{
+		// expected elements (follow set)
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getButtonCodesParameter(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[42]);
+	}
+	
+	(
+		a2_0 = parse_org_emftext_language_Presentation_NumberLiteral		{
+			if (terminateParsing) {
+				throw new org.emftext.language.Presentation.resource.sce.mopp.SceTerminateParsingException();
+			}
+			if (element == null) {
+				element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createButtonCodesParameter();
+				startIncompleteElement(element);
+			}
+			if (a2_0 != null) {
+				if (a2_0 != null) {
+					Object value = a2_0;
+					addObjectToList(element, org.emftext.language.Presentation.PresentationPackage.BUTTON_CODES_PARAMETER__BUTTON_CODES, value);
+					completedElement(value, true);
+				}
+				collectHiddenTokens(element);
+				retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_6_0_0_4, a2_0, true);
+				copyLocalizationInfos(a2_0, element);
+			}
+		}
+	)
+	{
+		// expected elements (follow set)
+		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[43]);
+	}
+	
+	(
+		a3 = ',' {
+			if (element == null) {
+				element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createButtonCodesParameter();
+				startIncompleteElement(element);
+			}
+			collectHiddenTokens(element);
+			retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_6_0_0_5_0_0_0, null, true);
+			copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a3, element);
+		}
+		{
+			// expected elements (follow set)
+			addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getButtonCodesParameter(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[44]);
+		}
+		
+		(
+			a4_0 = parse_org_emftext_language_Presentation_NumberLiteral			{
+				if (terminateParsing) {
+					throw new org.emftext.language.Presentation.resource.sce.mopp.SceTerminateParsingException();
+				}
+				if (element == null) {
+					element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createButtonCodesParameter();
+					startIncompleteElement(element);
+				}
+				if (a4_0 != null) {
+					if (a4_0 != null) {
+						Object value = a4_0;
+						addObjectToList(element, org.emftext.language.Presentation.PresentationPackage.BUTTON_CODES_PARAMETER__BUTTON_CODES, value);
+						completedElement(value, true);
+					}
+					collectHiddenTokens(element);
+					retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_6_0_0_5_0_0_2, a4_0, true);
+					copyLocalizationInfos(a4_0, element);
+				}
+			}
+		)
+		{
+			// expected elements (follow set)
+			addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[45]);
+		}
+		
+	)
+	{
+		// expected elements (follow set)
+		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[46]);
 	}
 	
 	a5 = ';' {
 		if (element == null) {
-			element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createDefinition();
+			element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createButtonCodesParameter();
 			startIncompleteElement(element);
 		}
 		collectHiddenTokens(element);
-		retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4_0_0_6, null, true);
+		retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_6_0_0_6, null, true);
 		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a5, element);
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[35]);
-		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[36]);
-		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[37]);
-		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[38]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[47]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[48]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getHeader(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[49]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[50]);
+		addExpectedElement(org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getScenario(), org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[51]);
 	}
 	
 ;
@@ -923,15 +1062,15 @@ parse_org_emftext_language_Presentation_NumberLiteral returns [org.emftext.langu
 					completedElement(value, false);
 				}
 				collectHiddenTokens(element);
-				retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_5_0_0_0, resolved, true);
+				retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_7_0_0_0, resolved, true);
 				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a0, element);
 			}
 		}
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[39]);
-		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[40]);
+		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[52]);
+		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[53]);
 	}
 	
 ;
@@ -966,15 +1105,14 @@ parse_org_emftext_language_Presentation_NameLiteral returns [org.emftext.languag
 					completedElement(value, false);
 				}
 				collectHiddenTokens(element);
-				retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_6_0_0_0, resolved, true);
+				retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_8_0_0_0, resolved, true);
 				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a0, element);
 			}
 		}
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[41]);
-		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[42]);
+		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[54]);
 	}
 	
 ;
@@ -1009,71 +1147,22 @@ parse_org_emftext_language_Presentation_BooleanLiteral returns [org.emftext.lang
 					completedElement(value, false);
 				}
 				collectHiddenTokens(element);
-				retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_7_0_0_0, resolved, true);
+				retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_9_0_0_0, resolved, true);
 				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a0, element);
 			}
 		}
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[43]);
-		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[44]);
 	}
 	
 ;
 
-parse_org_emftext_language_Presentation_ScenarioNameParameter returns [org.emftext.language.Presentation.ScenarioNameParameter element = null]
-@init{
-}
-:
-	a0 = 'scenario' {
-		if (element == null) {
-			element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createScenarioNameParameter();
-			startIncompleteElement(element);
-		}
-		collectHiddenTokens(element);
-		retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_8_0_0_0, null, true);
-		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a0, element);
-	}
-	{
-		// expected elements (follow set)
-		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[45]);
-	}
-	
-;
-
-parse_org_emftext_language_Presentation_ActiveButtonsParameter returns [org.emftext.language.Presentation.ActiveButtonsParameter element = null]
-@init{
-}
-:
-	a0 = 'active_buttons' {
-		if (element == null) {
-			element = org.emftext.language.Presentation.PresentationFactory.eINSTANCE.createActiveButtonsParameter();
-			startIncompleteElement(element);
-		}
-		collectHiddenTokens(element);
-		retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_9_0_0_0, null, true);
-		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a0, element);
-	}
-	{
-		// expected elements (follow set)
-		addExpectedElement(null, org.emftext.language.Presentation.resource.sce.mopp.SceExpectationConstants.EXPECTATIONS[46]);
-	}
-	
-;
-
-parse_org_emftext_language_Presentation_Parameter returns [org.emftext.language.Presentation.Parameter element = null]
+parse_org_emftext_language_Presentation_HeaderParameter returns [org.emftext.language.Presentation.HeaderParameter element = null]
 :
 	c0 = parse_org_emftext_language_Presentation_ScenarioNameParameter{ element = c0; /* this is a subclass or primitive expression choice */ }
 	|	c1 = parse_org_emftext_language_Presentation_ActiveButtonsParameter{ element = c1; /* this is a subclass or primitive expression choice */ }
-	
-;
-
-parse_org_emftext_language_Presentation_Literal returns [org.emftext.language.Presentation.Literal element = null]
-:
-	c0 = parse_org_emftext_language_Presentation_NumberLiteral{ element = c0; /* this is a subclass or primitive expression choice */ }
-	|	c1 = parse_org_emftext_language_Presentation_NameLiteral{ element = c1; /* this is a subclass or primitive expression choice */ }
-	|	c2 = parse_org_emftext_language_Presentation_BooleanLiteral{ element = c2; /* this is a subclass or primitive expression choice */ }
+	|	c2 = parse_org_emftext_language_Presentation_ButtonCodesParameter{ element = c2; /* this is a subclass or primitive expression choice */ }
 	
 ;
 
@@ -1086,7 +1175,7 @@ WHITESPACE:
 	{ _channel = 99; }
 ;
 SIGNED_INTEGER:
-	(('+'|'-')?(('0'..'9'))+)
+	((('+'|'-')?(('0'..'9'))+))
 ;
 BOOLEAN:
 	(('true' | 'false'))

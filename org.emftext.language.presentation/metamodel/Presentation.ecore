@@ -4,21 +4,14 @@
     nsPrefix="presentation">
   <eClassifiers xsi:type="ecore:EClass" name="ScenarioFile" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Header" eSuperTypes="#//ScenarioFile">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="definition" upperBound="-1"
-        eType="#//Definition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+        eType="#//HeaderParameter" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SDL" eSuperTypes="#//ScenarioFile"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SDL" eSuperTypes="#//ScenarioFile">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trial" upperBound="-1"
+        eType="#//Trial" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PCL" eSuperTypes="#//ScenarioFile"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Parameter" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Statement" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Definition" eSuperTypes="#//Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
-        eType="#//Parameter" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" upperBound="-1"
-        eType="#//Literal" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="HeaderParameter" abstract="true" eSuperTypes="#//Parameter"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ScenarioNameParameter" eSuperTypes="#//HeaderParameter"/>
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -30,7 +23,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="pcl" upperBound="-1" eType="#//PCL"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActiveButtonsParameter" eSuperTypes="#//HeaderParameter"/>
   <eClassifiers xsi:type="ecore:EClass" name="Literal" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumericLiteral" abstract="true" eSuperTypes="#//Literal"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumberLiteral" eSuperTypes="#//NumericLiteral">
@@ -40,7 +32,68 @@
   <eClassifiers xsi:type="ecore:EClass" name="BooleanLiteral" eSuperTypes="#//GeneralLiteral">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NameLiteral" eSuperTypes="#//GeneralLiteral">
+  <eClassifiers xsi:type="ecore:EClass" name="NameLiteral" eSuperTypes="#//TextLiteral"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Trial" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stimuluslist" lowerBound="1"
+        eType="#//StimulusList" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StimulusEvent" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="time" lowerBound="1" eType="#//TimeParameter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target_button" eType="#//TargetButtonParameter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="code" eType="#//CodeParameter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListNode" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//ListNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StimulusList" eSuperTypes="#//ListNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stimulus" lowerBound="1"
+        eType="#//StimulusEvent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScenarioObject" abstract="true" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Bitmap" eSuperTypes="#//Stimulus2D"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//Stimulus2D"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Picture" eSuperTypes="#//ScenarioObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="picturepart" upperBound="-1"
+        eType="#//PicturePart" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PicturePart" abstract="true" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Stimulus2D" abstract="true" eSuperTypes="#//PicturePart">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x_coordinate" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y_coordinate" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Box" eSuperTypes="#//Stimulus2D"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TextLiteral" eSuperTypes="#//GeneralLiteral">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HeaderParameter" abstract="true" eSuperTypes="#//Parameter"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SDLParameter" abstract="true" eSuperTypes="#//Parameter"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ActiveButtonsParameter" eSuperTypes="#//HeaderParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="active_buttons" lowerBound="1"
+        eType="#//NumberLiteral" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ButtonCodesParameter" eSuperTypes="#//HeaderParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="button_codes" lowerBound="1"
+        upperBound="-1" eType="#//NumberLiteral" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScenarioNameParameter" eSuperTypes="#//HeaderParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario_name" lowerBound="1"
+        eType="#//NameLiteral" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeParameter" eSuperTypes="#//SDLParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="time" lowerBound="1" eType="#//NumberLiteral"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TargetButtonParameter" eSuperTypes="#//SDLParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target_button" lowerBound="1"
+        eType="#//NumberLiteral" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CodeParameter" eSuperTypes="#//SDLParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="code" lowerBound="1" eType="#//TextLiteral"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

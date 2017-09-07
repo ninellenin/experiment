@@ -68,8 +68,16 @@ public class ScePrinter implements org.emftext.language.Presentation.resource.sc
 			print_org_emftext_language_Presentation_PCL((org.emftext.language.Presentation.PCL) element, globaltab, out);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.Definition) {
-			print_org_emftext_language_Presentation_Definition((org.emftext.language.Presentation.Definition) element, globaltab, out);
+		if (element instanceof org.emftext.language.Presentation.ScenarioNameParameter) {
+			print_org_emftext_language_Presentation_ScenarioNameParameter((org.emftext.language.Presentation.ScenarioNameParameter) element, globaltab, out);
+			return;
+		}
+		if (element instanceof org.emftext.language.Presentation.ActiveButtonsParameter) {
+			print_org_emftext_language_Presentation_ActiveButtonsParameter((org.emftext.language.Presentation.ActiveButtonsParameter) element, globaltab, out);
+			return;
+		}
+		if (element instanceof org.emftext.language.Presentation.ButtonCodesParameter) {
+			print_org_emftext_language_Presentation_ButtonCodesParameter((org.emftext.language.Presentation.ButtonCodesParameter) element, globaltab, out);
 			return;
 		}
 		if (element instanceof org.emftext.language.Presentation.NumberLiteral) {
@@ -82,14 +90,6 @@ public class ScePrinter implements org.emftext.language.Presentation.resource.sc
 		}
 		if (element instanceof org.emftext.language.Presentation.BooleanLiteral) {
 			print_org_emftext_language_Presentation_BooleanLiteral((org.emftext.language.Presentation.BooleanLiteral) element, globaltab, out);
-			return;
-		}
-		if (element instanceof org.emftext.language.Presentation.ScenarioNameParameter) {
-			print_org_emftext_language_Presentation_ScenarioNameParameter((org.emftext.language.Presentation.ScenarioNameParameter) element, globaltab, out);
-			return;
-		}
-		if (element instanceof org.emftext.language.Presentation.ActiveButtonsParameter) {
-			print_org_emftext_language_Presentation_ActiveButtonsParameter((org.emftext.language.Presentation.ActiveButtonsParameter) element, globaltab, out);
 			return;
 		}
 		
@@ -212,8 +212,8 @@ public class ScePrinter implements org.emftext.language.Presentation.resource.sc
 		// 0 (if the feature is null).
 		java.util.Map<String, Integer> printCountingMap = new java.util.LinkedHashMap<String, Integer>(1);
 		Object temp;
-		temp = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.HEADER__DEFINITION));
-		printCountingMap.put("definition", temp == null ? 0 : ((java.util.Collection<?>) temp).size());
+		temp = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.HEADER__PARAMETER));
+		printCountingMap.put("parameter", temp == null ? 0 : ((java.util.Collection<?>) temp).size());
 		// print collected hidden tokens
 		boolean iterate = true;
 		java.io.StringWriter sWriter = null;
@@ -239,15 +239,18 @@ public class ScePrinter implements org.emftext.language.Presentation.resource.sc
 		// DEFINITION PART BEGINS (LineBreak)
 		out.println();
 		out.print(localtab);
+		// DEFINITION PART BEGINS (LineBreak)
+		out.println();
+		out.print(localtab);
 	}
 	
 	public void print_org_emftext_language_Presentation_Header_0(org.emftext.language.Presentation.Header element, String outertab, java.io.PrintWriter out, java.util.Map<String, Integer> printCountingMap) {
 		String localtab = outertab;
 		int count;
 		// DEFINITION PART BEGINS (Containment)
-		count = printCountingMap.get("definition");
+		count = printCountingMap.get("parameter");
 		if (count > 0) {
-			Object o = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.HEADER__DEFINITION));
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.HEADER__PARAMETER));
 			java.util.List<?> list = (java.util.List<?>) o;
 			int index = list.size() - count;
 			if (index >= 0) {
@@ -258,7 +261,7 @@ public class ScePrinter implements org.emftext.language.Presentation.resource.sc
 			if (o != null) {
 				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
 			}
-			printCountingMap.put("definition", count - 1);
+			printCountingMap.put("parameter", count - 1);
 		}
 	}
 	
@@ -270,6 +273,10 @@ public class ScePrinter implements org.emftext.language.Presentation.resource.sc
 		// the number of elements stored in each structural feature. For lists this is the
 		// list size. For non-multiple features it is either 1 (if the feature is set) or
 		// 0 (if the feature is null).
+		java.util.Map<String, Integer> printCountingMap = new java.util.LinkedHashMap<String, Integer>(1);
+		Object temp;
+		temp = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.SDL__TRIAL));
+		printCountingMap.put("trial", temp == null ? 0 : ((java.util.Collection<?>) temp).size());
 		// print collected hidden tokens
 		// DEFINITION PART BEGINS (CsString)
 		out.print("begin");
@@ -303,34 +310,21 @@ public class ScePrinter implements org.emftext.language.Presentation.resource.sc
 	}
 	
 	
-	public void print_org_emftext_language_Presentation_Definition(org.emftext.language.Presentation.Definition element, String outertab, java.io.PrintWriter out) {
+	public void print_org_emftext_language_Presentation_ScenarioNameParameter(org.emftext.language.Presentation.ScenarioNameParameter element, String outertab, java.io.PrintWriter out) {
 		String localtab = outertab;
 		// The printCountingMap contains a mapping from feature names to the number of
 		// remaining elements that still need to be printed. The map is initialized with
 		// the number of elements stored in each structural feature. For lists this is the
 		// list size. For non-multiple features it is either 1 (if the feature is set) or
 		// 0 (if the feature is null).
-		java.util.Map<String, Integer> printCountingMap = new java.util.LinkedHashMap<String, Integer>(2);
+		java.util.Map<String, Integer> printCountingMap = new java.util.LinkedHashMap<String, Integer>(1);
 		Object temp;
-		temp = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.DEFINITION__PARAMETER));
-		printCountingMap.put("parameter", temp == null ? 0 : 1);
-		temp = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.DEFINITION__VALUE));
-		printCountingMap.put("value", temp == null ? 0 : ((java.util.Collection<?>) temp).size());
+		temp = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.SCENARIO_NAME_PARAMETER__SCENARIO_NAME));
+		printCountingMap.put("scenario_name", temp == null ? 0 : 1);
 		// print collected hidden tokens
 		int count;
-		boolean iterate = true;
-		java.io.StringWriter sWriter = null;
-		java.io.PrintWriter out1 = null;
-		java.util.Map<String, Integer> printCountingMap1 = null;
-		// DEFINITION PART BEGINS (Containment)
-		count = printCountingMap.get("parameter");
-		if (count > 0) {
-			Object o = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.DEFINITION__PARAMETER));
-			if (o != null) {
-				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
-			}
-			printCountingMap.put("parameter", count - 1);
-		}
+		// DEFINITION PART BEGINS (CsString)
+		out.print("scenario");
 		// DEFINITION PART BEGINS (WhiteSpaces)
 		out.print(" ");
 		// DEFINITION PART BEGINS (CsString)
@@ -338,37 +332,13 @@ public class ScePrinter implements org.emftext.language.Presentation.resource.sc
 		// DEFINITION PART BEGINS (WhiteSpaces)
 		out.print(" ");
 		// DEFINITION PART BEGINS (Containment)
-		count = printCountingMap.get("value");
+		count = printCountingMap.get("scenario_name");
 		if (count > 0) {
-			Object o = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.DEFINITION__VALUE));
-			java.util.List<?> list = (java.util.List<?>) o;
-			int index = list.size() - count;
-			if (index >= 0) {
-				o = list.get(index);
-			} else {
-				o = null;
-			}
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.SCENARIO_NAME_PARAMETER__SCENARIO_NAME));
 			if (o != null) {
 				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
 			}
-			printCountingMap.put("value", count - 1);
-		}
-		// DEFINITION PART BEGINS (CompoundDefinition)
-		iterate = true;
-		while (iterate) {
-			sWriter = new java.io.StringWriter();
-			out1 = new java.io.PrintWriter(sWriter);
-			printCountingMap1 = new java.util.LinkedHashMap<String, Integer>(printCountingMap);
-			print_org_emftext_language_Presentation_Definition_0(element, localtab, out1, printCountingMap1);
-			if (printCountingMap.equals(printCountingMap1)) {
-				iterate = false;
-				out1.close();
-			} else {
-				out1.flush();
-				out1.close();
-				out.print(sWriter.toString());
-				printCountingMap.putAll(printCountingMap1);
-			}
+			printCountingMap.put("scenario_name", count - 1);
 		}
 		// DEFINITION PART BEGINS (CsString)
 		out.print(";");
@@ -378,17 +348,71 @@ public class ScePrinter implements org.emftext.language.Presentation.resource.sc
 		out.print(localtab);
 	}
 	
-	public void print_org_emftext_language_Presentation_Definition_0(org.emftext.language.Presentation.Definition element, String outertab, java.io.PrintWriter out, java.util.Map<String, Integer> printCountingMap) {
+	
+	public void print_org_emftext_language_Presentation_ActiveButtonsParameter(org.emftext.language.Presentation.ActiveButtonsParameter element, String outertab, java.io.PrintWriter out) {
 		String localtab = outertab;
+		// The printCountingMap contains a mapping from feature names to the number of
+		// remaining elements that still need to be printed. The map is initialized with
+		// the number of elements stored in each structural feature. For lists this is the
+		// list size. For non-multiple features it is either 1 (if the feature is set) or
+		// 0 (if the feature is null).
+		java.util.Map<String, Integer> printCountingMap = new java.util.LinkedHashMap<String, Integer>(1);
+		Object temp;
+		temp = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.ACTIVE_BUTTONS_PARAMETER__ACTIVE_BUTTONS));
+		printCountingMap.put("active_buttons", temp == null ? 0 : 1);
+		// print collected hidden tokens
 		int count;
 		// DEFINITION PART BEGINS (CsString)
-		out.print(",");
+		out.print("active_buttons");
+		// DEFINITION PART BEGINS (WhiteSpaces)
+		out.print(" ");
+		// DEFINITION PART BEGINS (CsString)
+		out.print("=");
 		// DEFINITION PART BEGINS (WhiteSpaces)
 		out.print(" ");
 		// DEFINITION PART BEGINS (Containment)
-		count = printCountingMap.get("value");
+		count = printCountingMap.get("active_buttons");
 		if (count > 0) {
-			Object o = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.DEFINITION__VALUE));
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.ACTIVE_BUTTONS_PARAMETER__ACTIVE_BUTTONS));
+			if (o != null) {
+				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+			}
+			printCountingMap.put("active_buttons", count - 1);
+		}
+		// DEFINITION PART BEGINS (CsString)
+		out.print(";");
+		out.print(" ");
+		// DEFINITION PART BEGINS (LineBreak)
+		out.println();
+		out.print(localtab);
+	}
+	
+	
+	public void print_org_emftext_language_Presentation_ButtonCodesParameter(org.emftext.language.Presentation.ButtonCodesParameter element, String outertab, java.io.PrintWriter out) {
+		String localtab = outertab;
+		// The printCountingMap contains a mapping from feature names to the number of
+		// remaining elements that still need to be printed. The map is initialized with
+		// the number of elements stored in each structural feature. For lists this is the
+		// list size. For non-multiple features it is either 1 (if the feature is set) or
+		// 0 (if the feature is null).
+		java.util.Map<String, Integer> printCountingMap = new java.util.LinkedHashMap<String, Integer>(1);
+		Object temp;
+		temp = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.BUTTON_CODES_PARAMETER__BUTTON_CODES));
+		printCountingMap.put("button_codes", temp == null ? 0 : ((java.util.Collection<?>) temp).size());
+		// print collected hidden tokens
+		int count;
+		// DEFINITION PART BEGINS (CsString)
+		out.print("button_codes");
+		// DEFINITION PART BEGINS (WhiteSpaces)
+		out.print(" ");
+		// DEFINITION PART BEGINS (CsString)
+		out.print("=");
+		// DEFINITION PART BEGINS (WhiteSpaces)
+		out.print(" ");
+		// DEFINITION PART BEGINS (Containment)
+		count = printCountingMap.get("button_codes");
+		if (count > 0) {
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.BUTTON_CODES_PARAMETER__BUTTON_CODES));
 			java.util.List<?> list = (java.util.List<?>) o;
 			int index = list.size() - count;
 			if (index >= 0) {
@@ -399,7 +423,40 @@ public class ScePrinter implements org.emftext.language.Presentation.resource.sc
 			if (o != null) {
 				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
 			}
-			printCountingMap.put("value", count - 1);
+			printCountingMap.put("button_codes", count - 1);
+		}
+		// DEFINITION PART BEGINS (CompoundDefinition)
+		print_org_emftext_language_Presentation_ButtonCodesParameter_0(element, localtab, out, printCountingMap);
+		// DEFINITION PART BEGINS (CsString)
+		out.print(";");
+		out.print(" ");
+		// DEFINITION PART BEGINS (LineBreak)
+		out.println();
+		out.print(localtab);
+	}
+	
+	public void print_org_emftext_language_Presentation_ButtonCodesParameter_0(org.emftext.language.Presentation.ButtonCodesParameter element, String outertab, java.io.PrintWriter out, java.util.Map<String, Integer> printCountingMap) {
+		String localtab = outertab;
+		int count;
+		// DEFINITION PART BEGINS (CsString)
+		out.print(",");
+		// DEFINITION PART BEGINS (WhiteSpaces)
+		out.print(" ");
+		// DEFINITION PART BEGINS (Containment)
+		count = printCountingMap.get("button_codes");
+		if (count > 0) {
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.emftext.language.Presentation.PresentationPackage.BUTTON_CODES_PARAMETER__BUTTON_CODES));
+			java.util.List<?> list = (java.util.List<?>) o;
+			int index = list.size() - count;
+			if (index >= 0) {
+				o = list.get(index);
+			} else {
+				o = null;
+			}
+			if (o != null) {
+				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+			}
+			printCountingMap.put("button_codes", count - 1);
 		}
 	}
 	
@@ -482,32 +539,6 @@ public class ScePrinter implements org.emftext.language.Presentation.resource.sc
 			}
 			printCountingMap.put("value", count - 1);
 		}
-	}
-	
-	
-	public void print_org_emftext_language_Presentation_ScenarioNameParameter(org.emftext.language.Presentation.ScenarioNameParameter element, String outertab, java.io.PrintWriter out) {
-		// The printCountingMap contains a mapping from feature names to the number of
-		// remaining elements that still need to be printed. The map is initialized with
-		// the number of elements stored in each structural feature. For lists this is the
-		// list size. For non-multiple features it is either 1 (if the feature is set) or
-		// 0 (if the feature is null).
-		// print collected hidden tokens
-		// DEFINITION PART BEGINS (CsString)
-		out.print("scenario");
-		out.print(" ");
-	}
-	
-	
-	public void print_org_emftext_language_Presentation_ActiveButtonsParameter(org.emftext.language.Presentation.ActiveButtonsParameter element, String outertab, java.io.PrintWriter out) {
-		// The printCountingMap contains a mapping from feature names to the number of
-		// remaining elements that still need to be printed. The map is initialized with
-		// the number of elements stored in each structural feature. For lists this is the
-		// list size. For non-multiple features it is either 1 (if the feature is set) or
-		// 0 (if the feature is null).
-		// print collected hidden tokens
-		// DEFINITION PART BEGINS (CsString)
-		out.print("active_buttons");
-		out.print(" ");
 	}
 	
 	

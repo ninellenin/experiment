@@ -18,6 +18,7 @@ public class SceLexer extends Lexer {
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int T__15=15;
+    public static final int T__16=16;
     public static final int BOOLEAN=4;
     public static final int LINEBREAK=5;
     public static final int QUOTED_NAME=6;
@@ -185,10 +186,10 @@ public class SceLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Sce.g:21:7: ( 'scenario' )
-            // Sce.g:21:9: 'scenario'
+            // Sce.g:21:7: ( 'button_codes' )
+            // Sce.g:21:9: 'button_codes'
             {
-            match("scenario"); 
+            match("button_codes"); 
 
 
 
@@ -203,18 +204,41 @@ public class SceLexer extends Lexer {
     }
     // $ANTLR end "T__15"
 
+    // $ANTLR start "T__16"
+    public final void mT__16() throws RecognitionException {
+        try {
+            int _type = T__16;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // Sce.g:22:7: ( 'scenario' )
+            // Sce.g:22:9: 'scenario'
+            {
+            match("scenario"); 
+
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "T__16"
+
     // $ANTLR start "LINEBREAK"
     public final void mLINEBREAK() throws RecognitionException {
         try {
             int _type = LINEBREAK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Sce.g:1080:10: ( ( ( '\\r\\n' | '\\r' | '\\n' ) ) )
-            // Sce.g:1081:2: ( ( '\\r\\n' | '\\r' | '\\n' ) )
+            // Sce.g:1169:10: ( ( ( '\\r\\n' | '\\r' | '\\n' ) ) )
+            // Sce.g:1170:2: ( ( '\\r\\n' | '\\r' | '\\n' ) )
             {
-            // Sce.g:1081:2: ( ( '\\r\\n' | '\\r' | '\\n' ) )
-            // Sce.g:1081:3: ( '\\r\\n' | '\\r' | '\\n' )
+            // Sce.g:1170:2: ( ( '\\r\\n' | '\\r' | '\\n' ) )
+            // Sce.g:1170:3: ( '\\r\\n' | '\\r' | '\\n' )
             {
-            // Sce.g:1081:3: ( '\\r\\n' | '\\r' | '\\n' )
+            // Sce.g:1170:3: ( '\\r\\n' | '\\r' | '\\n' )
             int alt1=3;
             int LA1_0 = input.LA(1);
 
@@ -240,7 +264,7 @@ public class SceLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // Sce.g:1081:4: '\\r\\n'
+                    // Sce.g:1170:4: '\\r\\n'
                     {
                     match("\r\n"); 
 
@@ -249,14 +273,14 @@ public class SceLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // Sce.g:1081:13: '\\r'
+                    // Sce.g:1170:13: '\\r'
                     {
                     match('\r'); 
 
                     }
                     break;
                 case 3 :
-                    // Sce.g:1081:20: '\\n'
+                    // Sce.g:1170:20: '\\n'
                     {
                     match('\n'); 
 
@@ -287,8 +311,8 @@ public class SceLexer extends Lexer {
         try {
             int _type = WHITESPACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Sce.g:1084:11: ( ( ( '\\u0009' | '\\u000A' | '\\u000B' | '\\u000C' | '\\u000D' | '\\u0020' | '\\u00A0' | '\\u2000' | '\\u2001' | '\\u2002' | '\\u2003' | '\\u2004' | '\\u2005' | '\\u2006' | '\\u2007' | '\\u2008' | '\\u2009' | '\\u200A' | '\\u200B' | '\\u200C' | '\\u200D' | '\\u200E' | '\\u200F' | '\\u2028' | '\\u2029' | '\\u3000' | '\\uFEFF' ) ) )
-            // Sce.g:1085:2: ( ( '\\u0009' | '\\u000A' | '\\u000B' | '\\u000C' | '\\u000D' | '\\u0020' | '\\u00A0' | '\\u2000' | '\\u2001' | '\\u2002' | '\\u2003' | '\\u2004' | '\\u2005' | '\\u2006' | '\\u2007' | '\\u2008' | '\\u2009' | '\\u200A' | '\\u200B' | '\\u200C' | '\\u200D' | '\\u200E' | '\\u200F' | '\\u2028' | '\\u2029' | '\\u3000' | '\\uFEFF' ) )
+            // Sce.g:1173:11: ( ( ( '\\u0009' | '\\u000A' | '\\u000B' | '\\u000C' | '\\u000D' | '\\u0020' | '\\u00A0' | '\\u2000' | '\\u2001' | '\\u2002' | '\\u2003' | '\\u2004' | '\\u2005' | '\\u2006' | '\\u2007' | '\\u2008' | '\\u2009' | '\\u200A' | '\\u200B' | '\\u200C' | '\\u200D' | '\\u200E' | '\\u200F' | '\\u2028' | '\\u2029' | '\\u3000' | '\\uFEFF' ) ) )
+            // Sce.g:1174:2: ( ( '\\u0009' | '\\u000A' | '\\u000B' | '\\u000C' | '\\u000D' | '\\u0020' | '\\u00A0' | '\\u2000' | '\\u2001' | '\\u2002' | '\\u2003' | '\\u2004' | '\\u2005' | '\\u2006' | '\\u2007' | '\\u2008' | '\\u2009' | '\\u200A' | '\\u200B' | '\\u200C' | '\\u200D' | '\\u200E' | '\\u200F' | '\\u2028' | '\\u2029' | '\\u3000' | '\\uFEFF' ) )
             {
             if ( (input.LA(1) >= '\t' && input.LA(1) <= '\r')||input.LA(1)==' '||input.LA(1)=='\u00A0'||(input.LA(1) >= '\u2000' && input.LA(1) <= '\u200F')||(input.LA(1) >= '\u2028' && input.LA(1) <= '\u2029')||input.LA(1)=='\u3000'||input.LA(1)=='\uFEFF' ) {
                 input.consume();
@@ -318,13 +342,16 @@ public class SceLexer extends Lexer {
         try {
             int _type = SIGNED_INTEGER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Sce.g:1088:15: ( ( ( '+' | '-' )? ( ( '0' .. '9' ) )+ ) )
-            // Sce.g:1089:2: ( ( '+' | '-' )? ( ( '0' .. '9' ) )+ )
+            // Sce.g:1177:15: ( ( ( ( '+' | '-' )? ( ( '0' .. '9' ) )+ ) ) )
+            // Sce.g:1178:2: ( ( ( '+' | '-' )? ( ( '0' .. '9' ) )+ ) )
             {
-            // Sce.g:1089:2: ( ( '+' | '-' )? ( ( '0' .. '9' ) )+ )
-            // Sce.g:1089:3: ( '+' | '-' )? ( ( '0' .. '9' ) )+
+            // Sce.g:1178:2: ( ( ( '+' | '-' )? ( ( '0' .. '9' ) )+ ) )
+            // Sce.g:1178:3: ( ( '+' | '-' )? ( ( '0' .. '9' ) )+ )
             {
-            // Sce.g:1089:3: ( '+' | '-' )?
+            // Sce.g:1178:3: ( ( '+' | '-' )? ( ( '0' .. '9' ) )+ )
+            // Sce.g:1178:4: ( '+' | '-' )? ( ( '0' .. '9' ) )+
+            {
+            // Sce.g:1178:4: ( '+' | '-' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -351,7 +378,7 @@ public class SceLexer extends Lexer {
             }
 
 
-            // Sce.g:1089:13: ( ( '0' .. '9' ) )+
+            // Sce.g:1178:14: ( ( '0' .. '9' ) )+
             int cnt3=0;
             loop3:
             do {
@@ -395,6 +422,9 @@ public class SceLexer extends Lexer {
 
             }
 
+
+            }
+
             state.type = _type;
             state.channel = _channel;
         }
@@ -409,13 +439,13 @@ public class SceLexer extends Lexer {
         try {
             int _type = BOOLEAN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Sce.g:1091:8: ( ( ( 'true' | 'false' ) ) )
-            // Sce.g:1092:2: ( ( 'true' | 'false' ) )
+            // Sce.g:1180:8: ( ( ( 'true' | 'false' ) ) )
+            // Sce.g:1181:2: ( ( 'true' | 'false' ) )
             {
-            // Sce.g:1092:2: ( ( 'true' | 'false' ) )
-            // Sce.g:1092:3: ( 'true' | 'false' )
+            // Sce.g:1181:2: ( ( 'true' | 'false' ) )
+            // Sce.g:1181:3: ( 'true' | 'false' )
             {
-            // Sce.g:1092:3: ( 'true' | 'false' )
+            // Sce.g:1181:3: ( 'true' | 'false' )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -434,7 +464,7 @@ public class SceLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // Sce.g:1092:4: 'true'
+                    // Sce.g:1181:4: 'true'
                     {
                     match("true"); 
 
@@ -443,7 +473,7 @@ public class SceLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // Sce.g:1092:13: 'false'
+                    // Sce.g:1181:13: 'false'
                     {
                     match("false"); 
 
@@ -474,11 +504,11 @@ public class SceLexer extends Lexer {
         try {
             int _type = QUOTED_NAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Sce.g:1094:12: ( ( '\"' ( 'A' .. 'Z' | 'a' .. 'z' ) ( ( 'A' .. 'Z' | 'a' .. 'z' ) | ( '0' .. '9' ) | '-' | '_' )* '\"' ) )
-            // Sce.g:1095:2: ( '\"' ( 'A' .. 'Z' | 'a' .. 'z' ) ( ( 'A' .. 'Z' | 'a' .. 'z' ) | ( '0' .. '9' ) | '-' | '_' )* '\"' )
+            // Sce.g:1183:12: ( ( '\"' ( 'A' .. 'Z' | 'a' .. 'z' ) ( ( 'A' .. 'Z' | 'a' .. 'z' ) | ( '0' .. '9' ) | '-' | '_' )* '\"' ) )
+            // Sce.g:1184:2: ( '\"' ( 'A' .. 'Z' | 'a' .. 'z' ) ( ( 'A' .. 'Z' | 'a' .. 'z' ) | ( '0' .. '9' ) | '-' | '_' )* '\"' )
             {
-            // Sce.g:1095:2: ( '\"' ( 'A' .. 'Z' | 'a' .. 'z' ) ( ( 'A' .. 'Z' | 'a' .. 'z' ) | ( '0' .. '9' ) | '-' | '_' )* '\"' )
-            // Sce.g:1095:3: '\"' ( 'A' .. 'Z' | 'a' .. 'z' ) ( ( 'A' .. 'Z' | 'a' .. 'z' ) | ( '0' .. '9' ) | '-' | '_' )* '\"'
+            // Sce.g:1184:2: ( '\"' ( 'A' .. 'Z' | 'a' .. 'z' ) ( ( 'A' .. 'Z' | 'a' .. 'z' ) | ( '0' .. '9' ) | '-' | '_' )* '\"' )
+            // Sce.g:1184:3: '\"' ( 'A' .. 'Z' | 'a' .. 'z' ) ( ( 'A' .. 'Z' | 'a' .. 'z' ) | ( '0' .. '9' ) | '-' | '_' )* '\"'
             {
             match('\"'); 
 
@@ -492,7 +522,7 @@ public class SceLexer extends Lexer {
             }
 
 
-            // Sce.g:1095:25: ( ( 'A' .. 'Z' | 'a' .. 'z' ) | ( '0' .. '9' ) | '-' | '_' )*
+            // Sce.g:1184:25: ( ( 'A' .. 'Z' | 'a' .. 'z' ) | ( '0' .. '9' ) | '-' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -543,8 +573,8 @@ public class SceLexer extends Lexer {
     // $ANTLR end "QUOTED_NAME"
 
     public void mTokens() throws RecognitionException {
-        // Sce.g:1:8: ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | LINEBREAK | WHITESPACE | SIGNED_INTEGER | BOOLEAN | QUOTED_NAME )
-        int alt6=12;
+        // Sce.g:1:8: ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | LINEBREAK | WHITESPACE | SIGNED_INTEGER | BOOLEAN | QUOTED_NAME )
+        int alt6=13;
         switch ( input.LA(1) ) {
         case ',':
             {
@@ -574,15 +604,15 @@ public class SceLexer extends Lexer {
                 int LA6_13 = input.LA(3);
 
                 if ( (LA6_13=='g') ) {
-                    int LA6_15 = input.LA(4);
+                    int LA6_16 = input.LA(4);
 
-                    if ( (LA6_15=='i') ) {
-                        int LA6_16 = input.LA(5);
+                    if ( (LA6_16=='i') ) {
+                        int LA6_17 = input.LA(5);
 
-                        if ( (LA6_16=='n') ) {
-                            int LA6_17 = input.LA(6);
+                        if ( (LA6_17=='n') ) {
+                            int LA6_18 = input.LA(6);
 
-                            if ( (LA6_17=='_') ) {
+                            if ( (LA6_18=='_') ) {
                                 alt6=6;
                             }
                             else {
@@ -591,7 +621,7 @@ public class SceLexer extends Lexer {
                         }
                         else {
                             NoViableAltException nvae =
-                                new NoViableAltException("", 6, 16, input);
+                                new NoViableAltException("", 6, 17, input);
 
                             throw nvae;
 
@@ -599,7 +629,7 @@ public class SceLexer extends Lexer {
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 6, 15, input);
+                            new NoViableAltException("", 6, 16, input);
 
                         throw nvae;
 
@@ -613,6 +643,9 @@ public class SceLexer extends Lexer {
 
                 }
             }
+            else if ( (LA6_5=='u') ) {
+                alt6=7;
+            }
             else {
                 NoViableAltException nvae =
                     new NoViableAltException("", 6, 5, input);
@@ -624,17 +657,17 @@ public class SceLexer extends Lexer {
             break;
         case 's':
             {
-            alt6=7;
+            alt6=8;
             }
             break;
         case '\r':
             {
-            alt6=8;
+            alt6=9;
             }
             break;
         case '\n':
             {
-            alt6=8;
+            alt6=9;
             }
             break;
         case '\t':
@@ -663,7 +696,7 @@ public class SceLexer extends Lexer {
         case '\u3000':
         case '\uFEFF':
             {
-            alt6=9;
+            alt6=10;
             }
             break;
         case '+':
@@ -679,18 +712,18 @@ public class SceLexer extends Lexer {
         case '8':
         case '9':
             {
-            alt6=10;
+            alt6=11;
             }
             break;
         case 'f':
         case 't':
             {
-            alt6=11;
+            alt6=12;
             }
             break;
         case '\"':
             {
-            alt6=12;
+            alt6=13;
             }
             break;
         default:
@@ -759,39 +792,47 @@ public class SceLexer extends Lexer {
                 }
                 break;
             case 8 :
-                // Sce.g:1:51: LINEBREAK
+                // Sce.g:1:51: T__16
+                {
+                mT__16(); 
+
+
+                }
+                break;
+            case 9 :
+                // Sce.g:1:57: LINEBREAK
                 {
                 mLINEBREAK(); 
 
 
                 }
                 break;
-            case 9 :
-                // Sce.g:1:61: WHITESPACE
+            case 10 :
+                // Sce.g:1:67: WHITESPACE
                 {
                 mWHITESPACE(); 
 
 
                 }
                 break;
-            case 10 :
-                // Sce.g:1:72: SIGNED_INTEGER
+            case 11 :
+                // Sce.g:1:78: SIGNED_INTEGER
                 {
                 mSIGNED_INTEGER(); 
 
 
                 }
                 break;
-            case 11 :
-                // Sce.g:1:87: BOOLEAN
+            case 12 :
+                // Sce.g:1:93: BOOLEAN
                 {
                 mBOOLEAN(); 
 
 
                 }
                 break;
-            case 12 :
-                // Sce.g:1:95: QUOTED_NAME
+            case 13 :
+                // Sce.g:1:101: QUOTED_NAME
                 {
                 mQUOTED_NAME(); 
 

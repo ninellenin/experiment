@@ -208,27 +208,27 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_3, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.Definition) {
+		if (element instanceof org.emftext.language.Presentation.ScenarioNameParameter) {
 			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.NumberLiteral) {
+		if (element instanceof org.emftext.language.Presentation.ActiveButtonsParameter) {
 			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_5, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.NameLiteral) {
+		if (element instanceof org.emftext.language.Presentation.ButtonCodesParameter) {
 			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_6, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.BooleanLiteral) {
+		if (element instanceof org.emftext.language.Presentation.NumberLiteral) {
 			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_7, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.ScenarioNameParameter) {
+		if (element instanceof org.emftext.language.Presentation.NameLiteral) {
 			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_8, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.ActiveButtonsParameter) {
+		if (element instanceof org.emftext.language.Presentation.BooleanLiteral) {
 			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_9, foundFormattingElements);
 			return;
 		}

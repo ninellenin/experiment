@@ -38,6 +38,9 @@ public class SceTokenStyleInformationProvider {
 		if ("active_buttons".equals(tokenName)) {
 			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x80, 0x00, 0x55}, null, true, false, false, false);
 		}
+		if ("button_codes".equals(tokenName)) {
+			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x80, 0x00, 0x55}, null, true, false, false, false);
+		}
 		if ("TASK_ITEM".equals(tokenName)) {
 			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x7F, 0x9F, 0xBF}, null, true, false, false, false);
 		}

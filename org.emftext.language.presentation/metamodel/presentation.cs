@@ -44,13 +44,18 @@ TOKENS {
    
     // Literals
     DEFINE FRAGMENT UNSIGNED_INTEGER $($ + DIGIT + $)+$;
-    DEFINE SIGNED_INTEGER SIGN + $?$ + UNSIGNED_INTEGER;
+    DEFINE SIGNED_INTEGER $($ + SIGN + $?$ + UNSIGNED_INTEGER + $)$;
 	DEFINE BOOLEAN $('true' | 'false')$;
 
 	// Text
 	DEFINE FRAGMENT NAME_BODY $($ + LATIN_LETTER + $|$ + DIGIT + $|$ + MINUS_SIGN + $|$ + UNDERSCORE + $)$;
 	DEFINE FRAGMENT NAME LATIN_LETTER + NAME_BODY + $*$;
 	DEFINE QUOTED_NAME DOUBLE_QUOTE + NAME + DOUBLE_QUOTE;
+	
+	// Parameters
+	//DEFINE SCENARIO_NAME $('scenario')$;
+	//DEFINE ACTIVE_BUTTONS $('active_buttons')$;
+	//DEFINE BUTTON_CODES $('button_codes')$;
 }
 
 TOKENSTYLES {
@@ -69,14 +74,14 @@ TOKENSTYLES {
 
 RULES {
 	Scenario ::= header sdl* pcl*;
-	Header ::= (definition)* !0;
+	Header ::= (parameter)* !0!0;
 	SDL ::= "begin" ";" !0;
 	PCL ::= "begin_pcl" ";" !0;
 	
-	Definition ::= parameter #1 "=" #1 value ("," #1 value)*  ";" !0;
+	ScenarioNameParameter ::= "scenario" #1 "=" #1 scenario_name ";" !0;
+	ActiveButtonsParameter ::= "active_buttons" #1 "=" #1 active_buttons ";" !0;
+	ButtonCodesParameter ::= "button_codes" #1 "=" #1 button_codes ("," #1 button_codes) ";" !0;
 	NumberLiteral ::= value[SIGNED_INTEGER];
 	NameLiteral ::= value[QUOTED_NAME];
 	BooleanLiteral ::= value[BOOLEAN];
-	ScenarioNameParameter ::= "scenario";
-	ActiveButtonsParameter ::= "active_buttons";
 }
