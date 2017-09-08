@@ -26,6 +26,8 @@ public class SceTokenResolverFactory implements org.emftext.language.Presentatio
 		registerTokenResolver("SIGNED_INTEGER", new org.emftext.language.Presentation.resource.sce.analysis.SceSIGNED_INTEGERTokenResolver());
 		registerTokenResolver("BOOLEAN", new org.emftext.language.Presentation.resource.sce.analysis.SceBOOLEANTokenResolver());
 		registerTokenResolver("QUOTED_NAME", new org.emftext.language.Presentation.resource.sce.analysis.SceQUOTED_NAMETokenResolver());
+		registerTokenResolver("VAR_NAME", new org.emftext.language.Presentation.resource.sce.analysis.SceVAR_NAMETokenResolver());
+		registerTokenResolver("QUOTED_TEXT", new org.emftext.language.Presentation.resource.sce.analysis.SceQUOTED_TEXTTokenResolver());
 	}
 	
 	public org.emftext.language.Presentation.resource.sce.ISceTokenResolver createTokenResolver(String tokenName) {

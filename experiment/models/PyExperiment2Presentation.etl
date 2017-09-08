@@ -40,8 +40,26 @@ guard : parameter.name = "active_buttons"
 	activeButtons.active_buttons.value = parameter.val.asInteger;
 }
 
-/*rule Routine2Trial
+@lazy
+rule Param2ButtonCodesParameter
+transform parameter: PyExperiment!Param
+to buttonCodes: Presentation!ButtonCodesParameter {
+guard : parameter.name = "button_codes"
+	var codes = parameter.val.split(", ");
+	for (code in codes) {
+		var codeLiteral = new Presentation!NumberLiteral;
+		codeLiteral.value = code.asInteger;
+		buttonCodes.button_codes.add(codeLiteral);
+	}
+}
+
+@lazy
+rule Routine2Trial
 transform routine: PyExperiment!Routine
 to trial: Presentation!Trial {
-	
-}*/
+	trial.stimulus_list = new Presentation!StimulusList;
+	trial.name = routine.name;
+	for (component in routine.componentGroup) {
+		
+	}
+}

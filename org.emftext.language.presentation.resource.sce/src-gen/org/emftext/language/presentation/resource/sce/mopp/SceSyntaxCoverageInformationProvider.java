@@ -20,6 +20,16 @@ public class SceSyntaxCoverageInformationProvider {
 			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getNumberLiteral(),
 			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getNameLiteral(),
 			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getBooleanLiteral(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getTextLiteral(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getTrial(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getStimulusList(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getPictureStimulusEvent(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getPicture(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getTimeParameter(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getTextStimulus(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getCoordinateDefinition(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getText(),
+			org.emftext.language.Presentation.PresentationPackage.eINSTANCE.getCaptionParameter(),
 		};
 	}
 	

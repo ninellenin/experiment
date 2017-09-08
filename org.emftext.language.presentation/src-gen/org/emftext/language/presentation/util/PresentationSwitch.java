@@ -154,6 +154,7 @@ public class PresentationSwitch<T> extends Switch<T> {
 			case PresentationPackage.TRIAL: {
 				Trial trial = (Trial)theEObject;
 				T result = caseTrial(trial);
+				if (result == null) result = caseScenarioObject(trial);
 				if (result == null) result = caseNamedElement(trial);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -161,19 +162,14 @@ public class PresentationSwitch<T> extends Switch<T> {
 			case PresentationPackage.STIMULUS_EVENT: {
 				StimulusEvent stimulusEvent = (StimulusEvent)theEObject;
 				T result = caseStimulusEvent(stimulusEvent);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PresentationPackage.LIST_NODE: {
-				ListNode listNode = (ListNode)theEObject;
-				T result = caseListNode(listNode);
+				if (result == null) result = caseScenarioObject(stimulusEvent);
+				if (result == null) result = caseNamedElement(stimulusEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case PresentationPackage.STIMULUS_LIST: {
 				StimulusList stimulusList = (StimulusList)theEObject;
 				T result = caseStimulusList(stimulusList);
-				if (result == null) result = caseListNode(stimulusList);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -187,8 +183,8 @@ public class PresentationSwitch<T> extends Switch<T> {
 			case PresentationPackage.BITMAP: {
 				Bitmap bitmap = (Bitmap)theEObject;
 				T result = caseBitmap(bitmap);
-				if (result == null) result = caseStimulus2D(bitmap);
-				if (result == null) result = casePicturePart(bitmap);
+				if (result == null) result = caseGraphic2D(bitmap);
+				if (result == null) result = caseScenarioObject(bitmap);
 				if (result == null) result = caseNamedElement(bitmap);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -196,23 +192,25 @@ public class PresentationSwitch<T> extends Switch<T> {
 			case PresentationPackage.TEXT: {
 				Text text = (Text)theEObject;
 				T result = caseText(text);
-				if (result == null) result = caseStimulus2D(text);
-				if (result == null) result = casePicturePart(text);
+				if (result == null) result = caseGraphic2D(text);
+				if (result == null) result = caseScenarioObject(text);
 				if (result == null) result = caseNamedElement(text);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PresentationPackage.PICTURE: {
-				Picture picture = (Picture)theEObject;
-				T result = casePicture(picture);
-				if (result == null) result = caseScenarioObject(picture);
-				if (result == null) result = caseNamedElement(picture);
+			case PresentationPackage.PICTURE_STIMULUS_EVENT: {
+				PictureStimulusEvent pictureStimulusEvent = (PictureStimulusEvent)theEObject;
+				T result = casePictureStimulusEvent(pictureStimulusEvent);
+				if (result == null) result = caseStimulusEvent(pictureStimulusEvent);
+				if (result == null) result = caseScenarioObject(pictureStimulusEvent);
+				if (result == null) result = caseNamedElement(pictureStimulusEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case PresentationPackage.PICTURE_PART: {
 				PicturePart picturePart = (PicturePart)theEObject;
 				T result = casePicturePart(picturePart);
+				if (result == null) result = caseScenarioObject(picturePart);
 				if (result == null) result = caseNamedElement(picturePart);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -221,6 +219,7 @@ public class PresentationSwitch<T> extends Switch<T> {
 				Stimulus2D stimulus2D = (Stimulus2D)theEObject;
 				T result = caseStimulus2D(stimulus2D);
 				if (result == null) result = casePicturePart(stimulus2D);
+				if (result == null) result = caseScenarioObject(stimulus2D);
 				if (result == null) result = caseNamedElement(stimulus2D);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -228,8 +227,8 @@ public class PresentationSwitch<T> extends Switch<T> {
 			case PresentationPackage.BOX: {
 				Box box = (Box)theEObject;
 				T result = caseBox(box);
-				if (result == null) result = caseStimulus2D(box);
-				if (result == null) result = casePicturePart(box);
+				if (result == null) result = caseGraphic2D(box);
+				if (result == null) result = caseScenarioObject(box);
 				if (result == null) result = caseNamedElement(box);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -255,10 +254,10 @@ public class PresentationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PresentationPackage.SDL_PARAMETER: {
-				SDLParameter sdlParameter = (SDLParameter)theEObject;
-				T result = caseSDLParameter(sdlParameter);
-				if (result == null) result = caseParameter(sdlParameter);
+			case PresentationPackage.STIMULUS_EVENT_PARAMETER: {
+				StimulusEventParameter stimulusEventParameter = (StimulusEventParameter)theEObject;
+				T result = caseStimulusEventParameter(stimulusEventParameter);
+				if (result == null) result = caseParameter(stimulusEventParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -289,7 +288,7 @@ public class PresentationSwitch<T> extends Switch<T> {
 			case PresentationPackage.TIME_PARAMETER: {
 				TimeParameter timeParameter = (TimeParameter)theEObject;
 				T result = caseTimeParameter(timeParameter);
-				if (result == null) result = caseSDLParameter(timeParameter);
+				if (result == null) result = caseStimulusEventParameter(timeParameter);
 				if (result == null) result = caseParameter(timeParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -297,7 +296,7 @@ public class PresentationSwitch<T> extends Switch<T> {
 			case PresentationPackage.TARGET_BUTTON_PARAMETER: {
 				TargetButtonParameter targetButtonParameter = (TargetButtonParameter)theEObject;
 				T result = caseTargetButtonParameter(targetButtonParameter);
-				if (result == null) result = caseSDLParameter(targetButtonParameter);
+				if (result == null) result = caseStimulusEventParameter(targetButtonParameter);
 				if (result == null) result = caseParameter(targetButtonParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -305,8 +304,115 @@ public class PresentationSwitch<T> extends Switch<T> {
 			case PresentationPackage.CODE_PARAMETER: {
 				CodeParameter codeParameter = (CodeParameter)theEObject;
 				T result = caseCodeParameter(codeParameter);
-				if (result == null) result = caseSDLParameter(codeParameter);
+				if (result == null) result = caseStimulusEventParameter(codeParameter);
 				if (result == null) result = caseParameter(codeParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PresentationPackage.PICTURE_PARAMETER: {
+				PictureParameter pictureParameter = (PictureParameter)theEObject;
+				T result = casePictureParameter(pictureParameter);
+				if (result == null) result = caseParameter(pictureParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PresentationPackage.BACKGROUND_COLOR_PARAMETER: {
+				BackgroundColorParameter backgroundColorParameter = (BackgroundColorParameter)theEObject;
+				T result = caseBackgroundColorParameter(backgroundColorParameter);
+				if (result == null) result = casePictureParameter(backgroundColorParameter);
+				if (result == null) result = caseParameter(backgroundColorParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PresentationPackage.TEXT_PARAMETER: {
+				TextParameter textParameter = (TextParameter)theEObject;
+				T result = caseTextParameter(textParameter);
+				if (result == null) result = caseParameter(textParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PresentationPackage.CAPTION_PARAMETER: {
+				CaptionParameter captionParameter = (CaptionParameter)theEObject;
+				T result = caseCaptionParameter(captionParameter);
+				if (result == null) result = caseTextParameter(captionParameter);
+				if (result == null) result = caseParameter(captionParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PresentationPackage.PICTURE: {
+				Picture picture = (Picture)theEObject;
+				T result = casePicture(picture);
+				if (result == null) result = caseStimulus(picture);
+				if (result == null) result = caseScenarioObject(picture);
+				if (result == null) result = caseNamedElement(picture);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PresentationPackage.SOUND: {
+				Sound sound = (Sound)theEObject;
+				T result = caseSound(sound);
+				if (result == null) result = caseStimulus(sound);
+				if (result == null) result = caseScenarioObject(sound);
+				if (result == null) result = caseNamedElement(sound);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PresentationPackage.TRIAL_PARAMETER: {
+				TrialParameter trialParameter = (TrialParameter)theEObject;
+				T result = caseTrialParameter(trialParameter);
+				if (result == null) result = caseParameter(trialParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PresentationPackage.STIMULUS: {
+				Stimulus stimulus = (Stimulus)theEObject;
+				T result = caseStimulus(stimulus);
+				if (result == null) result = caseScenarioObject(stimulus);
+				if (result == null) result = caseNamedElement(stimulus);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PresentationPackage.GRAPHIC2_D: {
+				Graphic2D graphic2D = (Graphic2D)theEObject;
+				T result = caseGraphic2D(graphic2D);
+				if (result == null) result = caseScenarioObject(graphic2D);
+				if (result == null) result = caseNamedElement(graphic2D);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PresentationPackage.BITMAP_STIMULUS: {
+				BitmapStimulus bitmapStimulus = (BitmapStimulus)theEObject;
+				T result = caseBitmapStimulus(bitmapStimulus);
+				if (result == null) result = caseStimulus2D(bitmapStimulus);
+				if (result == null) result = casePicturePart(bitmapStimulus);
+				if (result == null) result = caseScenarioObject(bitmapStimulus);
+				if (result == null) result = caseNamedElement(bitmapStimulus);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PresentationPackage.BOX_STIMULUS: {
+				BoxStimulus boxStimulus = (BoxStimulus)theEObject;
+				T result = caseBoxStimulus(boxStimulus);
+				if (result == null) result = caseStimulus2D(boxStimulus);
+				if (result == null) result = casePicturePart(boxStimulus);
+				if (result == null) result = caseScenarioObject(boxStimulus);
+				if (result == null) result = caseNamedElement(boxStimulus);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PresentationPackage.TEXT_STIMULUS: {
+				TextStimulus textStimulus = (TextStimulus)theEObject;
+				T result = caseTextStimulus(textStimulus);
+				if (result == null) result = caseStimulus2D(textStimulus);
+				if (result == null) result = casePicturePart(textStimulus);
+				if (result == null) result = caseScenarioObject(textStimulus);
+				if (result == null) result = caseNamedElement(textStimulus);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PresentationPackage.COORDINATE_DEFINITION: {
+				CoordinateDefinition coordinateDefinition = (CoordinateDefinition)theEObject;
+				T result = caseCoordinateDefinition(coordinateDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -405,17 +511,17 @@ public class PresentationSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>SDL Parameter</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Stimulus Event Parameter</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>SDL Parameter</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Stimulus Event Parameter</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSDLParameter(SDLParameter object) {
+	public T caseStimulusEventParameter(StimulusEventParameter object) {
 		return null;
 	}
 
@@ -476,6 +582,66 @@ public class PresentationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCodeParameter(CodeParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Picture Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Picture Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePictureParameter(PictureParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Background Color Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Background Color Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBackgroundColorParameter(BackgroundColorParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Text Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Text Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTextParameter(TextParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Caption Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Caption Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCaptionParameter(CaptionParameter object) {
 		return null;
 	}
 
@@ -660,21 +826,6 @@ public class PresentationSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>List Node</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>List Node</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseListNode(ListNode object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Stimulus List</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -735,6 +886,21 @@ public class PresentationSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Picture Stimulus Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Picture Stimulus Event</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePictureStimulusEvent(PictureStimulusEvent object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Picture</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -746,6 +912,126 @@ public class PresentationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePicture(Picture object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Sound</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Sound</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSound(Sound object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Trial Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Trial Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTrialParameter(TrialParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Stimulus</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Stimulus</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStimulus(Stimulus object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Graphic2 D</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Graphic2 D</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGraphic2D(Graphic2D object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bitmap Stimulus</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bitmap Stimulus</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBitmapStimulus(BitmapStimulus object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Box Stimulus</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Box Stimulus</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBoxStimulus(BoxStimulus object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Text Stimulus</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Text Stimulus</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTextStimulus(TextStimulus object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Coordinate Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Coordinate Definition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCoordinateDefinition(CoordinateDefinition object) {
 		return null;
 	}
 

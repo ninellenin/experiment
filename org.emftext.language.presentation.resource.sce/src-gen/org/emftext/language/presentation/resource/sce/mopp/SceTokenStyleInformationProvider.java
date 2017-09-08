@@ -41,6 +41,45 @@ public class SceTokenStyleInformationProvider {
 		if ("button_codes".equals(tokenName)) {
 			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x80, 0x00, 0x55}, null, true, false, false, false);
 		}
+		if ("trial".equals(tokenName)) {
+			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x80, 0x00, 0x55}, null, true, false, false, false);
+		}
+		if ("picture".equals(tokenName)) {
+			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x80, 0x00, 0x55}, null, true, false, false, false);
+		}
+		if ("time".equals(tokenName)) {
+			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x80, 0x00, 0x55}, null, true, false, false, false);
+		}
+		if ("x".equals(tokenName)) {
+			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x80, 0x00, 0x55}, null, true, false, false, false);
+		}
+		if ("y".equals(tokenName)) {
+			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x80, 0x00, 0x55}, null, true, false, false, false);
+		}
+		if ("center_x".equals(tokenName)) {
+			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x80, 0x00, 0x55}, null, true, false, false, false);
+		}
+		if ("center_y".equals(tokenName)) {
+			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x80, 0x00, 0x55}, null, true, false, false, false);
+		}
+		if ("left_x".equals(tokenName)) {
+			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x80, 0x00, 0x55}, null, true, false, false, false);
+		}
+		if ("top_y".equals(tokenName)) {
+			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x80, 0x00, 0x55}, null, true, false, false, false);
+		}
+		if ("rigth_x".equals(tokenName)) {
+			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x80, 0x00, 0x55}, null, true, false, false, false);
+		}
+		if ("bottom_y".equals(tokenName)) {
+			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x80, 0x00, 0x55}, null, true, false, false, false);
+		}
+		if ("text".equals(tokenName)) {
+			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x80, 0x00, 0x55}, null, true, false, false, false);
+		}
+		if ("caption".equals(tokenName)) {
+			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x80, 0x00, 0x55}, null, true, false, false, false);
+		}
 		if ("TASK_ITEM".equals(tokenName)) {
 			return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(new int[] {0x7F, 0x9F, 0xBF}, null, true, false, false, false);
 		}

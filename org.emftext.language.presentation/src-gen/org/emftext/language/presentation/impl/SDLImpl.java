@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.emftext.language.Presentation.PresentationPackage;
 import org.emftext.language.Presentation.SDL;
-import org.emftext.language.Presentation.Trial;
+import org.emftext.language.Presentation.ScenarioObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,22 +22,21 @@ import org.emftext.language.Presentation.Trial;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.emftext.language.Presentation.impl.SDLImpl#getTrial <em>Trial</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.impl.SDLImpl#getScenario_object <em>Scenario object</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SDLImpl extends ScenarioFileImpl implements SDL {
 	/**
-	 * The cached value of the '{@link #getTrial() <em>Trial</em>}' containment reference list.
+	 * The cached value of the '{@link #getScenario_object() <em>Scenario object</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTrial()
+	 * @see #getScenario_object()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Trial> trial;
-
+	protected EList<ScenarioObject> scenario_object;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -62,11 +61,11 @@ public class SDLImpl extends ScenarioFileImpl implements SDL {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Trial> getTrial() {
-		if (trial == null) {
-			trial = new EObjectContainmentEList<Trial>(Trial.class, this, PresentationPackage.SDL__TRIAL);
+	public EList<ScenarioObject> getScenario_object() {
+		if (scenario_object == null) {
+			scenario_object = new EObjectContainmentEList<ScenarioObject>(ScenarioObject.class, this, PresentationPackage.SDL__SCENARIO_OBJECT);
 		}
-		return trial;
+		return scenario_object;
 	}
 
 	/**
@@ -77,8 +76,8 @@ public class SDLImpl extends ScenarioFileImpl implements SDL {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PresentationPackage.SDL__TRIAL:
-				return ((InternalEList<?>)getTrial()).basicRemove(otherEnd, msgs);
+			case PresentationPackage.SDL__SCENARIO_OBJECT:
+				return ((InternalEList<?>)getScenario_object()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -91,8 +90,8 @@ public class SDLImpl extends ScenarioFileImpl implements SDL {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PresentationPackage.SDL__TRIAL:
-				return getTrial();
+			case PresentationPackage.SDL__SCENARIO_OBJECT:
+				return getScenario_object();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,9 +105,9 @@ public class SDLImpl extends ScenarioFileImpl implements SDL {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PresentationPackage.SDL__TRIAL:
-				getTrial().clear();
-				getTrial().addAll((Collection<? extends Trial>)newValue);
+			case PresentationPackage.SDL__SCENARIO_OBJECT:
+				getScenario_object().clear();
+				getScenario_object().addAll((Collection<? extends ScenarioObject>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -122,8 +121,8 @@ public class SDLImpl extends ScenarioFileImpl implements SDL {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PresentationPackage.SDL__TRIAL:
-				getTrial().clear();
+			case PresentationPackage.SDL__SCENARIO_OBJECT:
+				getScenario_object().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -137,8 +136,8 @@ public class SDLImpl extends ScenarioFileImpl implements SDL {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PresentationPackage.SDL__TRIAL:
-				return trial != null && !trial.isEmpty();
+			case PresentationPackage.SDL__SCENARIO_OBJECT:
+				return scenario_object != null && !scenario_object.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

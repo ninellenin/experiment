@@ -232,6 +232,46 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_9, foundFormattingElements);
 			return;
 		}
+		if (element instanceof org.emftext.language.Presentation.TextLiteral) {
+			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_10, foundFormattingElements);
+			return;
+		}
+		if (element instanceof org.emftext.language.Presentation.Trial) {
+			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_11, foundFormattingElements);
+			return;
+		}
+		if (element instanceof org.emftext.language.Presentation.StimulusList) {
+			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_12, foundFormattingElements);
+			return;
+		}
+		if (element instanceof org.emftext.language.Presentation.PictureStimulusEvent) {
+			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_13, foundFormattingElements);
+			return;
+		}
+		if (element instanceof org.emftext.language.Presentation.Picture) {
+			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_14, foundFormattingElements);
+			return;
+		}
+		if (element instanceof org.emftext.language.Presentation.TimeParameter) {
+			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_15, foundFormattingElements);
+			return;
+		}
+		if (element instanceof org.emftext.language.Presentation.TextStimulus) {
+			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_16, foundFormattingElements);
+			return;
+		}
+		if (element instanceof org.emftext.language.Presentation.CoordinateDefinition) {
+			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_17, foundFormattingElements);
+			return;
+		}
+		if (element instanceof org.emftext.language.Presentation.Text) {
+			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_18, foundFormattingElements);
+			return;
+		}
+		if (element instanceof org.emftext.language.Presentation.CaptionParameter) {
+			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_19, foundFormattingElements);
+			return;
+		}
 		
 		addWarningToResource("The printer can not handle " + element.eClass().getName() + " elements", element);
 	}

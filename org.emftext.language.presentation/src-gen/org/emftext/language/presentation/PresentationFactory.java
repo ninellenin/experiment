@@ -85,6 +85,24 @@ public interface PresentationFactory extends EFactory {
 	CodeParameter createCodeParameter();
 
 	/**
+	 * Returns a new object of class '<em>Background Color Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Background Color Parameter</em>'.
+	 * @generated
+	 */
+	BackgroundColorParameter createBackgroundColorParameter();
+
+	/**
+	 * Returns a new object of class '<em>Caption Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Caption Parameter</em>'.
+	 * @generated
+	 */
+	CaptionParameter createCaptionParameter();
+
+	/**
 	 * Returns a new object of class '<em>Scenario</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,6 +193,15 @@ public interface PresentationFactory extends EFactory {
 	Text createText();
 
 	/**
+	 * Returns a new object of class '<em>Picture Stimulus Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Picture Stimulus Event</em>'.
+	 * @generated
+	 */
+	PictureStimulusEvent createPictureStimulusEvent();
+
+	/**
 	 * Returns a new object of class '<em>Picture</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -182,6 +209,51 @@ public interface PresentationFactory extends EFactory {
 	 * @generated
 	 */
 	Picture createPicture();
+
+	/**
+	 * Returns a new object of class '<em>Sound</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Sound</em>'.
+	 * @generated
+	 */
+	Sound createSound();
+
+	/**
+	 * Returns a new object of class '<em>Bitmap Stimulus</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Bitmap Stimulus</em>'.
+	 * @generated
+	 */
+	BitmapStimulus createBitmapStimulus();
+
+	/**
+	 * Returns a new object of class '<em>Box Stimulus</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Box Stimulus</em>'.
+	 * @generated
+	 */
+	BoxStimulus createBoxStimulus();
+
+	/**
+	 * Returns a new object of class '<em>Text Stimulus</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Text Stimulus</em>'.
+	 * @generated
+	 */
+	TextStimulus createTextStimulus();
+
+	/**
+	 * Returns a new object of class '<em>Coordinate Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Coordinate Definition</em>'.
+	 * @generated
+	 */
+	CoordinateDefinition createCoordinateDefinition();
 
 	/**
 	 * Returns a new object of class '<em>Box</em>'.

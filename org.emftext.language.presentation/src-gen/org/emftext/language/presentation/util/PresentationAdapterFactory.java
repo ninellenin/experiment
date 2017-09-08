@@ -124,10 +124,6 @@ public class PresentationAdapterFactory extends AdapterFactoryImpl {
 				return createStimulusEventAdapter();
 			}
 			@Override
-			public Adapter caseListNode(ListNode object) {
-				return createListNodeAdapter();
-			}
-			@Override
 			public Adapter caseStimulusList(StimulusList object) {
 				return createStimulusListAdapter();
 			}
@@ -144,8 +140,8 @@ public class PresentationAdapterFactory extends AdapterFactoryImpl {
 				return createTextAdapter();
 			}
 			@Override
-			public Adapter casePicture(Picture object) {
-				return createPictureAdapter();
+			public Adapter casePictureStimulusEvent(PictureStimulusEvent object) {
+				return createPictureStimulusEventAdapter();
 			}
 			@Override
 			public Adapter casePicturePart(PicturePart object) {
@@ -172,8 +168,8 @@ public class PresentationAdapterFactory extends AdapterFactoryImpl {
 				return createHeaderParameterAdapter();
 			}
 			@Override
-			public Adapter caseSDLParameter(SDLParameter object) {
-				return createSDLParameterAdapter();
+			public Adapter caseStimulusEventParameter(StimulusEventParameter object) {
+				return createStimulusEventParameterAdapter();
 			}
 			@Override
 			public Adapter caseActiveButtonsParameter(ActiveButtonsParameter object) {
@@ -198,6 +194,58 @@ public class PresentationAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCodeParameter(CodeParameter object) {
 				return createCodeParameterAdapter();
+			}
+			@Override
+			public Adapter casePictureParameter(PictureParameter object) {
+				return createPictureParameterAdapter();
+			}
+			@Override
+			public Adapter caseBackgroundColorParameter(BackgroundColorParameter object) {
+				return createBackgroundColorParameterAdapter();
+			}
+			@Override
+			public Adapter caseTextParameter(TextParameter object) {
+				return createTextParameterAdapter();
+			}
+			@Override
+			public Adapter caseCaptionParameter(CaptionParameter object) {
+				return createCaptionParameterAdapter();
+			}
+			@Override
+			public Adapter casePicture(Picture object) {
+				return createPictureAdapter();
+			}
+			@Override
+			public Adapter caseSound(Sound object) {
+				return createSoundAdapter();
+			}
+			@Override
+			public Adapter caseTrialParameter(TrialParameter object) {
+				return createTrialParameterAdapter();
+			}
+			@Override
+			public Adapter caseStimulus(Stimulus object) {
+				return createStimulusAdapter();
+			}
+			@Override
+			public Adapter caseGraphic2D(Graphic2D object) {
+				return createGraphic2DAdapter();
+			}
+			@Override
+			public Adapter caseBitmapStimulus(BitmapStimulus object) {
+				return createBitmapStimulusAdapter();
+			}
+			@Override
+			public Adapter caseBoxStimulus(BoxStimulus object) {
+				return createBoxStimulusAdapter();
+			}
+			@Override
+			public Adapter caseTextStimulus(TextStimulus object) {
+				return createTextStimulusAdapter();
+			}
+			@Override
+			public Adapter caseCoordinateDefinition(CoordinateDefinition object) {
+				return createCoordinateDefinitionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -304,16 +352,16 @@ public class PresentationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.SDLParameter <em>SDL Parameter</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.StimulusEventParameter <em>Stimulus Event Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.emftext.language.Presentation.SDLParameter
+	 * @see org.emftext.language.Presentation.StimulusEventParameter
 	 * @generated
 	 */
-	public Adapter createSDLParameterAdapter() {
+	public Adapter createStimulusEventParameterAdapter() {
 		return null;
 	}
 
@@ -370,6 +418,62 @@ public class PresentationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCodeParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.PictureParameter <em>Picture Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.emftext.language.Presentation.PictureParameter
+	 * @generated
+	 */
+	public Adapter createPictureParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.BackgroundColorParameter <em>Background Color Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.emftext.language.Presentation.BackgroundColorParameter
+	 * @generated
+	 */
+	public Adapter createBackgroundColorParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.TextParameter <em>Text Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.emftext.language.Presentation.TextParameter
+	 * @generated
+	 */
+	public Adapter createTextParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.CaptionParameter <em>Caption Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.emftext.language.Presentation.CaptionParameter
+	 * @generated
+	 */
+	public Adapter createCaptionParameterAdapter() {
 		return null;
 	}
 
@@ -542,20 +646,6 @@ public class PresentationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.ListNode <em>List Node</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.emftext.language.Presentation.ListNode
-	 * @generated
-	 */
-	public Adapter createListNodeAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.StimulusList <em>Stimulus List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -612,6 +702,20 @@ public class PresentationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.PictureStimulusEvent <em>Picture Stimulus Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.emftext.language.Presentation.PictureStimulusEvent
+	 * @generated
+	 */
+	public Adapter createPictureStimulusEventAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.Picture <em>Picture</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -622,6 +726,118 @@ public class PresentationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPictureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.Sound <em>Sound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.emftext.language.Presentation.Sound
+	 * @generated
+	 */
+	public Adapter createSoundAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.TrialParameter <em>Trial Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.emftext.language.Presentation.TrialParameter
+	 * @generated
+	 */
+	public Adapter createTrialParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.Stimulus <em>Stimulus</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.emftext.language.Presentation.Stimulus
+	 * @generated
+	 */
+	public Adapter createStimulusAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.Graphic2D <em>Graphic2 D</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.emftext.language.Presentation.Graphic2D
+	 * @generated
+	 */
+	public Adapter createGraphic2DAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.BitmapStimulus <em>Bitmap Stimulus</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.emftext.language.Presentation.BitmapStimulus
+	 * @generated
+	 */
+	public Adapter createBitmapStimulusAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.BoxStimulus <em>Box Stimulus</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.emftext.language.Presentation.BoxStimulus
+	 * @generated
+	 */
+	public Adapter createBoxStimulusAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.TextStimulus <em>Text Stimulus</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.emftext.language.Presentation.TextStimulus
+	 * @generated
+	 */
+	public Adapter createTextStimulusAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.CoordinateDefinition <em>Coordinate Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.emftext.language.Presentation.CoordinateDefinition
+	 * @generated
+	 */
+	public Adapter createCoordinateDefinitionAdapter() {
 		return null;
 	}
 

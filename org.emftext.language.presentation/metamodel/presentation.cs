@@ -47,15 +47,14 @@ TOKENS {
     DEFINE SIGNED_INTEGER $($ + SIGN + $?$ + UNSIGNED_INTEGER + $)$;
 	DEFINE BOOLEAN $('true' | 'false')$;
 
-	// Text
+	// Name
 	DEFINE FRAGMENT NAME_BODY $($ + LATIN_LETTER + $|$ + DIGIT + $|$ + MINUS_SIGN + $|$ + UNDERSCORE + $)$;
-	DEFINE FRAGMENT NAME LATIN_LETTER + NAME_BODY + $*$;
-	DEFINE QUOTED_NAME DOUBLE_QUOTE + NAME + DOUBLE_QUOTE;
+	DEFINE FRAGMENT NAME $($ + LATIN_LETTER + NAME_BODY + $*$ + $)$;
+	DEFINE QUOTED_NAME $($ + DOUBLE_QUOTE + NAME + DOUBLE_QUOTE + $)$;
+	DEFINE VAR_NAME NAME;
 	
-	// Parameters
-	//DEFINE SCENARIO_NAME $('scenario')$;
-	//DEFINE ACTIVE_BUTTONS $('active_buttons')$;
-	//DEFINE BUTTON_CODES $('button_codes')$;
+	DEFINE FRAGMENT SYMBOL $($ + LATIN_LETTER + $|$ + DIGIT + $|$ + MINUS_SIGN + $|$ + UNDERSCORE + $|$ + COLON +  $|$ + WHITESPACE +  $|$ + SLASH + $)$;
+	DEFINE QUOTED_TEXT DOUBLE_QUOTE  + SYMBOL + $*$ + DOUBLE_QUOTE;
 }
 
 TOKENSTYLES {
@@ -73,15 +72,47 @@ TOKENSTYLES {
 }
 
 RULES {
+	// General
 	Scenario ::= header sdl* pcl*;
 	Header ::= (parameter)* !0!0;
-	SDL ::= "begin" ";" !0;
+	SDL ::= "begin" ";" !0
+		(scenario_object)* !0;
 	PCL ::= "begin_pcl" ";" !0;
 	
-	ScenarioNameParameter ::= "scenario" #1 "=" #1 scenario_name ";" !0;
-	ActiveButtonsParameter ::= "active_buttons" #1 "=" #1 active_buttons ";" !0;
-	ButtonCodesParameter ::= "button_codes" #1 "=" #1 button_codes ("," #1 button_codes) ";" !0;
+	// Header parameters
+	ScenarioNameParameter ::= "scenario" #1 "=" #1 name_literal ";" !0;
+	ActiveButtonsParameter ::= "active_buttons" #1 "=" #1 number_literal ";" !0;
+	ButtonCodesParameter ::= "button_codes" #1 "=" #1 number_literal ("," #1 number_literal)* ";" !0;
+	
+	// Literals
 	NumberLiteral ::= value[SIGNED_INTEGER];
 	NameLiteral ::= value[QUOTED_NAME];
 	BooleanLiteral ::= value[BOOLEAN];
+	TextLiteral ::= value[QUOTED_TEXT];
+	
+	//SDL
+	Trial ::= "trial" #1 "{" !1
+		//(trial_parameter)* !0
+		stimulus_list
+	"}" name[VAR_NAME] ";" !0;
+	StimulusList ::= (stimulus_event)*;
+	PictureStimulusEvent ::= picture !0
+			(stimulus_event_parameter)* !0;
+	Picture ::= "picture" #1 "{" !1 
+		//(picture_parameter)* !0 
+		(picture_part)* !0 "}" name[VAR_NAME] ";" !0;
+	TimeParameter ::= "time" #1 "=" #1 number_literal ";" !0;
+	//BackgroundColorParameter ::= "background_color" #1 "=" #1 number_literal "," number_literal "," number_literal ";" !0;
+	TextStimulus ::= text !0
+					x_definition !0
+					y_definition !0;
+	CoordinateDefinition ::= type[X: "x", Y: "y", CENTER_X: "center_x", CENTER_Y: "center_y", 
+		LEFT_X: "left_x", TOP_Y: "top_y"] #1 "=" #1 coordinate[SIGNED_INTEGER] ";"
+		(("rigth_x" | "bottom_y") #1 "=" #1 right_bottom[SIGNED_INTEGER] ";")? ;
+							
+	Text ::= "text" #1 "{" !1
+		caption !1
+		(text_parameter)* !1
+		"}" (#1 name[VAR_NAME])? ";" !0;
+	CaptionParameter ::= "caption" #1 "=" #1 text_literal ";" #0; 
 }

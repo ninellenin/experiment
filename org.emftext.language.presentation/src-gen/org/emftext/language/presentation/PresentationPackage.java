@@ -4,6 +4,7 @@ package org.emftext.language.Presentation;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -132,13 +133,13 @@ public interface PresentationPackage extends EPackage {
 	int SDL = 2;
 
 	/**
-	 * The feature id for the '<em><b>Trial</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Scenario object</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SDL__TRIAL = SCENARIO_FILE_FEATURE_COUNT + 0;
+	int SDL__SCENARIO_OBJECT = SCENARIO_FILE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>SDL</em>' class.
@@ -194,17 +195,7 @@ public interface PresentationPackage extends EPackage {
 	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 24;
-
-	/**
-	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.SDLParameterImpl <em>SDL Parameter</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.Presentation.impl.SDLParameterImpl
-	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getSDLParameter()
-	 * @generated
-	 */
-	int SDL_PARAMETER = 26;
+	int PARAMETER = 23;
 
 	/**
 	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.ScenarioNameParameterImpl <em>Scenario Name Parameter</em>}' class.
@@ -214,7 +205,7 @@ public interface PresentationPackage extends EPackage {
 	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getScenarioNameParameter()
 	 * @generated
 	 */
-	int SCENARIO_NAME_PARAMETER = 29;
+	int SCENARIO_NAME_PARAMETER = 28;
 
 	/**
 	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.TimeParameterImpl <em>Time Parameter</em>}' class.
@@ -224,7 +215,7 @@ public interface PresentationPackage extends EPackage {
 	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getTimeParameter()
 	 * @generated
 	 */
-	int TIME_PARAMETER = 30;
+	int TIME_PARAMETER = 29;
 
 	/**
 	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.TargetButtonParameterImpl <em>Target Button Parameter</em>}' class.
@@ -234,7 +225,7 @@ public interface PresentationPackage extends EPackage {
 	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getTargetButtonParameter()
 	 * @generated
 	 */
-	int TARGET_BUTTON_PARAMETER = 31;
+	int TARGET_BUTTON_PARAMETER = 30;
 
 	/**
 	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.CodeParameterImpl <em>Code Parameter</em>}' class.
@@ -244,7 +235,7 @@ public interface PresentationPackage extends EPackage {
 	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getCodeParameter()
 	 * @generated
 	 */
-	int CODE_PARAMETER = 32;
+	int CODE_PARAMETER = 31;
 
 	/**
 	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -355,7 +346,7 @@ public interface PresentationPackage extends EPackage {
 	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getActiveButtonsParameter()
 	 * @generated
 	 */
-	int ACTIVE_BUTTONS_PARAMETER = 27;
+	int ACTIVE_BUTTONS_PARAMETER = 26;
 
 	/**
 	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.ButtonCodesParameterImpl <em>Button Codes Parameter</em>}' class.
@@ -365,7 +356,7 @@ public interface PresentationPackage extends EPackage {
 	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getButtonCodesParameter()
 	 * @generated
 	 */
-	int BUTTON_CODES_PARAMETER = 28;
+	int BUTTON_CODES_PARAMETER = 27;
 
 	/**
 	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.LiteralImpl <em>Literal</em>}' class.
@@ -533,7 +524,7 @@ public interface PresentationPackage extends EPackage {
 	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getTextLiteral()
 	 * @generated
 	 */
-	int TEXT_LITERAL = 23;
+	int TEXT_LITERAL = 22;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -611,42 +602,6 @@ public interface PresentationPackage extends EPackage {
 	int TRIAL = 12;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRIAL__NAME = NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Stimuluslist</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRIAL__STIMULUSLIST = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Trial</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRIAL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Trial</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRIAL_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.StimulusEventImpl <em>Stimulus Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -657,88 +612,6 @@ public interface PresentationPackage extends EPackage {
 	int STIMULUS_EVENT = 13;
 
 	/**
-	 * The feature id for the '<em><b>Time</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STIMULUS_EVENT__TIME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Target button</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STIMULUS_EVENT__TARGET_BUTTON = 1;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STIMULUS_EVENT__CODE = 2;
-
-	/**
-	 * The number of structural features of the '<em>Stimulus Event</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STIMULUS_EVENT_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Stimulus Event</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STIMULUS_EVENT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.ListNodeImpl <em>List Node</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.Presentation.impl.ListNodeImpl
-	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getListNode()
-	 * @generated
-	 */
-	int LIST_NODE = 14;
-
-	/**
-	 * The feature id for the '<em><b>Next</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LIST_NODE__NEXT = 0;
-
-	/**
-	 * The number of structural features of the '<em>List Node</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LIST_NODE_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>List Node</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LIST_NODE_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.StimulusListImpl <em>Stimulus List</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -746,43 +619,7 @@ public interface PresentationPackage extends EPackage {
 	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getStimulusList()
 	 * @generated
 	 */
-	int STIMULUS_LIST = 15;
-
-	/**
-	 * The feature id for the '<em><b>Next</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STIMULUS_LIST__NEXT = LIST_NODE__NEXT;
-
-	/**
-	 * The feature id for the '<em><b>Stimulus</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STIMULUS_LIST__STIMULUS = LIST_NODE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Stimulus List</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STIMULUS_LIST_FEATURE_COUNT = LIST_NODE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Stimulus List</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STIMULUS_LIST_OPERATION_COUNT = LIST_NODE_OPERATION_COUNT + 0;
+	int STIMULUS_LIST = 14;
 
 	/**
 	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.ScenarioObjectImpl <em>Scenario Object</em>}' class.
@@ -792,7 +629,7 @@ public interface PresentationPackage extends EPackage {
 	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getScenarioObject()
 	 * @generated
 	 */
-	int SCENARIO_OBJECT = 16;
+	int SCENARIO_OBJECT = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -822,14 +659,49 @@ public interface PresentationPackage extends EPackage {
 	int SCENARIO_OBJECT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.PicturePartImpl <em>Picture Part</em>}' class.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.Presentation.impl.PicturePartImpl
-	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getPicturePart()
 	 * @generated
+	 * @ordered
 	 */
-	int PICTURE_PART = 20;
+	int TRIAL__NAME = SCENARIO_OBJECT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Stimulus list</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIAL__STIMULUS_LIST = SCENARIO_OBJECT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Trial parameter</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIAL__TRIAL_PARAMETER = SCENARIO_OBJECT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Trial</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIAL_FEATURE_COUNT = SCENARIO_OBJECT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Trial</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIAL_OPERATION_COUNT = SCENARIO_OBJECT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -838,25 +710,108 @@ public interface PresentationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PICTURE_PART__NAME = NAMED_ELEMENT__NAME;
+	int STIMULUS_EVENT__NAME = SCENARIO_OBJECT__NAME;
 
 	/**
-	 * The number of structural features of the '<em>Picture Part</em>' class.
+	 * The feature id for the '<em><b>Stimulus event parameter</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PICTURE_PART_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int STIMULUS_EVENT__STIMULUS_EVENT_PARAMETER = SCENARIO_OBJECT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Picture Part</em>' class.
+	 * The number of structural features of the '<em>Stimulus Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PICTURE_PART_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int STIMULUS_EVENT_FEATURE_COUNT = SCENARIO_OBJECT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Stimulus Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STIMULUS_EVENT_OPERATION_COUNT = SCENARIO_OBJECT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Stimulus event</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STIMULUS_LIST__STIMULUS_EVENT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Stimulus List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STIMULUS_LIST_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Stimulus List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STIMULUS_LIST_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.Graphic2DImpl <em>Graphic2 D</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.Graphic2DImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getGraphic2D()
+	 * @generated
+	 */
+	int GRAPHIC2_D = 40;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPHIC2_D__NAME = SCENARIO_OBJECT__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Graphic2 D</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPHIC2_D_FEATURE_COUNT = SCENARIO_OBJECT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Graphic2 D</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPHIC2_D_OPERATION_COUNT = SCENARIO_OBJECT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.PicturePartImpl <em>Picture Part</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.PicturePartImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getPicturePart()
+	 * @generated
+	 */
+	int PICTURE_PART = 19;
 
 	/**
 	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.Stimulus2DImpl <em>Stimulus2 D</em>}' class.
@@ -866,7 +821,181 @@ public interface PresentationPackage extends EPackage {
 	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getStimulus2D()
 	 * @generated
 	 */
-	int STIMULUS2_D = 21;
+	int STIMULUS2_D = 20;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.BitmapImpl <em>Bitmap</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.BitmapImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getBitmap()
+	 * @generated
+	 */
+	int BITMAP = 16;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BITMAP__NAME = GRAPHIC2_D__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Bitmap</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BITMAP_FEATURE_COUNT = GRAPHIC2_D_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Bitmap</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BITMAP_OPERATION_COUNT = GRAPHIC2_D_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.TextImpl <em>Text</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.TextImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getText()
+	 * @generated
+	 */
+	int TEXT = 17;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT__NAME = GRAPHIC2_D__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Caption</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT__CAPTION = GRAPHIC2_D_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Text parameter</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT__TEXT_PARAMETER = GRAPHIC2_D_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Text</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_FEATURE_COUNT = GRAPHIC2_D_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Text</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_OPERATION_COUNT = GRAPHIC2_D_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.PictureStimulusEventImpl <em>Picture Stimulus Event</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.PictureStimulusEventImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getPictureStimulusEvent()
+	 * @generated
+	 */
+	int PICTURE_STIMULUS_EVENT = 18;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICTURE_STIMULUS_EVENT__NAME = STIMULUS_EVENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Stimulus event parameter</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICTURE_STIMULUS_EVENT__STIMULUS_EVENT_PARAMETER = STIMULUS_EVENT__STIMULUS_EVENT_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Picture</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICTURE_STIMULUS_EVENT__PICTURE = STIMULUS_EVENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Picture Stimulus Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICTURE_STIMULUS_EVENT_FEATURE_COUNT = STIMULUS_EVENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Picture Stimulus Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICTURE_STIMULUS_EVENT_OPERATION_COUNT = STIMULUS_EVENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICTURE_PART__NAME = SCENARIO_OBJECT__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Picture Part</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICTURE_PART_FEATURE_COUNT = SCENARIO_OBJECT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Picture Part</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICTURE_PART_OPERATION_COUNT = SCENARIO_OBJECT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -878,22 +1007,22 @@ public interface PresentationPackage extends EPackage {
 	int STIMULUS2_D__NAME = PICTURE_PART__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Xcoordinate</b></em>' attribute.
+	 * The feature id for the '<em><b>Xdefinition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STIMULUS2_D__XCOORDINATE = PICTURE_PART_FEATURE_COUNT + 0;
+	int STIMULUS2_D__XDEFINITION = PICTURE_PART_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Ycoordinate</b></em>' attribute.
+	 * The feature id for the '<em><b>Ydefinition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STIMULUS2_D__YCOORDINATE = PICTURE_PART_FEATURE_COUNT + 1;
+	int STIMULUS2_D__YDEFINITION = PICTURE_PART_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Stimulus2 D</em>' class.
@@ -914,116 +1043,6 @@ public interface PresentationPackage extends EPackage {
 	int STIMULUS2_D_OPERATION_COUNT = PICTURE_PART_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.BitmapImpl <em>Bitmap</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.Presentation.impl.BitmapImpl
-	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getBitmap()
-	 * @generated
-	 */
-	int BITMAP = 17;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BITMAP__NAME = STIMULUS2_D__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Xcoordinate</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BITMAP__XCOORDINATE = STIMULUS2_D__XCOORDINATE;
-
-	/**
-	 * The feature id for the '<em><b>Ycoordinate</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BITMAP__YCOORDINATE = STIMULUS2_D__YCOORDINATE;
-
-	/**
-	 * The number of structural features of the '<em>Bitmap</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BITMAP_FEATURE_COUNT = STIMULUS2_D_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Bitmap</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BITMAP_OPERATION_COUNT = STIMULUS2_D_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.TextImpl <em>Text</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.emftext.language.Presentation.impl.TextImpl
-	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getText()
-	 * @generated
-	 */
-	int TEXT = 18;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT__NAME = STIMULUS2_D__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Xcoordinate</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT__XCOORDINATE = STIMULUS2_D__XCOORDINATE;
-
-	/**
-	 * The feature id for the '<em><b>Ycoordinate</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT__YCOORDINATE = STIMULUS2_D__YCOORDINATE;
-
-	/**
-	 * The number of structural features of the '<em>Text</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT_FEATURE_COUNT = STIMULUS2_D_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Text</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT_OPERATION_COUNT = STIMULUS2_D_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.PictureImpl <em>Picture</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1031,43 +1050,77 @@ public interface PresentationPackage extends EPackage {
 	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getPicture()
 	 * @generated
 	 */
-	int PICTURE = 19;
+	int PICTURE = 36;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.SoundImpl <em>Sound</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.SoundImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getSound()
 	 * @generated
-	 * @ordered
 	 */
-	int PICTURE__NAME = SCENARIO_OBJECT__NAME;
+	int SOUND = 37;
 
 	/**
-	 * The feature id for the '<em><b>Picturepart</b></em>' containment reference list.
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.TrialParameterImpl <em>Trial Parameter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.TrialParameterImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getTrialParameter()
 	 * @generated
-	 * @ordered
 	 */
-	int PICTURE__PICTUREPART = SCENARIO_OBJECT_FEATURE_COUNT + 0;
+	int TRIAL_PARAMETER = 38;
 
 	/**
-	 * The number of structural features of the '<em>Picture</em>' class.
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.BitmapStimulusImpl <em>Bitmap Stimulus</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.BitmapStimulusImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getBitmapStimulus()
 	 * @generated
-	 * @ordered
 	 */
-	int PICTURE_FEATURE_COUNT = SCENARIO_OBJECT_FEATURE_COUNT + 1;
+	int BITMAP_STIMULUS = 41;
 
 	/**
-	 * The number of operations of the '<em>Picture</em>' class.
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.BoxStimulusImpl <em>Box Stimulus</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.BoxStimulusImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getBoxStimulus()
 	 * @generated
-	 * @ordered
 	 */
-	int PICTURE_OPERATION_COUNT = SCENARIO_OBJECT_OPERATION_COUNT + 0;
+	int BOX_STIMULUS = 42;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.TextStimulusImpl <em>Text Stimulus</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.TextStimulusImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getTextStimulus()
+	 * @generated
+	 */
+	int TEXT_STIMULUS = 43;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.CoordinateDefinitionImpl <em>Coordinate Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.CoordinateDefinitionImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getCoordinateDefinition()
+	 * @generated
+	 */
+	int COORDINATE_DEFINITION = 44;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.CoordinateType <em>Coordinate Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.CoordinateType
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getCoordinateType()
+	 * @generated
+	 */
+	int COORDINATE_TYPE = 45;
 
 	/**
 	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.BoxImpl <em>Box</em>}' class.
@@ -1077,7 +1130,7 @@ public interface PresentationPackage extends EPackage {
 	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getBox()
 	 * @generated
 	 */
-	int BOX = 22;
+	int BOX = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1086,25 +1139,7 @@ public interface PresentationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOX__NAME = STIMULUS2_D__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Xcoordinate</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOX__XCOORDINATE = STIMULUS2_D__XCOORDINATE;
-
-	/**
-	 * The feature id for the '<em><b>Ycoordinate</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOX__YCOORDINATE = STIMULUS2_D__YCOORDINATE;
+	int BOX__NAME = GRAPHIC2_D__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Box</em>' class.
@@ -1113,7 +1148,7 @@ public interface PresentationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOX_FEATURE_COUNT = STIMULUS2_D_FEATURE_COUNT + 0;
+	int BOX_FEATURE_COUNT = GRAPHIC2_D_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Box</em>' class.
@@ -1122,7 +1157,7 @@ public interface PresentationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOX_OPERATION_COUNT = STIMULUS2_D_OPERATION_COUNT + 0;
+	int BOX_OPERATION_COUNT = GRAPHIC2_D_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
@@ -1150,7 +1185,7 @@ public interface PresentationPackage extends EPackage {
 	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getHeaderParameter()
 	 * @generated
 	 */
-	int HEADER_PARAMETER = 25;
+	int HEADER_PARAMETER = 24;
 
 	/**
 	 * The number of structural features of the '<em>Header Parameter</em>' class.
@@ -1171,31 +1206,41 @@ public interface PresentationPackage extends EPackage {
 	int HEADER_PARAMETER_OPERATION_COUNT = PARAMETER_OPERATION_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>SDL Parameter</em>' class.
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.StimulusEventParameterImpl <em>Stimulus Event Parameter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.StimulusEventParameterImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getStimulusEventParameter()
 	 * @generated
-	 * @ordered
 	 */
-	int SDL_PARAMETER_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 0;
+	int STIMULUS_EVENT_PARAMETER = 25;
 
 	/**
-	 * The number of operations of the '<em>SDL Parameter</em>' class.
+	 * The number of structural features of the '<em>Stimulus Event Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SDL_PARAMETER_OPERATION_COUNT = PARAMETER_OPERATION_COUNT + 0;
+	int STIMULUS_EVENT_PARAMETER_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Active buttons</b></em>' containment reference.
+	 * The number of operations of the '<em>Stimulus Event Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_BUTTONS_PARAMETER__ACTIVE_BUTTONS = HEADER_PARAMETER_FEATURE_COUNT + 0;
+	int STIMULUS_EVENT_PARAMETER_OPERATION_COUNT = PARAMETER_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Number literal</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVE_BUTTONS_PARAMETER__NUMBER_LITERAL = HEADER_PARAMETER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Active Buttons Parameter</em>' class.
@@ -1216,13 +1261,13 @@ public interface PresentationPackage extends EPackage {
 	int ACTIVE_BUTTONS_PARAMETER_OPERATION_COUNT = HEADER_PARAMETER_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Button codes</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Number literal</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUTTON_CODES_PARAMETER__BUTTON_CODES = HEADER_PARAMETER_FEATURE_COUNT + 0;
+	int BUTTON_CODES_PARAMETER__NUMBER_LITERAL = HEADER_PARAMETER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Button Codes Parameter</em>' class.
@@ -1243,13 +1288,13 @@ public interface PresentationPackage extends EPackage {
 	int BUTTON_CODES_PARAMETER_OPERATION_COUNT = HEADER_PARAMETER_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Scenario name</b></em>' containment reference.
+	 * The feature id for the '<em><b>Name literal</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_NAME_PARAMETER__SCENARIO_NAME = HEADER_PARAMETER_FEATURE_COUNT + 0;
+	int SCENARIO_NAME_PARAMETER__NAME_LITERAL = HEADER_PARAMETER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Scenario Name Parameter</em>' class.
@@ -1270,13 +1315,13 @@ public interface PresentationPackage extends EPackage {
 	int SCENARIO_NAME_PARAMETER_OPERATION_COUNT = HEADER_PARAMETER_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Time</b></em>' containment reference.
+	 * The feature id for the '<em><b>Number literal</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_PARAMETER__TIME = SDL_PARAMETER_FEATURE_COUNT + 0;
+	int TIME_PARAMETER__NUMBER_LITERAL = STIMULUS_EVENT_PARAMETER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Time Parameter</em>' class.
@@ -1285,7 +1330,7 @@ public interface PresentationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_PARAMETER_FEATURE_COUNT = SDL_PARAMETER_FEATURE_COUNT + 1;
+	int TIME_PARAMETER_FEATURE_COUNT = STIMULUS_EVENT_PARAMETER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Time Parameter</em>' class.
@@ -1294,16 +1339,16 @@ public interface PresentationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_PARAMETER_OPERATION_COUNT = SDL_PARAMETER_OPERATION_COUNT + 0;
+	int TIME_PARAMETER_OPERATION_COUNT = STIMULUS_EVENT_PARAMETER_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Target button</b></em>' containment reference.
+	 * The feature id for the '<em><b>Number literal</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TARGET_BUTTON_PARAMETER__TARGET_BUTTON = SDL_PARAMETER_FEATURE_COUNT + 0;
+	int TARGET_BUTTON_PARAMETER__NUMBER_LITERAL = STIMULUS_EVENT_PARAMETER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Target Button Parameter</em>' class.
@@ -1312,7 +1357,7 @@ public interface PresentationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TARGET_BUTTON_PARAMETER_FEATURE_COUNT = SDL_PARAMETER_FEATURE_COUNT + 1;
+	int TARGET_BUTTON_PARAMETER_FEATURE_COUNT = STIMULUS_EVENT_PARAMETER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Target Button Parameter</em>' class.
@@ -1321,16 +1366,16 @@ public interface PresentationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TARGET_BUTTON_PARAMETER_OPERATION_COUNT = SDL_PARAMETER_OPERATION_COUNT + 0;
+	int TARGET_BUTTON_PARAMETER_OPERATION_COUNT = STIMULUS_EVENT_PARAMETER_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * The feature id for the '<em><b>Text literal</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CODE_PARAMETER__CODE = SDL_PARAMETER_FEATURE_COUNT + 0;
+	int CODE_PARAMETER__TEXT_LITERAL = STIMULUS_EVENT_PARAMETER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Code Parameter</em>' class.
@@ -1339,7 +1384,7 @@ public interface PresentationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CODE_PARAMETER_FEATURE_COUNT = SDL_PARAMETER_FEATURE_COUNT + 1;
+	int CODE_PARAMETER_FEATURE_COUNT = STIMULUS_EVENT_PARAMETER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Code Parameter</em>' class.
@@ -1348,8 +1393,473 @@ public interface PresentationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CODE_PARAMETER_OPERATION_COUNT = SDL_PARAMETER_OPERATION_COUNT + 0;
+	int CODE_PARAMETER_OPERATION_COUNT = STIMULUS_EVENT_PARAMETER_OPERATION_COUNT + 0;
 
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.PictureParameterImpl <em>Picture Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.PictureParameterImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getPictureParameter()
+	 * @generated
+	 */
+	int PICTURE_PARAMETER = 32;
+
+	/**
+	 * The number of structural features of the '<em>Picture Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICTURE_PARAMETER_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Picture Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICTURE_PARAMETER_OPERATION_COUNT = PARAMETER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.BackgroundColorParameterImpl <em>Background Color Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.BackgroundColorParameterImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getBackgroundColorParameter()
+	 * @generated
+	 */
+	int BACKGROUND_COLOR_PARAMETER = 33;
+
+	/**
+	 * The feature id for the '<em><b>Number literal</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACKGROUND_COLOR_PARAMETER__NUMBER_LITERAL = PICTURE_PARAMETER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Background Color Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACKGROUND_COLOR_PARAMETER_FEATURE_COUNT = PICTURE_PARAMETER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Background Color Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACKGROUND_COLOR_PARAMETER_OPERATION_COUNT = PICTURE_PARAMETER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.TextParameterImpl <em>Text Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.TextParameterImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getTextParameter()
+	 * @generated
+	 */
+	int TEXT_PARAMETER = 34;
+
+	/**
+	 * The number of structural features of the '<em>Text Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_PARAMETER_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Text Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_PARAMETER_OPERATION_COUNT = PARAMETER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.CaptionParameterImpl <em>Caption Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.CaptionParameterImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getCaptionParameter()
+	 * @generated
+	 */
+	int CAPTION_PARAMETER = 35;
+
+	/**
+	 * The feature id for the '<em><b>Text literal</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPTION_PARAMETER__TEXT_LITERAL = TEXT_PARAMETER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Caption Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPTION_PARAMETER_FEATURE_COUNT = TEXT_PARAMETER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Caption Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPTION_PARAMETER_OPERATION_COUNT = TEXT_PARAMETER_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.StimulusImpl <em>Stimulus</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.StimulusImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getStimulus()
+	 * @generated
+	 */
+	int STIMULUS = 39;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STIMULUS__NAME = SCENARIO_OBJECT__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Stimulus</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STIMULUS_FEATURE_COUNT = SCENARIO_OBJECT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Stimulus</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STIMULUS_OPERATION_COUNT = SCENARIO_OBJECT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICTURE__NAME = STIMULUS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Picture part</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICTURE__PICTURE_PART = STIMULUS_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Picture parameter</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICTURE__PICTURE_PARAMETER = STIMULUS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Picture</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICTURE_FEATURE_COUNT = STIMULUS_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Picture</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICTURE_OPERATION_COUNT = STIMULUS_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUND__NAME = STIMULUS__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Sound</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUND_FEATURE_COUNT = STIMULUS_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Sound</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUND_OPERATION_COUNT = STIMULUS_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Trial Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIAL_PARAMETER_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Trial Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIAL_PARAMETER_OPERATION_COUNT = PARAMETER_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BITMAP_STIMULUS__NAME = STIMULUS2_D__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Xdefinition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BITMAP_STIMULUS__XDEFINITION = STIMULUS2_D__XDEFINITION;
+
+	/**
+	 * The feature id for the '<em><b>Ydefinition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BITMAP_STIMULUS__YDEFINITION = STIMULUS2_D__YDEFINITION;
+
+	/**
+	 * The feature id for the '<em><b>Bitmap</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BITMAP_STIMULUS__BITMAP = STIMULUS2_D_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Bitmap Stimulus</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BITMAP_STIMULUS_FEATURE_COUNT = STIMULUS2_D_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Bitmap Stimulus</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BITMAP_STIMULUS_OPERATION_COUNT = STIMULUS2_D_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOX_STIMULUS__NAME = STIMULUS2_D__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Xdefinition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOX_STIMULUS__XDEFINITION = STIMULUS2_D__XDEFINITION;
+
+	/**
+	 * The feature id for the '<em><b>Ydefinition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOX_STIMULUS__YDEFINITION = STIMULUS2_D__YDEFINITION;
+
+	/**
+	 * The feature id for the '<em><b>Box</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOX_STIMULUS__BOX = STIMULUS2_D_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Box Stimulus</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOX_STIMULUS_FEATURE_COUNT = STIMULUS2_D_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Box Stimulus</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOX_STIMULUS_OPERATION_COUNT = STIMULUS2_D_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_STIMULUS__NAME = STIMULUS2_D__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Xdefinition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_STIMULUS__XDEFINITION = STIMULUS2_D__XDEFINITION;
+
+	/**
+	 * The feature id for the '<em><b>Ydefinition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_STIMULUS__YDEFINITION = STIMULUS2_D__YDEFINITION;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_STIMULUS__TEXT = STIMULUS2_D_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Text Stimulus</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_STIMULUS_FEATURE_COUNT = STIMULUS2_D_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Text Stimulus</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_STIMULUS_OPERATION_COUNT = STIMULUS2_D_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Coordinate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATE_DEFINITION__COORDINATE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATE_DEFINITION__TYPE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Right bottom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATE_DEFINITION__RIGHT_BOTTOM = 2;
+
+	/**
+	 * The number of structural features of the '<em>Coordinate Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATE_DEFINITION_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Coordinate Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATE_DEFINITION_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.emftext.language.Presentation.ScenarioFile <em>Scenario File</em>}'.
@@ -1393,15 +1903,15 @@ public interface PresentationPackage extends EPackage {
 	EClass getSDL();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.emftext.language.Presentation.SDL#getTrial <em>Trial</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.emftext.language.Presentation.SDL#getScenario_object <em>Scenario object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Trial</em>'.
-	 * @see org.emftext.language.Presentation.SDL#getTrial()
+	 * @return the meta object for the containment reference list '<em>Scenario object</em>'.
+	 * @see org.emftext.language.Presentation.SDL#getScenario_object()
 	 * @see #getSDL()
 	 * @generated
 	 */
-	EReference getSDL_Trial();
+	EReference getSDL_Scenario_object();
 
 	/**
 	 * Returns the meta object for class '{@link org.emftext.language.Presentation.PCL <em>PCL</em>}'.
@@ -1434,14 +1944,14 @@ public interface PresentationPackage extends EPackage {
 	EClass getHeaderParameter();
 
 	/**
-	 * Returns the meta object for class '{@link org.emftext.language.Presentation.SDLParameter <em>SDL Parameter</em>}'.
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.StimulusEventParameter <em>Stimulus Event Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>SDL Parameter</em>'.
-	 * @see org.emftext.language.Presentation.SDLParameter
+	 * @return the meta object for class '<em>Stimulus Event Parameter</em>'.
+	 * @see org.emftext.language.Presentation.StimulusEventParameter
 	 * @generated
 	 */
-	EClass getSDLParameter();
+	EClass getStimulusEventParameter();
 
 	/**
 	 * Returns the meta object for class '{@link org.emftext.language.Presentation.ScenarioNameParameter <em>Scenario Name Parameter</em>}'.
@@ -1454,15 +1964,15 @@ public interface PresentationPackage extends EPackage {
 	EClass getScenarioNameParameter();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.ScenarioNameParameter#getScenario_name <em>Scenario name</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.ScenarioNameParameter#getName_literal <em>Name literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Scenario name</em>'.
-	 * @see org.emftext.language.Presentation.ScenarioNameParameter#getScenario_name()
+	 * @return the meta object for the containment reference '<em>Name literal</em>'.
+	 * @see org.emftext.language.Presentation.ScenarioNameParameter#getName_literal()
 	 * @see #getScenarioNameParameter()
 	 * @generated
 	 */
-	EReference getScenarioNameParameter_Scenario_name();
+	EReference getScenarioNameParameter_Name_literal();
 
 	/**
 	 * Returns the meta object for class '{@link org.emftext.language.Presentation.TimeParameter <em>Time Parameter</em>}'.
@@ -1475,15 +1985,15 @@ public interface PresentationPackage extends EPackage {
 	EClass getTimeParameter();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.TimeParameter#getTime <em>Time</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.TimeParameter#getNumber_literal <em>Number literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Time</em>'.
-	 * @see org.emftext.language.Presentation.TimeParameter#getTime()
+	 * @return the meta object for the containment reference '<em>Number literal</em>'.
+	 * @see org.emftext.language.Presentation.TimeParameter#getNumber_literal()
 	 * @see #getTimeParameter()
 	 * @generated
 	 */
-	EReference getTimeParameter_Time();
+	EReference getTimeParameter_Number_literal();
 
 	/**
 	 * Returns the meta object for class '{@link org.emftext.language.Presentation.TargetButtonParameter <em>Target Button Parameter</em>}'.
@@ -1496,15 +2006,15 @@ public interface PresentationPackage extends EPackage {
 	EClass getTargetButtonParameter();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.TargetButtonParameter#getTarget_button <em>Target button</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.TargetButtonParameter#getNumber_literal <em>Number literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Target button</em>'.
-	 * @see org.emftext.language.Presentation.TargetButtonParameter#getTarget_button()
+	 * @return the meta object for the containment reference '<em>Number literal</em>'.
+	 * @see org.emftext.language.Presentation.TargetButtonParameter#getNumber_literal()
 	 * @see #getTargetButtonParameter()
 	 * @generated
 	 */
-	EReference getTargetButtonParameter_Target_button();
+	EReference getTargetButtonParameter_Number_literal();
 
 	/**
 	 * Returns the meta object for class '{@link org.emftext.language.Presentation.CodeParameter <em>Code Parameter</em>}'.
@@ -1517,15 +2027,77 @@ public interface PresentationPackage extends EPackage {
 	EClass getCodeParameter();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.CodeParameter#getCode <em>Code</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.CodeParameter#getText_literal <em>Text literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Code</em>'.
-	 * @see org.emftext.language.Presentation.CodeParameter#getCode()
+	 * @return the meta object for the containment reference '<em>Text literal</em>'.
+	 * @see org.emftext.language.Presentation.CodeParameter#getText_literal()
 	 * @see #getCodeParameter()
 	 * @generated
 	 */
-	EReference getCodeParameter_Code();
+	EReference getCodeParameter_Text_literal();
+
+	/**
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.PictureParameter <em>Picture Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Picture Parameter</em>'.
+	 * @see org.emftext.language.Presentation.PictureParameter
+	 * @generated
+	 */
+	EClass getPictureParameter();
+
+	/**
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.BackgroundColorParameter <em>Background Color Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Background Color Parameter</em>'.
+	 * @see org.emftext.language.Presentation.BackgroundColorParameter
+	 * @generated
+	 */
+	EClass getBackgroundColorParameter();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.emftext.language.Presentation.BackgroundColorParameter#getNumber_literal <em>Number literal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Number literal</em>'.
+	 * @see org.emftext.language.Presentation.BackgroundColorParameter#getNumber_literal()
+	 * @see #getBackgroundColorParameter()
+	 * @generated
+	 */
+	EReference getBackgroundColorParameter_Number_literal();
+
+	/**
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.TextParameter <em>Text Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Text Parameter</em>'.
+	 * @see org.emftext.language.Presentation.TextParameter
+	 * @generated
+	 */
+	EClass getTextParameter();
+
+	/**
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.CaptionParameter <em>Caption Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Caption Parameter</em>'.
+	 * @see org.emftext.language.Presentation.CaptionParameter
+	 * @generated
+	 */
+	EClass getCaptionParameter();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.CaptionParameter#getText_literal <em>Text literal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Text literal</em>'.
+	 * @see org.emftext.language.Presentation.CaptionParameter#getText_literal()
+	 * @see #getCaptionParameter()
+	 * @generated
+	 */
+	EReference getCaptionParameter_Text_literal();
 
 	/**
 	 * Returns the meta object for class '{@link org.emftext.language.Presentation.NamedElement <em>Named Element</em>}'.
@@ -1602,15 +2174,15 @@ public interface PresentationPackage extends EPackage {
 	EClass getActiveButtonsParameter();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.ActiveButtonsParameter#getActive_buttons <em>Active buttons</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.ActiveButtonsParameter#getNumber_literal <em>Number literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Active buttons</em>'.
-	 * @see org.emftext.language.Presentation.ActiveButtonsParameter#getActive_buttons()
+	 * @return the meta object for the containment reference '<em>Number literal</em>'.
+	 * @see org.emftext.language.Presentation.ActiveButtonsParameter#getNumber_literal()
 	 * @see #getActiveButtonsParameter()
 	 * @generated
 	 */
-	EReference getActiveButtonsParameter_Active_buttons();
+	EReference getActiveButtonsParameter_Number_literal();
 
 	/**
 	 * Returns the meta object for class '{@link org.emftext.language.Presentation.ButtonCodesParameter <em>Button Codes Parameter</em>}'.
@@ -1623,15 +2195,15 @@ public interface PresentationPackage extends EPackage {
 	EClass getButtonCodesParameter();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.emftext.language.Presentation.ButtonCodesParameter#getButton_codes <em>Button codes</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.emftext.language.Presentation.ButtonCodesParameter#getNumber_literal <em>Number literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Button codes</em>'.
-	 * @see org.emftext.language.Presentation.ButtonCodesParameter#getButton_codes()
+	 * @return the meta object for the containment reference list '<em>Number literal</em>'.
+	 * @see org.emftext.language.Presentation.ButtonCodesParameter#getNumber_literal()
 	 * @see #getButtonCodesParameter()
 	 * @generated
 	 */
-	EReference getButtonCodesParameter_Button_codes();
+	EReference getButtonCodesParameter_Number_literal();
 
 	/**
 	 * Returns the meta object for class '{@link org.emftext.language.Presentation.Literal <em>Literal</em>}'.
@@ -1726,15 +2298,26 @@ public interface PresentationPackage extends EPackage {
 	EClass getTrial();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.Trial#getStimuluslist <em>Stimuluslist</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.Trial#getStimulus_list <em>Stimulus list</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Stimuluslist</em>'.
-	 * @see org.emftext.language.Presentation.Trial#getStimuluslist()
+	 * @return the meta object for the containment reference '<em>Stimulus list</em>'.
+	 * @see org.emftext.language.Presentation.Trial#getStimulus_list()
 	 * @see #getTrial()
 	 * @generated
 	 */
-	EReference getTrial_Stimuluslist();
+	EReference getTrial_Stimulus_list();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.emftext.language.Presentation.Trial#getTrial_parameter <em>Trial parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Trial parameter</em>'.
+	 * @see org.emftext.language.Presentation.Trial#getTrial_parameter()
+	 * @see #getTrial()
+	 * @generated
+	 */
+	EReference getTrial_Trial_parameter();
 
 	/**
 	 * Returns the meta object for class '{@link org.emftext.language.Presentation.StimulusEvent <em>Stimulus Event</em>}'.
@@ -1747,58 +2330,15 @@ public interface PresentationPackage extends EPackage {
 	EClass getStimulusEvent();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.StimulusEvent#getTime <em>Time</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.emftext.language.Presentation.StimulusEvent#getStimulus_event_parameter <em>Stimulus event parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Time</em>'.
-	 * @see org.emftext.language.Presentation.StimulusEvent#getTime()
+	 * @return the meta object for the containment reference list '<em>Stimulus event parameter</em>'.
+	 * @see org.emftext.language.Presentation.StimulusEvent#getStimulus_event_parameter()
 	 * @see #getStimulusEvent()
 	 * @generated
 	 */
-	EReference getStimulusEvent_Time();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.StimulusEvent#getTarget_button <em>Target button</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Target button</em>'.
-	 * @see org.emftext.language.Presentation.StimulusEvent#getTarget_button()
-	 * @see #getStimulusEvent()
-	 * @generated
-	 */
-	EReference getStimulusEvent_Target_button();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.emftext.language.Presentation.StimulusEvent#getCode <em>Code</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Code</em>'.
-	 * @see org.emftext.language.Presentation.StimulusEvent#getCode()
-	 * @see #getStimulusEvent()
-	 * @generated
-	 */
-	EReference getStimulusEvent_Code();
-
-	/**
-	 * Returns the meta object for class '{@link org.emftext.language.Presentation.ListNode <em>List Node</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>List Node</em>'.
-	 * @see org.emftext.language.Presentation.ListNode
-	 * @generated
-	 */
-	EClass getListNode();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.emftext.language.Presentation.ListNode#getNext <em>Next</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Next</em>'.
-	 * @see org.emftext.language.Presentation.ListNode#getNext()
-	 * @see #getListNode()
-	 * @generated
-	 */
-	EReference getListNode_Next();
+	EReference getStimulusEvent_Stimulus_event_parameter();
 
 	/**
 	 * Returns the meta object for class '{@link org.emftext.language.Presentation.StimulusList <em>Stimulus List</em>}'.
@@ -1811,15 +2351,15 @@ public interface PresentationPackage extends EPackage {
 	EClass getStimulusList();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.StimulusList#getStimulus <em>Stimulus</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.emftext.language.Presentation.StimulusList#getStimulus_event <em>Stimulus event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Stimulus</em>'.
-	 * @see org.emftext.language.Presentation.StimulusList#getStimulus()
+	 * @return the meta object for the containment reference list '<em>Stimulus event</em>'.
+	 * @see org.emftext.language.Presentation.StimulusList#getStimulus_event()
 	 * @see #getStimulusList()
 	 * @generated
 	 */
-	EReference getStimulusList_Stimulus();
+	EReference getStimulusList_Stimulus_event();
 
 	/**
 	 * Returns the meta object for class '{@link org.emftext.language.Presentation.ScenarioObject <em>Scenario Object</em>}'.
@@ -1852,6 +2392,49 @@ public interface PresentationPackage extends EPackage {
 	EClass getText();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.Text#getCaption <em>Caption</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Caption</em>'.
+	 * @see org.emftext.language.Presentation.Text#getCaption()
+	 * @see #getText()
+	 * @generated
+	 */
+	EReference getText_Caption();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.emftext.language.Presentation.Text#getText_parameter <em>Text parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Text parameter</em>'.
+	 * @see org.emftext.language.Presentation.Text#getText_parameter()
+	 * @see #getText()
+	 * @generated
+	 */
+	EReference getText_Text_parameter();
+
+	/**
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.PictureStimulusEvent <em>Picture Stimulus Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Picture Stimulus Event</em>'.
+	 * @see org.emftext.language.Presentation.PictureStimulusEvent
+	 * @generated
+	 */
+	EClass getPictureStimulusEvent();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.PictureStimulusEvent#getPicture <em>Picture</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Picture</em>'.
+	 * @see org.emftext.language.Presentation.PictureStimulusEvent#getPicture()
+	 * @see #getPictureStimulusEvent()
+	 * @generated
+	 */
+	EReference getPictureStimulusEvent_Picture();
+
+	/**
 	 * Returns the meta object for class '{@link org.emftext.language.Presentation.Picture <em>Picture</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1862,15 +2445,182 @@ public interface PresentationPackage extends EPackage {
 	EClass getPicture();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.emftext.language.Presentation.Picture#getPicturepart <em>Picturepart</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.emftext.language.Presentation.Picture#getPicture_part <em>Picture part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Picturepart</em>'.
-	 * @see org.emftext.language.Presentation.Picture#getPicturepart()
+	 * @return the meta object for the containment reference list '<em>Picture part</em>'.
+	 * @see org.emftext.language.Presentation.Picture#getPicture_part()
 	 * @see #getPicture()
 	 * @generated
 	 */
-	EReference getPicture_Picturepart();
+	EReference getPicture_Picture_part();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.emftext.language.Presentation.Picture#getPicture_parameter <em>Picture parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Picture parameter</em>'.
+	 * @see org.emftext.language.Presentation.Picture#getPicture_parameter()
+	 * @see #getPicture()
+	 * @generated
+	 */
+	EReference getPicture_Picture_parameter();
+
+	/**
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.Sound <em>Sound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Sound</em>'.
+	 * @see org.emftext.language.Presentation.Sound
+	 * @generated
+	 */
+	EClass getSound();
+
+	/**
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.TrialParameter <em>Trial Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Trial Parameter</em>'.
+	 * @see org.emftext.language.Presentation.TrialParameter
+	 * @generated
+	 */
+	EClass getTrialParameter();
+
+	/**
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.Stimulus <em>Stimulus</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Stimulus</em>'.
+	 * @see org.emftext.language.Presentation.Stimulus
+	 * @generated
+	 */
+	EClass getStimulus();
+
+	/**
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.Graphic2D <em>Graphic2 D</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Graphic2 D</em>'.
+	 * @see org.emftext.language.Presentation.Graphic2D
+	 * @generated
+	 */
+	EClass getGraphic2D();
+
+	/**
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.BitmapStimulus <em>Bitmap Stimulus</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bitmap Stimulus</em>'.
+	 * @see org.emftext.language.Presentation.BitmapStimulus
+	 * @generated
+	 */
+	EClass getBitmapStimulus();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.BitmapStimulus#getBitmap <em>Bitmap</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Bitmap</em>'.
+	 * @see org.emftext.language.Presentation.BitmapStimulus#getBitmap()
+	 * @see #getBitmapStimulus()
+	 * @generated
+	 */
+	EReference getBitmapStimulus_Bitmap();
+
+	/**
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.BoxStimulus <em>Box Stimulus</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Box Stimulus</em>'.
+	 * @see org.emftext.language.Presentation.BoxStimulus
+	 * @generated
+	 */
+	EClass getBoxStimulus();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.BoxStimulus#getBox <em>Box</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Box</em>'.
+	 * @see org.emftext.language.Presentation.BoxStimulus#getBox()
+	 * @see #getBoxStimulus()
+	 * @generated
+	 */
+	EReference getBoxStimulus_Box();
+
+	/**
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.TextStimulus <em>Text Stimulus</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Text Stimulus</em>'.
+	 * @see org.emftext.language.Presentation.TextStimulus
+	 * @generated
+	 */
+	EClass getTextStimulus();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.TextStimulus#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Text</em>'.
+	 * @see org.emftext.language.Presentation.TextStimulus#getText()
+	 * @see #getTextStimulus()
+	 * @generated
+	 */
+	EReference getTextStimulus_Text();
+
+	/**
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.CoordinateDefinition <em>Coordinate Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Coordinate Definition</em>'.
+	 * @see org.emftext.language.Presentation.CoordinateDefinition
+	 * @generated
+	 */
+	EClass getCoordinateDefinition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.emftext.language.Presentation.CoordinateDefinition#getCoordinate <em>Coordinate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Coordinate</em>'.
+	 * @see org.emftext.language.Presentation.CoordinateDefinition#getCoordinate()
+	 * @see #getCoordinateDefinition()
+	 * @generated
+	 */
+	EAttribute getCoordinateDefinition_Coordinate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.emftext.language.Presentation.CoordinateDefinition#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see org.emftext.language.Presentation.CoordinateDefinition#getType()
+	 * @see #getCoordinateDefinition()
+	 * @generated
+	 */
+	EAttribute getCoordinateDefinition_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.emftext.language.Presentation.CoordinateDefinition#getRight_bottom <em>Right bottom</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Right bottom</em>'.
+	 * @see org.emftext.language.Presentation.CoordinateDefinition#getRight_bottom()
+	 * @see #getCoordinateDefinition()
+	 * @generated
+	 */
+	EAttribute getCoordinateDefinition_Right_bottom();
+
+	/**
+	 * Returns the meta object for enum '{@link org.emftext.language.Presentation.CoordinateType <em>Coordinate Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Coordinate Type</em>'.
+	 * @see org.emftext.language.Presentation.CoordinateType
+	 * @generated
+	 */
+	EEnum getCoordinateType();
 
 	/**
 	 * Returns the meta object for class '{@link org.emftext.language.Presentation.PicturePart <em>Picture Part</em>}'.
@@ -1893,26 +2643,26 @@ public interface PresentationPackage extends EPackage {
 	EClass getStimulus2D();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.emftext.language.Presentation.Stimulus2D#getX_coordinate <em>Xcoordinate</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.Stimulus2D#getX_definition <em>Xdefinition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Xcoordinate</em>'.
-	 * @see org.emftext.language.Presentation.Stimulus2D#getX_coordinate()
+	 * @return the meta object for the containment reference '<em>Xdefinition</em>'.
+	 * @see org.emftext.language.Presentation.Stimulus2D#getX_definition()
 	 * @see #getStimulus2D()
 	 * @generated
 	 */
-	EAttribute getStimulus2D_X_coordinate();
+	EReference getStimulus2D_X_definition();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.emftext.language.Presentation.Stimulus2D#getY_coordinate <em>Ycoordinate</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.Stimulus2D#getY_definition <em>Ydefinition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ycoordinate</em>'.
-	 * @see org.emftext.language.Presentation.Stimulus2D#getY_coordinate()
+	 * @return the meta object for the containment reference '<em>Ydefinition</em>'.
+	 * @see org.emftext.language.Presentation.Stimulus2D#getY_definition()
 	 * @see #getStimulus2D()
 	 * @generated
 	 */
-	EAttribute getStimulus2D_Y_coordinate();
+	EReference getStimulus2D_Y_definition();
 
 	/**
 	 * Returns the meta object for class '{@link org.emftext.language.Presentation.Box <em>Box</em>}'.
@@ -2007,12 +2757,12 @@ public interface PresentationPackage extends EPackage {
 		EClass SDL = eINSTANCE.getSDL();
 
 		/**
-		 * The meta object literal for the '<em><b>Trial</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Scenario object</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SDL__TRIAL = eINSTANCE.getSDL_Trial();
+		EReference SDL__SCENARIO_OBJECT = eINSTANCE.getSDL_Scenario_object();
 
 		/**
 		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.PCLImpl <em>PCL</em>}' class.
@@ -2045,14 +2795,14 @@ public interface PresentationPackage extends EPackage {
 		EClass HEADER_PARAMETER = eINSTANCE.getHeaderParameter();
 
 		/**
-		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.SDLParameterImpl <em>SDL Parameter</em>}' class.
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.StimulusEventParameterImpl <em>Stimulus Event Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.Presentation.impl.SDLParameterImpl
-		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getSDLParameter()
+		 * @see org.emftext.language.Presentation.impl.StimulusEventParameterImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getStimulusEventParameter()
 		 * @generated
 		 */
-		EClass SDL_PARAMETER = eINSTANCE.getSDLParameter();
+		EClass STIMULUS_EVENT_PARAMETER = eINSTANCE.getStimulusEventParameter();
 
 		/**
 		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.ScenarioNameParameterImpl <em>Scenario Name Parameter</em>}' class.
@@ -2065,12 +2815,12 @@ public interface PresentationPackage extends EPackage {
 		EClass SCENARIO_NAME_PARAMETER = eINSTANCE.getScenarioNameParameter();
 
 		/**
-		 * The meta object literal for the '<em><b>Scenario name</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Name literal</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCENARIO_NAME_PARAMETER__SCENARIO_NAME = eINSTANCE.getScenarioNameParameter_Scenario_name();
+		EReference SCENARIO_NAME_PARAMETER__NAME_LITERAL = eINSTANCE.getScenarioNameParameter_Name_literal();
 
 		/**
 		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.TimeParameterImpl <em>Time Parameter</em>}' class.
@@ -2083,12 +2833,12 @@ public interface PresentationPackage extends EPackage {
 		EClass TIME_PARAMETER = eINSTANCE.getTimeParameter();
 
 		/**
-		 * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Number literal</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TIME_PARAMETER__TIME = eINSTANCE.getTimeParameter_Time();
+		EReference TIME_PARAMETER__NUMBER_LITERAL = eINSTANCE.getTimeParameter_Number_literal();
 
 		/**
 		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.TargetButtonParameterImpl <em>Target Button Parameter</em>}' class.
@@ -2101,12 +2851,12 @@ public interface PresentationPackage extends EPackage {
 		EClass TARGET_BUTTON_PARAMETER = eINSTANCE.getTargetButtonParameter();
 
 		/**
-		 * The meta object literal for the '<em><b>Target button</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Number literal</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TARGET_BUTTON_PARAMETER__TARGET_BUTTON = eINSTANCE.getTargetButtonParameter_Target_button();
+		EReference TARGET_BUTTON_PARAMETER__NUMBER_LITERAL = eINSTANCE.getTargetButtonParameter_Number_literal();
 
 		/**
 		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.CodeParameterImpl <em>Code Parameter</em>}' class.
@@ -2119,12 +2869,68 @@ public interface PresentationPackage extends EPackage {
 		EClass CODE_PARAMETER = eINSTANCE.getCodeParameter();
 
 		/**
-		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Text literal</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CODE_PARAMETER__CODE = eINSTANCE.getCodeParameter_Code();
+		EReference CODE_PARAMETER__TEXT_LITERAL = eINSTANCE.getCodeParameter_Text_literal();
+
+		/**
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.PictureParameterImpl <em>Picture Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.emftext.language.Presentation.impl.PictureParameterImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getPictureParameter()
+		 * @generated
+		 */
+		EClass PICTURE_PARAMETER = eINSTANCE.getPictureParameter();
+
+		/**
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.BackgroundColorParameterImpl <em>Background Color Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.emftext.language.Presentation.impl.BackgroundColorParameterImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getBackgroundColorParameter()
+		 * @generated
+		 */
+		EClass BACKGROUND_COLOR_PARAMETER = eINSTANCE.getBackgroundColorParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Number literal</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BACKGROUND_COLOR_PARAMETER__NUMBER_LITERAL = eINSTANCE.getBackgroundColorParameter_Number_literal();
+
+		/**
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.TextParameterImpl <em>Text Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.emftext.language.Presentation.impl.TextParameterImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getTextParameter()
+		 * @generated
+		 */
+		EClass TEXT_PARAMETER = eINSTANCE.getTextParameter();
+
+		/**
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.CaptionParameterImpl <em>Caption Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.emftext.language.Presentation.impl.CaptionParameterImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getCaptionParameter()
+		 * @generated
+		 */
+		EClass CAPTION_PARAMETER = eINSTANCE.getCaptionParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Text literal</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CAPTION_PARAMETER__TEXT_LITERAL = eINSTANCE.getCaptionParameter_Text_literal();
 
 		/**
 		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -2189,12 +2995,12 @@ public interface PresentationPackage extends EPackage {
 		EClass ACTIVE_BUTTONS_PARAMETER = eINSTANCE.getActiveButtonsParameter();
 
 		/**
-		 * The meta object literal for the '<em><b>Active buttons</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Number literal</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVE_BUTTONS_PARAMETER__ACTIVE_BUTTONS = eINSTANCE.getActiveButtonsParameter_Active_buttons();
+		EReference ACTIVE_BUTTONS_PARAMETER__NUMBER_LITERAL = eINSTANCE.getActiveButtonsParameter_Number_literal();
 
 		/**
 		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.ButtonCodesParameterImpl <em>Button Codes Parameter</em>}' class.
@@ -2207,12 +3013,12 @@ public interface PresentationPackage extends EPackage {
 		EClass BUTTON_CODES_PARAMETER = eINSTANCE.getButtonCodesParameter();
 
 		/**
-		 * The meta object literal for the '<em><b>Button codes</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Number literal</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BUTTON_CODES_PARAMETER__BUTTON_CODES = eINSTANCE.getButtonCodesParameter_Button_codes();
+		EReference BUTTON_CODES_PARAMETER__NUMBER_LITERAL = eINSTANCE.getButtonCodesParameter_Number_literal();
 
 		/**
 		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.LiteralImpl <em>Literal</em>}' class.
@@ -2301,12 +3107,20 @@ public interface PresentationPackage extends EPackage {
 		EClass TRIAL = eINSTANCE.getTrial();
 
 		/**
-		 * The meta object literal for the '<em><b>Stimuluslist</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Stimulus list</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRIAL__STIMULUSLIST = eINSTANCE.getTrial_Stimuluslist();
+		EReference TRIAL__STIMULUS_LIST = eINSTANCE.getTrial_Stimulus_list();
+
+		/**
+		 * The meta object literal for the '<em><b>Trial parameter</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIAL__TRIAL_PARAMETER = eINSTANCE.getTrial_Trial_parameter();
 
 		/**
 		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.StimulusEventImpl <em>Stimulus Event</em>}' class.
@@ -2319,46 +3133,12 @@ public interface PresentationPackage extends EPackage {
 		EClass STIMULUS_EVENT = eINSTANCE.getStimulusEvent();
 
 		/**
-		 * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Stimulus event parameter</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STIMULUS_EVENT__TIME = eINSTANCE.getStimulusEvent_Time();
-
-		/**
-		 * The meta object literal for the '<em><b>Target button</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STIMULUS_EVENT__TARGET_BUTTON = eINSTANCE.getStimulusEvent_Target_button();
-
-		/**
-		 * The meta object literal for the '<em><b>Code</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STIMULUS_EVENT__CODE = eINSTANCE.getStimulusEvent_Code();
-
-		/**
-		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.ListNodeImpl <em>List Node</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.emftext.language.Presentation.impl.ListNodeImpl
-		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getListNode()
-		 * @generated
-		 */
-		EClass LIST_NODE = eINSTANCE.getListNode();
-
-		/**
-		 * The meta object literal for the '<em><b>Next</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LIST_NODE__NEXT = eINSTANCE.getListNode_Next();
+		EReference STIMULUS_EVENT__STIMULUS_EVENT_PARAMETER = eINSTANCE.getStimulusEvent_Stimulus_event_parameter();
 
 		/**
 		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.StimulusListImpl <em>Stimulus List</em>}' class.
@@ -2371,12 +3151,12 @@ public interface PresentationPackage extends EPackage {
 		EClass STIMULUS_LIST = eINSTANCE.getStimulusList();
 
 		/**
-		 * The meta object literal for the '<em><b>Stimulus</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Stimulus event</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STIMULUS_LIST__STIMULUS = eINSTANCE.getStimulusList_Stimulus();
+		EReference STIMULUS_LIST__STIMULUS_EVENT = eINSTANCE.getStimulusList_Stimulus_event();
 
 		/**
 		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.ScenarioObjectImpl <em>Scenario Object</em>}' class.
@@ -2409,6 +3189,40 @@ public interface PresentationPackage extends EPackage {
 		EClass TEXT = eINSTANCE.getText();
 
 		/**
+		 * The meta object literal for the '<em><b>Caption</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TEXT__CAPTION = eINSTANCE.getText_Caption();
+
+		/**
+		 * The meta object literal for the '<em><b>Text parameter</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TEXT__TEXT_PARAMETER = eINSTANCE.getText_Text_parameter();
+
+		/**
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.PictureStimulusEventImpl <em>Picture Stimulus Event</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.emftext.language.Presentation.impl.PictureStimulusEventImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getPictureStimulusEvent()
+		 * @generated
+		 */
+		EClass PICTURE_STIMULUS_EVENT = eINSTANCE.getPictureStimulusEvent();
+
+		/**
+		 * The meta object literal for the '<em><b>Picture</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PICTURE_STIMULUS_EVENT__PICTURE = eINSTANCE.getPictureStimulusEvent_Picture();
+
+		/**
 		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.PictureImpl <em>Picture</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2419,12 +3233,158 @@ public interface PresentationPackage extends EPackage {
 		EClass PICTURE = eINSTANCE.getPicture();
 
 		/**
-		 * The meta object literal for the '<em><b>Picturepart</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Picture part</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PICTURE__PICTUREPART = eINSTANCE.getPicture_Picturepart();
+		EReference PICTURE__PICTURE_PART = eINSTANCE.getPicture_Picture_part();
+
+		/**
+		 * The meta object literal for the '<em><b>Picture parameter</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PICTURE__PICTURE_PARAMETER = eINSTANCE.getPicture_Picture_parameter();
+
+		/**
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.SoundImpl <em>Sound</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.emftext.language.Presentation.impl.SoundImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getSound()
+		 * @generated
+		 */
+		EClass SOUND = eINSTANCE.getSound();
+
+		/**
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.TrialParameterImpl <em>Trial Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.emftext.language.Presentation.impl.TrialParameterImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getTrialParameter()
+		 * @generated
+		 */
+		EClass TRIAL_PARAMETER = eINSTANCE.getTrialParameter();
+
+		/**
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.StimulusImpl <em>Stimulus</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.emftext.language.Presentation.impl.StimulusImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getStimulus()
+		 * @generated
+		 */
+		EClass STIMULUS = eINSTANCE.getStimulus();
+
+		/**
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.Graphic2DImpl <em>Graphic2 D</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.emftext.language.Presentation.impl.Graphic2DImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getGraphic2D()
+		 * @generated
+		 */
+		EClass GRAPHIC2_D = eINSTANCE.getGraphic2D();
+
+		/**
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.BitmapStimulusImpl <em>Bitmap Stimulus</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.emftext.language.Presentation.impl.BitmapStimulusImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getBitmapStimulus()
+		 * @generated
+		 */
+		EClass BITMAP_STIMULUS = eINSTANCE.getBitmapStimulus();
+
+		/**
+		 * The meta object literal for the '<em><b>Bitmap</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BITMAP_STIMULUS__BITMAP = eINSTANCE.getBitmapStimulus_Bitmap();
+
+		/**
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.BoxStimulusImpl <em>Box Stimulus</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.emftext.language.Presentation.impl.BoxStimulusImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getBoxStimulus()
+		 * @generated
+		 */
+		EClass BOX_STIMULUS = eINSTANCE.getBoxStimulus();
+
+		/**
+		 * The meta object literal for the '<em><b>Box</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOX_STIMULUS__BOX = eINSTANCE.getBoxStimulus_Box();
+
+		/**
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.TextStimulusImpl <em>Text Stimulus</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.emftext.language.Presentation.impl.TextStimulusImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getTextStimulus()
+		 * @generated
+		 */
+		EClass TEXT_STIMULUS = eINSTANCE.getTextStimulus();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TEXT_STIMULUS__TEXT = eINSTANCE.getTextStimulus_Text();
+
+		/**
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.CoordinateDefinitionImpl <em>Coordinate Definition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.emftext.language.Presentation.impl.CoordinateDefinitionImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getCoordinateDefinition()
+		 * @generated
+		 */
+		EClass COORDINATE_DEFINITION = eINSTANCE.getCoordinateDefinition();
+
+		/**
+		 * The meta object literal for the '<em><b>Coordinate</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COORDINATE_DEFINITION__COORDINATE = eINSTANCE.getCoordinateDefinition_Coordinate();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COORDINATE_DEFINITION__TYPE = eINSTANCE.getCoordinateDefinition_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Right bottom</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COORDINATE_DEFINITION__RIGHT_BOTTOM = eINSTANCE.getCoordinateDefinition_Right_bottom();
+
+		/**
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.CoordinateType <em>Coordinate Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.emftext.language.Presentation.CoordinateType
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getCoordinateType()
+		 * @generated
+		 */
+		EEnum COORDINATE_TYPE = eINSTANCE.getCoordinateType();
 
 		/**
 		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.PicturePartImpl <em>Picture Part</em>}' class.
@@ -2447,20 +3407,20 @@ public interface PresentationPackage extends EPackage {
 		EClass STIMULUS2_D = eINSTANCE.getStimulus2D();
 
 		/**
-		 * The meta object literal for the '<em><b>Xcoordinate</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Xdefinition</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STIMULUS2_D__XCOORDINATE = eINSTANCE.getStimulus2D_X_coordinate();
+		EReference STIMULUS2_D__XDEFINITION = eINSTANCE.getStimulus2D_X_definition();
 
 		/**
-		 * The meta object literal for the '<em><b>Ycoordinate</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Ydefinition</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STIMULUS2_D__YCOORDINATE = eINSTANCE.getStimulus2D_Y_coordinate();
+		EReference STIMULUS2_D__YDEFINITION = eINSTANCE.getStimulus2D_Y_definition();
 
 		/**
 		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.BoxImpl <em>Box</em>}' class.

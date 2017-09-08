@@ -12,7 +12,7 @@ package org.emftext.language.Presentation;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.emftext.language.Presentation.ScenarioNameParameter#getScenario_name <em>Scenario name</em>}</li>
+ *   <li>{@link org.emftext.language.Presentation.ScenarioNameParameter#getName_literal <em>Name literal</em>}</li>
  * </ul>
  *
  * @see org.emftext.language.Presentation.PresentationPackage#getScenarioNameParameter()
@@ -22,28 +22,28 @@ package org.emftext.language.Presentation;
 public interface ScenarioNameParameter extends HeaderParameter {
 
 	/**
-	 * Returns the value of the '<em><b>Scenario name</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Name literal</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Scenario name</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Name literal</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scenario name</em>' containment reference.
-	 * @see #setScenario_name(NameLiteral)
-	 * @see org.emftext.language.Presentation.PresentationPackage#getScenarioNameParameter_Scenario_name()
+	 * @return the value of the '<em>Name literal</em>' containment reference.
+	 * @see #setName_literal(NameLiteral)
+	 * @see org.emftext.language.Presentation.PresentationPackage#getScenarioNameParameter_Name_literal()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	NameLiteral getScenario_name();
+	NameLiteral getName_literal();
 
 	/**
-	 * Sets the value of the '{@link org.emftext.language.Presentation.ScenarioNameParameter#getScenario_name <em>Scenario name</em>}' containment reference.
+	 * Sets the value of the '{@link org.emftext.language.Presentation.ScenarioNameParameter#getName_literal <em>Name literal</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Scenario name</em>' containment reference.
-	 * @see #getScenario_name()
+	 * @param value the new value of the '<em>Name literal</em>' containment reference.
+	 * @see #getName_literal()
 	 * @generated
 	 */
-	void setScenario_name(NameLiteral value);
+	void setName_literal(NameLiteral value);
 } // ScenarioNameParameter

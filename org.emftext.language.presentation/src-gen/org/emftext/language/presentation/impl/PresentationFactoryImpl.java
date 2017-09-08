@@ -3,6 +3,7 @@
 package org.emftext.language.Presentation.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -67,7 +68,7 @@ public class PresentationFactoryImpl extends EFactoryImpl implements Presentatio
 			case PresentationPackage.STIMULUS_LIST: return createStimulusList();
 			case PresentationPackage.BITMAP: return createBitmap();
 			case PresentationPackage.TEXT: return createText();
-			case PresentationPackage.PICTURE: return createPicture();
+			case PresentationPackage.PICTURE_STIMULUS_EVENT: return createPictureStimulusEvent();
 			case PresentationPackage.BOX: return createBox();
 			case PresentationPackage.TEXT_LITERAL: return createTextLiteral();
 			case PresentationPackage.ACTIVE_BUTTONS_PARAMETER: return createActiveButtonsParameter();
@@ -76,8 +77,46 @@ public class PresentationFactoryImpl extends EFactoryImpl implements Presentatio
 			case PresentationPackage.TIME_PARAMETER: return createTimeParameter();
 			case PresentationPackage.TARGET_BUTTON_PARAMETER: return createTargetButtonParameter();
 			case PresentationPackage.CODE_PARAMETER: return createCodeParameter();
+			case PresentationPackage.BACKGROUND_COLOR_PARAMETER: return createBackgroundColorParameter();
+			case PresentationPackage.CAPTION_PARAMETER: return createCaptionParameter();
+			case PresentationPackage.PICTURE: return createPicture();
+			case PresentationPackage.SOUND: return createSound();
+			case PresentationPackage.BITMAP_STIMULUS: return createBitmapStimulus();
+			case PresentationPackage.BOX_STIMULUS: return createBoxStimulus();
+			case PresentationPackage.TEXT_STIMULUS: return createTextStimulus();
+			case PresentationPackage.COORDINATE_DEFINITION: return createCoordinateDefinition();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case PresentationPackage.COORDINATE_TYPE:
+				return createCoordinateTypeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case PresentationPackage.COORDINATE_TYPE:
+				return convertCoordinateTypeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -149,6 +188,26 @@ public class PresentationFactoryImpl extends EFactoryImpl implements Presentatio
 	public CodeParameter createCodeParameter() {
 		CodeParameterImpl codeParameter = new CodeParameterImpl();
 		return codeParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BackgroundColorParameter createBackgroundColorParameter() {
+		BackgroundColorParameterImpl backgroundColorParameter = new BackgroundColorParameterImpl();
+		return backgroundColorParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CaptionParameter createCaptionParameter() {
+		CaptionParameterImpl captionParameter = new CaptionParameterImpl();
+		return captionParameter;
 	}
 
 	/**
@@ -256,9 +315,89 @@ public class PresentationFactoryImpl extends EFactoryImpl implements Presentatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public PictureStimulusEvent createPictureStimulusEvent() {
+		PictureStimulusEventImpl pictureStimulusEvent = new PictureStimulusEventImpl();
+		return pictureStimulusEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Picture createPicture() {
 		PictureImpl picture = new PictureImpl();
 		return picture;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Sound createSound() {
+		SoundImpl sound = new SoundImpl();
+		return sound;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BitmapStimulus createBitmapStimulus() {
+		BitmapStimulusImpl bitmapStimulus = new BitmapStimulusImpl();
+		return bitmapStimulus;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BoxStimulus createBoxStimulus() {
+		BoxStimulusImpl boxStimulus = new BoxStimulusImpl();
+		return boxStimulus;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TextStimulus createTextStimulus() {
+		TextStimulusImpl textStimulus = new TextStimulusImpl();
+		return textStimulus;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CoordinateDefinition createCoordinateDefinition() {
+		CoordinateDefinitionImpl coordinateDefinition = new CoordinateDefinitionImpl();
+		return coordinateDefinition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CoordinateType createCoordinateTypeFromString(EDataType eDataType, String initialValue) {
+		CoordinateType result = CoordinateType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertCoordinateTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

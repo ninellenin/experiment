@@ -36,6 +36,7 @@ public class SceBracketInformationProvider {
 	
 	public java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceBracketPair> getBracketPairs() {
 		java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceBracketPair> result = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ISceBracketPair>();
+		result.add(new BracketPair("{", "}", true));
 		return result;
 	}
 	
