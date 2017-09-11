@@ -2157,7 +2157,7 @@ public class SceParser extends SceANTLRParserBase {
             			startIncompleteElement(element);
             		}
             		collectHiddenTokens(element);
-            		retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_11_0_0_5, null, true);
+            		retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_11_0_0_6, null, true);
             		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a3, element);
             	}
 
@@ -2195,7 +2195,7 @@ public class SceParser extends SceANTLRParserBase {
             					completedElement(value, false);
             				}
             				collectHiddenTokens(element);
-            				retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_11_0_0_6, resolved, true);
+            				retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_11_0_0_8, resolved, true);
             				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a4, element);
             			}
             		}
@@ -2216,7 +2216,7 @@ public class SceParser extends SceANTLRParserBase {
             			startIncompleteElement(element);
             		}
             		collectHiddenTokens(element);
-            		retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_11_0_0_7, null, true);
+            		retrieveLayoutInformation(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_11_0_0_9, null, true);
             		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a5, element);
             	}
 

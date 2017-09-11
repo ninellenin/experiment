@@ -248,6 +248,18 @@ public class PresentationAdapterFactory extends AdapterFactoryImpl {
 				return createCoordinateDefinitionAdapter();
 			}
 			@Override
+			public Adapter caseBitmapParameter(BitmapParameter object) {
+				return createBitmapParameterAdapter();
+			}
+			@Override
+			public Adapter caseFilenameParameter(FilenameParameter object) {
+				return createFilenameParameterAdapter();
+			}
+			@Override
+			public Adapter caseFilenameLiteral(FilenameLiteral object) {
+				return createFilenameLiteralAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -838,6 +850,48 @@ public class PresentationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCoordinateDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.BitmapParameter <em>Bitmap Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.emftext.language.Presentation.BitmapParameter
+	 * @generated
+	 */
+	public Adapter createBitmapParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.FilenameParameter <em>Filename Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.emftext.language.Presentation.FilenameParameter
+	 * @generated
+	 */
+	public Adapter createFilenameParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.emftext.language.Presentation.FilenameLiteral <em>Filename Literal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.emftext.language.Presentation.FilenameLiteral
+	 * @generated
+	 */
+	public Adapter createFilenameLiteralAdapter() {
 		return null;
 	}
 

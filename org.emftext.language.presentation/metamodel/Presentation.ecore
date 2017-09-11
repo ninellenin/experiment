@@ -49,7 +49,22 @@
         eType="#//StimulusEvent" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScenarioObject" abstract="true" eSuperTypes="#//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Bitmap" eSuperTypes="#//Graphic2D"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Bitmap" eSuperTypes="#//Graphic2D">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filename_parameter" lowerBound="1"
+        eType="#//FilenameParameter" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value=""/>
+        <details key="group" value="#bitmap_parameters"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bitmap_parameters" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="bitmap_parameters"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//Graphic2D">
     <eStructuralFeatures xsi:type="ecore:EReference" name="caption" lowerBound="1"
         eType="#//CaptionParameter" containment="true"/>
@@ -141,8 +156,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CoordinateDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="coordinate" ordered="false"
-        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"
+        defaultValueLiteral="0."/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//CoordinateType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="right_bottom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BitmapParameter" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FilenameParameter" eSuperTypes="#//BitmapParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filename_literal" lowerBound="1"
+        eType="#//FilenameLiteral" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FilenameLiteral" eSuperTypes="#//TextLiteral"/>
 </ecore:EPackage>

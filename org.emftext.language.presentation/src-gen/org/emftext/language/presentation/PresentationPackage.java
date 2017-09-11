@@ -843,13 +843,31 @@ public interface PresentationPackage extends EPackage {
 	int BITMAP__NAME = GRAPHIC2_D__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Filename parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BITMAP__FILENAME_PARAMETER = GRAPHIC2_D_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Bitmap parameters</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BITMAP__BITMAP_PARAMETERS = GRAPHIC2_D_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Bitmap</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BITMAP_FEATURE_COUNT = GRAPHIC2_D_FEATURE_COUNT + 0;
+	int BITMAP_FEATURE_COUNT = GRAPHIC2_D_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Bitmap</em>' class.
@@ -1120,7 +1138,7 @@ public interface PresentationPackage extends EPackage {
 	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getCoordinateType()
 	 * @generated
 	 */
-	int COORDINATE_TYPE = 45;
+	int COORDINATE_TYPE = 48;
 
 	/**
 	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.BoxImpl <em>Box</em>}' class.
@@ -1862,6 +1880,108 @@ public interface PresentationPackage extends EPackage {
 	int COORDINATE_DEFINITION_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.BitmapParameterImpl <em>Bitmap Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.BitmapParameterImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getBitmapParameter()
+	 * @generated
+	 */
+	int BITMAP_PARAMETER = 45;
+
+	/**
+	 * The number of structural features of the '<em>Bitmap Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BITMAP_PARAMETER_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Bitmap Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BITMAP_PARAMETER_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.FilenameParameterImpl <em>Filename Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.FilenameParameterImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getFilenameParameter()
+	 * @generated
+	 */
+	int FILENAME_PARAMETER = 46;
+
+	/**
+	 * The feature id for the '<em><b>Filename literal</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILENAME_PARAMETER__FILENAME_LITERAL = BITMAP_PARAMETER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Filename Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILENAME_PARAMETER_FEATURE_COUNT = BITMAP_PARAMETER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Filename Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILENAME_PARAMETER_OPERATION_COUNT = BITMAP_PARAMETER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.emftext.language.Presentation.impl.FilenameLiteralImpl <em>Filename Literal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.emftext.language.Presentation.impl.FilenameLiteralImpl
+	 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getFilenameLiteral()
+	 * @generated
+	 */
+	int FILENAME_LITERAL = 47;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILENAME_LITERAL__VALUE = TEXT_LITERAL__VALUE;
+
+	/**
+	 * The number of structural features of the '<em>Filename Literal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILENAME_LITERAL_FEATURE_COUNT = TEXT_LITERAL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Filename Literal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILENAME_LITERAL_OPERATION_COUNT = TEXT_LITERAL_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.emftext.language.Presentation.ScenarioFile <em>Scenario File</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2382,6 +2502,28 @@ public interface PresentationPackage extends EPackage {
 	EClass getBitmap();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.Bitmap#getFilename_parameter <em>Filename parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Filename parameter</em>'.
+	 * @see org.emftext.language.Presentation.Bitmap#getFilename_parameter()
+	 * @see #getBitmap()
+	 * @generated
+	 */
+	EReference getBitmap_Filename_parameter();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.emftext.language.Presentation.Bitmap#getBitmap_parameters <em>Bitmap parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Bitmap parameters</em>'.
+	 * @see org.emftext.language.Presentation.Bitmap#getBitmap_parameters()
+	 * @see #getBitmap()
+	 * @generated
+	 */
+	EAttribute getBitmap_Bitmap_parameters();
+
+	/**
 	 * Returns the meta object for class '{@link org.emftext.language.Presentation.Text <em>Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2611,6 +2753,47 @@ public interface PresentationPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCoordinateDefinition_Right_bottom();
+
+	/**
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.BitmapParameter <em>Bitmap Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bitmap Parameter</em>'.
+	 * @see org.emftext.language.Presentation.BitmapParameter
+	 * @generated
+	 */
+	EClass getBitmapParameter();
+
+	/**
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.FilenameParameter <em>Filename Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Filename Parameter</em>'.
+	 * @see org.emftext.language.Presentation.FilenameParameter
+	 * @generated
+	 */
+	EClass getFilenameParameter();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.emftext.language.Presentation.FilenameParameter#getFilename_literal <em>Filename literal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Filename literal</em>'.
+	 * @see org.emftext.language.Presentation.FilenameParameter#getFilename_literal()
+	 * @see #getFilenameParameter()
+	 * @generated
+	 */
+	EReference getFilenameParameter_Filename_literal();
+
+	/**
+	 * Returns the meta object for class '{@link org.emftext.language.Presentation.FilenameLiteral <em>Filename Literal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Filename Literal</em>'.
+	 * @see org.emftext.language.Presentation.FilenameLiteral
+	 * @generated
+	 */
+	EClass getFilenameLiteral();
 
 	/**
 	 * Returns the meta object for enum '{@link org.emftext.language.Presentation.CoordinateType <em>Coordinate Type</em>}'.
@@ -3179,6 +3362,22 @@ public interface PresentationPackage extends EPackage {
 		EClass BITMAP = eINSTANCE.getBitmap();
 
 		/**
+		 * The meta object literal for the '<em><b>Filename parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BITMAP__FILENAME_PARAMETER = eINSTANCE.getBitmap_Filename_parameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Bitmap parameters</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BITMAP__BITMAP_PARAMETERS = eINSTANCE.getBitmap_Bitmap_parameters();
+
+		/**
 		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.TextImpl <em>Text</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3375,6 +3574,44 @@ public interface PresentationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COORDINATE_DEFINITION__RIGHT_BOTTOM = eINSTANCE.getCoordinateDefinition_Right_bottom();
+
+		/**
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.BitmapParameterImpl <em>Bitmap Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.emftext.language.Presentation.impl.BitmapParameterImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getBitmapParameter()
+		 * @generated
+		 */
+		EClass BITMAP_PARAMETER = eINSTANCE.getBitmapParameter();
+
+		/**
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.FilenameParameterImpl <em>Filename Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.emftext.language.Presentation.impl.FilenameParameterImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getFilenameParameter()
+		 * @generated
+		 */
+		EClass FILENAME_PARAMETER = eINSTANCE.getFilenameParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Filename literal</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FILENAME_PARAMETER__FILENAME_LITERAL = eINSTANCE.getFilenameParameter_Filename_literal();
+
+		/**
+		 * The meta object literal for the '{@link org.emftext.language.Presentation.impl.FilenameLiteralImpl <em>Filename Literal</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.emftext.language.Presentation.impl.FilenameLiteralImpl
+		 * @see org.emftext.language.Presentation.impl.PresentationPackageImpl#getFilenameLiteral()
+		 * @generated
+		 */
+		EClass FILENAME_LITERAL = eINSTANCE.getFilenameLiteral();
 
 		/**
 		 * The meta object literal for the '{@link org.emftext.language.Presentation.CoordinateType <em>Coordinate Type</em>}' enum.

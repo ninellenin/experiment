@@ -85,6 +85,8 @@ public class PresentationFactoryImpl extends EFactoryImpl implements Presentatio
 			case PresentationPackage.BOX_STIMULUS: return createBoxStimulus();
 			case PresentationPackage.TEXT_STIMULUS: return createTextStimulus();
 			case PresentationPackage.COORDINATE_DEFINITION: return createCoordinateDefinition();
+			case PresentationPackage.FILENAME_PARAMETER: return createFilenameParameter();
+			case PresentationPackage.FILENAME_LITERAL: return createFilenameLiteral();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -378,6 +380,26 @@ public class PresentationFactoryImpl extends EFactoryImpl implements Presentatio
 	public CoordinateDefinition createCoordinateDefinition() {
 		CoordinateDefinitionImpl coordinateDefinition = new CoordinateDefinitionImpl();
 		return coordinateDefinition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FilenameParameter createFilenameParameter() {
+		FilenameParameterImpl filenameParameter = new FilenameParameterImpl();
+		return filenameParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FilenameLiteral createFilenameLiteral() {
+		FilenameLiteralImpl filenameLiteral = new FilenameLiteralImpl();
+		return filenameLiteral;
 	}
 
 	/**

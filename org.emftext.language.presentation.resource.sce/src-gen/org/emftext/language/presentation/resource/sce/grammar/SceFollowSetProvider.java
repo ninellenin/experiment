@@ -45,9 +45,9 @@ public class SceFollowSetProvider {
 		TERMINALS[21] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedStructuralFeature(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_9_0_0_0);
 		TERMINALS[22] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedStructuralFeature(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_10_0_0_0);
 		TERMINALS[23] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_11_0_0_2);
-		TERMINALS[24] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_11_0_0_5);
-		TERMINALS[25] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedStructuralFeature(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_11_0_0_6);
-		TERMINALS[26] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_11_0_0_7);
+		TERMINALS[24] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_11_0_0_6);
+		TERMINALS[25] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedStructuralFeature(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_11_0_0_8);
+		TERMINALS[26] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_11_0_0_9);
 		TERMINALS[27] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_15_0_0_0);
 		TERMINALS[28] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_14_0_0_2);
 		TERMINALS[29] = new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString(org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_14_0_0_6);

@@ -710,8 +710,12 @@ public class ScePrinter implements org.emftext.language.Presentation.resource.sc
 			}
 			printCountingMap.put("stimulus_list", count - 1);
 		}
+		// DEFINITION PART BEGINS (LineBreak)
+		out.println();
+		out.print(localtab);
 		// DEFINITION PART BEGINS (CsString)
 		out.print("}");
+		// DEFINITION PART BEGINS (WhiteSpaces)
 		out.print(" ");
 		// DEFINITION PART BEGINS (PlaceholderUsingSpecifiedToken)
 		count = printCountingMap.get("name");
@@ -822,6 +826,7 @@ public class ScePrinter implements org.emftext.language.Presentation.resource.sc
 			printCountingMap.put("picture", count - 1);
 		}
 		// DEFINITION PART BEGINS (LineBreak)
+		localtab += "	";
 		out.println();
 		out.print(localtab);
 		// DEFINITION PART BEGINS (CompoundDefinition)

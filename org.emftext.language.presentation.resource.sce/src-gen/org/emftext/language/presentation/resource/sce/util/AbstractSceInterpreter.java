@@ -328,6 +328,24 @@ public class AbstractSceInterpreter<ResultType, ContextType> {
 		if (result != null) {
 			return result;
 		}
+		if (object instanceof org.emftext.language.Presentation.FilenameParameter) {
+			result = interprete_org_emftext_language_Presentation_FilenameParameter((org.emftext.language.Presentation.FilenameParameter) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.BitmapParameter) {
+			result = interprete_org_emftext_language_Presentation_BitmapParameter((org.emftext.language.Presentation.BitmapParameter) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.emftext.language.Presentation.FilenameLiteral) {
+			result = interprete_org_emftext_language_Presentation_FilenameLiteral((org.emftext.language.Presentation.FilenameLiteral) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
 		return result;
 	}
 	
@@ -508,6 +526,18 @@ public class AbstractSceInterpreter<ResultType, ContextType> {
 	}
 	
 	public ResultType interprete_org_emftext_language_Presentation_CoordinateDefinition(org.emftext.language.Presentation.CoordinateDefinition coordinateDefinition, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_BitmapParameter(org.emftext.language.Presentation.BitmapParameter bitmapParameter, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_FilenameParameter(org.emftext.language.Presentation.FilenameParameter filenameParameter, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_emftext_language_Presentation_FilenameLiteral(org.emftext.language.Presentation.FilenameLiteral filenameLiteral, ContextType context) {
 		return null;
 	}
 	

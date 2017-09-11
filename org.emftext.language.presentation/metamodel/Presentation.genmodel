@@ -53,7 +53,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//StimulusList/stimulus_event"/>
     </genClasses>
     <genClasses image="false" ecoreClass="Presentation.ecore#//ScenarioObject"/>
-    <genClasses ecoreClass="Presentation.ecore#//Bitmap"/>
+    <genClasses ecoreClass="Presentation.ecore#//Bitmap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//Bitmap/filename_parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Presentation.ecore#//Bitmap/bitmap_parameters"/>
+    </genClasses>
     <genClasses ecoreClass="Presentation.ecore#//Text">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//Text/caption"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//Text/text_parameter"/>
@@ -121,5 +124,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Presentation.ecore#//CoordinateDefinition/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Presentation.ecore#//CoordinateDefinition/right_bottom"/>
     </genClasses>
+    <genClasses ecoreClass="Presentation.ecore#//BitmapParameter"/>
+    <genClasses ecoreClass="Presentation.ecore#//FilenameParameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//FilenameParameter/filename_literal"/>
+    </genClasses>
+    <genClasses ecoreClass="Presentation.ecore#//FilenameLiteral"/>
   </genPackages>
 </genmodel:GenModel>

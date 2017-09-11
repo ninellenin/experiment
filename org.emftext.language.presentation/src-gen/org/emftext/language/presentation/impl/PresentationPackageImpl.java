@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.emftext.language.Presentation.ActiveButtonsParameter;
 import org.emftext.language.Presentation.BackgroundColorParameter;
 import org.emftext.language.Presentation.Bitmap;
+import org.emftext.language.Presentation.BitmapParameter;
 import org.emftext.language.Presentation.BitmapStimulus;
 import org.emftext.language.Presentation.BooleanLiteral;
 import org.emftext.language.Presentation.Box;
@@ -22,6 +23,8 @@ import org.emftext.language.Presentation.CaptionParameter;
 import org.emftext.language.Presentation.CodeParameter;
 import org.emftext.language.Presentation.CoordinateDefinition;
 import org.emftext.language.Presentation.CoordinateType;
+import org.emftext.language.Presentation.FilenameLiteral;
+import org.emftext.language.Presentation.FilenameParameter;
 import org.emftext.language.Presentation.GeneralLiteral;
 import org.emftext.language.Presentation.Graphic2D;
 import org.emftext.language.Presentation.Header;
@@ -350,6 +353,27 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * @generated
 	 */
 	private EClass coordinateDefinitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bitmapParameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass filenameParameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass filenameLiteralEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -902,6 +926,24 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getBitmap_Filename_parameter() {
+		return (EReference)bitmapEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBitmap_Bitmap_parameters() {
+		return (EAttribute)bitmapEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getText() {
 		return textEClass;
 	}
@@ -1100,6 +1142,42 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getBitmapParameter() {
+		return bitmapParameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFilenameParameter() {
+		return filenameParameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFilenameParameter_Filename_literal() {
+		return (EReference)filenameParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFilenameLiteral() {
+		return filenameLiteralEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getCoordinateType() {
 		return coordinateTypeEEnum;
 	}
@@ -1240,6 +1318,8 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 		scenarioObjectEClass = createEClass(SCENARIO_OBJECT);
 
 		bitmapEClass = createEClass(BITMAP);
+		createEReference(bitmapEClass, BITMAP__FILENAME_PARAMETER);
+		createEAttribute(bitmapEClass, BITMAP__BITMAP_PARAMETERS);
 
 		textEClass = createEClass(TEXT);
 		createEReference(textEClass, TEXT__CAPTION);
@@ -1319,6 +1399,13 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 		createEAttribute(coordinateDefinitionEClass, COORDINATE_DEFINITION__TYPE);
 		createEAttribute(coordinateDefinitionEClass, COORDINATE_DEFINITION__RIGHT_BOTTOM);
 
+		bitmapParameterEClass = createEClass(BITMAP_PARAMETER);
+
+		filenameParameterEClass = createEClass(FILENAME_PARAMETER);
+		createEReference(filenameParameterEClass, FILENAME_PARAMETER__FILENAME_LITERAL);
+
+		filenameLiteralEClass = createEClass(FILENAME_LITERAL);
+
 		// Create enums
 		coordinateTypeEEnum = createEEnum(COORDINATE_TYPE);
 	}
@@ -1390,6 +1477,8 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 		bitmapStimulusEClass.getESuperTypes().add(this.getStimulus2D());
 		boxStimulusEClass.getESuperTypes().add(this.getStimulus2D());
 		textStimulusEClass.getESuperTypes().add(this.getStimulus2D());
+		filenameParameterEClass.getESuperTypes().add(this.getBitmapParameter());
+		filenameLiteralEClass.getESuperTypes().add(this.getTextLiteral());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(scenarioFileEClass, ScenarioFile.class, "ScenarioFile", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1437,6 +1526,8 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 		initEClass(scenarioObjectEClass, ScenarioObject.class, "ScenarioObject", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(bitmapEClass, Bitmap.class, "Bitmap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBitmap_Filename_parameter(), this.getFilenameParameter(), null, "filename_parameter", null, 1, 1, Bitmap.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBitmap_Bitmap_parameters(), ecorePackage.getEFeatureMapEntry(), "bitmap_parameters", null, 0, -1, Bitmap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getText_Caption(), this.getCaptionParameter(), null, "caption", null, 1, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1512,9 +1603,16 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 		initEReference(getTextStimulus_Text(), this.getText(), null, "text", null, 1, 1, TextStimulus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(coordinateDefinitionEClass, CoordinateDefinition.class, "CoordinateDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCoordinateDefinition_Coordinate(), ecorePackage.getEFloatObject(), "coordinate", null, 1, 1, CoordinateDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCoordinateDefinition_Coordinate(), ecorePackage.getEFloatObject(), "coordinate", "0.", 1, 1, CoordinateDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCoordinateDefinition_Type(), this.getCoordinateType(), "type", null, 1, 1, CoordinateDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCoordinateDefinition_Right_bottom(), ecorePackage.getEFloatObject(), "right_bottom", null, 0, 1, CoordinateDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(bitmapParameterEClass, BitmapParameter.class, "BitmapParameter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(filenameParameterEClass, FilenameParameter.class, "FilenameParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFilenameParameter_Filename_literal(), this.getFilenameLiteral(), null, "filename_literal", null, 1, 1, FilenameParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(filenameLiteralEClass, FilenameLiteral.class, "FilenameLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(coordinateTypeEEnum, CoordinateType.class, "CoordinateType");
@@ -1527,6 +1625,33 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+		createExtendedMetaDataAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createExtendedMetaDataAnnotations() {
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";	
+		addAnnotation
+		  (getBitmap_Filename_parameter(), 
+		   source, 
+		   new String[] {
+			 "namespace", "",
+			 "group", "#bitmap_parameters"
+		   });	
+		addAnnotation
+		  (getBitmap_Bitmap_parameters(), 
+		   source, 
+		   new String[] {
+			 "name", "bitmap_parameters"
+		   });
 	}
 
 } //PresentationPackageImpl

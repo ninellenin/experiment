@@ -416,6 +416,28 @@ public class PresentationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PresentationPackage.BITMAP_PARAMETER: {
+				BitmapParameter bitmapParameter = (BitmapParameter)theEObject;
+				T result = caseBitmapParameter(bitmapParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PresentationPackage.FILENAME_PARAMETER: {
+				FilenameParameter filenameParameter = (FilenameParameter)theEObject;
+				T result = caseFilenameParameter(filenameParameter);
+				if (result == null) result = caseBitmapParameter(filenameParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PresentationPackage.FILENAME_LITERAL: {
+				FilenameLiteral filenameLiteral = (FilenameLiteral)theEObject;
+				T result = caseFilenameLiteral(filenameLiteral);
+				if (result == null) result = caseTextLiteral(filenameLiteral);
+				if (result == null) result = caseGeneralLiteral(filenameLiteral);
+				if (result == null) result = caseLiteral(filenameLiteral);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -1032,6 +1054,51 @@ public class PresentationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCoordinateDefinition(CoordinateDefinition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bitmap Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bitmap Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBitmapParameter(BitmapParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Filename Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Filename Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFilenameParameter(FilenameParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Filename Literal</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Filename Literal</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFilenameLiteral(FilenameLiteral object) {
 		return null;
 	}
 

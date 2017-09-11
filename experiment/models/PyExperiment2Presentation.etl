@@ -2,7 +2,8 @@ rule DocumentRoot2Scenario
 transform root: PyExperiment!DocumentRoot
 to scenario: Presentation!Scenario {
   	scenario.header ::= root.Experiment.settings;
-  	scenario.sdl.add(new Presentation!SDL);
+  	var sdl ::= root.Experiment.routines;
+  	scenario.sdl.add(sdl);
   	scenario.pcl.add(new Presentation!PCL);
 }
 
@@ -27,8 +28,8 @@ rule Param2ScenarioNameParameter
 transform parameter: PyExperiment!Param
 to scenarioName: Presentation!ScenarioNameParameter {
 guard : parameter.name = "scenario"
-	scenarioName.scenario_name = new Presentation!NameLiteral;
-	scenarioName.scenario_name.value = parameter.val;
+	scenarioName.name_literal = new Presentation!NameLiteral;
+	scenarioName.name_literal.value = parameter.val;
 }
 
 @lazy
@@ -36,8 +37,8 @@ rule Param2ActiveButtonsParameter
 transform parameter: PyExperiment!Param
 to activeButtons: Presentation!ActiveButtonsParameter {
 guard : parameter.name = "active_buttons"
-	activeButtons.active_buttons = new Presentation!NumberLiteral;
-	activeButtons.active_buttons.value = parameter.val.asInteger;
+	activeButtons.number_literal = new Presentation!NumberLiteral;
+	activeButtons.number_literal.value = parameter.val.asInteger;
 }
 
 @lazy
@@ -49,7 +50,17 @@ guard : parameter.name = "button_codes"
 	for (code in codes) {
 		var codeLiteral = new Presentation!NumberLiteral;
 		codeLiteral.value = code.asInteger;
-		buttonCodes.button_codes.add(codeLiteral);
+		buttonCodes.number_literal.add(codeLiteral);
+	}
+}
+
+@lazy
+rule Routines2SDL
+transform routines: PyExperiment!Routines
+to sdl: Presentation!SDL {
+	for (routine in routines.routine) {
+		var trial ::= routine;
+		sdl.scenario_object.add(trial);
 	}
 }
 
@@ -60,6 +71,34 @@ to trial: Presentation!Trial {
 	trial.stimulus_list = new Presentation!StimulusList;
 	trial.name = routine.name;
 	for (component in routine.componentGroup) {
-		
+		var pic: Presentation!PictureStimulusEvent;
+		pic ::= component.getValue();
+		if (pic.isDefined()) {
+			trial.stimulus_list.stimulus_event.add(pic);
+		}
 	}
 }
+
+@lazy
+rule ImageComponent2PictureStimulusEvent
+transform component: PyExperiment!Component
+to pictureStimulusEvent: Presentation!PictureStimulusEvent {
+guard: 	component.eContainingFeature().getName() = "imageComponent"
+	//component.println();
+	pictureStimulusEvent.name = component.name;
+	pictureStimulusEvent.picture = new Presentation!Picture;
+	var bitmapStimulus = new Presentation!BitmapStimulus;
+	var bitmap = new Presentation!Bitmap;
+	bitmap.bitmap_parameters.add(new Presentation!FilenameParameter);
+	//bitmapStimulus.bitmap.filename_parameter ::= component.param[0];
+	//pictureStimulusEvent.picture.picture_part.add(bitmapStimulus);
+}
+
+@lazy
+rule Param2FilenameParameter
+transform parameter: PyExperiment!Param
+to fileName: Presentation!FilenameParameter {
+guard: parameter.name = "image" and parameter.type = PyExperiment!ValType#str
+	"Hello!".println();
+}
+

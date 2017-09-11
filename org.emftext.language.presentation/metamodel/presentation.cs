@@ -93,10 +93,10 @@ RULES {
 	//SDL
 	Trial ::= "trial" #1 "{" !1
 		//(trial_parameter)* !0
-		stimulus_list
-	"}" name[VAR_NAME] ";" !0;
+		stimulus_list !0
+	"}" #1 name[VAR_NAME] ";" !0;
 	StimulusList ::= (stimulus_event)*;
-	PictureStimulusEvent ::= picture !0
+	PictureStimulusEvent ::= picture !1
 			(stimulus_event_parameter)* !0;
 	Picture ::= "picture" #1 "{" !1 
 		//(picture_parameter)* !0 

@@ -256,6 +256,24 @@ public interface PresentationFactory extends EFactory {
 	CoordinateDefinition createCoordinateDefinition();
 
 	/**
+	 * Returns a new object of class '<em>Filename Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Filename Parameter</em>'.
+	 * @generated
+	 */
+	FilenameParameter createFilenameParameter();
+
+	/**
+	 * Returns a new object of class '<em>Filename Literal</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Filename Literal</em>'.
+	 * @generated
+	 */
+	FilenameLiteral createFilenameLiteral();
+
+	/**
 	 * Returns a new object of class '<em>Box</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
