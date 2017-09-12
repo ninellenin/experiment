@@ -4,76 +4,76 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
-public class SceMetaInformation implements org.emftext.language.Presentation.resource.sce.ISceMetaInformation {
+public class SceMetaInformation implements org.emftext.language.presentation.resource.sce.ISceMetaInformation {
 	
 	public String getSyntaxName() {
 		return "sce";
 	}
 	
 	public String getURI() {
-		return "http://www.emftext.org/language/Presentation";
+		return "http://www.emftext.org/language/presentation";
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ISceTextScanner createLexer() {
-		return new org.emftext.language.Presentation.resource.sce.mopp.SceAntlrScanner(new org.emftext.language.Presentation.resource.sce.mopp.SceLexer());
+	public org.emftext.language.presentation.resource.sce.ISceTextScanner createLexer() {
+		return new org.emftext.language.presentation.resource.sce.mopp.SceAntlrScanner(new org.emftext.language.presentation.resource.sce.mopp.SceLexer());
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ISceTextParser createParser(java.io.InputStream inputStream, String encoding) {
-		return new org.emftext.language.Presentation.resource.sce.mopp.SceParser().createInstance(inputStream, encoding);
+	public org.emftext.language.presentation.resource.sce.ISceTextParser createParser(java.io.InputStream inputStream, String encoding) {
+		return new org.emftext.language.presentation.resource.sce.mopp.SceParser().createInstance(inputStream, encoding);
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ISceTextPrinter createPrinter(java.io.OutputStream outputStream, org.emftext.language.Presentation.resource.sce.ISceTextResource resource) {
-		return new org.emftext.language.Presentation.resource.sce.mopp.ScePrinter2(outputStream, resource);
+	public org.emftext.language.presentation.resource.sce.ISceTextPrinter createPrinter(java.io.OutputStream outputStream, org.emftext.language.presentation.resource.sce.ISceTextResource resource) {
+		return new org.emftext.language.presentation.resource.sce.mopp.ScePrinter2(outputStream, resource);
 	}
 	
 	public org.eclipse.emf.ecore.EClass[] getClassesWithSyntax() {
-		return new org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxCoverageInformationProvider().getClassesWithSyntax();
+		return new org.emftext.language.presentation.resource.sce.mopp.SceSyntaxCoverageInformationProvider().getClassesWithSyntax();
 	}
 	
 	public org.eclipse.emf.ecore.EClass[] getStartSymbols() {
-		return new org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxCoverageInformationProvider().getStartSymbols();
+		return new org.emftext.language.presentation.resource.sce.mopp.SceSyntaxCoverageInformationProvider().getStartSymbols();
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ISceReferenceResolverSwitch getReferenceResolverSwitch() {
-		return new org.emftext.language.Presentation.resource.sce.mopp.SceReferenceResolverSwitch();
+	public org.emftext.language.presentation.resource.sce.ISceReferenceResolverSwitch getReferenceResolverSwitch() {
+		return new org.emftext.language.presentation.resource.sce.mopp.SceReferenceResolverSwitch();
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ISceTokenResolverFactory getTokenResolverFactory() {
-		return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenResolverFactory();
+	public org.emftext.language.presentation.resource.sce.ISceTokenResolverFactory getTokenResolverFactory() {
+		return new org.emftext.language.presentation.resource.sce.mopp.SceTokenResolverFactory();
 	}
 	
 	public String getPathToCSDefinition() {
-		return "org.emftext.language.presentation/metamodel/Presentation.cs";
+		return "org.emftext.language.presentation/metamodel/presentation.cs";
 	}
 	
 	public String[] getTokenNames() {
-		return org.emftext.language.Presentation.resource.sce.mopp.SceParser.tokenNames;
+		return org.emftext.language.presentation.resource.sce.mopp.SceParser.tokenNames;
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ISceTokenStyle getDefaultTokenStyle(String tokenName) {
-		return new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyleInformationProvider().getDefaultTokenStyle(tokenName);
+	public org.emftext.language.presentation.resource.sce.ISceTokenStyle getDefaultTokenStyle(String tokenName) {
+		return new org.emftext.language.presentation.resource.sce.mopp.SceTokenStyleInformationProvider().getDefaultTokenStyle(tokenName);
 	}
 	
-	public java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceBracketPair> getBracketPairs() {
-		return new org.emftext.language.Presentation.resource.sce.mopp.SceBracketInformationProvider().getBracketPairs();
+	public java.util.Collection<org.emftext.language.presentation.resource.sce.ISceBracketPair> getBracketPairs() {
+		return new org.emftext.language.presentation.resource.sce.mopp.SceBracketInformationProvider().getBracketPairs();
 	}
 	
 	public org.eclipse.emf.ecore.EClass[] getFoldableClasses() {
-		return new org.emftext.language.Presentation.resource.sce.mopp.SceFoldingInformationProvider().getFoldableClasses();
+		return new org.emftext.language.presentation.resource.sce.mopp.SceFoldingInformationProvider().getFoldableClasses();
 	}
 	
 	public org.eclipse.emf.ecore.resource.Resource.Factory createResourceFactory() {
-		return new org.emftext.language.Presentation.resource.sce.mopp.SceResourceFactory();
+		return new org.emftext.language.presentation.resource.sce.mopp.SceResourceFactory();
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.mopp.SceNewFileContentProvider getNewFileContentProvider() {
-		return new org.emftext.language.Presentation.resource.sce.mopp.SceNewFileContentProvider();
+	public org.emftext.language.presentation.resource.sce.mopp.SceNewFileContentProvider getNewFileContentProvider() {
+		return new org.emftext.language.presentation.resource.sce.mopp.SceNewFileContentProvider();
 	}
 	
 	public void registerResourceFactory() {
-		org.eclipse.emf.ecore.resource.Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(getSyntaxName(), new org.emftext.language.Presentation.resource.sce.mopp.SceResourceFactory());
+		org.eclipse.emf.ecore.resource.Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(getSyntaxName(), new org.emftext.language.presentation.resource.sce.mopp.SceResourceFactory());
 	}
 	
 	/**
@@ -97,15 +97,15 @@ public class SceMetaInformation implements org.emftext.language.Presentation.res
 	}
 	
 	public String getLaunchConfigurationType() {
-		return "org.emftext.language.Presentation.resource.sce.ui.launchConfigurationType";
+		return "org.emftext.language.presentation.resource.sce.ui.launchConfigurationType";
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ISceNameProvider createNameProvider() {
-		return new org.emftext.language.Presentation.resource.sce.analysis.SceDefaultNameProvider();
+	public org.emftext.language.presentation.resource.sce.ISceNameProvider createNameProvider() {
+		return new org.emftext.language.presentation.resource.sce.analysis.SceDefaultNameProvider();
 	}
 	
 	public String[] getSyntaxHighlightableTokenNames() {
-		org.emftext.language.Presentation.resource.sce.mopp.SceAntlrTokenHelper tokenHelper = new org.emftext.language.Presentation.resource.sce.mopp.SceAntlrTokenHelper();
+		org.emftext.language.presentation.resource.sce.mopp.SceAntlrTokenHelper tokenHelper = new org.emftext.language.presentation.resource.sce.mopp.SceAntlrTokenHelper();
 		java.util.List<String> highlightableTokens = new java.util.ArrayList<String>();
 		String[] parserTokenNames = getTokenNames();
 		for (int i = 0; i < parserTokenNames.length; i++) {
@@ -119,7 +119,7 @@ public class SceMetaInformation implements org.emftext.language.Presentation.res
 			}
 			highlightableTokens.add(tokenName);
 		}
-		highlightableTokens.add(org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyleInformationProvider.TASK_ITEM_TOKEN_NAME);
+		highlightableTokens.add(org.emftext.language.presentation.resource.sce.mopp.SceTokenStyleInformationProvider.TASK_ITEM_TOKEN_NAME);
 		return highlightableTokens.toArray(new String[highlightableTokens.size()]);
 	}
 	

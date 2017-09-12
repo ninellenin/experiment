@@ -4,9 +4,9 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
-public class ScePrinter2 implements org.emftext.language.Presentation.resource.sce.ISceTextPrinter {
+public class ScePrinter2 implements org.emftext.language.presentation.resource.sce.ISceTextPrinter {
 	
 	protected class PrintToken {
 		
@@ -68,7 +68,7 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 			featureToPrintedIndicesMap.get(featureName).add(index);
 		}
 		
-		public int getCountLeft(org.emftext.language.Presentation.resource.sce.grammar.SceTerminal terminal) {
+		public int getCountLeft(org.emftext.language.presentation.resource.sce.grammar.SceTerminal terminal) {
 			org.eclipse.emf.ecore.EStructuralFeature feature = terminal.getFeature();
 			String featureName = feature.getName();
 			java.util.List<Object> totalValuesToPrint = featureToValuesMap.get(featureName);
@@ -114,19 +114,19 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 	
 	public final static String NEW_LINE = java.lang.System.getProperties().getProperty("line.separator");
 	
-	private final org.emftext.language.Presentation.resource.sce.util.SceEClassUtil eClassUtil = new org.emftext.language.Presentation.resource.sce.util.SceEClassUtil();
+	private final org.emftext.language.presentation.resource.sce.util.SceEClassUtil eClassUtil = new org.emftext.language.presentation.resource.sce.util.SceEClassUtil();
 	
 	/**
 	 * Holds the resource that is associated with this printer. May be null if the
 	 * printer is used stand alone.
 	 */
-	private org.emftext.language.Presentation.resource.sce.ISceTextResource resource;
+	private org.emftext.language.presentation.resource.sce.ISceTextResource resource;
 	
 	private java.util.Map<?, ?> options;
 	private java.io.OutputStream outputStream;
 	private String encoding = System.getProperty("file.encoding");
 	protected java.util.List<PrintToken> tokenOutputStream;
-	private org.emftext.language.Presentation.resource.sce.ISceTokenResolverFactory tokenResolverFactory = new org.emftext.language.Presentation.resource.sce.mopp.SceTokenResolverFactory();
+	private org.emftext.language.presentation.resource.sce.ISceTokenResolverFactory tokenResolverFactory = new org.emftext.language.presentation.resource.sce.mopp.SceTokenResolverFactory();
 	private boolean handleTokenSpaceAutomatically = true;
 	private int tokenSpace = 1;
 	/**
@@ -157,7 +157,7 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 	 */
 	private boolean startedPrintingContainedObject;
 	
-	public ScePrinter2(java.io.OutputStream outputStream, org.emftext.language.Presentation.resource.sce.ISceTextResource resource) {
+	public ScePrinter2(java.io.OutputStream outputStream, org.emftext.language.presentation.resource.sce.ISceTextResource resource) {
 		super();
 		this.outputStream = outputStream;
 		this.resource = resource;
@@ -169,11 +169,11 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 		tabsBeforeCurrentObject = 0;
 		startedPrintingObject = true;
 		startedPrintingContainedObject = false;
-		java.util.List<org.emftext.language.Presentation.resource.sce.grammar.SceFormattingElement>  formattingElements = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.grammar.SceFormattingElement>();
+		java.util.List<org.emftext.language.presentation.resource.sce.grammar.SceFormattingElement>  formattingElements = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.grammar.SceFormattingElement>();
 		doPrint(element, formattingElements);
 		// print all remaining formatting elements
-		java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations = getCopyOfLayoutInformation(element);
-		org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation eofLayoutInformation = getLayoutInformation(layoutInformations, null, null, null);
+		java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations = getCopyOfLayoutInformation(element);
+		org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation eofLayoutInformation = getLayoutInformation(layoutInformations, null, null, null);
 		printFormattingElements(element, formattingElements, layoutInformations, eofLayoutInformation);
 		java.io.PrintWriter writer = new java.io.PrintWriter(new java.io.OutputStreamWriter(new java.io.BufferedOutputStream(outputStream), encoding));
 		if (handleTokenSpaceAutomatically) {
@@ -184,7 +184,7 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 		writer.flush();
 	}
 	
-	protected void doPrint(org.eclipse.emf.ecore.EObject element, java.util.List<org.emftext.language.Presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements) {
+	protected void doPrint(org.eclipse.emf.ecore.EObject element, java.util.List<org.emftext.language.presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements) {
 		if (element == null) {
 			throw new java.lang.IllegalArgumentException("Nothing to write.");
 		}
@@ -192,93 +192,93 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 			throw new java.lang.IllegalArgumentException("Nothing to write on.");
 		}
 		
-		if (element instanceof org.emftext.language.Presentation.Scenario) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_0, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.scenario.Scenario) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_0, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.Header) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_1, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.scenario.Header) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_1, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.SDL) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_2, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.scenario.SDL) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_2, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.PCL) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_3, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.scenario.PCL) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_3, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.ScenarioNameParameter) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.parameter.ScenarioNameParameter) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_4, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.ActiveButtonsParameter) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_5, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.parameter.ActiveButtonsParameter) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_5, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.ButtonCodesParameter) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_6, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.parameter.ButtonCodesParameter) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_6, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.NumberLiteral) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_7, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.literal.NumberLiteral) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_7, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.NameLiteral) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_8, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.literal.NameLiteral) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_8, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.BooleanLiteral) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_9, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.literal.BooleanLiteral) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_9, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.TextLiteral) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_10, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.literal.TextLiteral) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_10, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.Trial) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_11, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.stimulus.Trial) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_11, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.StimulusList) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_12, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.stimulus.StimulusList) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_12, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.PictureStimulusEvent) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_13, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.stimulus.picture.PictureStimulusEvent) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_13, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.Picture) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_14, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.stimulus.picture.Picture) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_14, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.TimeParameter) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_15, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.parameter.TimeParameter) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_15, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.TextStimulus) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_16, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.stimulus.picture.TextStimulus) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_16, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.CoordinateDefinition) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_17, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.general.CoordinateDefinition) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_17, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.Text) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_18, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.stimulus.picture.Text) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_18, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.emftext.language.Presentation.CaptionParameter) {
-			printInternal(element, org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_19, foundFormattingElements);
+		if (element instanceof org.emftext.language.presentation.parameter.CaptionParameter) {
+			printInternal(element, org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.SCE_19, foundFormattingElements);
 			return;
 		}
 		
 		addWarningToResource("The printer can not handle " + element.eClass().getName() + " elements", element);
 	}
 	
-	public void printInternal(org.eclipse.emf.ecore.EObject eObject, org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement ruleElement, java.util.List<org.emftext.language.Presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements) {
-		java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations = getCopyOfLayoutInformation(eObject);
-		org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator decoratorTree = getDecoratorTree(ruleElement);
+	public void printInternal(org.eclipse.emf.ecore.EObject eObject, org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement ruleElement, java.util.List<org.emftext.language.presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements) {
+		java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations = getCopyOfLayoutInformation(eObject);
+		org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator decoratorTree = getDecoratorTree(ruleElement);
 		decorateTree(decoratorTree, eObject);
 		printTree(decoratorTree, eObject, foundFormattingElements, layoutInformations);
 	}
@@ -287,22 +287,22 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 	 * creates a tree of decorator objects which reflects the syntax tree that is
 	 * attached to the given syntax element
 	 */
-	public org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator getDecoratorTree(org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement syntaxElement) {
-		org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement[] children = syntaxElement.getChildren();
+	public org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator getDecoratorTree(org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement syntaxElement) {
+		org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement[] children = syntaxElement.getChildren();
 		int childCount = children.length;
-		org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator[] childDecorators = new org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator[childCount];
+		org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator[] childDecorators = new org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator[childCount];
 		for (int i = 0; i < childCount; i++) {
 			childDecorators[i] = getDecoratorTree(children[i]);
 		}
-		org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator decorator = new org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator(syntaxElement, childDecorators);
+		org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator decorator = new org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator(syntaxElement, childDecorators);
 		return decorator;
 	}
 	
-	public void decorateTree(org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator decorator, org.eclipse.emf.ecore.EObject eObject) {
+	public void decorateTree(org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator decorator, org.eclipse.emf.ecore.EObject eObject) {
 		PrintCountingMap printCountingMap = initializePrintCountingMap(eObject);
-		java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator> keywordsToPrint = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator>();
+		java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator> keywordsToPrint = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator>();
 		decorateTreeBasic(decorator, eObject, printCountingMap, keywordsToPrint);
-		for (org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator keywordToPrint : keywordsToPrint) {
+		for (org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator keywordToPrint : keywordsToPrint) {
 			// for keywords the concrete index does not matter, but we must add one to
 			// indicate that the keyword needs to be printed here. Thus, we use 0 as index.
 			keywordToPrint.addIndexToPrint(0);
@@ -313,20 +313,20 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 	 * Tries to decorate the decorator with an attribute value, or reference held by
 	 * the given EObject. Returns true if an attribute value or reference was found.
 	 */
-	public boolean decorateTreeBasic(org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator decorator, org.eclipse.emf.ecore.EObject eObject, PrintCountingMap printCountingMap, java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator> keywordsToPrint) {
+	public boolean decorateTreeBasic(org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator decorator, org.eclipse.emf.ecore.EObject eObject, PrintCountingMap printCountingMap, java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator> keywordsToPrint) {
 		boolean foundFeatureToPrint = false;
-		org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement syntaxElement = decorator.getDecoratedElement();
-		org.emftext.language.Presentation.resource.sce.grammar.SceCardinality cardinality = syntaxElement.getCardinality();
+		org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement syntaxElement = decorator.getDecoratedElement();
+		org.emftext.language.presentation.resource.sce.grammar.SceCardinality cardinality = syntaxElement.getCardinality();
 		boolean isFirstIteration = true;
 		while (true) {
-			java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator> subKeywordsToPrint = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator>();
+			java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator> subKeywordsToPrint = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator>();
 			boolean keepDecorating = false;
-			if (syntaxElement instanceof org.emftext.language.Presentation.resource.sce.grammar.SceKeyword) {
+			if (syntaxElement instanceof org.emftext.language.presentation.resource.sce.grammar.SceKeyword) {
 				subKeywordsToPrint.add(decorator);
-			} else if (syntaxElement instanceof org.emftext.language.Presentation.resource.sce.grammar.SceTerminal) {
-				org.emftext.language.Presentation.resource.sce.grammar.SceTerminal terminal = (org.emftext.language.Presentation.resource.sce.grammar.SceTerminal) syntaxElement;
+			} else if (syntaxElement instanceof org.emftext.language.presentation.resource.sce.grammar.SceTerminal) {
+				org.emftext.language.presentation.resource.sce.grammar.SceTerminal terminal = (org.emftext.language.presentation.resource.sce.grammar.SceTerminal) syntaxElement;
 				org.eclipse.emf.ecore.EStructuralFeature feature = terminal.getFeature();
-				if (feature == org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.ANONYMOUS_FEATURE) {
+				if (feature == org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.ANONYMOUS_FEATURE) {
 					return false;
 				}
 				String featureName = feature.getName();
@@ -336,8 +336,8 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 					int indexToPrint = printCountingMap.getNextIndexToPrint(featureName);
 					// But, if there are type restrictions for containments, we must choose an index
 					// of an element that fits (i.e., which has the correct type)
-					if (terminal instanceof org.emftext.language.Presentation.resource.sce.grammar.SceContainment) {
-						org.emftext.language.Presentation.resource.sce.grammar.SceContainment containment = (org.emftext.language.Presentation.resource.sce.grammar.SceContainment) terminal;
+					if (terminal instanceof org.emftext.language.presentation.resource.sce.grammar.SceContainment) {
+						org.emftext.language.presentation.resource.sce.grammar.SceContainment containment = (org.emftext.language.presentation.resource.sce.grammar.SceContainment) terminal;
 						indexToPrint = findElementWithCorrectType(eObject, feature, printCountingMap.getIndicesToPrint(featureName), containment);
 					}
 					if (indexToPrint >= 0) {
@@ -347,10 +347,10 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 					}
 				}
 			}
-			if (syntaxElement instanceof org.emftext.language.Presentation.resource.sce.grammar.SceChoice) {
+			if (syntaxElement instanceof org.emftext.language.presentation.resource.sce.grammar.SceChoice) {
 				// for choices we do print only the choice which does print at least one feature
-				org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator childToPrint = null;
-				for (org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator childDecorator : decorator.getChildDecorators()) {
+				org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator childToPrint = null;
+				for (org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator childDecorator : decorator.getChildDecorators()) {
 					// pick first choice as default, will be overridden if a choice that prints a
 					// feature is found
 					if (childToPrint == null) {
@@ -364,15 +364,15 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 				keepDecorating |= decorateTreeBasic(childToPrint, eObject, printCountingMap, subKeywordsToPrint);
 			} else {
 				// for all other syntax element we do print all children
-				for (org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator childDecorator : decorator.getChildDecorators()) {
+				for (org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator childDecorator : decorator.getChildDecorators()) {
 					keepDecorating |= decorateTreeBasic(childDecorator, eObject, printCountingMap, subKeywordsToPrint);
 				}
 			}
 			foundFeatureToPrint |= keepDecorating;
 			// only print keywords if a feature was printed or the syntax element is mandatory
-			if (cardinality == org.emftext.language.Presentation.resource.sce.grammar.SceCardinality.ONE) {
+			if (cardinality == org.emftext.language.presentation.resource.sce.grammar.SceCardinality.ONE) {
 				keywordsToPrint.addAll(subKeywordsToPrint);
-			} else if (cardinality == org.emftext.language.Presentation.resource.sce.grammar.SceCardinality.PLUS) {
+			} else if (cardinality == org.emftext.language.presentation.resource.sce.grammar.SceCardinality.PLUS) {
 				if (isFirstIteration) {
 					keywordsToPrint.addAll(subKeywordsToPrint);
 				} else {
@@ -380,10 +380,10 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 						keywordsToPrint.addAll(subKeywordsToPrint);
 					}
 				}
-			} else if (keepDecorating && (cardinality == org.emftext.language.Presentation.resource.sce.grammar.SceCardinality.STAR || cardinality == org.emftext.language.Presentation.resource.sce.grammar.SceCardinality.QUESTIONMARK)) {
+			} else if (keepDecorating && (cardinality == org.emftext.language.presentation.resource.sce.grammar.SceCardinality.STAR || cardinality == org.emftext.language.presentation.resource.sce.grammar.SceCardinality.QUESTIONMARK)) {
 				keywordsToPrint.addAll(subKeywordsToPrint);
 			}
-			if (cardinality == org.emftext.language.Presentation.resource.sce.grammar.SceCardinality.ONE || cardinality == org.emftext.language.Presentation.resource.sce.grammar.SceCardinality.QUESTIONMARK) {
+			if (cardinality == org.emftext.language.presentation.resource.sce.grammar.SceCardinality.ONE || cardinality == org.emftext.language.presentation.resource.sce.grammar.SceCardinality.QUESTIONMARK) {
 				break;
 			} else if (!keepDecorating) {
 				break;
@@ -393,7 +393,7 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 		return foundFeatureToPrint;
 	}
 	
-	private int findElementWithCorrectType(org.eclipse.emf.ecore.EObject eObject, org.eclipse.emf.ecore.EStructuralFeature feature, java.util.Set<Integer> indicesToPrint, org.emftext.language.Presentation.resource.sce.grammar.SceContainment containment) {
+	private int findElementWithCorrectType(org.eclipse.emf.ecore.EObject eObject, org.eclipse.emf.ecore.EStructuralFeature feature, java.util.Set<Integer> indicesToPrint, org.emftext.language.presentation.resource.sce.grammar.SceContainment containment) {
 		// By default the type restrictions that are defined in the CS definition are
 		// considered when printing models. You can change this behavior by setting the
 		// 'ignoreTypeRestrictionsForPrinting' option to true.
@@ -427,12 +427,12 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 	 * multiple choices are available. We pick the choice that prints at least one
 	 * attribute or reference.
 	 */
-	public boolean doesPrintFeature(org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator decorator, org.eclipse.emf.ecore.EObject eObject, PrintCountingMap printCountingMap) {
-		org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement syntaxElement = decorator.getDecoratedElement();
-		if (syntaxElement instanceof org.emftext.language.Presentation.resource.sce.grammar.SceTerminal) {
-			org.emftext.language.Presentation.resource.sce.grammar.SceTerminal terminal = (org.emftext.language.Presentation.resource.sce.grammar.SceTerminal) syntaxElement;
+	public boolean doesPrintFeature(org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator decorator, org.eclipse.emf.ecore.EObject eObject, PrintCountingMap printCountingMap) {
+		org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement syntaxElement = decorator.getDecoratedElement();
+		if (syntaxElement instanceof org.emftext.language.presentation.resource.sce.grammar.SceTerminal) {
+			org.emftext.language.presentation.resource.sce.grammar.SceTerminal terminal = (org.emftext.language.presentation.resource.sce.grammar.SceTerminal) syntaxElement;
 			org.eclipse.emf.ecore.EStructuralFeature feature = terminal.getFeature();
-			if (feature == org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.ANONYMOUS_FEATURE) {
+			if (feature == org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.ANONYMOUS_FEATURE) {
 				return false;
 			}
 			int countLeft = printCountingMap.getCountLeft(terminal);
@@ -441,7 +441,7 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 				return true;
 			}
 		}
-		for (org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator childDecorator : decorator.getChildDecorators()) {
+		for (org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator childDecorator : decorator.getChildDecorators()) {
 			if (doesPrintFeature(childDecorator, eObject, printCountingMap)) {
 				return true;
 			}
@@ -449,10 +449,10 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 		return false;
 	}
 	
-	public boolean printTree(org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator decorator, org.eclipse.emf.ecore.EObject eObject, java.util.List<org.emftext.language.Presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations) {
-		org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement printElement = decorator.getDecoratedElement();
-		org.emftext.language.Presentation.resource.sce.grammar.SceCardinality cardinality = printElement.getCardinality();
-		java.util.List<org.emftext.language.Presentation.resource.sce.grammar.SceFormattingElement> cloned = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.grammar.SceFormattingElement>();
+	public boolean printTree(org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator decorator, org.eclipse.emf.ecore.EObject eObject, java.util.List<org.emftext.language.presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations) {
+		org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement printElement = decorator.getDecoratedElement();
+		org.emftext.language.presentation.resource.sce.grammar.SceCardinality cardinality = printElement.getCardinality();
+		java.util.List<org.emftext.language.presentation.resource.sce.grammar.SceFormattingElement> cloned = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.grammar.SceFormattingElement>();
 		cloned.addAll(foundFormattingElements);
 		boolean foundSomethingAtAll = false;
 		boolean foundSomethingToPrint;
@@ -460,23 +460,23 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 			foundSomethingToPrint = false;
 			Integer indexToPrint = decorator.getNextIndexToPrint();
 			if (indexToPrint != null) {
-				if (printElement instanceof org.emftext.language.Presentation.resource.sce.grammar.SceKeyword) {
-					printKeyword(eObject, (org.emftext.language.Presentation.resource.sce.grammar.SceKeyword) printElement, foundFormattingElements, layoutInformations);
+				if (printElement instanceof org.emftext.language.presentation.resource.sce.grammar.SceKeyword) {
+					printKeyword(eObject, (org.emftext.language.presentation.resource.sce.grammar.SceKeyword) printElement, foundFormattingElements, layoutInformations);
 					foundSomethingToPrint = true;
-				} else if (printElement instanceof org.emftext.language.Presentation.resource.sce.grammar.ScePlaceholder) {
-					org.emftext.language.Presentation.resource.sce.grammar.ScePlaceholder placeholder = (org.emftext.language.Presentation.resource.sce.grammar.ScePlaceholder) printElement;
+				} else if (printElement instanceof org.emftext.language.presentation.resource.sce.grammar.ScePlaceholder) {
+					org.emftext.language.presentation.resource.sce.grammar.ScePlaceholder placeholder = (org.emftext.language.presentation.resource.sce.grammar.ScePlaceholder) printElement;
 					printFeature(eObject, placeholder, indexToPrint, foundFormattingElements, layoutInformations);
 					foundSomethingToPrint = true;
-				} else if (printElement instanceof org.emftext.language.Presentation.resource.sce.grammar.SceContainment) {
-					org.emftext.language.Presentation.resource.sce.grammar.SceContainment containment = (org.emftext.language.Presentation.resource.sce.grammar.SceContainment) printElement;
+				} else if (printElement instanceof org.emftext.language.presentation.resource.sce.grammar.SceContainment) {
+					org.emftext.language.presentation.resource.sce.grammar.SceContainment containment = (org.emftext.language.presentation.resource.sce.grammar.SceContainment) printElement;
 					printContainedObject(eObject, containment, indexToPrint, foundFormattingElements, layoutInformations);
 					foundSomethingToPrint = true;
-				} else if (printElement instanceof org.emftext.language.Presentation.resource.sce.grammar.SceBooleanTerminal) {
-					org.emftext.language.Presentation.resource.sce.grammar.SceBooleanTerminal booleanTerminal = (org.emftext.language.Presentation.resource.sce.grammar.SceBooleanTerminal) printElement;
+				} else if (printElement instanceof org.emftext.language.presentation.resource.sce.grammar.SceBooleanTerminal) {
+					org.emftext.language.presentation.resource.sce.grammar.SceBooleanTerminal booleanTerminal = (org.emftext.language.presentation.resource.sce.grammar.SceBooleanTerminal) printElement;
 					printBooleanTerminal(eObject, booleanTerminal, indexToPrint, foundFormattingElements, layoutInformations);
 					foundSomethingToPrint = true;
-				} else if (printElement instanceof org.emftext.language.Presentation.resource.sce.grammar.SceEnumerationTerminal) {
-					org.emftext.language.Presentation.resource.sce.grammar.SceEnumerationTerminal enumTerminal = (org.emftext.language.Presentation.resource.sce.grammar.SceEnumerationTerminal) printElement;
+				} else if (printElement instanceof org.emftext.language.presentation.resource.sce.grammar.SceEnumerationTerminal) {
+					org.emftext.language.presentation.resource.sce.grammar.SceEnumerationTerminal enumTerminal = (org.emftext.language.presentation.resource.sce.grammar.SceEnumerationTerminal) printElement;
 					printEnumerationTerminal(eObject, enumTerminal, indexToPrint, foundFormattingElements, layoutInformations);
 					foundSomethingToPrint = true;
 				}
@@ -484,20 +484,20 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 			if (foundSomethingToPrint) {
 				foundSomethingAtAll = true;
 			}
-			if (printElement instanceof org.emftext.language.Presentation.resource.sce.grammar.SceWhiteSpace) {
-				foundFormattingElements.add((org.emftext.language.Presentation.resource.sce.grammar.SceWhiteSpace) printElement);
+			if (printElement instanceof org.emftext.language.presentation.resource.sce.grammar.SceWhiteSpace) {
+				foundFormattingElements.add((org.emftext.language.presentation.resource.sce.grammar.SceWhiteSpace) printElement);
 			}
-			if (printElement instanceof org.emftext.language.Presentation.resource.sce.grammar.SceLineBreak) {
-				foundFormattingElements.add((org.emftext.language.Presentation.resource.sce.grammar.SceLineBreak) printElement);
+			if (printElement instanceof org.emftext.language.presentation.resource.sce.grammar.SceLineBreak) {
+				foundFormattingElements.add((org.emftext.language.presentation.resource.sce.grammar.SceLineBreak) printElement);
 			}
-			for (org.emftext.language.Presentation.resource.sce.mopp.SceSyntaxElementDecorator childDecorator : decorator.getChildDecorators()) {
+			for (org.emftext.language.presentation.resource.sce.mopp.SceSyntaxElementDecorator childDecorator : decorator.getChildDecorators()) {
 				foundSomethingToPrint |= printTree(childDecorator, eObject, foundFormattingElements, layoutInformations);
-				org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement decoratedElement = decorator.getDecoratedElement();
-				if (foundSomethingToPrint && decoratedElement instanceof org.emftext.language.Presentation.resource.sce.grammar.SceChoice) {
+				org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement decoratedElement = decorator.getDecoratedElement();
+				if (foundSomethingToPrint && decoratedElement instanceof org.emftext.language.presentation.resource.sce.grammar.SceChoice) {
 					break;
 				}
 			}
-			if (cardinality == org.emftext.language.Presentation.resource.sce.grammar.SceCardinality.ONE || cardinality == org.emftext.language.Presentation.resource.sce.grammar.SceCardinality.QUESTIONMARK) {
+			if (cardinality == org.emftext.language.presentation.resource.sce.grammar.SceCardinality.ONE || cardinality == org.emftext.language.presentation.resource.sce.grammar.SceCardinality.QUESTIONMARK) {
 				break;
 			} else if (!foundSomethingToPrint) {
 				break;
@@ -505,21 +505,21 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 		}
 		// only print formatting elements if a feature was printed or the syntax element
 		// is mandatory
-		if (!foundSomethingAtAll && (cardinality == org.emftext.language.Presentation.resource.sce.grammar.SceCardinality.STAR || cardinality == org.emftext.language.Presentation.resource.sce.grammar.SceCardinality.QUESTIONMARK)) {
+		if (!foundSomethingAtAll && (cardinality == org.emftext.language.presentation.resource.sce.grammar.SceCardinality.STAR || cardinality == org.emftext.language.presentation.resource.sce.grammar.SceCardinality.QUESTIONMARK)) {
 			foundFormattingElements.clear();
 			foundFormattingElements.addAll(cloned);
 		}
 		return foundSomethingToPrint;
 	}
 	
-	public void printKeyword(org.eclipse.emf.ecore.EObject eObject, org.emftext.language.Presentation.resource.sce.grammar.SceKeyword keyword, java.util.List<org.emftext.language.Presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations) {
-		org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation keywordLayout = getLayoutInformation(layoutInformations, keyword, null, eObject);
+	public void printKeyword(org.eclipse.emf.ecore.EObject eObject, org.emftext.language.presentation.resource.sce.grammar.SceKeyword keyword, java.util.List<org.emftext.language.presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations) {
+		org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation keywordLayout = getLayoutInformation(layoutInformations, keyword, null, eObject);
 		printFormattingElements(eObject, foundFormattingElements, layoutInformations, keywordLayout);
 		String value = keyword.getValue();
-		tokenOutputStream.add(new PrintToken(value, "'" + org.emftext.language.Presentation.resource.sce.util.SceStringUtil.escapeToANTLRKeyword(value) + "'", eObject));
+		tokenOutputStream.add(new PrintToken(value, "'" + org.emftext.language.presentation.resource.sce.util.SceStringUtil.escapeToANTLRKeyword(value) + "'", eObject));
 	}
 	
-	public void printFeature(org.eclipse.emf.ecore.EObject eObject, org.emftext.language.Presentation.resource.sce.grammar.ScePlaceholder placeholder, int count, java.util.List<org.emftext.language.Presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations) {
+	public void printFeature(org.eclipse.emf.ecore.EObject eObject, org.emftext.language.presentation.resource.sce.grammar.ScePlaceholder placeholder, int count, java.util.List<org.emftext.language.presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations) {
 		org.eclipse.emf.ecore.EStructuralFeature feature = placeholder.getFeature();
 		if (feature instanceof org.eclipse.emf.ecore.EAttribute) {
 			printAttribute(eObject, (org.eclipse.emf.ecore.EAttribute) feature, placeholder, count, foundFormattingElements, layoutInformations);
@@ -528,10 +528,10 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 		}
 	}
 	
-	public void printAttribute(org.eclipse.emf.ecore.EObject eObject, org.eclipse.emf.ecore.EAttribute attribute, org.emftext.language.Presentation.resource.sce.grammar.ScePlaceholder placeholder, int index, java.util.List<org.emftext.language.Presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations) {
+	public void printAttribute(org.eclipse.emf.ecore.EObject eObject, org.eclipse.emf.ecore.EAttribute attribute, org.emftext.language.presentation.resource.sce.grammar.ScePlaceholder placeholder, int index, java.util.List<org.emftext.language.presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations) {
 		String result = null;
-		Object attributeValue = org.emftext.language.Presentation.resource.sce.util.SceEObjectUtil.getFeatureValue(eObject, attribute, index);
-		org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation attributeLayout = getLayoutInformation(layoutInformations, placeholder, attributeValue, eObject);
+		Object attributeValue = org.emftext.language.presentation.resource.sce.util.SceEObjectUtil.getFeatureValue(eObject, attribute, index);
+		org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation attributeLayout = getLayoutInformation(layoutInformations, placeholder, attributeValue, eObject);
 		String visibleTokenText = getVisibleTokenText(attributeLayout);
 		// if there is text for the attribute we use it
 		if (visibleTokenText != null) {
@@ -541,7 +541,7 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 		if (result == null) {
 			// if no text is available, the attribute is deresolved to obtain its textual
 			// representation
-			org.emftext.language.Presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver(placeholder.getTokenName());
+			org.emftext.language.presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver(placeholder.getTokenName());
 			tokenResolver.setOptions(getOptions());
 			String deResolvedValue = tokenResolver.deResolve(attributeValue, attribute, eObject);
 			result = deResolvedValue;
@@ -555,11 +555,11 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 	}
 	
 	
-	public void printBooleanTerminal(org.eclipse.emf.ecore.EObject eObject, org.emftext.language.Presentation.resource.sce.grammar.SceBooleanTerminal booleanTerminal, int index, java.util.List<org.emftext.language.Presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations) {
+	public void printBooleanTerminal(org.eclipse.emf.ecore.EObject eObject, org.emftext.language.presentation.resource.sce.grammar.SceBooleanTerminal booleanTerminal, int index, java.util.List<org.emftext.language.presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations) {
 		org.eclipse.emf.ecore.EAttribute attribute = booleanTerminal.getAttribute();
 		String result = null;
-		Object attributeValue = org.emftext.language.Presentation.resource.sce.util.SceEObjectUtil.getFeatureValue(eObject, attribute, index);
-		org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation attributeLayout = getLayoutInformation(layoutInformations, booleanTerminal, attributeValue, eObject);
+		Object attributeValue = org.emftext.language.presentation.resource.sce.util.SceEObjectUtil.getFeatureValue(eObject, attribute, index);
+		org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation attributeLayout = getLayoutInformation(layoutInformations, booleanTerminal, attributeValue, eObject);
 		String visibleTokenText = getVisibleTokenText(attributeLayout);
 		// if there is text for the attribute we use it
 		if (visibleTokenText != null) {
@@ -579,16 +579,16 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 		if (result != null && !"".equals(result)) {
 			printFormattingElements(eObject, foundFormattingElements, layoutInformations, attributeLayout);
 			// write result to the output stream
-			tokenOutputStream.add(new PrintToken(result, "'" + org.emftext.language.Presentation.resource.sce.util.SceStringUtil.escapeToANTLRKeyword(result) + "'", eObject));
+			tokenOutputStream.add(new PrintToken(result, "'" + org.emftext.language.presentation.resource.sce.util.SceStringUtil.escapeToANTLRKeyword(result) + "'", eObject));
 		}
 	}
 	
 	
-	public void printEnumerationTerminal(org.eclipse.emf.ecore.EObject eObject, org.emftext.language.Presentation.resource.sce.grammar.SceEnumerationTerminal enumTerminal, int index, java.util.List<org.emftext.language.Presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations) {
+	public void printEnumerationTerminal(org.eclipse.emf.ecore.EObject eObject, org.emftext.language.presentation.resource.sce.grammar.SceEnumerationTerminal enumTerminal, int index, java.util.List<org.emftext.language.presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations) {
 		org.eclipse.emf.ecore.EAttribute attribute = enumTerminal.getAttribute();
 		String result = null;
-		Object attributeValue = org.emftext.language.Presentation.resource.sce.util.SceEObjectUtil.getFeatureValue(eObject, attribute, index);
-		org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation attributeLayout = getLayoutInformation(layoutInformations, enumTerminal, attributeValue, eObject);
+		Object attributeValue = org.emftext.language.presentation.resource.sce.util.SceEObjectUtil.getFeatureValue(eObject, attribute, index);
+		org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation attributeLayout = getLayoutInformation(layoutInformations, enumTerminal, attributeValue, eObject);
 		String visibleTokenText = getVisibleTokenText(attributeLayout);
 		// if there is text for the attribute we use it
 		if (visibleTokenText != null) {
@@ -605,14 +605,14 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 		if (result != null && !"".equals(result)) {
 			printFormattingElements(eObject, foundFormattingElements, layoutInformations, attributeLayout);
 			// write result to the output stream
-			tokenOutputStream.add(new PrintToken(result, "'" + org.emftext.language.Presentation.resource.sce.util.SceStringUtil.escapeToANTLRKeyword(result) + "'", eObject));
+			tokenOutputStream.add(new PrintToken(result, "'" + org.emftext.language.presentation.resource.sce.util.SceStringUtil.escapeToANTLRKeyword(result) + "'", eObject));
 		}
 	}
 	
 	
-	public void printContainedObject(org.eclipse.emf.ecore.EObject eObject, org.emftext.language.Presentation.resource.sce.grammar.SceContainment containment, int index, java.util.List<org.emftext.language.Presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations) {
+	public void printContainedObject(org.eclipse.emf.ecore.EObject eObject, org.emftext.language.presentation.resource.sce.grammar.SceContainment containment, int index, java.util.List<org.emftext.language.presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations) {
 		org.eclipse.emf.ecore.EStructuralFeature reference = containment.getFeature();
-		Object o = org.emftext.language.Presentation.resource.sce.util.SceEObjectUtil.getFeatureValue(eObject, reference, index);
+		Object o = org.emftext.language.presentation.resource.sce.util.SceEObjectUtil.getFeatureValue(eObject, reference, index);
 		// save current number of tabs to restore them after printing the contained object
 		int oldTabsBeforeCurrentObject = tabsBeforeCurrentObject;
 		int oldCurrentTabs = currentTabs;
@@ -627,7 +627,7 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 		currentTabs = oldCurrentTabs;
 	}
 	
-	public void printFormattingElements(org.eclipse.emf.ecore.EObject eObject, java.util.List<org.emftext.language.Presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations, org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation layoutInformation) {
+	public void printFormattingElements(org.eclipse.emf.ecore.EObject eObject, java.util.List<org.emftext.language.presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations, org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation layoutInformation) {
 		String hiddenTokenText = getHiddenTokenText(layoutInformation);
 		if (hiddenTokenText != null) {
 			// removed used information
@@ -642,15 +642,15 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 		}
 		int printedTabs = 0;
 		if (foundFormattingElements.size() > 0) {
-			for (org.emftext.language.Presentation.resource.sce.grammar.SceFormattingElement foundFormattingElement : foundFormattingElements) {
-				if (foundFormattingElement instanceof org.emftext.language.Presentation.resource.sce.grammar.SceWhiteSpace) {
-					int amount = ((org.emftext.language.Presentation.resource.sce.grammar.SceWhiteSpace) foundFormattingElement).getAmount();
+			for (org.emftext.language.presentation.resource.sce.grammar.SceFormattingElement foundFormattingElement : foundFormattingElements) {
+				if (foundFormattingElement instanceof org.emftext.language.presentation.resource.sce.grammar.SceWhiteSpace) {
+					int amount = ((org.emftext.language.presentation.resource.sce.grammar.SceWhiteSpace) foundFormattingElement).getAmount();
 					for (int i = 0; i < amount; i++) {
 						tokenOutputStream.add(createSpaceToken(eObject));
 					}
 				}
-				if (foundFormattingElement instanceof org.emftext.language.Presentation.resource.sce.grammar.SceLineBreak) {
-					currentTabs = ((org.emftext.language.Presentation.resource.sce.grammar.SceLineBreak) foundFormattingElement).getTabs();
+				if (foundFormattingElement instanceof org.emftext.language.presentation.resource.sce.grammar.SceLineBreak) {
+					currentTabs = ((org.emftext.language.presentation.resource.sce.grammar.SceLineBreak) foundFormattingElement).getTabs();
 					printedTabs += currentTabs;
 					tokenOutputStream.add(createNewLineToken(eObject));
 					for (int i = 0; i < tabsBeforeCurrentObject + currentTabs; i++) {
@@ -684,11 +684,11 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 	}
 	
 	@SuppressWarnings("unchecked")	
-	public void printReference(org.eclipse.emf.ecore.EObject eObject, org.eclipse.emf.ecore.EReference reference, org.emftext.language.Presentation.resource.sce.grammar.ScePlaceholder placeholder, int index, java.util.List<org.emftext.language.Presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations) {
+	public void printReference(org.eclipse.emf.ecore.EObject eObject, org.eclipse.emf.ecore.EReference reference, org.emftext.language.presentation.resource.sce.grammar.ScePlaceholder placeholder, int index, java.util.List<org.emftext.language.presentation.resource.sce.grammar.SceFormattingElement> foundFormattingElements, java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations) {
 		String tokenName = placeholder.getTokenName();
-		Object referencedObject = org.emftext.language.Presentation.resource.sce.util.SceEObjectUtil.getFeatureValue(eObject, reference, index, false);
+		Object referencedObject = org.emftext.language.presentation.resource.sce.util.SceEObjectUtil.getFeatureValue(eObject, reference, index, false);
 		// first add layout before the reference
-		org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation referenceLayout = getLayoutInformation(layoutInformations, placeholder, referencedObject, eObject);
+		org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation referenceLayout = getLayoutInformation(layoutInformations, placeholder, referencedObject, eObject);
 		printFormattingElements(eObject, foundFormattingElements, layoutInformations, referenceLayout);
 		// proxy objects must be printed differently
 		String deresolvedReference = null;
@@ -698,8 +698,8 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 				deresolvedReference = ((org.eclipse.emf.ecore.InternalEObject) eObjectToDeResolve).eProxyURI().fragment();
 				// If the proxy was created by EMFText, we can try to recover the identifier from
 				// the proxy URI
-				if (deresolvedReference != null && deresolvedReference.startsWith(org.emftext.language.Presentation.resource.sce.ISceContextDependentURIFragment.INTERNAL_URI_FRAGMENT_PREFIX)) {
-					deresolvedReference = deresolvedReference.substring(org.emftext.language.Presentation.resource.sce.ISceContextDependentURIFragment.INTERNAL_URI_FRAGMENT_PREFIX.length());
+				if (deresolvedReference != null && deresolvedReference.startsWith(org.emftext.language.presentation.resource.sce.ISceContextDependentURIFragment.INTERNAL_URI_FRAGMENT_PREFIX)) {
+					deresolvedReference = deresolvedReference.substring(org.emftext.language.presentation.resource.sce.ISceContextDependentURIFragment.INTERNAL_URI_FRAGMENT_PREFIX.length());
 					deresolvedReference = deresolvedReference.substring(deresolvedReference.indexOf("_") + 1);
 				}
 			}
@@ -709,11 +709,11 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 			// use the visible token information, because deresolving usually depends on
 			// attribute values of the referenced object instead of the object itself.
 			@SuppressWarnings("rawtypes")			
-			org.emftext.language.Presentation.resource.sce.ISceReferenceResolver referenceResolver = getReferenceResolverSwitch().getResolver(reference);
+			org.emftext.language.presentation.resource.sce.ISceReferenceResolver referenceResolver = getReferenceResolverSwitch().getResolver(reference);
 			referenceResolver.setOptions(getOptions());
 			deresolvedReference = referenceResolver.deResolve((org.eclipse.emf.ecore.EObject) referencedObject, eObject, reference);
 		}
-		org.emftext.language.Presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver(tokenName);
+		org.emftext.language.presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver(tokenName);
 		tokenResolver.setOptions(getOptions());
 		String deresolvedToken = tokenResolver.deResolve(deresolvedReference, reference, eObject);
 		// write result to output stream
@@ -766,36 +766,36 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 		}
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ISceTextResource getResource() {
+	public org.emftext.language.presentation.resource.sce.ISceTextResource getResource() {
 		return resource;
 	}
 	
-	protected org.emftext.language.Presentation.resource.sce.mopp.SceReferenceResolverSwitch getReferenceResolverSwitch() {
-		return (org.emftext.language.Presentation.resource.sce.mopp.SceReferenceResolverSwitch) new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation().getReferenceResolverSwitch();
+	protected org.emftext.language.presentation.resource.sce.mopp.SceReferenceResolverSwitch getReferenceResolverSwitch() {
+		return (org.emftext.language.presentation.resource.sce.mopp.SceReferenceResolverSwitch) new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation().getReferenceResolverSwitch();
 	}
 	
 	protected void addWarningToResource(final String errorMessage, org.eclipse.emf.ecore.EObject cause) {
-		org.emftext.language.Presentation.resource.sce.ISceTextResource resource = getResource();
+		org.emftext.language.presentation.resource.sce.ISceTextResource resource = getResource();
 		if (resource == null) {
 			// the resource can be null if the printer is used stand alone
 			return;
 		}
-		resource.addProblem(new org.emftext.language.Presentation.resource.sce.mopp.SceProblem(errorMessage, org.emftext.language.Presentation.resource.sce.SceEProblemType.PRINT_PROBLEM, org.emftext.language.Presentation.resource.sce.SceEProblemSeverity.WARNING), cause);
+		resource.addProblem(new org.emftext.language.presentation.resource.sce.mopp.SceProblem(errorMessage, org.emftext.language.presentation.resource.sce.SceEProblemType.PRINT_PROBLEM, org.emftext.language.presentation.resource.sce.SceEProblemSeverity.WARNING), cause);
 	}
 	
-	protected org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter getLayoutInformationAdapter(org.eclipse.emf.ecore.EObject element) {
+	protected org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter getLayoutInformationAdapter(org.eclipse.emf.ecore.EObject element) {
 		for (org.eclipse.emf.common.notify.Adapter adapter : element.eAdapters()) {
-			if (adapter instanceof org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter) {
-				return (org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter) adapter;
+			if (adapter instanceof org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter) {
+				return (org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter) adapter;
 			}
 		}
-		org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter newAdapter = new org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter();
+		org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter newAdapter = new org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter();
 		element.eAdapters().add(newAdapter);
 		return newAdapter;
 	}
 	
-	private org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation getLayoutInformation(java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations, org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement syntaxElement, Object object, org.eclipse.emf.ecore.EObject container) {
-		for (org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation layoutInformation : layoutInformations) {
+	private org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation getLayoutInformation(java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations, org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement syntaxElement, Object object, org.eclipse.emf.ecore.EObject container) {
+		for (org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation layoutInformation : layoutInformations) {
 			if (syntaxElement == layoutInformation.getSyntaxElement()) {
 				if (object == null) {
 					return layoutInformation;
@@ -816,17 +816,17 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 		return null;
 	}
 	
-	public java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> getCopyOfLayoutInformation(org.eclipse.emf.ecore.EObject eObject) {
-		org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter layoutInformationAdapter = getLayoutInformationAdapter(eObject);
-		java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> originalLayoutInformations = layoutInformationAdapter.getLayoutInformations();
+	public java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> getCopyOfLayoutInformation(org.eclipse.emf.ecore.EObject eObject) {
+		org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter layoutInformationAdapter = getLayoutInformationAdapter(eObject);
+		java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> originalLayoutInformations = layoutInformationAdapter.getLayoutInformations();
 		// create a copy of the original list of layout information object in order to be
 		// able to remove used informations during printing
-		java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation>(originalLayoutInformations.size());
+		java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation>(originalLayoutInformations.size());
 		layoutInformations.addAll(originalLayoutInformations);
 		return layoutInformations;
 	}
 	
-	private String getHiddenTokenText(org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation layoutInformation) {
+	private String getHiddenTokenText(org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation layoutInformation) {
 		if (layoutInformation != null) {
 			return layoutInformation.getHiddenTokenText();
 		} else {
@@ -834,7 +834,7 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 		}
 	}
 	
-	private String getVisibleTokenText(org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation layoutInformation) {
+	private String getVisibleTokenText(org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation layoutInformation) {
 		if (layoutInformation != null) {
 			return layoutInformation.getVisibleTokenText();
 		} else {
@@ -915,11 +915,11 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 				continue;
 			}
 			// now check whether the current block can be scanned
-			org.emftext.language.Presentation.resource.sce.ISceTextScanner scanner = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation().createLexer();
+			org.emftext.language.presentation.resource.sce.ISceTextScanner scanner = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation().createLexer();
 			scanner.setText(currentBlock.toString());
 			// retrieve all tokens from scanner and add them to list 'tempTokens'
-			java.util.List<org.emftext.language.Presentation.resource.sce.ISceTextToken> tempTokens = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ISceTextToken>();
-			org.emftext.language.Presentation.resource.sce.ISceTextToken nextToken = scanner.getNextToken();
+			java.util.List<org.emftext.language.presentation.resource.sce.ISceTextToken> tempTokens = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ISceTextToken>();
+			org.emftext.language.presentation.resource.sce.ISceTextToken nextToken = scanner.getNextToken();
 			while (nextToken != null && nextToken.getText() != null) {
 				tempTokens.add(nextToken);
 				nextToken = scanner.getNextToken();
@@ -928,7 +928,7 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 			// check whether the current block was scanned to the same token sequence
 			for (int t = 0; t < tempTokens.size(); t++) {
 				PrintToken printTokenT = tokenOutputStream.get(currentBlockStart + t);
-				org.emftext.language.Presentation.resource.sce.ISceTextToken tempToken = tempTokens.get(t);
+				org.emftext.language.presentation.resource.sce.ISceTextToken tempToken = tempTokens.get(t);
 				if (!tempToken.getText().equals(printTokenT.getText())) {
 					sequenceIsValid = false;
 					break;
@@ -978,11 +978,11 @@ public class ScePrinter2 implements org.emftext.language.Presentation.resource.s
 		return o1 == o2;
 	}
 	
-	protected java.util.List<Class<?>> getAllowedTypes(org.emftext.language.Presentation.resource.sce.grammar.SceTerminal terminal) {
+	protected java.util.List<Class<?>> getAllowedTypes(org.emftext.language.presentation.resource.sce.grammar.SceTerminal terminal) {
 		java.util.List<Class<?>> allowedTypes = new java.util.ArrayList<Class<?>>();
 		allowedTypes.add(terminal.getFeature().getEType().getInstanceClass());
-		if (terminal instanceof org.emftext.language.Presentation.resource.sce.grammar.SceContainment) {
-			org.emftext.language.Presentation.resource.sce.grammar.SceContainment printingContainment = (org.emftext.language.Presentation.resource.sce.grammar.SceContainment) terminal;
+		if (terminal instanceof org.emftext.language.presentation.resource.sce.grammar.SceContainment) {
+			org.emftext.language.presentation.resource.sce.grammar.SceContainment printingContainment = (org.emftext.language.presentation.resource.sce.grammar.SceContainment) terminal;
 			org.eclipse.emf.ecore.EClass[] typeRestrictions = printingContainment.getAllowedTypes();
 			if (typeRestrictions != null && typeRestrictions.length > 0) {
 				allowedTypes.clear();

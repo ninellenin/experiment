@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 /**
  * Displays HTML information in a {@link org.eclipse.swt.browser.Browser} widget.
@@ -96,7 +96,7 @@ public class SceBrowserInformationControl extends org.eclipse.jface.text.Abstrac
 	 */
 	private org.eclipse.swt.graphics.TextStyle fBoldStyle;
 	
-	private org.emftext.language.Presentation.resource.sce.ui.SceDocBrowserInformationControlInput fInput;
+	private org.emftext.language.presentation.resource.sce.ui.SceDocBrowserInformationControlInput fInput;
 	
 	/**
 	 * <code>true</code> iff the browser has completed loading of the last input set
@@ -205,14 +205,14 @@ public class SceBrowserInformationControl extends org.eclipse.jface.text.Abstrac
 	 * {@inheritDoc} This control can handle {@link String}(no handle) and
 	 */
 	public void setInput(Object input) {
-		org.eclipse.core.runtime.Assert.isLegal(input == null || input instanceof String || input instanceof org.emftext.language.Presentation.resource.sce.ui.SceDocBrowserInformationControlInput);
+		org.eclipse.core.runtime.Assert.isLegal(input == null || input instanceof String || input instanceof org.emftext.language.presentation.resource.sce.ui.SceDocBrowserInformationControlInput);
 		
 		if (input instanceof String) {
 			setInformation((String)input);
 			return;
 		}
 		
-		fInput= (org.emftext.language.Presentation.resource.sce.ui.SceDocBrowserInformationControlInput) input;
+		fInput= (org.emftext.language.presentation.resource.sce.ui.SceDocBrowserInformationControlInput) input;
 		
 		String content= null;
 		if (fInput != null)		content= fInput.getHtml();
@@ -241,7 +241,7 @@ public class SceBrowserInformationControl extends org.eclipse.jface.text.Abstrac
 		}
 		
 		StringBuffer buffer= new StringBuffer(content);
-		org.emftext.language.Presentation.resource.sce.ui.SceHTMLPrinter.insertStyles(buffer, styles);
+		org.emftext.language.presentation.resource.sce.ui.SceHTMLPrinter.insertStyles(buffer, styles);
 		content= buffer.toString();
 		
 		// XXX: Should add some JavaScript here that shows something like "(continued...)"
@@ -358,7 +358,7 @@ public class SceBrowserInformationControl extends org.eclipse.jface.text.Abstrac
 		org.eclipse.jface.text.TextPresentation presentation= new org.eclipse.jface.text.TextPresentation();
 		String text;
 		try {
-			text = org.emftext.language.Presentation.resource.sce.ui.SceHTMLPrinter.html2text(new java.io.StringReader(fInput.getHtml()), presentation);
+			text = org.emftext.language.presentation.resource.sce.ui.SceHTMLPrinter.html2text(new java.io.StringReader(fInput.getHtml()), presentation);
 		} catch (java.io.IOException e) {
 			text = "";
 		}
@@ -529,7 +529,7 @@ public class SceBrowserInformationControl extends org.eclipse.jface.text.Abstrac
 	 * 
 	 * @return the current browser input or <code>null</code>
 	 */
-	public org.emftext.language.Presentation.resource.sce.ui.SceDocBrowserInformationControlInput getInput() {
+	public org.emftext.language.presentation.resource.sce.ui.SceDocBrowserInformationControlInput getInput() {
 		return fInput;
 	}
 	

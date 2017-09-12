@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce;
+package org.emftext.language.presentation.resource.sce;
 
 public enum SceEProblemSeverity {
 	WARNING, ERROR;

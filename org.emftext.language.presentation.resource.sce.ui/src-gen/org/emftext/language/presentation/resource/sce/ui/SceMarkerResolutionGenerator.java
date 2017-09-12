@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 public class SceMarkerResolutionGenerator implements org.eclipse.ui.IMarkerResolutionGenerator {
 	
@@ -19,14 +19,14 @@ public class SceMarkerResolutionGenerator implements org.eclipse.ui.IMarkerResol
 				final org.eclipse.core.resources.IFile file = (org.eclipse.core.resources.IFile) resource;
 				org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 				org.eclipse.emf.ecore.resource.ResourceSet rs = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
-				rs.getLoadOptions().put(org.emftext.language.Presentation.resource.sce.ISceOptions.DISABLE_CREATING_MARKERS_FOR_PROBLEMS, "true");
+				rs.getLoadOptions().put(org.emftext.language.presentation.resource.sce.ISceOptions.DISABLE_CREATING_MARKERS_FOR_PROBLEMS, "true");
 				org.eclipse.emf.ecore.resource.Resource emfResource = rs.getResource(uri, true);
-				if (emfResource instanceof org.emftext.language.Presentation.resource.sce.mopp.SceResource) {
-					org.emftext.language.Presentation.resource.sce.mopp.SceResource customResource = (org.emftext.language.Presentation.resource.sce.mopp.SceResource) emfResource;
+				if (emfResource instanceof org.emftext.language.presentation.resource.sce.mopp.SceResource) {
+					org.emftext.language.presentation.resource.sce.mopp.SceResource customResource = (org.emftext.language.presentation.resource.sce.mopp.SceResource) emfResource;
 					org.eclipse.emf.ecore.util.EcoreUtil.resolveAll(customResource);
-					java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceQuickFix> quickFixes = getQuickFixes(customResource, marker);
+					java.util.Collection<org.emftext.language.presentation.resource.sce.ISceQuickFix> quickFixes = getQuickFixes(customResource, marker);
 					java.util.List<org.eclipse.ui.IMarkerResolution2> resolutions = new java.util.ArrayList<org.eclipse.ui.IMarkerResolution2>();
-					for (final org.emftext.language.Presentation.resource.sce.ISceQuickFix quickFix : quickFixes) {
+					for (final org.emftext.language.presentation.resource.sce.ISceQuickFix quickFix : quickFixes) {
 						resolutions.add(new org.eclipse.ui.IMarkerResolution2() {
 							
 							public void run(org.eclipse.core.resources.IMarker marker) {
@@ -35,7 +35,7 @@ public class SceMarkerResolutionGenerator implements org.eclipse.ui.IMarkerResol
 								try {
 									file.setContents(new java.io.ByteArrayInputStream(newText.getBytes()), true, true, null);
 								} catch (org.eclipse.core.runtime.CoreException e) {
-									org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.logError("Exception while applying quick fix", e);
+									org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.logError("Exception while applying quick fix", e);
 								}
 							}
 							
@@ -44,7 +44,7 @@ public class SceMarkerResolutionGenerator implements org.eclipse.ui.IMarkerResol
 							}
 							
 							public org.eclipse.swt.graphics.Image getImage() {
-								return new org.emftext.language.Presentation.resource.sce.ui.SceUIMetaInformation().getImageProvider().getImage(quickFix.getImageKey());
+								return new org.emftext.language.presentation.resource.sce.ui.SceUIMetaInformation().getImageProvider().getImage(quickFix.getImageKey());
 							}
 							
 							public String getDescription() {
@@ -57,19 +57,19 @@ public class SceMarkerResolutionGenerator implements org.eclipse.ui.IMarkerResol
 				}
 			}
 		} catch (Exception e) {
-			org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.logError("Exception while computing quick fix resolutions", e);
+			org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.logError("Exception while computing quick fix resolutions", e);
 		}
 		return new org.eclipse.ui.IMarkerResolution[] {};
 	}
 	
-	public java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceQuickFix> getQuickFixes(org.emftext.language.Presentation.resource.sce.ISceTextResource resource, org.eclipse.core.resources.IMarker marker) {
-		java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceQuickFix> foundQuickFixes = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ISceQuickFix>();
+	public java.util.Collection<org.emftext.language.presentation.resource.sce.ISceQuickFix> getQuickFixes(org.emftext.language.presentation.resource.sce.ISceTextResource resource, org.eclipse.core.resources.IMarker marker) {
+		java.util.Collection<org.emftext.language.presentation.resource.sce.ISceQuickFix> foundQuickFixes = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ISceQuickFix>();
 		try {
 			String quickFixContexts = getQuickFixContextString(marker);
 			if (quickFixContexts != null) {
 				String[] quickFixContextParts = quickFixContexts.split("\\|");
 				for (String quickFixContext : quickFixContextParts) {
-					org.emftext.language.Presentation.resource.sce.ISceQuickFix quickFix = resource.getQuickFix(quickFixContext);
+					org.emftext.language.presentation.resource.sce.ISceQuickFix quickFix = resource.getQuickFix(quickFixContext);
 					if (quickFix != null) {
 						foundQuickFixes.add(quickFix);
 					}

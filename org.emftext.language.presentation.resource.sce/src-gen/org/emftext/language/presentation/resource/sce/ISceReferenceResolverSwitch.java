@@ -4,13 +4,13 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce;
+package org.emftext.language.presentation.resource.sce;
 
 /**
  * A ISceReferenceResolverSwitch holds references to multiple other reference
  * resolvers and delegates requests to the appropriate resolver.
  */
-public interface ISceReferenceResolverSwitch extends org.emftext.language.Presentation.resource.sce.ISceConfigurable {
+public interface ISceReferenceResolverSwitch extends org.emftext.language.presentation.resource.sce.ISceConfigurable {
 	
 	/**
 	 * Attempts to resolve a reference string fuzzy (returning objects that do not
@@ -21,5 +21,5 @@ public interface ISceReferenceResolverSwitch extends org.emftext.language.Presen
 	 * @param reference The reference that points to the target of the reference.
 	 * @param result an object to store the result of the resolve operation.
 	 */
-	public void resolveFuzzy(String identifier, org.eclipse.emf.ecore.EObject container, org.eclipse.emf.ecore.EReference reference, int position, org.emftext.language.Presentation.resource.sce.ISceReferenceResolveResult<org.eclipse.emf.ecore.EObject> result);
+	public void resolveFuzzy(String identifier, org.eclipse.emf.ecore.EObject container, org.eclipse.emf.ecore.EReference reference, int position, org.emftext.language.presentation.resource.sce.ISceReferenceResolveResult<org.eclipse.emf.ecore.EObject> result);
 }

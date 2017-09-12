@@ -4,14 +4,14 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * An inactive implementation of the ILocationMap interface. That is used if the
- * org.emftext.language.Presentation.resource.sce.ISceOptions.DISABLE_LOCATION_MAP
+ * org.emftext.language.presentation.resource.sce.ISceOptions.DISABLE_LOCATION_MAP
  * option is set.
  */
-public class SceDevNullLocationMap implements org.emftext.language.Presentation.resource.sce.ISceLocationMap {
+public class SceDevNullLocationMap implements org.emftext.language.presentation.resource.sce.ISceLocationMap {
 	
 	public void setLine(org.eclipse.emf.ecore.EObject element, int line) {
 	}

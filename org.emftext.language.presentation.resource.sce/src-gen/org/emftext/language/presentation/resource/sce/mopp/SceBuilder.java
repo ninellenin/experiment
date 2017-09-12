@@ -4,16 +4,16 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
-public class SceBuilder implements org.emftext.language.Presentation.resource.sce.ISceBuilder {
+public class SceBuilder implements org.emftext.language.presentation.resource.sce.ISceBuilder {
 	
 	public boolean isBuildingNeeded(org.eclipse.emf.common.util.URI uri) {
 		// change this to return true to enable building of all resources
 		return false;
 	}
 	
-	public org.eclipse.core.runtime.IStatus build(org.emftext.language.Presentation.resource.sce.mopp.SceResource resource, org.eclipse.core.runtime.IProgressMonitor monitor) {
+	public org.eclipse.core.runtime.IStatus build(org.emftext.language.presentation.resource.sce.mopp.SceResource resource, org.eclipse.core.runtime.IProgressMonitor monitor) {
 		// set option overrideBuilder to 'false' and then perform build here
 		return org.eclipse.core.runtime.Status.OK_STATUS;
 	}

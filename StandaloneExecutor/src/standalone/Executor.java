@@ -6,8 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.emftext.language.Presentation.PresentationPackage;
-import org.emftext.language.Presentation.resource.sce.mopp.SceResourceFactory;
+import org.emftext.language.presentation.PresentationPackage;
+import org.emftext.language.presentation.resource.sce.mopp.SceResourceFactory;
 
 import PyExperiment.PyExperimentPackage;
 import standalone.emftext.DomainSpecificLanguage;

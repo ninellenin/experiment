@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce;
+package org.emftext.language.presentation.resource.sce;
 
 /**
  * This interface provides information about a generated EMFText text resource
@@ -33,7 +33,7 @@ public interface ISceMetaInformation {
 	 * 
 	 * @return a new instance of the lexer class.
 	 */
-	public org.emftext.language.Presentation.resource.sce.ISceTextScanner createLexer();
+	public org.emftext.language.presentation.resource.sce.ISceTextScanner createLexer();
 	
 	/**
 	 * Returns an instance of the parser. This factory method is needed, because we
@@ -48,7 +48,7 @@ public interface ISceMetaInformation {
 	 * 
 	 * @return a new instance of the parser class
 	 */
-	public org.emftext.language.Presentation.resource.sce.ISceTextParser createParser(java.io.InputStream inputStream, String encoding);
+	public org.emftext.language.presentation.resource.sce.ISceTextParser createParser(java.io.InputStream inputStream, String encoding);
 	
 	/**
 	 * Returns a new instance of the printer.
@@ -58,7 +58,7 @@ public interface ISceMetaInformation {
 	 * 
 	 * @return a new instance of the printer class
 	 */
-	public org.emftext.language.Presentation.resource.sce.ISceTextPrinter createPrinter(java.io.OutputStream outputStream, org.emftext.language.Presentation.resource.sce.ISceTextResource resource);
+	public org.emftext.language.presentation.resource.sce.ISceTextPrinter createPrinter(java.io.OutputStream outputStream, org.emftext.language.presentation.resource.sce.ISceTextResource resource);
 	
 	/**
 	 * Returns all meta classes for which syntax was defined. This information is used
@@ -69,12 +69,12 @@ public interface ISceMetaInformation {
 	/**
 	 * Returns an instance of the reference resolver switch class.
 	 */
-	public org.emftext.language.Presentation.resource.sce.ISceReferenceResolverSwitch getReferenceResolverSwitch();
+	public org.emftext.language.presentation.resource.sce.ISceReferenceResolverSwitch getReferenceResolverSwitch();
 	
 	/**
 	 * Returns an instance of the token resolver factory.
 	 */
-	public org.emftext.language.Presentation.resource.sce.ISceTokenResolverFactory getTokenResolverFactory();
+	public org.emftext.language.presentation.resource.sce.ISceTokenResolverFactory getTokenResolverFactory();
 	
 	/**
 	 * Returns a list of the names of all tokens defined in the syntax.
@@ -89,12 +89,12 @@ public interface ISceMetaInformation {
 	 * 
 	 * @return a style object or null if no default style is set
 	 */
-	public org.emftext.language.Presentation.resource.sce.ISceTokenStyle getDefaultTokenStyle(String tokenName);
+	public org.emftext.language.presentation.resource.sce.ISceTokenStyle getDefaultTokenStyle(String tokenName);
 	
 	/**
 	 * Returns the default bracket pairs.
 	 */
-	public java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceBracketPair> getBracketPairs();
+	public java.util.Collection<org.emftext.language.presentation.resource.sce.ISceBracketPair> getBracketPairs();
 	
 	/**
 	 * Returns all classes for which folding must be enabled in the editor.

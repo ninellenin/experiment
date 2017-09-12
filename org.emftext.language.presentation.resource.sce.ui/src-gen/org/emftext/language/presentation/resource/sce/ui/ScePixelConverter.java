@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 /**
  * A utility class for pixel conversion.

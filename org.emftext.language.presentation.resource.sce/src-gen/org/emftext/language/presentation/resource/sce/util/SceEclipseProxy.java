@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.util;
+package org.emftext.language.presentation.resource.sce.util;
 
 /**
  * A utility class that bundles all dependencies to the Eclipse platform. Clients
@@ -24,17 +24,17 @@ public class SceEclipseProxy {
 		if (org.eclipse.core.runtime.Platform.isRunning()) {
 			// find default load option providers
 			org.eclipse.core.runtime.IExtensionRegistry extensionRegistry = org.eclipse.core.runtime.Platform.getExtensionRegistry();
-			org.eclipse.core.runtime.IConfigurationElement configurationElements[] = extensionRegistry.getConfigurationElementsFor(org.emftext.language.Presentation.resource.sce.mopp.ScePlugin.EP_DEFAULT_LOAD_OPTIONS_ID);
+			org.eclipse.core.runtime.IConfigurationElement configurationElements[] = extensionRegistry.getConfigurationElementsFor(org.emftext.language.presentation.resource.sce.mopp.ScePlugin.EP_DEFAULT_LOAD_OPTIONS_ID);
 			for (org.eclipse.core.runtime.IConfigurationElement element : configurationElements) {
 				try {
-					org.emftext.language.Presentation.resource.sce.ISceOptionProvider provider = (org.emftext.language.Presentation.resource.sce.ISceOptionProvider) element.createExecutableExtension("class");
+					org.emftext.language.presentation.resource.sce.ISceOptionProvider provider = (org.emftext.language.presentation.resource.sce.ISceOptionProvider) element.createExecutableExtension("class");
 					final java.util.Map<?, ?> options = provider.getOptions();
 					final java.util.Collection<?> keys = options.keySet();
 					for (Object key : keys) {
-						org.emftext.language.Presentation.resource.sce.util.SceMapUtil.putAndMergeKeys(optionsMap, key, options.get(key));
+						org.emftext.language.presentation.resource.sce.util.SceMapUtil.putAndMergeKeys(optionsMap, key, options.get(key));
 					}
 				} catch (org.eclipse.core.runtime.CoreException ce) {
-					new org.emftext.language.Presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while getting default options.", ce);
+					new org.emftext.language.presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while getting default options.", ce);
 				}
 			}
 		}
@@ -48,7 +48,7 @@ public class SceEclipseProxy {
 	public void getResourceFactoryExtensions(java.util.Map<String, org.eclipse.emf.ecore.resource.Resource.Factory> factories) {
 		if (org.eclipse.core.runtime.Platform.isRunning()) {
 			org.eclipse.core.runtime.IExtensionRegistry extensionRegistry = org.eclipse.core.runtime.Platform.getExtensionRegistry();
-			org.eclipse.core.runtime.IConfigurationElement configurationElements[] = extensionRegistry.getConfigurationElementsFor(org.emftext.language.Presentation.resource.sce.mopp.ScePlugin.EP_ADDITIONAL_EXTENSION_PARSER_ID);
+			org.eclipse.core.runtime.IConfigurationElement configurationElements[] = extensionRegistry.getConfigurationElementsFor(org.emftext.language.presentation.resource.sce.mopp.ScePlugin.EP_ADDITIONAL_EXTENSION_PARSER_ID);
 			for (org.eclipse.core.runtime.IConfigurationElement element : configurationElements) {
 				try {
 					String type = element.getAttribute("type");
@@ -71,7 +71,7 @@ public class SceEclipseProxy {
 						factories.put(type, factory);
 					}
 				} catch (org.eclipse.core.runtime.CoreException ce) {
-					new org.emftext.language.Presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while getting default options.", ce);
+					new org.emftext.language.presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while getting default options.", ce);
 				}
 			}
 		}
@@ -80,10 +80,10 @@ public class SceEclipseProxy {
 	/**
 	 * Gets the resource that is contained in the give file.
 	 */
-	public org.emftext.language.Presentation.resource.sce.mopp.SceResource getResource(org.eclipse.core.resources.IFile file) {
+	public org.emftext.language.presentation.resource.sce.mopp.SceResource getResource(org.eclipse.core.resources.IFile file) {
 		org.eclipse.emf.ecore.resource.ResourceSet rs = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
 		org.eclipse.emf.ecore.resource.Resource resource = rs.getResource(org.eclipse.emf.common.util.URI.createPlatformResourceURI(file.getFullPath().toString(),true), true);
-		return (org.emftext.language.Presentation.resource.sce.mopp.SceResource) resource;
+		return (org.emftext.language.presentation.resource.sce.mopp.SceResource) resource;
 	}
 	
 	/**
@@ -91,11 +91,11 @@ public class SceEclipseProxy {
 	 * work if OSGi is not running.
 	 */
 	@SuppressWarnings("restriction")	
-	public void checkEMFValidationConstraints(org.emftext.language.Presentation.resource.sce.ISceTextResource resource, org.eclipse.emf.ecore.EObject root) {
+	public void checkEMFValidationConstraints(org.emftext.language.presentation.resource.sce.ISceTextResource resource, org.eclipse.emf.ecore.EObject root) {
 		// The EMF validation framework code throws a NPE if the validation plug-in is not
 		// loaded. This is a bug, which is fixed in the Helios release. Nonetheless, we
 		// need to catch the exception here.
-		if (new org.emftext.language.Presentation.resource.sce.util.SceRuntimeUtil().isEclipsePlatformRunning()) {
+		if (new org.emftext.language.presentation.resource.sce.util.SceRuntimeUtil().isEclipsePlatformRunning()) {
 			// The EMF validation framework code throws a NPE if the validation plug-in is not
 			// loaded. This is a workaround for bug 322079.
 			if (org.eclipse.emf.validation.internal.EMFModelValidationPlugin.getPlugin() != null) {
@@ -106,13 +106,13 @@ public class SceEclipseProxy {
 					org.eclipse.core.runtime.IStatus status = validator.validate(root);
 					addStatus(status, resource, root);
 				} catch (Throwable t) {
-					new org.emftext.language.Presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while checking contraints provided by EMF validator classes.", t);
+					new org.emftext.language.presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while checking contraints provided by EMF validator classes.", t);
 				}
 			}
 		}
 	}
 	
-	public void addStatus(org.eclipse.core.runtime.IStatus status, org.emftext.language.Presentation.resource.sce.ISceTextResource resource, org.eclipse.emf.ecore.EObject root) {
+	public void addStatus(org.eclipse.core.runtime.IStatus status, org.emftext.language.presentation.resource.sce.ISceTextResource resource, org.eclipse.emf.ecore.EObject root) {
 		java.util.List<org.eclipse.emf.ecore.EObject> causes = new java.util.ArrayList<org.eclipse.emf.ecore.EObject>();
 		causes.add(root);
 		if (status instanceof org.eclipse.emf.validation.model.ConstraintStatus) {
@@ -127,12 +127,12 @@ public class SceEclipseProxy {
 		if (!status.isMultiStatus() || !hasChildren) {
 			if (status.getSeverity() == org.eclipse.core.runtime.IStatus.ERROR) {
 				for (org.eclipse.emf.ecore.EObject cause : causes) {
-					resource.addError(status.getMessage(), org.emftext.language.Presentation.resource.sce.SceEProblemType.ANALYSIS_PROBLEM, cause);
+					resource.addError(status.getMessage(), org.emftext.language.presentation.resource.sce.SceEProblemType.ANALYSIS_PROBLEM, cause);
 				}
 			}
 			if (status.getSeverity() == org.eclipse.core.runtime.IStatus.WARNING) {
 				for (org.eclipse.emf.ecore.EObject cause : causes) {
-					resource.addWarning(status.getMessage(), org.emftext.language.Presentation.resource.sce.SceEProblemType.ANALYSIS_PROBLEM, cause);
+					resource.addWarning(status.getMessage(), org.emftext.language.presentation.resource.sce.SceEProblemType.ANALYSIS_PROBLEM, cause);
 				}
 			}
 		}
@@ -147,7 +147,7 @@ public class SceEclipseProxy {
 	 */
 	public String getPlatformResourceEncoding(org.eclipse.emf.common.util.URI uri) {
 		// We can't determine the encoding if the platform is not running.
-		if (!new org.emftext.language.Presentation.resource.sce.util.SceRuntimeUtil().isEclipsePlatformRunning()) {
+		if (!new org.emftext.language.presentation.resource.sce.util.SceRuntimeUtil().isEclipsePlatformRunning()) {
 			return null;
 		}
 		if (uri != null && uri.isPlatform()) {
@@ -158,7 +158,7 @@ public class SceEclipseProxy {
 				try {
 					return file.getCharset();
 				} catch (org.eclipse.core.runtime.CoreException ce) {
-					new org.emftext.language.Presentation.resource.sce.util.SceRuntimeUtil().logWarning("Could not determine encoding of platform resource: " + uri.toString(), ce);
+					new org.emftext.language.presentation.resource.sce.util.SceRuntimeUtil().logWarning("Could not determine encoding of platform resource: " + uri.toString(), ce);
 				}
 			}
 		}

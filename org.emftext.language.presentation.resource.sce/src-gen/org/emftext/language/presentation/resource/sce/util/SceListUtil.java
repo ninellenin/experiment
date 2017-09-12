@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.util;
+package org.emftext.language.presentation.resource.sce.util;
 
 /**
  * A utility class that encapsulates some case operations that need to be

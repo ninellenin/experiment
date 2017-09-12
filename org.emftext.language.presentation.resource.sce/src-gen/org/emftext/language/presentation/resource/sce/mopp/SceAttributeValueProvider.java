@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * This class provides sets of values for attributes. It is used by the code
@@ -15,7 +15,7 @@ public class SceAttributeValueProvider {
 	public Object[] getDefaultValues(org.eclipse.emf.ecore.EAttribute attribute) {
 		String typeName = attribute.getEType().getName();
 		if ("EString".equals(typeName)) {
-			return new Object[] {"some" + org.emftext.language.Presentation.resource.sce.util.SceStringUtil.capitalize(attribute.getName())};
+			return new Object[] {"some" + org.emftext.language.presentation.resource.sce.util.SceStringUtil.capitalize(attribute.getName())};
 		}
 		if ("EBoolean".equals(typeName)) {
 			return new Object[] {Boolean.TRUE, Boolean.FALSE};

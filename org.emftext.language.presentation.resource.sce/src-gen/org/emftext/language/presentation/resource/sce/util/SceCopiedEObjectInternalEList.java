@@ -4,9 +4,9 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.util;
+package org.emftext.language.presentation.resource.sce.util;
 
-public class SceCopiedEObjectInternalEList extends org.emftext.language.Presentation.resource.sce.util.SceCopiedEList<org.eclipse.emf.ecore.EObject> implements org.eclipse.emf.ecore.util.InternalEList<org.eclipse.emf.ecore.EObject> {
+public class SceCopiedEObjectInternalEList extends org.emftext.language.presentation.resource.sce.util.SceCopiedEList<org.eclipse.emf.ecore.EObject> implements org.eclipse.emf.ecore.util.InternalEList<org.eclipse.emf.ecore.EObject> {
 	
 	private org.eclipse.emf.ecore.util.InternalEList<org.eclipse.emf.ecore.EObject> original;
 	private org.eclipse.emf.ecore.util.InternalEList<org.eclipse.emf.ecore.EObject> copy;

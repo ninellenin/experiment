@@ -4,17 +4,17 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * A basic implementation of the
- * org.emftext.language.Presentation.resource.sce.ISceURIMapping interface that
+ * org.emftext.language.presentation.resource.sce.ISceURIMapping interface that
  * can map identifiers to URIs.
  * 
  * @param <ReferenceType> unused type parameter which is needed to implement
- * org.emftext.language.Presentation.resource.sce.ISceURIMapping.
+ * org.emftext.language.presentation.resource.sce.ISceURIMapping.
  */
-public class SceURIMapping<ReferenceType> implements org.emftext.language.Presentation.resource.sce.ISceURIMapping<ReferenceType> {
+public class SceURIMapping<ReferenceType> implements org.emftext.language.presentation.resource.sce.ISceURIMapping<ReferenceType> {
 	
 	private org.eclipse.emf.common.util.URI uri;
 	private String identifier;

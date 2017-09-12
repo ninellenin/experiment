@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 /**
  * A CodeCompletionHelper can be used to derive completion proposals for partial
@@ -14,9 +14,9 @@ package org.emftext.language.Presentation.resource.sce.ui;
  */
 public class SceCodeCompletionHelper {
 	
-	private org.emftext.language.Presentation.resource.sce.mopp.SceAttributeValueProvider attributeValueProvider = new org.emftext.language.Presentation.resource.sce.mopp.SceAttributeValueProvider();
+	private org.emftext.language.presentation.resource.sce.mopp.SceAttributeValueProvider attributeValueProvider = new org.emftext.language.presentation.resource.sce.mopp.SceAttributeValueProvider();
 	
-	private org.emftext.language.Presentation.resource.sce.ISceMetaInformation metaInformation = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation();
+	private org.emftext.language.presentation.resource.sce.ISceMetaInformation metaInformation = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation();
 	
 	/**
 	 * Computes a set of proposals for the given document assuming the cursor is at
@@ -29,30 +29,30 @@ public class SceCodeCompletionHelper {
 	 * 
 	 * @return
 	 */
-	public org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal[] computeCompletionProposals(org.emftext.language.Presentation.resource.sce.ISceTextResource originalResource, String content, int cursorOffset) {
+	public org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal[] computeCompletionProposals(org.emftext.language.presentation.resource.sce.ISceTextResource originalResource, String content, int cursorOffset) {
 		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
 		// the shadow resource needs the same URI because reference resolvers may use the
 		// URI to resolve external references
-		org.emftext.language.Presentation.resource.sce.ISceTextResource resource = (org.emftext.language.Presentation.resource.sce.ISceTextResource) resourceSet.createResource(originalResource.getURI());
+		org.emftext.language.presentation.resource.sce.ISceTextResource resource = (org.emftext.language.presentation.resource.sce.ISceTextResource) resourceSet.createResource(originalResource.getURI());
 		java.io.ByteArrayInputStream inputStream = new java.io.ByteArrayInputStream(content.getBytes());
-		org.emftext.language.Presentation.resource.sce.ISceMetaInformation metaInformation = resource.getMetaInformation();
-		org.emftext.language.Presentation.resource.sce.ISceTextParser parser = metaInformation.createParser(inputStream, null);
-		org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal[] expectedElements = parseToExpectedElements(parser, resource, cursorOffset);
+		org.emftext.language.presentation.resource.sce.ISceMetaInformation metaInformation = resource.getMetaInformation();
+		org.emftext.language.presentation.resource.sce.ISceTextParser parser = metaInformation.createParser(inputStream, null);
+		org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal[] expectedElements = parseToExpectedElements(parser, resource, cursorOffset);
 		if (expectedElements == null) {
-			return new org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal[0];
+			return new org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal[0];
 		}
 		if (expectedElements.length == 0) {
-			return new org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal[0];
+			return new org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal[0];
 		}
-		java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal> expectedAfterCursor = java.util.Arrays.asList(getElementsExpectedAt(expectedElements, cursorOffset));
-		java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal> expectedBeforeCursor = java.util.Arrays.asList(getElementsExpectedAt(expectedElements, cursorOffset - 1));
+		java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal> expectedAfterCursor = java.util.Arrays.asList(getElementsExpectedAt(expectedElements, cursorOffset));
+		java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal> expectedBeforeCursor = java.util.Arrays.asList(getElementsExpectedAt(expectedElements, cursorOffset - 1));
 		setPrefixes(expectedAfterCursor, content, cursorOffset);
 		setPrefixes(expectedBeforeCursor, content, cursorOffset);
 		// First, we derive all possible proposals from the set of elements that are
 		// expected at the cursor position.
-		java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> allProposals = new java.util.LinkedHashSet<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal>();
-		java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> rightProposals = deriveProposals(expectedAfterCursor, content, resource, cursorOffset);
-		java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> leftProposals = deriveProposals(expectedBeforeCursor, content, resource, cursorOffset - 1);
+		java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> allProposals = new java.util.LinkedHashSet<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal>();
+		java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> rightProposals = deriveProposals(expectedAfterCursor, content, resource, cursorOffset);
+		java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> leftProposals = deriveProposals(expectedBeforeCursor, content, resource, cursorOffset - 1);
 		removeKeywordsEndingBeforeIndex(leftProposals, cursorOffset);
 		// Second, the set of left proposals (i.e., the ones before the cursor) is checked
 		// for emptiness. If the set is empty, the right proposals (i.e., the ones after
@@ -62,7 +62,7 @@ public class SceCodeCompletionHelper {
 		allProposals.addAll(leftProposals);
 		// Count the proposals before the cursor that match the prefix
 		int leftMatchingProposals = 0;
-		for (org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal leftProposal : leftProposals) {
+		for (org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal leftProposal : leftProposals) {
 			if (leftProposal.getMatchesPrefix()) {
 				leftMatchingProposals++;
 			}
@@ -73,43 +73,43 @@ public class SceCodeCompletionHelper {
 		// Third, the proposals are sorted according to their relevance. Proposals that
 		// matched the prefix are preferred over ones that did not. Finally, proposals are
 		// sorted alphabetically.
-		final java.util.List<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> sortedProposals = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal>(allProposals);
+		final java.util.List<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> sortedProposals = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal>(allProposals);
 		java.util.Collections.sort(sortedProposals);
 		org.eclipse.emf.ecore.EObject root = null;
 		if (!resource.getContents().isEmpty()) {
 			root = resource.getContents().get(0);
 		}
-		for (org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal proposal : sortedProposals) {
+		for (org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal proposal : sortedProposals) {
 			proposal.setRoot(root);
 		}
-		return sortedProposals.toArray(new org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal[sortedProposals.size()]);
+		return sortedProposals.toArray(new org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal[sortedProposals.size()]);
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal[] parseToExpectedElements(org.emftext.language.Presentation.resource.sce.ISceTextParser parser, org.emftext.language.Presentation.resource.sce.ISceTextResource resource, int cursorOffset) {
-		final java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal> expectedElements = parser.parseToExpectedElements(null, resource, cursorOffset);
+	public org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal[] parseToExpectedElements(org.emftext.language.presentation.resource.sce.ISceTextParser parser, org.emftext.language.presentation.resource.sce.ISceTextResource resource, int cursorOffset) {
+		final java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal> expectedElements = parser.parseToExpectedElements(null, resource, cursorOffset);
 		if (expectedElements == null) {
-			return new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal[0];
+			return new org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal[0];
 		}
 		removeDuplicateEntries(expectedElements);
 		removeInvalidEntriesAtEnd(expectedElements);
-		return expectedElements.toArray(new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal[expectedElements.size()]);
+		return expectedElements.toArray(new org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal[expectedElements.size()]);
 	}
 	
 	/**
 	 * Removes all expected elements that refer to the same terminal and that start at
 	 * the same position.
 	 */
-	protected void removeDuplicateEntries(java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal> expectedElements) {
+	protected void removeDuplicateEntries(java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal> expectedElements) {
 		int size = expectedElements.size();
 		// We split the list of expected elements into buckets where each bucket contains
 		// the elements that start at the same position.
-		java.util.Map<Integer, java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal>> map = new java.util.LinkedHashMap<Integer, java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal>>();
+		java.util.Map<Integer, java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal>> map = new java.util.LinkedHashMap<Integer, java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal>>();
 		for (int i = 0; i < size; i++) {
-			org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal elementAtIndex = expectedElements.get(i);
+			org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal elementAtIndex = expectedElements.get(i);
 			int start1 = elementAtIndex.getStartExcludingHiddenTokens();
-			java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal> list = map.get(start1);
+			java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal> list = map.get(start1);
 			if (list == null) {
-				list = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal>();
+				list = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal>();
 				map.put(start1, list);
 			}
 			list.add(elementAtIndex);
@@ -117,14 +117,14 @@ public class SceCodeCompletionHelper {
 		
 		// Then, we remove all duplicate elements from each bucket individually.
 		for (int position : map.keySet()) {
-			java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal> list = map.get(position);
+			java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal> list = map.get(position);
 			removeDuplicateEntriesFromBucket(list);
 		}
 		
 		// After removing all duplicates, we merge the buckets.
 		expectedElements.clear();
 		for (int position : map.keySet()) {
-			java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal> list = map.get(position);
+			java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal> list = map.get(position);
 			expectedElements.addAll(list);
 		}
 	}
@@ -134,13 +134,13 @@ public class SceCodeCompletionHelper {
 	 * method assumes that the given list of expected terminals contains only elements
 	 * that start at the same position.
 	 */
-	protected void removeDuplicateEntriesFromBucket(java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal> expectedElements) {
+	protected void removeDuplicateEntriesFromBucket(java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal> expectedElements) {
 		int size = expectedElements.size();
 		for (int i = 0; i < size - 1; i++) {
-			org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal elementAtIndex = expectedElements.get(i);
-			org.emftext.language.Presentation.resource.sce.ISceExpectedElement terminal = elementAtIndex.getTerminal();
+			org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal elementAtIndex = expectedElements.get(i);
+			org.emftext.language.presentation.resource.sce.ISceExpectedElement terminal = elementAtIndex.getTerminal();
 			for (int j = i + 1; j < size;) {
-				org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal elementAtNext = expectedElements.get(j);
+				org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal elementAtNext = expectedElements.get(j);
 				if (terminal.equals(elementAtNext.getTerminal())) {
 					expectedElements.remove(j);
 					size--;
@@ -151,16 +151,16 @@ public class SceCodeCompletionHelper {
 		}
 	}
 	
-	protected void removeInvalidEntriesAtEnd(java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal> expectedElements) {
+	protected void removeInvalidEntriesAtEnd(java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal> expectedElements) {
 		for (int i = 0; i < expectedElements.size() - 1;) {
-			org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal elementAtIndex = expectedElements.get(i);
-			org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal elementAtNext = expectedElements.get(i + 1);
+			org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal elementAtIndex = expectedElements.get(i);
+			org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal elementAtNext = expectedElements.get(i + 1);
 			
 			// If the two expected elements have a different parent in the syntax definition,
 			// we must not discard the second element, because is probably stems from a parent
 			// rule.
-			org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement symtaxElementOfThis = elementAtIndex.getTerminal().getSymtaxElement();
-			org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement symtaxElementOfNext = elementAtNext.getTerminal().getSymtaxElement();
+			org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement symtaxElementOfThis = elementAtIndex.getTerminal().getSymtaxElement();
+			org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement symtaxElementOfNext = elementAtNext.getTerminal().getSymtaxElement();
 			boolean differentParent = symtaxElementOfNext.getParent() != symtaxElementOfThis.getParent();
 			
 			boolean sameStartExcludingHiddenTokens = elementAtIndex.getStartExcludingHiddenTokens() == elementAtNext.getStartExcludingHiddenTokens();
@@ -176,13 +176,13 @@ public class SceCodeCompletionHelper {
 	/**
 	 * Removes all proposals for keywords that end before the given index.
 	 */
-	protected void removeKeywordsEndingBeforeIndex(java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> proposals, int index) {
-		java.util.List<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> toRemove = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal>();
-		for (org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal proposal : proposals) {
-			org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal = proposal.getExpectedTerminal();
-			org.emftext.language.Presentation.resource.sce.ISceExpectedElement terminal = expectedTerminal.getTerminal();
-			if (terminal instanceof org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString) {
-				org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString csString = (org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString) terminal;
+	protected void removeKeywordsEndingBeforeIndex(java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> proposals, int index) {
+		java.util.List<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> toRemove = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal>();
+		for (org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal proposal : proposals) {
+			org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal = proposal.getExpectedTerminal();
+			org.emftext.language.presentation.resource.sce.ISceExpectedElement terminal = expectedTerminal.getTerminal();
+			if (terminal instanceof org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString) {
+				org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString csString = (org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString) terminal;
 				int startExcludingHiddenTokens = expectedTerminal.getStartExcludingHiddenTokens();
 				if (startExcludingHiddenTokens + csString.getValue().length() - 1 < index) {
 					toRemove.add(proposal);
@@ -192,12 +192,12 @@ public class SceCodeCompletionHelper {
 		proposals.removeAll(toRemove);
 	}
 	
-	protected String findPrefix(java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal> expectedElements, org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedAtCursor, String content, int cursorOffset) {
+	protected String findPrefix(java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal> expectedElements, org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedAtCursor, String content, int cursorOffset) {
 		if (cursorOffset < 0) {
 			return "";
 		}
 		int end = 0;
-		for (org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedElement : expectedElements) {
+		for (org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedElement : expectedElements) {
 			if (expectedElement == expectedAtCursor) {
 				final int start = expectedElement.getStartExcludingHiddenTokens();
 				if (start >= 0  && start < Integer.MAX_VALUE) {
@@ -211,27 +211,27 @@ public class SceCodeCompletionHelper {
 		return prefix;
 	}
 	
-	protected java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> deriveProposals(java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal> expectedElements, String content, org.emftext.language.Presentation.resource.sce.ISceTextResource resource, int cursorOffset) {
-		java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> resultSet = new java.util.LinkedHashSet<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal>();
-		for (org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedElement : expectedElements) {
+	protected java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> deriveProposals(java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal> expectedElements, String content, org.emftext.language.presentation.resource.sce.ISceTextResource resource, int cursorOffset) {
+		java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> resultSet = new java.util.LinkedHashSet<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal>();
+		for (org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedElement : expectedElements) {
 			resultSet.addAll(deriveProposals(expectedElement, content, resource, cursorOffset));
 		}
 		return resultSet;
 	}
 	
-	protected java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> deriveProposals(final org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, String content, org.emftext.language.Presentation.resource.sce.ISceTextResource resource, int cursorOffset) {
-		org.emftext.language.Presentation.resource.sce.ISceExpectedElement expectedElement = (org.emftext.language.Presentation.resource.sce.ISceExpectedElement) expectedTerminal.getTerminal();
-		if (expectedElement instanceof org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString) {
-			org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString csString = (org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString) expectedElement;
+	protected java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> deriveProposals(final org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, String content, org.emftext.language.presentation.resource.sce.ISceTextResource resource, int cursorOffset) {
+		org.emftext.language.presentation.resource.sce.ISceExpectedElement expectedElement = (org.emftext.language.presentation.resource.sce.ISceExpectedElement) expectedTerminal.getTerminal();
+		if (expectedElement instanceof org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString) {
+			org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString csString = (org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString) expectedElement;
 			return handleKeyword(expectedTerminal, csString, expectedTerminal.getPrefix());
-		} else if (expectedElement instanceof org.emftext.language.Presentation.resource.sce.mopp.SceExpectedBooleanTerminal) {
-			org.emftext.language.Presentation.resource.sce.mopp.SceExpectedBooleanTerminal expectedBooleanTerminal = (org.emftext.language.Presentation.resource.sce.mopp.SceExpectedBooleanTerminal) expectedElement;
+		} else if (expectedElement instanceof org.emftext.language.presentation.resource.sce.mopp.SceExpectedBooleanTerminal) {
+			org.emftext.language.presentation.resource.sce.mopp.SceExpectedBooleanTerminal expectedBooleanTerminal = (org.emftext.language.presentation.resource.sce.mopp.SceExpectedBooleanTerminal) expectedElement;
 			return handleBooleanTerminal(expectedTerminal, expectedBooleanTerminal, expectedTerminal.getPrefix());
-		} else if (expectedElement instanceof org.emftext.language.Presentation.resource.sce.mopp.SceExpectedEnumerationTerminal) {
-			org.emftext.language.Presentation.resource.sce.mopp.SceExpectedEnumerationTerminal expectedEnumerationTerminal = (org.emftext.language.Presentation.resource.sce.mopp.SceExpectedEnumerationTerminal) expectedElement;
+		} else if (expectedElement instanceof org.emftext.language.presentation.resource.sce.mopp.SceExpectedEnumerationTerminal) {
+			org.emftext.language.presentation.resource.sce.mopp.SceExpectedEnumerationTerminal expectedEnumerationTerminal = (org.emftext.language.presentation.resource.sce.mopp.SceExpectedEnumerationTerminal) expectedElement;
 			return handleEnumerationTerminal(expectedTerminal, expectedEnumerationTerminal, expectedTerminal.getPrefix());
-		} else if (expectedElement instanceof org.emftext.language.Presentation.resource.sce.mopp.SceExpectedStructuralFeature) {
-			final org.emftext.language.Presentation.resource.sce.mopp.SceExpectedStructuralFeature expectedFeature = (org.emftext.language.Presentation.resource.sce.mopp.SceExpectedStructuralFeature) expectedElement;
+		} else if (expectedElement instanceof org.emftext.language.presentation.resource.sce.mopp.SceExpectedStructuralFeature) {
+			final org.emftext.language.presentation.resource.sce.mopp.SceExpectedStructuralFeature expectedFeature = (org.emftext.language.presentation.resource.sce.mopp.SceExpectedStructuralFeature) expectedElement;
 			final org.eclipse.emf.ecore.EStructuralFeature feature = expectedFeature.getFeature();
 			final org.eclipse.emf.ecore.EClassifier featureType = feature.getEType();
 			final org.eclipse.emf.ecore.EObject container = findCorrectContainer(expectedTerminal);
@@ -243,7 +243,7 @@ public class SceCodeCompletionHelper {
 			// required for different completion situations. This can be particularly observed
 			// when the user has not yet typed a character that starts an element to be
 			// completed.
-			final java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> proposals = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal>();
+			final java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> proposals = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal>();
 			expectedTerminal.materialize(new Runnable() {
 				
 				public void run() {
@@ -282,44 +282,44 @@ public class SceCodeCompletionHelper {
 		return java.util.Collections.emptyList();
 	}
 	
-	protected java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> handleEnumAttribute(org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, org.emftext.language.Presentation.resource.sce.mopp.SceExpectedStructuralFeature expectedFeature, org.eclipse.emf.ecore.EEnum enumType, String prefix, org.eclipse.emf.ecore.EObject container) {
+	protected java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> handleEnumAttribute(org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, org.emftext.language.presentation.resource.sce.mopp.SceExpectedStructuralFeature expectedFeature, org.eclipse.emf.ecore.EEnum enumType, String prefix, org.eclipse.emf.ecore.EObject container) {
 		java.util.Collection<org.eclipse.emf.ecore.EEnumLiteral> enumLiterals = enumType.getELiterals();
-		java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> result = new java.util.LinkedHashSet<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal>();
+		java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> result = new java.util.LinkedHashSet<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal>();
 		for (org.eclipse.emf.ecore.EEnumLiteral literal : enumLiterals) {
 			String unResolvedLiteral = literal.getLiteral();
 			// use token resolver to get de-resolved value of the literal
-			org.emftext.language.Presentation.resource.sce.ISceTokenResolverFactory tokenResolverFactory = metaInformation.getTokenResolverFactory();
-			org.emftext.language.Presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver(expectedFeature.getTokenName());
+			org.emftext.language.presentation.resource.sce.ISceTokenResolverFactory tokenResolverFactory = metaInformation.getTokenResolverFactory();
+			org.emftext.language.presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver(expectedFeature.getTokenName());
 			String resolvedLiteral = tokenResolver.deResolve(unResolvedLiteral, expectedFeature.getFeature(), container);
 			boolean matchesPrefix = matches(resolvedLiteral, prefix);
-			result.add(new org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal(expectedTerminal, resolvedLiteral, prefix, matchesPrefix, expectedFeature.getFeature(), container));
+			result.add(new org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal(expectedTerminal, resolvedLiteral, prefix, matchesPrefix, expectedFeature.getFeature(), container));
 		}
 		return result;
 	}
 	
-	protected java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> handleNCReference(org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, org.eclipse.emf.ecore.EObject container, org.eclipse.emf.ecore.EReference reference, String prefix, String tokenName) {
+	protected java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> handleNCReference(org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, org.eclipse.emf.ecore.EObject container, org.eclipse.emf.ecore.EReference reference, String prefix, String tokenName) {
 		// proposals for non-containment references are derived by calling the reference
 		// resolver switch in fuzzy mode.
-		org.emftext.language.Presentation.resource.sce.ISceReferenceResolverSwitch resolverSwitch = metaInformation.getReferenceResolverSwitch();
-		org.emftext.language.Presentation.resource.sce.ISceTokenResolverFactory tokenResolverFactory = metaInformation.getTokenResolverFactory();
-		org.emftext.language.Presentation.resource.sce.ISceReferenceResolveResult<org.eclipse.emf.ecore.EObject> result = new org.emftext.language.Presentation.resource.sce.mopp.SceReferenceResolveResult<org.eclipse.emf.ecore.EObject>(true);
+		org.emftext.language.presentation.resource.sce.ISceReferenceResolverSwitch resolverSwitch = metaInformation.getReferenceResolverSwitch();
+		org.emftext.language.presentation.resource.sce.ISceTokenResolverFactory tokenResolverFactory = metaInformation.getTokenResolverFactory();
+		org.emftext.language.presentation.resource.sce.ISceReferenceResolveResult<org.eclipse.emf.ecore.EObject> result = new org.emftext.language.presentation.resource.sce.mopp.SceReferenceResolveResult<org.eclipse.emf.ecore.EObject>(true);
 		resolverSwitch.resolveFuzzy(prefix, container, reference, 0, result);
-		java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceReferenceMapping<org.eclipse.emf.ecore.EObject>> mappings = result.getMappings();
+		java.util.Collection<org.emftext.language.presentation.resource.sce.ISceReferenceMapping<org.eclipse.emf.ecore.EObject>> mappings = result.getMappings();
 		if (mappings != null) {
-			java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> resultSet = new java.util.LinkedHashSet<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal>();
-			for (org.emftext.language.Presentation.resource.sce.ISceReferenceMapping<org.eclipse.emf.ecore.EObject> mapping : mappings) {
+			java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> resultSet = new java.util.LinkedHashSet<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal>();
+			for (org.emftext.language.presentation.resource.sce.ISceReferenceMapping<org.eclipse.emf.ecore.EObject> mapping : mappings) {
 				org.eclipse.swt.graphics.Image image = null;
-				if (mapping instanceof org.emftext.language.Presentation.resource.sce.mopp.SceElementMapping<?>) {
-					org.emftext.language.Presentation.resource.sce.mopp.SceElementMapping<?> elementMapping = (org.emftext.language.Presentation.resource.sce.mopp.SceElementMapping<?>) mapping;
+				if (mapping instanceof org.emftext.language.presentation.resource.sce.mopp.SceElementMapping<?>) {
+					org.emftext.language.presentation.resource.sce.mopp.SceElementMapping<?> elementMapping = (org.emftext.language.presentation.resource.sce.mopp.SceElementMapping<?>) mapping;
 					Object target = elementMapping.getTargetElement();
 					// de-resolve reference to obtain correct identifier
-					org.emftext.language.Presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver(tokenName);
+					org.emftext.language.presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver(tokenName);
 					final String identifier = tokenResolver.deResolve(elementMapping.getIdentifier(), reference, container);
 					if (target instanceof org.eclipse.emf.ecore.EObject) {
 						image = getImage((org.eclipse.emf.ecore.EObject) target);
 					}
 					boolean matchesPrefix = matches(identifier, prefix);
-					resultSet.add(new org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal(expectedTerminal, identifier, prefix, matchesPrefix, reference, container, image));
+					resultSet.add(new org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal(expectedTerminal, identifier, prefix, matchesPrefix, reference, container, image));
 				}
 			}
 			return resultSet;
@@ -327,20 +327,20 @@ public class SceCodeCompletionHelper {
 		return java.util.Collections.emptyList();
 	}
 	
-	protected java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> handleAttribute(org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, org.emftext.language.Presentation.resource.sce.mopp.SceExpectedStructuralFeature expectedFeature, org.eclipse.emf.ecore.EObject container, org.eclipse.emf.ecore.EAttribute attribute, String prefix) {
-		java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> resultSet = new java.util.LinkedHashSet<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal>();
+	protected java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> handleAttribute(org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, org.emftext.language.presentation.resource.sce.mopp.SceExpectedStructuralFeature expectedFeature, org.eclipse.emf.ecore.EObject container, org.eclipse.emf.ecore.EAttribute attribute, String prefix) {
+		java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> resultSet = new java.util.LinkedHashSet<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal>();
 		Object[] defaultValues = attributeValueProvider.getDefaultValues(attribute);
 		if (defaultValues != null) {
 			for (Object defaultValue : defaultValues) {
 				if (defaultValue != null) {
-					org.emftext.language.Presentation.resource.sce.ISceTokenResolverFactory tokenResolverFactory = metaInformation.getTokenResolverFactory();
+					org.emftext.language.presentation.resource.sce.ISceTokenResolverFactory tokenResolverFactory = metaInformation.getTokenResolverFactory();
 					String tokenName = expectedFeature.getTokenName();
 					if (tokenName != null) {
-						org.emftext.language.Presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver(tokenName);
+						org.emftext.language.presentation.resource.sce.ISceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver(tokenName);
 						if (tokenResolver != null) {
 							String defaultValueAsString = tokenResolver.deResolve(defaultValue, attribute, container);
 							boolean matchesPrefix = matches(defaultValueAsString, prefix);
-							resultSet.add(new org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal(expectedTerminal, defaultValueAsString, prefix, matchesPrefix, expectedFeature.getFeature(), container));
+							resultSet.add(new org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal(expectedTerminal, defaultValueAsString, prefix, matchesPrefix, expectedFeature.getFeature(), container));
 						}
 					}
 				}
@@ -352,18 +352,18 @@ public class SceCodeCompletionHelper {
 	/**
 	 * Creates a set of completion proposals from the given keyword.
 	 */
-	protected java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> handleKeyword(org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, org.emftext.language.Presentation.resource.sce.mopp.SceExpectedCsString csString, String prefix) {
+	protected java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> handleKeyword(org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, org.emftext.language.presentation.resource.sce.mopp.SceExpectedCsString csString, String prefix) {
 		String proposal = csString.getValue();
 		boolean matchesPrefix = matches(proposal, prefix);
-		return java.util.Collections.singleton(new org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal(expectedTerminal, proposal, prefix, matchesPrefix, null, null));
+		return java.util.Collections.singleton(new org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal(expectedTerminal, proposal, prefix, matchesPrefix, null, null));
 	}
 	
 	/**
 	 * Creates a set of (two) completion proposals from the given boolean terminal.
 	 */
-	protected java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> handleBooleanTerminal(org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, org.emftext.language.Presentation.resource.sce.mopp.SceExpectedBooleanTerminal expectedBooleanTerminal, String prefix) {
-		java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> result = new java.util.LinkedHashSet<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal>(2);
-		org.emftext.language.Presentation.resource.sce.grammar.SceBooleanTerminal booleanTerminal = expectedBooleanTerminal.getBooleanTerminal();
+	protected java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> handleBooleanTerminal(org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, org.emftext.language.presentation.resource.sce.mopp.SceExpectedBooleanTerminal expectedBooleanTerminal, String prefix) {
+		java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> result = new java.util.LinkedHashSet<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal>(2);
+		org.emftext.language.presentation.resource.sce.grammar.SceBooleanTerminal booleanTerminal = expectedBooleanTerminal.getBooleanTerminal();
 		result.addAll(handleLiteral(expectedTerminal, booleanTerminal.getAttribute(), prefix, booleanTerminal.getTrueLiteral()));
 		result.addAll(handleLiteral(expectedTerminal, booleanTerminal.getAttribute(), prefix, booleanTerminal.getFalseLiteral()));
 		return result;
@@ -373,9 +373,9 @@ public class SceCodeCompletionHelper {
 	 * Creates a set of completion proposals from the given enumeration terminal. For
 	 * each enumeration literal one proposal is created.
 	 */
-	protected java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> handleEnumerationTerminal(org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, org.emftext.language.Presentation.resource.sce.mopp.SceExpectedEnumerationTerminal expectedEnumerationTerminal, String prefix) {
-		java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> result = new java.util.LinkedHashSet<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal>(2);
-		org.emftext.language.Presentation.resource.sce.grammar.SceEnumerationTerminal enumerationTerminal = expectedEnumerationTerminal.getEnumerationTerminal();
+	protected java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> handleEnumerationTerminal(org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, org.emftext.language.presentation.resource.sce.mopp.SceExpectedEnumerationTerminal expectedEnumerationTerminal, String prefix) {
+		java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> result = new java.util.LinkedHashSet<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal>(2);
+		org.emftext.language.presentation.resource.sce.grammar.SceEnumerationTerminal enumerationTerminal = expectedEnumerationTerminal.getEnumerationTerminal();
 		java.util.Map<String, String> literalMapping = enumerationTerminal.getLiteralMapping();
 		for (String literalName : literalMapping.keySet()) {
 			result.addAll(handleLiteral(expectedTerminal, enumerationTerminal.getAttribute(), prefix, literalMapping.get(literalName)));
@@ -383,12 +383,12 @@ public class SceCodeCompletionHelper {
 		return result;
 	}
 	
-	protected java.util.Collection<org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal> handleLiteral(org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, org.eclipse.emf.ecore.EAttribute attribute, String prefix, String literal) {
+	protected java.util.Collection<org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal> handleLiteral(org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal, org.eclipse.emf.ecore.EAttribute attribute, String prefix, String literal) {
 		if ("".equals(literal)) {
 			return java.util.Collections.emptySet();
 		}
 		boolean matchesPrefix = matches(literal, prefix);
-		return java.util.Collections.singleton(new org.emftext.language.Presentation.resource.sce.ui.SceCompletionProposal(expectedTerminal, literal, prefix, matchesPrefix, null, null));
+		return java.util.Collections.singleton(new org.emftext.language.presentation.resource.sce.ui.SceCompletionProposal(expectedTerminal, literal, prefix, matchesPrefix, null, null));
 	}
 	
 	/**
@@ -396,27 +396,27 @@ public class SceCodeCompletionHelper {
 	 * the current document content, the cursor position, and the position where the
 	 * element is expected.
 	 */
-	protected void setPrefixes(java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal> expectedElements, String content, int cursorOffset) {
+	protected void setPrefixes(java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal> expectedElements, String content, int cursorOffset) {
 		if (cursorOffset < 0) {
 			return;
 		}
-		for (org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedElement : expectedElements) {
+		for (org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedElement : expectedElements) {
 			String prefix = findPrefix(expectedElements, expectedElement, content, cursorOffset);
 			expectedElement.setPrefix(prefix);
 		}
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal[] getElementsExpectedAt(org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal[] allExpectedElements, int cursorOffset) {
-		java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal> expectedAtCursor = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal>();
+	public org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal[] getElementsExpectedAt(org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal[] allExpectedElements, int cursorOffset) {
+		java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal> expectedAtCursor = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal>();
 		for (int i = 0; i < allExpectedElements.length; i++) {
-			org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedElement = allExpectedElements[i];
+			org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedElement = allExpectedElements[i];
 			int startIncludingHidden = expectedElement.getStartIncludingHiddenTokens();
 			int end = getEnd(allExpectedElements, i);
 			if (cursorOffset >= startIncludingHidden && cursorOffset <= end) {
 				expectedAtCursor.add(expectedElement);
 			}
 		}
-		return expectedAtCursor.toArray(new org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal[expectedAtCursor.size()]);
+		return expectedAtCursor.toArray(new org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal[expectedAtCursor.size()]);
 	}
 	
 	/**
@@ -425,12 +425,12 @@ public class SceCodeCompletionHelper {
 	 * expected elements are used. An element is considered to end one character
 	 * before the next elements starts.
 	 */
-	protected int getEnd(org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal[] allExpectedElements, int indexInList) {
-		org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal elementAtIndex = allExpectedElements[indexInList];
+	protected int getEnd(org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal[] allExpectedElements, int indexInList) {
+		org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal elementAtIndex = allExpectedElements[indexInList];
 		int startIncludingHidden = elementAtIndex.getStartIncludingHiddenTokens();
 		int startExcludingHidden = elementAtIndex.getStartExcludingHiddenTokens();
 		for (int i = indexInList + 1; i < allExpectedElements.length; i++) {
-			org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal elementAtI = allExpectedElements[i];
+			org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal elementAtI = allExpectedElements[i];
 			int startIncludingHiddenForI = elementAtI.getStartIncludingHiddenTokens();
 			int startExcludingHiddenForI = elementAtI.getStartExcludingHiddenTokens();
 			if (startIncludingHidden != startIncludingHiddenForI || startExcludingHidden != startExcludingHiddenForI) {
@@ -449,7 +449,7 @@ public class SceCodeCompletionHelper {
 		if (proposal == null || prefix == null) {
 			return false;
 		}
-		return (proposal.toLowerCase().startsWith(prefix.toLowerCase()) || org.emftext.language.Presentation.resource.sce.util.SceStringUtil.matchCamelCase(prefix, proposal) != null) && !proposal.equals(prefix);
+		return (proposal.toLowerCase().startsWith(prefix.toLowerCase()) || org.emftext.language.presentation.resource.sce.util.SceStringUtil.matchCamelCase(prefix, proposal) != null) && !proposal.equals(prefix);
 	}
 	
 	protected org.eclipse.swt.graphics.Image getImage(org.eclipse.emf.ecore.EObject element) {
@@ -464,7 +464,7 @@ public class SceCodeCompletionHelper {
 		return labelProvider.getImage(element);
 	}
 	
-	protected org.eclipse.emf.ecore.EObject findCorrectContainer(org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal) {
+	protected org.eclipse.emf.ecore.EObject findCorrectContainer(org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal expectedTerminal) {
 		org.eclipse.emf.ecore.EObject container = expectedTerminal.getContainer();
 		org.eclipse.emf.ecore.EClass ruleMetaclass = expectedTerminal.getTerminal().getRuleMetaclass();
 		if (ruleMetaclass.isInstance(container)) {
@@ -476,11 +476,11 @@ public class SceCodeCompletionHelper {
 		org.eclipse.emf.ecore.EObject previousParent = null;
 		org.eclipse.emf.ecore.EObject correctContainer = null;
 		org.eclipse.emf.ecore.EObject hookableParent = null;
-		org.emftext.language.Presentation.resource.sce.grammar.SceContainmentTrace containmentTrace = expectedTerminal.getContainmentTrace();
+		org.emftext.language.presentation.resource.sce.grammar.SceContainmentTrace containmentTrace = expectedTerminal.getContainmentTrace();
 		org.eclipse.emf.ecore.EClass startClass = containmentTrace.getStartClass();
-		org.emftext.language.Presentation.resource.sce.mopp.SceContainedFeature currentLink = null;
-		org.emftext.language.Presentation.resource.sce.mopp.SceContainedFeature previousLink = null;
-		org.emftext.language.Presentation.resource.sce.mopp.SceContainedFeature[] containedFeatures = containmentTrace.getPath();
+		org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature currentLink = null;
+		org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature previousLink = null;
+		org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature[] containedFeatures = containmentTrace.getPath();
 		for (int i = 0; i < containedFeatures.length; i++) {
 			currentLink = containedFeatures[i];
 			if (i > 0) {
@@ -504,8 +504,8 @@ public class SceCodeCompletionHelper {
 						// initialized for all loop iterations where 'i' is greather than 0 and for the
 						// case where 'i' equals zero, this path is never executed, because
 						// 'previousParent' is null in this case.
-						org.emftext.language.Presentation.resource.sce.mopp.SceContainedFeature link = previousLink;
-						org.emftext.language.Presentation.resource.sce.util.SceEObjectUtil.setFeature(parent, link.getFeature(), previousParent, false);
+						org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature link = previousLink;
+						org.emftext.language.presentation.resource.sce.util.SceEObjectUtil.setFeature(parent, link.getFeature(), previousParent, false);
 					}
 				}
 			}
@@ -528,7 +528,7 @@ public class SceCodeCompletionHelper {
 			expectedTerminal.setAttachmentCode(new Runnable() {
 				
 				public void run() {
-					org.emftext.language.Presentation.resource.sce.util.SceEObjectUtil.setFeature(finalHookableParent, finalFeature, finalParent, false);
+					org.emftext.language.presentation.resource.sce.util.SceEObjectUtil.setFeature(finalHookableParent, finalFeature, finalParent, false);
 				}
 			});
 		}
@@ -539,7 +539,7 @@ public class SceCodeCompletionHelper {
 	 * Walks up the containment hierarchy to find an EObject that is able to hold
 	 * (contain) the given object.
 	 */
-	protected org.eclipse.emf.ecore.EObject findHookParent(org.eclipse.emf.ecore.EObject container, org.eclipse.emf.ecore.EClass startClass, org.emftext.language.Presentation.resource.sce.mopp.SceContainedFeature currentLink, org.eclipse.emf.ecore.EObject object) {
+	protected org.eclipse.emf.ecore.EObject findHookParent(org.eclipse.emf.ecore.EObject container, org.eclipse.emf.ecore.EClass startClass, org.emftext.language.presentation.resource.sce.mopp.SceContainedFeature currentLink, org.eclipse.emf.ecore.EObject object) {
 		org.eclipse.emf.ecore.EClass containerClass = currentLink.getContainerClass();
 		while (container != null) {
 			if (containerClass.isInstance(object)) {

@@ -4,14 +4,14 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * A quick fix that replaces the target of a reference with another EObject. This
  * class is used to implement default quick fixes for references that could not be
  * resolved, but can also be used by custom reference resolvers.
  */
-public class SceChangeReferenceQuickFix extends org.emftext.language.Presentation.resource.sce.mopp.SceQuickFix {
+public class SceChangeReferenceQuickFix extends org.emftext.language.presentation.resource.sce.mopp.SceQuickFix {
 	
 	private org.eclipse.emf.ecore.EObject container;
 	private org.eclipse.emf.ecore.EReference reference;

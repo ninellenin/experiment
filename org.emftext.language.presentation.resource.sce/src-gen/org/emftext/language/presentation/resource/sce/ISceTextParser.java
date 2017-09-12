@@ -4,13 +4,13 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce;
+package org.emftext.language.presentation.resource.sce;
 
 /**
  * A text parser parses a text into a tree of <code>EObject</code>s. It is
  * associated with a <code>TextResource</code>.
  */
-public interface ISceTextParser extends org.emftext.language.Presentation.resource.sce.ISceConfigurable {
+public interface ISceTextParser extends org.emftext.language.presentation.resource.sce.ISceConfigurable {
 	
 	/**
 	 * Parses the content given to the parser and create a tree of EObjects. The root
@@ -19,7 +19,7 @@ public interface ISceTextParser extends org.emftext.language.Presentation.resour
 	 * 
 	 * @return the result of the parse process
 	 */
-	public org.emftext.language.Presentation.resource.sce.ISceParseResult parse();
+	public org.emftext.language.presentation.resource.sce.ISceParseResult parse();
 	
 	/**
 	 * Parses the document and returns a list of expected elements. Each expected
@@ -32,7 +32,7 @@ public interface ISceTextParser extends org.emftext.language.Presentation.resour
 	 * The <code>cursorPosition</code> is used to discard expected elements, which
 	 * will not be needed.
 	 */
-	public java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceExpectedTerminal> parseToExpectedElements(org.eclipse.emf.ecore.EClass type, org.emftext.language.Presentation.resource.sce.ISceTextResource dummyResource, int cursorOffset);
+	public java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceExpectedTerminal> parseToExpectedElements(org.eclipse.emf.ecore.EClass type, org.emftext.language.presentation.resource.sce.ISceTextResource dummyResource, int cursorOffset);
 	
 	/**
 	 * Signals the parse to terminate parsing as soon as possible. This method must be

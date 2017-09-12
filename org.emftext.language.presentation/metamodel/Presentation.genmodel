@@ -1,133 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.emftext.language.presentation/src-gen" editDirectory="/org.emftext.language.presentation.edit/src-gen"
-    editorDirectory="/org.emftext.language.presentation.editor/src-gen" modelPluginID="org.emftext.language.presentation"
-    modelName="Presentation" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
-  <foreignModel>Presentation.ecore</foreignModel>
-  <genPackages prefix="Presentation" basePackage="org.emftext.language" disposableProviderFactory="true"
-      fileExtensions="sce" ecorePackage="Presentation.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Presentation.ecore#//CoordinateType">
-      <genEnumLiterals ecoreEnumLiteral="Presentation.ecore#//CoordinateType/X"/>
-      <genEnumLiterals ecoreEnumLiteral="Presentation.ecore#//CoordinateType/Y"/>
-      <genEnumLiterals ecoreEnumLiteral="Presentation.ecore#//CoordinateType/CENTER_X"/>
-      <genEnumLiterals ecoreEnumLiteral="Presentation.ecore#//CoordinateType/CENTER_Y"/>
-      <genEnumLiterals ecoreEnumLiteral="Presentation.ecore#//CoordinateType/LEFT_X"/>
-      <genEnumLiterals ecoreEnumLiteral="Presentation.ecore#//CoordinateType/TOP_Y"/>
-    </genEnums>
-    <genClasses image="false" ecoreClass="Presentation.ecore#//ScenarioFile"/>
-    <genClasses ecoreClass="Presentation.ecore#//Header">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//Header/parameter"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//SDL">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//SDL/scenario_object"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//PCL"/>
-    <genClasses image="false" ecoreClass="Presentation.ecore#//NamedElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Presentation.ecore#//NamedElement/name"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//Scenario">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//Scenario/header"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//Scenario/sdl"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//Scenario/pcl"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="Presentation.ecore#//Literal"/>
-    <genClasses image="false" ecoreClass="Presentation.ecore#//NumericLiteral"/>
-    <genClasses ecoreClass="Presentation.ecore#//NumberLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Presentation.ecore#//NumberLiteral/value"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="Presentation.ecore#//GeneralLiteral"/>
-    <genClasses ecoreClass="Presentation.ecore#//BooleanLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Presentation.ecore#//BooleanLiteral/value"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//NameLiteral"/>
-    <genClasses ecoreClass="Presentation.ecore#//Trial">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//Trial/stimulus_list"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//Trial/trial_parameter"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="Presentation.ecore#//StimulusEvent">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//StimulusEvent/stimulus_event_parameter"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//StimulusList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//StimulusList/stimulus_event"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="Presentation.ecore#//ScenarioObject"/>
-    <genClasses ecoreClass="Presentation.ecore#//Bitmap">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//Bitmap/filename_parameter"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Presentation.ecore#//Bitmap/bitmap_parameters"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//Text">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//Text/caption"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//Text/text_parameter"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//PictureStimulusEvent">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//PictureStimulusEvent/picture"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="Presentation.ecore#//PicturePart"/>
-    <genClasses image="false" ecoreClass="Presentation.ecore#//Stimulus2D">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//Stimulus2D/x_definition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//Stimulus2D/y_definition"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//Box"/>
-    <genClasses ecoreClass="Presentation.ecore#//TextLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Presentation.ecore#//TextLiteral/value"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//Parameter"/>
-    <genClasses ecoreClass="Presentation.ecore#//HeaderParameter"/>
-    <genClasses ecoreClass="Presentation.ecore#//StimulusEventParameter"/>
-    <genClasses ecoreClass="Presentation.ecore#//ActiveButtonsParameter">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//ActiveButtonsParameter/number_literal"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//ButtonCodesParameter">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//ButtonCodesParameter/number_literal"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//ScenarioNameParameter">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//ScenarioNameParameter/name_literal"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//TimeParameter">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//TimeParameter/number_literal"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//TargetButtonParameter">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//TargetButtonParameter/number_literal"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//CodeParameter">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//CodeParameter/text_literal"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//PictureParameter"/>
-    <genClasses ecoreClass="Presentation.ecore#//BackgroundColorParameter">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//BackgroundColorParameter/number_literal"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//TextParameter"/>
-    <genClasses ecoreClass="Presentation.ecore#//CaptionParameter">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//CaptionParameter/text_literal"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//Picture">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//Picture/picture_part"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//Picture/picture_parameter"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//Sound"/>
-    <genClasses ecoreClass="Presentation.ecore#//TrialParameter"/>
-    <genClasses ecoreClass="Presentation.ecore#//Stimulus"/>
-    <genClasses ecoreClass="Presentation.ecore#//Graphic2D"/>
-    <genClasses ecoreClass="Presentation.ecore#//BitmapStimulus">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//BitmapStimulus/bitmap"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//BoxStimulus">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//BoxStimulus/box"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//TextStimulus">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//TextStimulus/text"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//CoordinateDefinition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Presentation.ecore#//CoordinateDefinition/coordinate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Presentation.ecore#//CoordinateDefinition/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Presentation.ecore#//CoordinateDefinition/right_bottom"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//BitmapParameter"/>
-    <genClasses ecoreClass="Presentation.ecore#//FilenameParameter">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Presentation.ecore#//FilenameParameter/filename_literal"/>
-    </genClasses>
-    <genClasses ecoreClass="Presentation.ecore#//FilenameLiteral"/>
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.emftext.language.presentation/src-gen" modelPluginID="org.emftext.language.presentation"
+    modelName="presentation" complianceLevel="5.0" copyrightFields="false">
+  <genPackages prefix="presentation" basePackage="org.emftext.language" disposableProviderFactory="true"
+      ecorePackage="presentation.ecore#/">
+    <nestedGenPackages prefix="literal" disposableProviderFactory="true" ecorePackage="presentation.ecore#//literal">
+      <genClasses image="false" ecoreClass="presentation.ecore#//literal/Literal"/>
+      <genClasses image="false" ecoreClass="presentation.ecore#//literal/NumericLiteral"/>
+      <genClasses ecoreClass="presentation.ecore#//literal/NumberLiteral">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//literal/NumberLiteral/value"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="presentation.ecore#//literal/GeneralLiteral"/>
+      <genClasses ecoreClass="presentation.ecore#//literal/BooleanLiteral">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//literal/BooleanLiteral/value"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//literal/NameLiteral"/>
+      <genClasses ecoreClass="presentation.ecore#//literal/FilenameLiteral"/>
+      <genClasses ecoreClass="presentation.ecore#//literal/TextLiteral">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//literal/TextLiteral/value"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="scenario" disposableProviderFactory="true" ecorePackage="presentation.ecore#//scenario">
+      <genClasses image="false" ecoreClass="presentation.ecore#//scenario/ScenarioFile"/>
+      <genClasses ecoreClass="presentation.ecore#//scenario/Header">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//scenario/Header/parameter"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//scenario/SDL">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//scenario/SDL/scenario_object"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//scenario/PCL"/>
+      <genClasses ecoreClass="presentation.ecore#//scenario/Scenario">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//scenario/Scenario/header"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//scenario/Scenario/sdl"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//scenario/Scenario/pcl"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="parameter" disposableProviderFactory="true" ecorePackage="presentation.ecore#//parameter">
+      <genClasses image="false" ecoreClass="presentation.ecore#//parameter/Parameter"/>
+      <genClasses image="false" ecoreClass="presentation.ecore#//parameter/HeaderParameter"/>
+      <genClasses image="false" ecoreClass="presentation.ecore#//parameter/StimulusEventParameter"/>
+      <genClasses ecoreClass="presentation.ecore#//parameter/ActiveButtonsParameter">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//parameter/ActiveButtonsParameter/number_literal"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//parameter/ButtonCodesParameter">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//parameter/ButtonCodesParameter/number_literal"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//parameter/ScenarioNameParameter">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//parameter/ScenarioNameParameter/name_literal"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//parameter/TimeParameter">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//parameter/TimeParameter/number_literal"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//parameter/TargetButtonParameter">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//parameter/TargetButtonParameter/number_literal"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//parameter/CodeParameter">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//parameter/CodeParameter/text_literal"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="presentation.ecore#//parameter/PictureParameter"/>
+      <genClasses ecoreClass="presentation.ecore#//parameter/BackgroundColorParameter">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//parameter/BackgroundColorParameter/number_literal"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="presentation.ecore#//parameter/TextParameter"/>
+      <genClasses ecoreClass="presentation.ecore#//parameter/CaptionParameter">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//parameter/CaptionParameter/text_literal"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="presentation.ecore#//parameter/BitmapParameter"/>
+      <genClasses ecoreClass="presentation.ecore#//parameter/FilenameParameter">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//parameter/FilenameParameter/filename_literal"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="presentation.ecore#//parameter/TrialParameter"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="general" disposableProviderFactory="true" ecorePackage="presentation.ecore#//general">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="presentation.ecore#//general/CoordinateType">
+        <genEnumLiterals ecoreEnumLiteral="presentation.ecore#//general/CoordinateType/X"/>
+        <genEnumLiterals ecoreEnumLiteral="presentation.ecore#//general/CoordinateType/Y"/>
+        <genEnumLiterals ecoreEnumLiteral="presentation.ecore#//general/CoordinateType/CENTER_X"/>
+        <genEnumLiterals ecoreEnumLiteral="presentation.ecore#//general/CoordinateType/CENTER_Y"/>
+        <genEnumLiterals ecoreEnumLiteral="presentation.ecore#//general/CoordinateType/LEFT_X"/>
+        <genEnumLiterals ecoreEnumLiteral="presentation.ecore#//general/CoordinateType/TOP_Y"/>
+      </genEnums>
+      <genClasses ecoreClass="presentation.ecore#//general/CoordinateDefinition">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//general/CoordinateDefinition/coordinate"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//general/CoordinateDefinition/type"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//general/CoordinateDefinition/right_bottom"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="presentation.ecore#//general/NamedElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//general/NamedElement/name"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="stimulus" disposableProviderFactory="true" ecorePackage="presentation.ecore#//stimulus">
+      <genClasses image="false" ecoreClass="presentation.ecore#//stimulus/Stimulus"/>
+      <genClasses image="false" ecoreClass="presentation.ecore#//stimulus/StimulusEvent">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/StimulusEvent/stimulus_event_parameter"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//stimulus/StimulusList">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/StimulusList/stimulus_event"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//stimulus/Trial">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/Trial/stimulus_list"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/Trial/trial_parameter"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="presentation.ecore#//stimulus/ScenarioObject"/>
+      <nestedGenPackages prefix="picture" resource="XML" disposableProviderFactory="true"
+          ecorePackage="presentation.ecore#//stimulus/picture">
+        <genClasses ecoreClass="presentation.ecore#//stimulus/picture/Picture">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/picture/Picture/picture_part"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/picture/Picture/picture_parameter"/>
+        </genClasses>
+        <genClasses ecoreClass="presentation.ecore#//stimulus/picture/PictureStimulusEvent">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/picture/PictureStimulusEvent/picture"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="presentation.ecore#//stimulus/picture/PicturePart"/>
+        <genClasses ecoreClass="presentation.ecore#//stimulus/picture/Bitmap">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/picture/Bitmap/filename_parameter"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute presentation.ecore#//stimulus/picture/Bitmap/bitmap_parameters"/>
+        </genClasses>
+        <genClasses ecoreClass="presentation.ecore#//stimulus/picture/Text">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/picture/Text/caption"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/picture/Text/text_parameter"/>
+        </genClasses>
+        <genClasses ecoreClass="presentation.ecore#//stimulus/picture/Box"/>
+        <genClasses image="false" ecoreClass="presentation.ecore#//stimulus/picture/Graphic2D"/>
+        <genClasses image="false" ecoreClass="presentation.ecore#//stimulus/picture/Stimulus2D">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/picture/Stimulus2D/x_definition"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/picture/Stimulus2D/y_definition"/>
+        </genClasses>
+        <genClasses ecoreClass="presentation.ecore#//stimulus/picture/BitmapStimulus">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/picture/BitmapStimulus/bitmap"/>
+        </genClasses>
+        <genClasses ecoreClass="presentation.ecore#//stimulus/picture/BoxStimulus">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/picture/BoxStimulus/box"/>
+        </genClasses>
+        <genClasses ecoreClass="presentation.ecore#//stimulus/picture/TextStimulus">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/picture/TextStimulus/text"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="sound" disposableProviderFactory="true" ecorePackage="presentation.ecore#//stimulus/sound">
+        <genClasses ecoreClass="presentation.ecore#//stimulus/sound/Sound"/>
+      </nestedGenPackages>
+    </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

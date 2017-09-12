@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: EMFText UI Plugin: sce
-Bundle-SymbolicName: org.emftext.language.Presentation.resource.sce.ui;singleton:=true
+Bundle-SymbolicName: org.emftext.language.presentation.resource.sce.ui;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Vendor: Software Technology Group - TU Dresden Germany
 Require-Bundle: org.eclipse.core.resources,
@@ -18,11 +18,11 @@ Require-Bundle: org.eclipse.core.resources,
   org.eclipse.ui.editors,
   org.eclipse.ui.ide,
   org.eclipse.ui.views,
-  org.emftext.language.Presentation.resource.sce,
+  org.emftext.language.presentation.resource.sce,
   org.emftext.commons.antlr3_4_0,
   org.emftext.language.presentation
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.emftext.language.Presentation.resource.sce.ui
-Bundle-Activator: org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin
+Export-Package: org.emftext.language.presentation.resource.sce.ui
+Bundle-Activator: org.emftext.language.presentation.resource.sce.ui.SceUIPlugin
 Import-Package: org.eclipse.ui.texteditor.spelling

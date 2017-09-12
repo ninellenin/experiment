@@ -4,13 +4,13 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.grammar;
+package org.emftext.language.presentation.resource.sce.grammar;
 
-public class SceLineBreak extends org.emftext.language.Presentation.resource.sce.grammar.SceFormattingElement {
+public class SceLineBreak extends org.emftext.language.presentation.resource.sce.grammar.SceFormattingElement {
 	
 	private final int tabs;
 	
-	public SceLineBreak(org.emftext.language.Presentation.resource.sce.grammar.SceCardinality cardinality, int tabs) {
+	public SceLineBreak(org.emftext.language.presentation.resource.sce.grammar.SceCardinality cardinality, int tabs) {
 		super(cardinality);
 		this.tabs = tabs;
 	}

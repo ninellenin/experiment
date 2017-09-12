@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 /**
  * The root preference page
@@ -12,7 +12,7 @@ package org.emftext.language.Presentation.resource.sce.ui;
 public class ScePreferencePage extends org.eclipse.jface.preference.PreferencePage implements org.eclipse.ui.IWorkbenchPreferencePage {
 	
 	public void init(org.eclipse.ui.IWorkbench workbench) {
-		setPreferenceStore(org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.getDefault().getPreferenceStore());
+		setPreferenceStore(org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.getDefault().getPreferenceStore());
 		setDescription("Sce Text Editor Preferences");
 	}
 	

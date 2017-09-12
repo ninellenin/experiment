@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 /**
  * An adapter from the Eclipse
@@ -13,29 +13,29 @@ package org.emftext.language.Presentation.resource.sce.ui;
  */
 public class SceTokenScanner implements org.eclipse.jface.text.rules.ITokenScanner {
 	
-	private org.emftext.language.Presentation.resource.sce.ISceTextScanner lexer;
-	private org.emftext.language.Presentation.resource.sce.ISceTextToken currentToken;
-	private java.util.List<org.emftext.language.Presentation.resource.sce.ISceTextToken> nextTokens;
+	private org.emftext.language.presentation.resource.sce.ISceTextScanner lexer;
+	private org.emftext.language.presentation.resource.sce.ISceTextToken currentToken;
+	private java.util.List<org.emftext.language.presentation.resource.sce.ISceTextToken> nextTokens;
 	private int offset;
 	private String languageId;
 	private org.eclipse.jface.preference.IPreferenceStore store;
-	private org.emftext.language.Presentation.resource.sce.ui.SceColorManager colorManager;
-	private org.emftext.language.Presentation.resource.sce.ISceTextResource resource;
+	private org.emftext.language.presentation.resource.sce.ui.SceColorManager colorManager;
+	private org.emftext.language.presentation.resource.sce.ISceTextResource resource;
 	
 	/**
 	 * 
 	 * @param colorManager A manager to obtain color objects
 	 */
-	public SceTokenScanner(org.emftext.language.Presentation.resource.sce.ISceTextResource resource, org.emftext.language.Presentation.resource.sce.ui.SceColorManager colorManager) {
+	public SceTokenScanner(org.emftext.language.presentation.resource.sce.ISceTextResource resource, org.emftext.language.presentation.resource.sce.ui.SceColorManager colorManager) {
 		this.resource = resource;
 		this.colorManager = colorManager;
-		this.lexer = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation().createLexer();
-		this.languageId = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation().getSyntaxName();
-		org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin plugin = org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.getDefault();
+		this.lexer = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation().createLexer();
+		this.languageId = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation().getSyntaxName();
+		org.emftext.language.presentation.resource.sce.ui.SceUIPlugin plugin = org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.getDefault();
 		if (plugin != null) {
 			this.store = plugin.getPreferenceStore();
 		}
-		this.nextTokens = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ISceTextToken>();
+		this.nextTokens = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ISceTextToken>();
 	}
 	
 	public int getTokenLength() {
@@ -65,10 +65,10 @@ public class SceTokenScanner implements org.eclipse.jface.text.rules.ITokenScann
 		org.eclipse.jface.text.TextAttribute textAttribute = null;
 		String tokenName = currentToken.getName();
 		if (tokenName != null) {
-			org.emftext.language.Presentation.resource.sce.ISceTokenStyle staticStyle = getStaticTokenStyle();
+			org.emftext.language.presentation.resource.sce.ISceTokenStyle staticStyle = getStaticTokenStyle();
 			// now call dynamic token styler to allow to apply modifications to the static
 			// style
-			org.emftext.language.Presentation.resource.sce.ISceTokenStyle dynamicStyle = getDynamicTokenStyle(staticStyle);
+			org.emftext.language.presentation.resource.sce.ISceTokenStyle dynamicStyle = getDynamicTokenStyle(staticStyle);
 			if (dynamicStyle != null) {
 				textAttribute = getTextAttribute(dynamicStyle);
 			}
@@ -98,31 +98,31 @@ public class SceTokenScanner implements org.eclipse.jface.text.rules.ITokenScann
 		return new int[] {rgb.red, rgb.green, rgb.blue};
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ISceTokenStyle getStaticTokenStyle() {
-		org.emftext.language.Presentation.resource.sce.ISceTokenStyle staticStyle = null;
+	public org.emftext.language.presentation.resource.sce.ISceTokenStyle getStaticTokenStyle() {
+		org.emftext.language.presentation.resource.sce.ISceTokenStyle staticStyle = null;
 		String tokenName = currentToken.getName();
-		String enableKey = org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageId, tokenName, org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.ENABLE);
+		String enableKey = org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageId, tokenName, org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.ENABLE);
 		boolean enabled = store.getBoolean(enableKey);
 		if (enabled) {
-			String colorKey = org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageId, tokenName, org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.COLOR);
+			String colorKey = org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageId, tokenName, org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.COLOR);
 			org.eclipse.swt.graphics.RGB foregroundRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(store, colorKey);
 			org.eclipse.swt.graphics.RGB backgroundRGB = null;
-			boolean bold = store.getBoolean(org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageId, tokenName, org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.BOLD));
-			boolean italic = store.getBoolean(org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageId, tokenName, org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.ITALIC));
-			boolean strikethrough = store.getBoolean(org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageId, tokenName, org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.STRIKETHROUGH));
-			boolean underline = store.getBoolean(org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageId, tokenName, org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.UNDERLINE));
-			staticStyle = new org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyle(convertToIntArray(foregroundRGB), convertToIntArray(backgroundRGB), bold, italic, strikethrough, underline);
+			boolean bold = store.getBoolean(org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageId, tokenName, org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.BOLD));
+			boolean italic = store.getBoolean(org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageId, tokenName, org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.ITALIC));
+			boolean strikethrough = store.getBoolean(org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageId, tokenName, org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.STRIKETHROUGH));
+			boolean underline = store.getBoolean(org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageId, tokenName, org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.UNDERLINE));
+			staticStyle = new org.emftext.language.presentation.resource.sce.mopp.SceTokenStyle(convertToIntArray(foregroundRGB), convertToIntArray(backgroundRGB), bold, italic, strikethrough, underline);
 		}
 		return staticStyle;
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ISceTokenStyle getDynamicTokenStyle(org.emftext.language.Presentation.resource.sce.ISceTokenStyle staticStyle) {
-		org.emftext.language.Presentation.resource.sce.mopp.SceDynamicTokenStyler dynamicTokenStyler = new org.emftext.language.Presentation.resource.sce.mopp.SceDynamicTokenStyler();
-		org.emftext.language.Presentation.resource.sce.ISceTokenStyle dynamicStyle = dynamicTokenStyler.getDynamicTokenStyle(resource, currentToken, staticStyle);
+	public org.emftext.language.presentation.resource.sce.ISceTokenStyle getDynamicTokenStyle(org.emftext.language.presentation.resource.sce.ISceTokenStyle staticStyle) {
+		org.emftext.language.presentation.resource.sce.mopp.SceDynamicTokenStyler dynamicTokenStyler = new org.emftext.language.presentation.resource.sce.mopp.SceDynamicTokenStyler();
+		org.emftext.language.presentation.resource.sce.ISceTokenStyle dynamicStyle = dynamicTokenStyler.getDynamicTokenStyle(resource, currentToken, staticStyle);
 		return dynamicStyle;
 	}
 	
-	public org.eclipse.jface.text.TextAttribute getTextAttribute(org.emftext.language.Presentation.resource.sce.ISceTokenStyle tokeStyle) {
+	public org.eclipse.jface.text.TextAttribute getTextAttribute(org.emftext.language.presentation.resource.sce.ISceTokenStyle tokeStyle) {
 		int[] foregroundColorArray = tokeStyle.getColorAsRGB();
 		org.eclipse.swt.graphics.Color foregroundColor = null;
 		if (colorManager != null) {
@@ -162,13 +162,13 @@ public class SceTokenScanner implements org.eclipse.jface.text.rules.ITokenScann
 		final int charStart = currentToken.getOffset();
 		final int column = currentToken.getColumn();
 		
-		java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceTaskItem> taskItems = new org.emftext.language.Presentation.resource.sce.mopp.SceTaskItemDetector().findTaskItems(text, line, charStart);
+		java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceTaskItem> taskItems = new org.emftext.language.presentation.resource.sce.mopp.SceTaskItemDetector().findTaskItems(text, line, charStart);
 		
 		// this is the offset for the next token to be added
 		int offset = charStart;
 		int itemBeginRelative;
-		java.util.List<org.emftext.language.Presentation.resource.sce.ISceTextToken> newItems = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ISceTextToken>();
-		for (org.emftext.language.Presentation.resource.sce.mopp.SceTaskItem taskItem : taskItems) {
+		java.util.List<org.emftext.language.presentation.resource.sce.ISceTextToken> newItems = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ISceTextToken>();
+		for (org.emftext.language.presentation.resource.sce.mopp.SceTaskItem taskItem : taskItems) {
 			int itemBegin = taskItem.getCharStart();
 			int itemLine = taskItem.getLine();
 			int itemColumn = 0;
@@ -177,13 +177,13 @@ public class SceTokenScanner implements org.eclipse.jface.text.rules.ITokenScann
 			// create token before task item (TODO if required)
 			String textBefore = text.substring(offset - charStart, itemBeginRelative);
 			int textBeforeLength = textBefore.length();
-			newItems.add(new org.emftext.language.Presentation.resource.sce.mopp.SceTextToken(name, textBefore, offset, textBeforeLength, line, column, true));
+			newItems.add(new org.emftext.language.presentation.resource.sce.mopp.SceTextToken(name, textBefore, offset, textBeforeLength, line, column, true));
 			
 			// create token for the task item itself
 			offset = offset + textBeforeLength;
 			String itemText = taskItem.getKeyword();
 			int itemTextLength = itemText.length();
-			newItems.add(new org.emftext.language.Presentation.resource.sce.mopp.SceTextToken(org.emftext.language.Presentation.resource.sce.mopp.SceTokenStyleInformationProvider.TASK_ITEM_TOKEN_NAME, itemText, offset, itemTextLength, itemLine, itemColumn, true));
+			newItems.add(new org.emftext.language.presentation.resource.sce.mopp.SceTextToken(org.emftext.language.presentation.resource.sce.mopp.SceTokenStyleInformationProvider.TASK_ITEM_TOKEN_NAME, itemText, offset, itemTextLength, itemLine, itemColumn, true));
 			
 			offset = offset + itemTextLength;
 		}
@@ -191,7 +191,7 @@ public class SceTokenScanner implements org.eclipse.jface.text.rules.ITokenScann
 		if (!taskItems.isEmpty()) {
 			// create token after last task item (TODO if required)
 			String textAfter = text.substring(offset - charStart);
-			newItems.add(new org.emftext.language.Presentation.resource.sce.mopp.SceTextToken(name, textAfter, offset, textAfter.length(), line, column, true));
+			newItems.add(new org.emftext.language.presentation.resource.sce.mopp.SceTextToken(name, textAfter, offset, textAfter.length(), line, column, true));
 		}
 		
 		if (!newItems.isEmpty()) {

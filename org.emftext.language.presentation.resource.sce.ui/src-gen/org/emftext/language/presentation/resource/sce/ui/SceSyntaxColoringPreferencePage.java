@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 /**
  * Preference page for configuring syntax coloring.
@@ -18,7 +18,7 @@ public class SceSyntaxColoringPreferencePage extends org.eclipse.jface.preferenc
 	public SceSyntaxColoringPreferencePage() {
 		super();
 		
-		org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation metaInformation = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation();
+		org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation metaInformation = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation();
 		
 		String languageId = metaInformation.getSyntaxName();
 		
@@ -32,7 +32,7 @@ public class SceSyntaxColoringPreferencePage extends org.eclipse.jface.preferenc
 		java.util.Collections.sort(terminals);
 		content.put(languageId, terminals);
 		
-		setPreferenceStore(org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.getDefault().getPreferenceStore());
+		setPreferenceStore(org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.getDefault().getPreferenceStore());
 		setDescription("Configure syntax coloring for ." + languageId + " files.");
 	}
 	
@@ -117,12 +117,12 @@ public class SceSyntaxColoringPreferencePage extends org.eclipse.jface.preferenc
 		 */
 		public HighlightingColorListItem(String languageID, String tokenName) {
 			fDisplayName = tokenName;
-			fColorKey = org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageID, tokenName, org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.COLOR);
-			fBoldKey = org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageID, tokenName, org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.BOLD);
-			fItalicKey = org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageID, tokenName, org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.ITALIC);
-			fStrikethroughKey = org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageID, tokenName, org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.STRIKETHROUGH);
-			fUnderlineKey = org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageID, tokenName, org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.UNDERLINE);
-			fEnableKey = org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageID, tokenName, org.emftext.language.Presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.ENABLE);
+			fColorKey = org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageID, tokenName, org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.COLOR);
+			fBoldKey = org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageID, tokenName, org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.BOLD);
+			fItalicKey = org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageID, tokenName, org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.ITALIC);
+			fStrikethroughKey = org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageID, tokenName, org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.STRIKETHROUGH);
+			fUnderlineKey = org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageID, tokenName, org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.UNDERLINE);
+			fEnableKey = org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.getPreferenceKey(languageID, tokenName, org.emftext.language.presentation.resource.sce.ui.SceSyntaxColoringHelper.StyleProperty.ENABLE);
 		}
 		
 		/**
@@ -517,7 +517,7 @@ public class SceSyntaxColoringPreferencePage extends org.eclipse.jface.preferenc
 	}
 	
 	private void addFiller(org.eclipse.swt.widgets.Composite composite, int horizontalSpan) {
-		org.emftext.language.Presentation.resource.sce.ui.ScePixelConverter pixelConverter = new org.emftext.language.Presentation.resource.sce.ui.ScePixelConverter(composite);
+		org.emftext.language.presentation.resource.sce.ui.ScePixelConverter pixelConverter = new org.emftext.language.presentation.resource.sce.ui.ScePixelConverter(composite);
 		org.eclipse.swt.widgets.Label filler = new org.eclipse.swt.widgets.Label(composite, org.eclipse.swt.SWT.LEFT);
 		org.eclipse.swt.layout.GridData gd = new org.eclipse.swt.layout.GridData(org.eclipse.swt.layout.GridData.HORIZONTAL_ALIGN_FILL);
 		gd.horizontalSpan = horizontalSpan;
@@ -601,8 +601,8 @@ public class SceSyntaxColoringPreferencePage extends org.eclipse.jface.preferenc
 	private void updateActiveEditor() {
 		org.eclipse.ui.IWorkbench workbench = org.eclipse.ui.PlatformUI.getWorkbench();
 		org.eclipse.ui.IEditorPart editor = workbench.getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-		if (editor != null && editor instanceof org.emftext.language.Presentation.resource.sce.ui.SceEditor) {
-			org.emftext.language.Presentation.resource.sce.ui.SceEditor emfTextEditor = (org.emftext.language.Presentation.resource.sce.ui.SceEditor) editor;
+		if (editor != null && editor instanceof org.emftext.language.presentation.resource.sce.ui.SceEditor) {
+			org.emftext.language.presentation.resource.sce.ui.SceEditor emfTextEditor = (org.emftext.language.presentation.resource.sce.ui.SceEditor) editor;
 			emfTextEditor.invalidateTextRepresentation();
 		}
 	}

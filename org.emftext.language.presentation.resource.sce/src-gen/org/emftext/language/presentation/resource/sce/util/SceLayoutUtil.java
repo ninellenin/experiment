@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.util;
+package org.emftext.language.presentation.resource.sce.util;
 
 /**
  * A utility class to inject/extract layout information into/from a model.
@@ -38,10 +38,10 @@ public class SceLayoutUtil {
 	}
 	
 	public void transferLayoutInformationToModel(org.eclipse.emf.ecore.EObject element) {
-		org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter layoutInformationAdapter = getLayoutInformationAdapter(element);
+		org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter layoutInformationAdapter = getLayoutInformationAdapter(element);
 		layoutInformationAdapter.getLayoutInformations();
-		for (java.util.Iterator<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> i = layoutInformationAdapter.getLayoutInformations().iterator(); i.hasNext(); ) {
-			org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation layoutInformation = i.next();
+		for (java.util.Iterator<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> i = layoutInformationAdapter.getLayoutInformations().iterator(); i.hasNext(); ) {
+			org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation layoutInformation = i.next();
 			org.eclipse.emf.ecore.EReference layoutReference = findLayoutReference(element.eClass());
 			if (layoutReference != null) {
 				org.eclipse.emf.ecore.EObject layoutInformationModelElement = createLayoutInformationModelElement(layoutInformation, layoutReference.getEType().getEPackage());
@@ -58,12 +58,12 @@ public class SceLayoutUtil {
 	public void transferLayoutInformationFromModel(org.eclipse.emf.ecore.EObject element) {
 		org.eclipse.emf.ecore.EReference layoutReference = findLayoutReference(element.eClass());
 		if (layoutReference != null) {
-			org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter layoutInformationAdapter = getLayoutInformationAdapter(element);
+			org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter layoutInformationAdapter = getLayoutInformationAdapter(element);
 			@SuppressWarnings("unchecked")			
 			java.util.List<org.eclipse.emf.ecore.EObject> list = (java.util.List<org.eclipse.emf.ecore.EObject>) element.eGet(layoutReference);
 			for (java.util.Iterator<org.eclipse.emf.ecore.EObject> i = list.iterator(); i.hasNext(); ) {
 				org.eclipse.emf.ecore.EObject layoutModelElement = i.next();
-				org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation layoutInformation = createLayoutInformation(layoutModelElement);
+				org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation layoutInformation = createLayoutInformation(layoutModelElement);
 				if (layoutInformation != null) {
 					layoutInformationAdapter.getLayoutInformations().add(layoutInformation);
 					i.remove();
@@ -72,10 +72,10 @@ public class SceLayoutUtil {
 		}
 	}
 	
-	public org.eclipse.emf.ecore.EObject createLayoutInformationModelElement(org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation layoutInformation, org.eclipse.emf.ecore.EPackage layoutPackage) {
+	public org.eclipse.emf.ecore.EObject createLayoutInformationModelElement(org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation layoutInformation, org.eclipse.emf.ecore.EPackage layoutPackage) {
 		org.eclipse.emf.ecore.EFactory factory = layoutPackage.getEFactoryInstance();
 		Object object = layoutInformation.getObject(null, false);
-		org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement syntaxElement = layoutInformation.getSyntaxElement();
+		org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement syntaxElement = layoutInformation.getSyntaxElement();
 		org.eclipse.emf.ecore.EClass layoutInformationEClass = null;
 		org.eclipse.emf.ecore.EObject layoutInformationModelElement = null;
 		if (object == null) {
@@ -95,36 +95,36 @@ public class SceLayoutUtil {
 		layoutInformationModelElement.eSet(layoutInformationEClass.getEStructuralFeature(START_OFFSET_EATTRIBUTE_NAME), layoutInformation.getStartOffset());
 		layoutInformationModelElement.eSet(layoutInformationEClass.getEStructuralFeature(HIDDEN_TOKEN_TEXT_EATTRIBUTE_NAME), layoutInformation.getHiddenTokenText());
 		layoutInformationModelElement.eSet(layoutInformationEClass.getEStructuralFeature(VISIBLE_TOKEN_TEXT_EATTRIBUTE_NAME), layoutInformation.getVisibleTokenText());
-		layoutInformationModelElement.eSet(layoutInformationEClass.getEStructuralFeature(SYNTAX_ELEMENT_ID_EATTRIBUTE_NAME), org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.getSyntaxElementID(syntaxElement));
+		layoutInformationModelElement.eSet(layoutInformationEClass.getEStructuralFeature(SYNTAX_ELEMENT_ID_EATTRIBUTE_NAME), org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.getSyntaxElementID(syntaxElement));
 		return layoutInformationModelElement;
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation createLayoutInformation(org.eclipse.emf.ecore.EObject layoutInformationModelElement) {
+	public org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation createLayoutInformation(org.eclipse.emf.ecore.EObject layoutInformationModelElement) {
 		Object object = null;
 		org.eclipse.emf.ecore.EStructuralFeature objectFeature = layoutInformationModelElement.eClass().getEStructuralFeature(OBJECT_EATTRIBUTE_NAME);
 		int startOffset = (Integer) layoutInformationModelElement.eGet(layoutInformationModelElement.eClass().getEStructuralFeature(START_OFFSET_EATTRIBUTE_NAME));
 		String hiddenTokenText = (String) layoutInformationModelElement.eGet(layoutInformationModelElement.eClass().getEStructuralFeature(HIDDEN_TOKEN_TEXT_EATTRIBUTE_NAME));
 		String visibleTokenText = (String) layoutInformationModelElement.eGet(layoutInformationModelElement.eClass().getEStructuralFeature(VISIBLE_TOKEN_TEXT_EATTRIBUTE_NAME));
-		org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement syntaxElement = org.emftext.language.Presentation.resource.sce.grammar.SceGrammarInformationProvider.getSyntaxElementByID((String) layoutInformationModelElement.eGet(layoutInformationModelElement.eClass().getEStructuralFeature(SYNTAX_ELEMENT_ID_EATTRIBUTE_NAME)));
+		org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement syntaxElement = org.emftext.language.presentation.resource.sce.grammar.SceGrammarInformationProvider.getSyntaxElementByID((String) layoutInformationModelElement.eGet(layoutInformationModelElement.eClass().getEStructuralFeature(SYNTAX_ELEMENT_ID_EATTRIBUTE_NAME)));
 		if (objectFeature != null) {
 			object = layoutInformationModelElement.eGet(objectFeature);
-		} else if (syntaxElement instanceof org.emftext.language.Presentation.resource.sce.grammar.ScePlaceholder) {
-			org.emftext.language.Presentation.resource.sce.grammar.ScePlaceholder placeholder = (org.emftext.language.Presentation.resource.sce.grammar.ScePlaceholder) syntaxElement;
-			org.emftext.language.Presentation.resource.sce.ISceTokenResolver tokenResolver = new org.emftext.language.Presentation.resource.sce.mopp.SceTokenResolverFactory().createTokenResolver(placeholder.getTokenName());
-			org.emftext.language.Presentation.resource.sce.ISceTokenResolveResult result = new org.emftext.language.Presentation.resource.sce.mopp.SceTokenResolveResult();
+		} else if (syntaxElement instanceof org.emftext.language.presentation.resource.sce.grammar.ScePlaceholder) {
+			org.emftext.language.presentation.resource.sce.grammar.ScePlaceholder placeholder = (org.emftext.language.presentation.resource.sce.grammar.ScePlaceholder) syntaxElement;
+			org.emftext.language.presentation.resource.sce.ISceTokenResolver tokenResolver = new org.emftext.language.presentation.resource.sce.mopp.SceTokenResolverFactory().createTokenResolver(placeholder.getTokenName());
+			org.emftext.language.presentation.resource.sce.ISceTokenResolveResult result = new org.emftext.language.presentation.resource.sce.mopp.SceTokenResolveResult();
 			tokenResolver.resolve(visibleTokenText, placeholder.getFeature(), result);
 			object = result.getResolvedToken();
 		}
-		return new org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation(syntaxElement, object, startOffset, hiddenTokenText, visibleTokenText);
+		return new org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation(syntaxElement, object, startOffset, hiddenTokenText, visibleTokenText);
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter getLayoutInformationAdapter(org.eclipse.emf.ecore.EObject element) {
+	public org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter getLayoutInformationAdapter(org.eclipse.emf.ecore.EObject element) {
 		for (org.eclipse.emf.common.notify.Adapter adapter : element.eAdapters()) {
-			if (adapter instanceof org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter) {
-				return (org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter) adapter;
+			if (adapter instanceof org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter) {
+				return (org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter) adapter;
 			}
 		}
-		org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter newAdapter = new org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter();
+		org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter newAdapter = new org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter();
 		element.eAdapters().add(newAdapter);
 		return newAdapter;
 	}

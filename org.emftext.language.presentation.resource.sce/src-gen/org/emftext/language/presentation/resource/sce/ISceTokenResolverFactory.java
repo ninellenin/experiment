@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce;
+package org.emftext.language.presentation.resource.sce;
 
 /**
  * A TokenResolverFactory creates TokenResolvers. The concrete resolver to be
@@ -17,12 +17,12 @@ public interface ISceTokenResolverFactory {
 	/**
 	 * Creates a token resolver for normal tokens of type <code>tokenName</code>.
 	 */
-	public org.emftext.language.Presentation.resource.sce.ISceTokenResolver createTokenResolver(String tokenName);
+	public org.emftext.language.presentation.resource.sce.ISceTokenResolver createTokenResolver(String tokenName);
 	
 	/**
 	 * Creates a token resolver for COLLECT-IN tokens that are stored in feature
 	 * <code>featureName</code>.
 	 */
-	public org.emftext.language.Presentation.resource.sce.ISceTokenResolver createCollectInTokenResolver(String featureName);
+	public org.emftext.language.presentation.resource.sce.ISceTokenResolver createCollectInTokenResolver(String featureName);
 	
 }

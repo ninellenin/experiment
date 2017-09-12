@@ -4,14 +4,14 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 /**
  * Simple Outline Page using the ReflectiveItemAdapters provided by EMF
  */
 public class SceOutlinePage extends org.eclipse.ui.part.Page implements org.eclipse.jface.viewers.ISelectionProvider, org.eclipse.jface.viewers.ISelectionChangedListener, org.eclipse.ui.views.contentoutline.IContentOutlinePage {
 	
-	public final static String CONTEXT_MENU_ID = "org.emftext.language.Presentation.resource.sce.ui.outlinecontext";
+	public final static String CONTEXT_MENU_ID = "org.emftext.language.presentation.resource.sce.ui.outlinecontext";
 	
 	/**
 	 * The auto expand level determines the depth to which the outline tree is
@@ -23,17 +23,17 @@ public class SceOutlinePage extends org.eclipse.ui.part.Page implements org.ecli
 	 * The provider for the resource that is displayed in the outline page. Normally
 	 * this is the current editor.
 	 */
-	private org.emftext.language.Presentation.resource.sce.ISceResourceProvider resourceProvider;
-	private org.emftext.language.Presentation.resource.sce.ui.SceOutlinePageTreeViewer treeViewer;
+	private org.emftext.language.presentation.resource.sce.ISceResourceProvider resourceProvider;
+	private org.emftext.language.presentation.resource.sce.ui.SceOutlinePageTreeViewer treeViewer;
 	private org.eclipse.core.runtime.ListenerList selectionChangedListeners = new org.eclipse.core.runtime.ListenerList();
 	
-	public SceOutlinePage(org.emftext.language.Presentation.resource.sce.ISceResourceProvider resourceProvider) {
+	public SceOutlinePage(org.emftext.language.presentation.resource.sce.ISceResourceProvider resourceProvider) {
 		super();
 		this.resourceProvider = resourceProvider;
 	}
 	
 	public void createControl(org.eclipse.swt.widgets.Composite parent) {
-		treeViewer = new org.emftext.language.Presentation.resource.sce.ui.SceOutlinePageTreeViewer(parent, org.eclipse.swt.SWT.MULTI | org.eclipse.swt.SWT.H_SCROLL | org.eclipse.swt.SWT.V_SCROLL);
+		treeViewer = new org.emftext.language.presentation.resource.sce.ui.SceOutlinePageTreeViewer(parent, org.eclipse.swt.SWT.MULTI | org.eclipse.swt.SWT.H_SCROLL | org.eclipse.swt.SWT.V_SCROLL);
 		Object[] listeners = selectionChangedListeners.getListeners();
 		for (int i = 0; i < listeners.length; ++i) {
 			org.eclipse.jface.viewers.ISelectionChangedListener l = (org.eclipse.jface.viewers.ISelectionChangedListener) listeners[i];
@@ -54,7 +54,7 @@ public class SceOutlinePage extends org.eclipse.ui.part.Page implements org.ecli
 			// Select the root object in the view.
 			treeViewer.setSelection(new org.eclipse.jface.viewers.StructuredSelection(resource), true);
 		}
-		treeViewer.setComparator(new org.emftext.language.Presentation.resource.sce.ui.SceOutlinePageTreeViewerComparator());
+		treeViewer.setComparator(new org.emftext.language.presentation.resource.sce.ui.SceOutlinePageTreeViewerComparator());
 		createContextMenu();
 		createActions();
 	}
@@ -72,7 +72,7 @@ public class SceOutlinePage extends org.eclipse.ui.part.Page implements org.ecli
 		org.eclipse.swt.widgets.Menu menu = menuManager.createContextMenu(treeViewer.getControl());
 		treeViewer.getControl().setMenu(menu);
 		// register menu for extension
-		getSite().registerContextMenu("org.emftext.language.Presentation.resource.sce.ui.outlinecontext", menuManager, treeViewer);
+		getSite().registerContextMenu("org.emftext.language.presentation.resource.sce.ui.outlinecontext", menuManager, treeViewer);
 	}
 	
 	private void fillContextMenu(org.eclipse.jface.action.IMenuManager manager) {
@@ -83,7 +83,7 @@ public class SceOutlinePage extends org.eclipse.ui.part.Page implements org.ecli
 		org.eclipse.ui.part.IPageSite site = getSite();
 		org.eclipse.ui.IActionBars actionBars = site.getActionBars();
 		org.eclipse.jface.action.IToolBarManager toolBarManager = actionBars.getToolBarManager();
-		java.util.List<org.eclipse.jface.action.IAction> actions = new org.emftext.language.Presentation.resource.sce.ui.SceOutlinePageActionProvider().getActions(treeViewer);
+		java.util.List<org.eclipse.jface.action.IAction> actions = new org.emftext.language.presentation.resource.sce.ui.SceOutlinePageActionProvider().getActions(treeViewer);
 		for (org.eclipse.jface.action.IAction action : actions) {
 			toolBarManager.add(action);
 		}

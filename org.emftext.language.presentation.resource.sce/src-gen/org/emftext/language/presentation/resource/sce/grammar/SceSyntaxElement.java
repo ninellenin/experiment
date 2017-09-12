@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.grammar;
+package org.emftext.language.presentation.resource.sce.grammar;
 
 /**
  * The abstract super class for all elements of a grammar. This class provides
@@ -14,9 +14,9 @@ public abstract class SceSyntaxElement {
 	
 	private SceSyntaxElement[] children;
 	private SceSyntaxElement parent;
-	private org.emftext.language.Presentation.resource.sce.grammar.SceCardinality cardinality;
+	private org.emftext.language.presentation.resource.sce.grammar.SceCardinality cardinality;
 	
-	public SceSyntaxElement(org.emftext.language.Presentation.resource.sce.grammar.SceCardinality cardinality, SceSyntaxElement[] children) {
+	public SceSyntaxElement(org.emftext.language.presentation.resource.sce.grammar.SceCardinality cardinality, SceSyntaxElement[] children) {
 		this.cardinality = cardinality;
 		this.children = children;
 		if (this.children != null) {
@@ -54,7 +54,7 @@ public abstract class SceSyntaxElement {
 		return parent.getMetaclass();
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.grammar.SceCardinality getCardinality() {
+	public org.emftext.language.presentation.resource.sce.grammar.SceCardinality getCardinality() {
 		return cardinality;
 	}
 	

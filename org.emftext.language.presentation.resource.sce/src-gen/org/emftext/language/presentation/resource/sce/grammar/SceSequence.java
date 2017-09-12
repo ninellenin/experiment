@@ -4,16 +4,16 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.grammar;
+package org.emftext.language.presentation.resource.sce.grammar;
 
-public class SceSequence extends org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement {
+public class SceSequence extends org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement {
 	
-	public SceSequence(org.emftext.language.Presentation.resource.sce.grammar.SceCardinality cardinality, org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement... elements) {
+	public SceSequence(org.emftext.language.presentation.resource.sce.grammar.SceCardinality cardinality, org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement... elements) {
 		super(cardinality, elements);
 	}
 	
 	public String toString() {
-		return org.emftext.language.Presentation.resource.sce.util.SceStringUtil.explode(getChildren(), " ");
+		return org.emftext.language.presentation.resource.sce.util.SceStringUtil.explode(getChildren(), " ");
 	}
 	
 }

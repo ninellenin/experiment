@@ -4,14 +4,14 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.util;
+package org.emftext.language.presentation.resource.sce.util;
 
 /**
  * A helper class that is able to create minimal model instances for Ecore models.
  */
 public class SceMinimalModelHelper {
 	
-	private final static org.emftext.language.Presentation.resource.sce.util.SceEClassUtil eClassUtil = new org.emftext.language.Presentation.resource.sce.util.SceEClassUtil();
+	private final static org.emftext.language.presentation.resource.sce.util.SceEClassUtil eClassUtil = new org.emftext.language.presentation.resource.sce.util.SceEClassUtil();
 	
 	public org.eclipse.emf.ecore.EObject getMinimalModel(org.eclipse.emf.ecore.EClass eClass, java.util.Collection<org.eclipse.emf.ecore.EClass> allAvailableClasses) {
 		return getMinimalModel(eClass, allAvailableClasses.toArray(new org.eclipse.emf.ecore.EClass[allAvailableClasses.size()]), null);
@@ -64,7 +64,7 @@ public class SceMinimalModelHelper {
 						else {
 							subModel = typeClass.getEPackage().getEFactoryInstance().create(typeClass);
 							// set some proxy URI to make this object a proxy
-							String initialValue = "#some" + org.emftext.language.Presentation.resource.sce.util.SceStringUtil.capitalize(typeClass.getName());
+							String initialValue = "#some" + org.emftext.language.presentation.resource.sce.util.SceStringUtil.capitalize(typeClass.getName());
 							org.eclipse.emf.common.util.URI proxyURI = org.eclipse.emf.common.util.URI.createURI(initialValue);
 							((org.eclipse.emf.ecore.InternalEObject) subModel).eSetProxyURI(proxyURI);
 						}
@@ -74,7 +74,7 @@ public class SceMinimalModelHelper {
 						
 						Object value = root.eGet(reference);
 						if (value instanceof java.util.List<?>) {
-							java.util.List<org.eclipse.emf.ecore.EObject> list = org.emftext.language.Presentation.resource.sce.util.SceListUtil.castListUnchecked(value);
+							java.util.List<org.eclipse.emf.ecore.EObject> list = org.emftext.language.presentation.resource.sce.util.SceListUtil.castListUnchecked(value);
 							list.add(subModel);
 						} else {
 							root.eSet(reference, subModel);
@@ -89,11 +89,11 @@ public class SceMinimalModelHelper {
 						initialValue = name;
 					}
 					else {
-						initialValue = "some" + org.emftext.language.Presentation.resource.sce.util.SceStringUtil.capitalize(attribute.getName());
+						initialValue = "some" + org.emftext.language.presentation.resource.sce.util.SceStringUtil.capitalize(attribute.getName());
 					}
 					Object value = root.eGet(attribute);
 					if (value instanceof java.util.List<?>) {
-						java.util.List<String> list = org.emftext.language.Presentation.resource.sce.util.SceListUtil.castListUnchecked(value);
+						java.util.List<String> list = org.emftext.language.presentation.resource.sce.util.SceListUtil.castListUnchecked(value);
 						list.add(initialValue);
 					} else {
 						root.eSet(attribute, initialValue);

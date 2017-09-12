@@ -4,9 +4,9 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
-public class SceAntlrScanner implements org.emftext.language.Presentation.resource.sce.ISceTextScanner {
+public class SceAntlrScanner implements org.emftext.language.presentation.resource.sce.ISceTextScanner {
 	
 	private org.antlr.runtime3_4_0.Lexer antlrLexer;
 	
@@ -14,7 +14,7 @@ public class SceAntlrScanner implements org.emftext.language.Presentation.resour
 		this.antlrLexer = antlrLexer;
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ISceTextToken getNextToken() {
+	public org.emftext.language.presentation.resource.sce.ISceTextToken getNextToken() {
 		if (antlrLexer.getCharStream() == null) {
 			return null;
 		}
@@ -22,7 +22,7 @@ public class SceAntlrScanner implements org.emftext.language.Presentation.resour
 		if (current == null || current.getType() < 0) {
 			return null;
 		}
-		org.emftext.language.Presentation.resource.sce.ISceTextToken result = new org.emftext.language.Presentation.resource.sce.mopp.SceANTLRTextToken(current);
+		org.emftext.language.presentation.resource.sce.ISceTextToken result = new org.emftext.language.presentation.resource.sce.mopp.SceANTLRTextToken(current);
 		return result;
 	}
 	

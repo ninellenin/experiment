@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 /**
  * This class provides the configuration for the generated editor. It registers
@@ -12,11 +12,11 @@ package org.emftext.language.Presentation.resource.sce.ui;
  */
 public class SceSourceViewerConfiguration extends org.eclipse.ui.editors.text.TextSourceViewerConfiguration {
 	
-	private org.emftext.language.Presentation.resource.sce.ui.SceColorManager colorManager;
-	private org.emftext.language.Presentation.resource.sce.ISceResourceProvider resourceProvider;
-	private org.emftext.language.Presentation.resource.sce.ui.ISceAnnotationModelProvider annotationModelProvider;
-	private org.emftext.language.Presentation.resource.sce.ui.ISceBracketHandlerProvider bracketHandlerProvider;
-	private org.emftext.language.Presentation.resource.sce.ui.SceQuickAssistAssistant quickAssistAssistant;
+	private org.emftext.language.presentation.resource.sce.ui.SceColorManager colorManager;
+	private org.emftext.language.presentation.resource.sce.ISceResourceProvider resourceProvider;
+	private org.emftext.language.presentation.resource.sce.ui.ISceAnnotationModelProvider annotationModelProvider;
+	private org.emftext.language.presentation.resource.sce.ui.ISceBracketHandlerProvider bracketHandlerProvider;
+	private org.emftext.language.presentation.resource.sce.ui.SceQuickAssistAssistant quickAssistAssistant;
 	
 	/**
 	 * Creates a new editor configuration.
@@ -25,8 +25,8 @@ public class SceSourceViewerConfiguration extends org.eclipse.ui.editors.text.Te
 	 * editor)
 	 * @param colorManager the color manager to use
 	 */
-	public SceSourceViewerConfiguration(org.emftext.language.Presentation.resource.sce.ISceResourceProvider resourceProvider, org.emftext.language.Presentation.resource.sce.ui.ISceAnnotationModelProvider annotationModelProvider, org.emftext.language.Presentation.resource.sce.ui.ISceBracketHandlerProvider bracketHandlerProvider, org.emftext.language.Presentation.resource.sce.ui.SceColorManager colorManager) {
-		super(org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.getDefault().getPreferenceStore());
+	public SceSourceViewerConfiguration(org.emftext.language.presentation.resource.sce.ISceResourceProvider resourceProvider, org.emftext.language.presentation.resource.sce.ui.ISceAnnotationModelProvider annotationModelProvider, org.emftext.language.presentation.resource.sce.ui.ISceBracketHandlerProvider bracketHandlerProvider, org.emftext.language.presentation.resource.sce.ui.SceColorManager colorManager) {
+		super(org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.getDefault().getPreferenceStore());
 		this.fPreferenceStore.setDefault(org.eclipse.ui.texteditor.spelling.SpellingService.PREFERENCE_SPELLING_ENABLED, true);
 		this.fPreferenceStore.setDefault(org.eclipse.ui.texteditor.AbstractDecoratedTextEditorPreferenceConstants.EDITOR_TAB_WIDTH, 4);
 		this.fPreferenceStore.setDefault(org.eclipse.ui.texteditor.AbstractDecoratedTextEditorPreferenceConstants.EDITOR_HYPERLINK_KEY_MODIFIER, org.eclipse.jface.action.Action.findModifierString(org.eclipse.swt.SWT.MOD1));
@@ -39,7 +39,7 @@ public class SceSourceViewerConfiguration extends org.eclipse.ui.editors.text.Te
 	public org.eclipse.jface.text.contentassist.IContentAssistant getContentAssistant(org.eclipse.jface.text.source.ISourceViewer sourceViewer) {
 		
 		org.eclipse.jface.text.contentassist.ContentAssistant assistant = new org.eclipse.jface.text.contentassist.ContentAssistant();
-		assistant.setContentAssistProcessor(new org.emftext.language.Presentation.resource.sce.ui.SceCompletionProcessor(resourceProvider, bracketHandlerProvider), org.eclipse.jface.text.IDocument.DEFAULT_CONTENT_TYPE);
+		assistant.setContentAssistProcessor(new org.emftext.language.presentation.resource.sce.ui.SceCompletionProcessor(resourceProvider, bracketHandlerProvider), org.eclipse.jface.text.IDocument.DEFAULT_CONTENT_TYPE);
 		assistant.enableAutoActivation(true);
 		assistant.setAutoActivationDelay(500);
 		assistant.setProposalPopupOrientation(org.eclipse.jface.text.contentassist.IContentAssistant.PROPOSAL_OVERLAY);
@@ -55,7 +55,7 @@ public class SceSourceViewerConfiguration extends org.eclipse.ui.editors.text.Te
 	}
 	
 	protected org.eclipse.jface.text.rules.ITokenScanner getScanner() {
-		return new org.emftext.language.Presentation.resource.sce.ui.SceTokenScanner(resourceProvider.getResource(), colorManager);
+		return new org.emftext.language.presentation.resource.sce.ui.SceTokenScanner(resourceProvider.getResource(), colorManager);
 	}
 	
 	public org.eclipse.jface.text.presentation.IPresentationReconciler getPresentationReconciler(org.eclipse.jface.text.source.ISourceViewer sourceViewer) {
@@ -73,19 +73,19 @@ public class SceSourceViewerConfiguration extends org.eclipse.ui.editors.text.Te
 	}
 	
 	public org.eclipse.jface.text.ITextHover getTextHover(org.eclipse.jface.text.source.ISourceViewer sourceViewer, String contentType) {
-		return new org.emftext.language.Presentation.resource.sce.ui.SceTextHover(resourceProvider);
+		return new org.emftext.language.presentation.resource.sce.ui.SceTextHover(resourceProvider);
 	}
 	
 	public org.eclipse.jface.text.hyperlink.IHyperlinkDetector[] getHyperlinkDetectors(org.eclipse.jface.text.source.ISourceViewer sourceViewer) {
 		if (sourceViewer == null) {
 			return null;
 		}
-		return new org.eclipse.jface.text.hyperlink.IHyperlinkDetector[] { new org.emftext.language.Presentation.resource.sce.ui.SceHyperlinkDetector(resourceProvider.getResource()) };
+		return new org.eclipse.jface.text.hyperlink.IHyperlinkDetector[] { new org.emftext.language.presentation.resource.sce.ui.SceHyperlinkDetector(resourceProvider.getResource()) };
 	}
 	
 	public org.eclipse.jface.text.quickassist.IQuickAssistAssistant getQuickAssistAssistant(org.eclipse.jface.text.source.ISourceViewer sourceViewer) {
 		if (quickAssistAssistant == null) {
-			quickAssistAssistant = new org.emftext.language.Presentation.resource.sce.ui.SceQuickAssistAssistant(resourceProvider, annotationModelProvider);
+			quickAssistAssistant = new org.emftext.language.presentation.resource.sce.ui.SceQuickAssistAssistant(resourceProvider, annotationModelProvider);
 		}
 		return quickAssistAssistant;
 	}
@@ -123,7 +123,7 @@ public class SceSourceViewerConfiguration extends org.eclipse.ui.editors.text.Te
 						} catch (org.eclipse.jface.text.BadLocationException e) {
 							return;
 						}
-						if (new org.emftext.language.Presentation.resource.sce.ui.SceIgnoredWordsFilter().ignoreWord(text)) {
+						if (new org.emftext.language.presentation.resource.sce.ui.SceIgnoredWordsFilter().ignoreWord(text)) {
 							return;
 						}
 						collector.accept(problem);

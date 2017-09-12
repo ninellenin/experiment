@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce;
+package org.emftext.language.presentation.resource.sce;
 
 /**
  * Implementors of this interface can be used to post-process parsed text
@@ -19,7 +19,7 @@ public interface ISceResourcePostProcessor {
 	 * 
 	 * @param resource the resource to validate of modify
 	 */
-	public void process(org.emftext.language.Presentation.resource.sce.mopp.SceResource resource);
+	public void process(org.emftext.language.presentation.resource.sce.mopp.SceResource resource);
 	
 	/**
 	 * This method is called to request the post processor to terminate. It is called

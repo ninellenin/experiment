@@ -4,25 +4,25 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 public abstract class AbstractSceOutlinePageAction extends org.eclipse.jface.action.Action {
 	
 	private String preferenceKey = this.getClass().getSimpleName() + ".isChecked";
 	
-	private org.emftext.language.Presentation.resource.sce.ui.SceOutlinePageTreeViewer treeViewer;
+	private org.emftext.language.presentation.resource.sce.ui.SceOutlinePageTreeViewer treeViewer;
 	
-	public AbstractSceOutlinePageAction(org.emftext.language.Presentation.resource.sce.ui.SceOutlinePageTreeViewer treeViewer, String text, int style) {
+	public AbstractSceOutlinePageAction(org.emftext.language.presentation.resource.sce.ui.SceOutlinePageTreeViewer treeViewer, String text, int style) {
 		super(text, style);
 		this.treeViewer = treeViewer;
 	}
 	
 	public void initialize(String imagePath) {
-		org.eclipse.jface.resource.ImageDescriptor descriptor = org.emftext.language.Presentation.resource.sce.ui.SceImageProvider.INSTANCE.getImageDescriptor(imagePath);
+		org.eclipse.jface.resource.ImageDescriptor descriptor = org.emftext.language.presentation.resource.sce.ui.SceImageProvider.INSTANCE.getImageDescriptor(imagePath);
 		setDisabledImageDescriptor(descriptor);
 		setImageDescriptor(descriptor);
 		setHoverImageDescriptor(descriptor);
-		boolean checked = org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.getDefault().getPreferenceStore().getBoolean(preferenceKey);
+		boolean checked = org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.getDefault().getPreferenceStore().getBoolean(preferenceKey);
 		valueChanged(checked, false);
 	}
 	
@@ -49,7 +49,7 @@ public abstract class AbstractSceOutlinePageAction extends org.eclipse.jface.act
 		setChecked(on);
 		runBusy(on);
 		if (store) {
-			org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.getDefault().getPreferenceStore().setValue(preferenceKey, on);
+			org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.getDefault().getPreferenceStore().setValue(preferenceKey, on);
 		}
 	}
 	
@@ -57,12 +57,12 @@ public abstract class AbstractSceOutlinePageAction extends org.eclipse.jface.act
 		return true;
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ui.SceOutlinePageTreeViewer getTreeViewer() {
+	public org.emftext.language.presentation.resource.sce.ui.SceOutlinePageTreeViewer getTreeViewer() {
 		return treeViewer;
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ui.SceOutlinePageTreeViewerComparator getTreeViewerComparator() {
-		return (org.emftext.language.Presentation.resource.sce.ui.SceOutlinePageTreeViewerComparator) treeViewer.getComparator();
+	public org.emftext.language.presentation.resource.sce.ui.SceOutlinePageTreeViewerComparator getTreeViewerComparator() {
+		return (org.emftext.language.presentation.resource.sce.ui.SceOutlinePageTreeViewerComparator) treeViewer.getComparator();
 	}
 	
 }

@@ -4,13 +4,13 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * Helper class to add markers to text files based on EMF's
  * <code>org.eclipse.emf.ecore.resource.Resource.Diagnostic</code>. If a resource
  * contains
- * <code>org.emftext.language.Presentation.resource.sce.ISceTextDiagnostic</code>s
+ * <code>org.emftext.language.presentation.resource.sce.ISceTextDiagnostic</code>s
  * it uses the more precise information of this extended diagnostic type.
  */
 public class SceMarkerHelper {
@@ -18,7 +18,7 @@ public class SceMarkerHelper {
 	/**
 	 * The extension id of the custom marker type that is used by this text resource.
 	 */
-	public static final String MARKER_TYPE = org.emftext.language.Presentation.resource.sce.mopp.ScePlugin.PLUGIN_ID + ".problem";
+	public static final String MARKER_TYPE = org.emftext.language.presentation.resource.sce.mopp.ScePlugin.PLUGIN_ID + ".problem";
 	
 	/**
 	 * The total number of markers per file is restricted with this constant.
@@ -48,11 +48,11 @@ public class SceMarkerHelper {
 	
 	private static class MarkerCommandQueue {
 		
-		private java.util.List<org.emftext.language.Presentation.resource.sce.ISceCommand<Object>> commands = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ISceCommand<Object>>();
+		private java.util.List<org.emftext.language.presentation.resource.sce.ISceCommand<Object>> commands = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ISceCommand<Object>>();
 		
 		private MutexRule schedulingRule = new MutexRule();
 		
-		public void addCommand(org.emftext.language.Presentation.resource.sce.ISceCommand<Object> command) {
+		public void addCommand(org.emftext.language.presentation.resource.sce.ISceCommand<Object> command) {
 			synchronized(commands) {
 				commands.add(command);
 				// we only need to schedule a job, if the queue was empty
@@ -75,12 +75,12 @@ public class SceMarkerHelper {
 		}
 		
 		public void runCommands() {
-			java.util.List<org.emftext.language.Presentation.resource.sce.ISceCommand<Object>> commandsToProcess = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ISceCommand<Object>>();
+			java.util.List<org.emftext.language.presentation.resource.sce.ISceCommand<Object>> commandsToProcess = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ISceCommand<Object>>();
 			synchronized(commands) {
 				commandsToProcess.addAll(commands);
 				commands.clear();
 			}
-			for (org.emftext.language.Presentation.resource.sce.ISceCommand<Object> command : commandsToProcess) {
+			for (org.emftext.language.presentation.resource.sce.ISceCommand<Object> command : commandsToProcess) {
 				command.execute(null);
 			}
 		}
@@ -96,7 +96,7 @@ public class SceMarkerHelper {
 	 * @param resource The resource that is the file to mark.
 	 * @param diagnostic The diagnostic with information for the marker.
 	 */
-	public void mark(org.eclipse.emf.ecore.resource.Resource resource, org.emftext.language.Presentation.resource.sce.ISceTextDiagnostic diagnostic) {
+	public void mark(org.eclipse.emf.ecore.resource.Resource resource, org.emftext.language.presentation.resource.sce.ISceTextDiagnostic diagnostic) {
 		final org.eclipse.core.resources.IFile file = getFile(resource);
 		if (file == null) {
 			return;
@@ -104,11 +104,11 @@ public class SceMarkerHelper {
 		createMarkerFromDiagnostic(file, diagnostic);
 	}
 	
-	protected void createMarkerFromDiagnostic(final org.eclipse.core.resources.IFile file, final org.emftext.language.Presentation.resource.sce.ISceTextDiagnostic diagnostic) {
-		final org.emftext.language.Presentation.resource.sce.ISceProblem problem = diagnostic.getProblem();
-		org.emftext.language.Presentation.resource.sce.SceEProblemType problemType = problem.getType();
+	protected void createMarkerFromDiagnostic(final org.eclipse.core.resources.IFile file, final org.emftext.language.presentation.resource.sce.ISceTextDiagnostic diagnostic) {
+		final org.emftext.language.presentation.resource.sce.ISceProblem problem = diagnostic.getProblem();
+		org.emftext.language.presentation.resource.sce.SceEProblemType problemType = problem.getType();
 		final String markerID = getMarkerID(problemType);
-		COMMAND_QUEUE.addCommand(new org.emftext.language.Presentation.resource.sce.ISceCommand<Object>() {
+		COMMAND_QUEUE.addCommand(new org.emftext.language.presentation.resource.sce.ISceCommand<Object>() {
 			public boolean execute(Object context) {
 				try {
 					// if there are too many markers, we do not add new ones
@@ -117,34 +117,34 @@ public class SceMarkerHelper {
 					}
 					
 					org.eclipse.core.resources.IMarker marker = file.createMarker(markerID);
-					if (problem.getSeverity() == org.emftext.language.Presentation.resource.sce.SceEProblemSeverity.ERROR) {
+					if (problem.getSeverity() == org.emftext.language.presentation.resource.sce.SceEProblemSeverity.ERROR) {
 						marker.setAttribute(org.eclipse.core.resources.IMarker.SEVERITY, org.eclipse.core.resources.IMarker.SEVERITY_ERROR);
 					} else {
 						marker.setAttribute(org.eclipse.core.resources.IMarker.SEVERITY, org.eclipse.core.resources.IMarker.SEVERITY_WARNING);
 					}
 					marker.setAttribute(org.eclipse.core.resources.IMarker.MESSAGE, diagnostic.getMessage());
-					org.emftext.language.Presentation.resource.sce.ISceTextDiagnostic textDiagnostic = (org.emftext.language.Presentation.resource.sce.ISceTextDiagnostic) diagnostic;
+					org.emftext.language.presentation.resource.sce.ISceTextDiagnostic textDiagnostic = (org.emftext.language.presentation.resource.sce.ISceTextDiagnostic) diagnostic;
 					marker.setAttribute(org.eclipse.core.resources.IMarker.LINE_NUMBER, textDiagnostic.getLine());
 					marker.setAttribute(org.eclipse.core.resources.IMarker.CHAR_START, textDiagnostic.getCharStart());
 					marker.setAttribute(org.eclipse.core.resources.IMarker.CHAR_END, textDiagnostic.getCharEnd() + 1);
-					if (diagnostic instanceof org.emftext.language.Presentation.resource.sce.mopp.SceResource.ElementBasedTextDiagnostic) {
-						org.eclipse.emf.ecore.EObject element = ((org.emftext.language.Presentation.resource.sce.mopp.SceResource.ElementBasedTextDiagnostic) diagnostic).getElement();
+					if (diagnostic instanceof org.emftext.language.presentation.resource.sce.mopp.SceResource.ElementBasedTextDiagnostic) {
+						org.eclipse.emf.ecore.EObject element = ((org.emftext.language.presentation.resource.sce.mopp.SceResource.ElementBasedTextDiagnostic) diagnostic).getElement();
 						String elementURI = getObjectURI(element);
 						if (elementURI != null) {
 							marker.setAttribute(org.eclipse.emf.ecore.util.EcoreValidator.URI_ATTRIBUTE, elementURI);
 						}
 					}
-					java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceQuickFix> quickFixes = textDiagnostic.getProblem().getQuickFixes();
+					java.util.Collection<org.emftext.language.presentation.resource.sce.ISceQuickFix> quickFixes = textDiagnostic.getProblem().getQuickFixes();
 					java.util.Collection<Object> sourceIDs = new java.util.ArrayList<Object>();
 					if (quickFixes != null) {
-						for (org.emftext.language.Presentation.resource.sce.ISceQuickFix quickFix : quickFixes) {
+						for (org.emftext.language.presentation.resource.sce.ISceQuickFix quickFix : quickFixes) {
 							if (quickFix != null) {
 								sourceIDs.add(quickFix.getContextAsString());
 							}
 						}
 					}
 					if (!sourceIDs.isEmpty()) {
-						marker.setAttribute(org.eclipse.core.resources.IMarker.SOURCE_ID, org.emftext.language.Presentation.resource.sce.util.SceStringUtil.explode(sourceIDs, "|"));
+						marker.setAttribute(org.eclipse.core.resources.IMarker.SOURCE_ID, org.emftext.language.presentation.resource.sce.util.SceStringUtil.explode(sourceIDs, "|"));
 					}
 				} catch (org.eclipse.core.runtime.CoreException ce) {
 					handleException(ce);
@@ -163,7 +163,7 @@ public class SceMarkerHelper {
 	 * @param resource The resource where to delete markers from
 	 */
 	public void unmark(org.eclipse.emf.ecore.resource.Resource resource) {
-		for (org.emftext.language.Presentation.resource.sce.SceEProblemType nextType : org.emftext.language.Presentation.resource.sce.SceEProblemType.values()) {
+		for (org.emftext.language.presentation.resource.sce.SceEProblemType nextType : org.emftext.language.presentation.resource.sce.SceEProblemType.values()) {
 			unmark(resource, nextType);
 		}
 	}
@@ -177,13 +177,13 @@ public class SceMarkerHelper {
 	 * @param resource The resource where to delete markers from
 	 * @param problemType The type of problem to remove
 	 */
-	public void unmark(org.eclipse.emf.ecore.resource.Resource resource, org.emftext.language.Presentation.resource.sce.SceEProblemType problemType) {
+	public void unmark(org.eclipse.emf.ecore.resource.Resource resource, org.emftext.language.presentation.resource.sce.SceEProblemType problemType) {
 		final org.eclipse.core.resources.IFile file = getFile(resource);
 		if (file == null) {
 			return;
 		}
 		final String markerType = getMarkerID(problemType);
-		COMMAND_QUEUE.addCommand(new org.emftext.language.Presentation.resource.sce.ISceCommand<Object>() {
+		COMMAND_QUEUE.addCommand(new org.emftext.language.presentation.resource.sce.ISceCommand<Object>() {
 			public boolean execute(Object context) {
 				try {
 					file.deleteMarkers(markerType, false, org.eclipse.core.resources.IResource.DEPTH_ZERO);
@@ -209,12 +209,12 @@ public class SceMarkerHelper {
 		if (file == null) {
 			return;
 		}
-		final String markerID = getMarkerID(org.emftext.language.Presentation.resource.sce.SceEProblemType.UNKNOWN);
+		final String markerID = getMarkerID(org.emftext.language.presentation.resource.sce.SceEProblemType.UNKNOWN);
 		final String causingObjectURI = getObjectURI(causingObject);
 		if (causingObjectURI == null) {
 			return;
 		}
-		COMMAND_QUEUE.addCommand(new org.emftext.language.Presentation.resource.sce.ISceCommand<Object>() {
+		COMMAND_QUEUE.addCommand(new org.emftext.language.presentation.resource.sce.ISceCommand<Object>() {
 			public boolean execute(Object context) {
 				try {
 					org.eclipse.core.resources.IMarker[] markers = file.findMarkers(markerID, true, org.eclipse.core.resources.IResource.DEPTH_ZERO);
@@ -235,7 +235,7 @@ public class SceMarkerHelper {
 	 * Returns the ID of the marker type that is used to indicate problems of the
 	 * given type.
 	 */
-	public String getMarkerID(org.emftext.language.Presentation.resource.sce.SceEProblemType problemType) {
+	public String getMarkerID(org.emftext.language.presentation.resource.sce.SceEProblemType problemType) {
 		String markerID = MARKER_TYPE;
 		String typeID = problemType.getID();
 		if (!"".equals(typeID)) {
@@ -284,7 +284,7 @@ public class SceMarkerHelper {
 		}else if (ce.getMessage().matches("Resource.*does not exist.")) {
 			// ignore
 		} else {
-			new org.emftext.language.Presentation.resource.sce.util.SceRuntimeUtil().logError("Error while removing markers from resource:", ce);
+			new org.emftext.language.presentation.resource.sce.util.SceRuntimeUtil().logError("Error while removing markers from resource:", ce);
 		}
 	}
 	
@@ -301,7 +301,7 @@ public class SceMarkerHelper {
 		if (resource == null) {
 			return;
 		}
-		COMMAND_QUEUE.addCommand(new org.emftext.language.Presentation.resource.sce.ISceCommand<Object>() {
+		COMMAND_QUEUE.addCommand(new org.emftext.language.presentation.resource.sce.ISceCommand<Object>() {
 			public boolean execute(Object context) {
 				try {
 					resource.deleteMarkers(markerId, false, org.eclipse.core.resources.IResource.DEPTH_ZERO);
@@ -318,7 +318,7 @@ public class SceMarkerHelper {
 			return;
 		}
 		
-		COMMAND_QUEUE.addCommand(new org.emftext.language.Presentation.resource.sce.ISceCommand<Object>() {
+		COMMAND_QUEUE.addCommand(new org.emftext.language.presentation.resource.sce.ISceCommand<Object>() {
 			public boolean execute(Object context) {
 				try {
 					org.eclipse.core.resources.IMarker marker = resource.createMarker(markerId);
@@ -327,7 +327,7 @@ public class SceMarkerHelper {
 					}
 					return true;
 				} catch (org.eclipse.core.runtime.CoreException e) {
-					org.emftext.language.Presentation.resource.sce.mopp.ScePlugin.logError("Can't create marker.", e);
+					org.emftext.language.presentation.resource.sce.mopp.ScePlugin.logError("Can't create marker.", e);
 					return false;
 				}
 			}

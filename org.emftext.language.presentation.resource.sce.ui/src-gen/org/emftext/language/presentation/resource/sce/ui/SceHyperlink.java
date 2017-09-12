@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 /**
  * A hyperlink for the proxy elements in source code.
@@ -76,7 +76,7 @@ public class SceHyperlink implements org.eclipse.jface.text.hyperlink.IHyperlink
 					}
 				}
 			} catch (org.eclipse.ui.PartInitException e) {
-				org.emftext.language.Presentation.resource.sce.mopp.ScePlugin.logError("Exception while opening hyperlink target.", e);
+				org.emftext.language.presentation.resource.sce.mopp.ScePlugin.logError("Exception while opening hyperlink target.", e);
 			}
 		}
 	}

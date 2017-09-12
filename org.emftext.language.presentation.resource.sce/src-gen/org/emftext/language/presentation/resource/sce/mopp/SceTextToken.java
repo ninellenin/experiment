@@ -4,9 +4,9 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
-public class SceTextToken implements org.emftext.language.Presentation.resource.sce.ISceTextToken {
+public class SceTextToken implements org.emftext.language.presentation.resource.sce.ISceTextToken {
 	
 	private String name;
 	

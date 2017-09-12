@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * Standard implementation of <code>IContextDependentURIFragment</code>.
@@ -14,14 +14,14 @@ package org.emftext.language.Presentation.resource.sce.mopp;
  * @param <ReferenceType> the type of the reference which shall be resolved by
  * this fragment.
  */
-public abstract class SceContextDependentURIFragment<ContainerType extends org.eclipse.emf.ecore.EObject, ReferenceType extends org.eclipse.emf.ecore.EObject> implements org.emftext.language.Presentation.resource.sce.ISceContextDependentURIFragment<ReferenceType> {
+public abstract class SceContextDependentURIFragment<ContainerType extends org.eclipse.emf.ecore.EObject, ReferenceType extends org.eclipse.emf.ecore.EObject> implements org.emftext.language.presentation.resource.sce.ISceContextDependentURIFragment<ReferenceType> {
 	
 	protected String identifier;
 	protected ContainerType container;
 	protected org.eclipse.emf.ecore.EReference reference;
 	protected int positionInReference;
 	protected org.eclipse.emf.ecore.EObject proxy;
-	protected org.emftext.language.Presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> result;
+	protected org.emftext.language.presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> result;
 	
 	private boolean resolving;
 	
@@ -37,17 +37,17 @@ public abstract class SceContextDependentURIFragment<ContainerType extends org.e
 		return result != null;
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> resolve() {
+	public org.emftext.language.presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> resolve() {
 		if (resolving) {
 			return null;
 		}
 		resolving = true;
 		if (result == null || !result.wasResolved()) {
-			result = new org.emftext.language.Presentation.resource.sce.mopp.SceReferenceResolveResult<ReferenceType>(false);
+			result = new org.emftext.language.presentation.resource.sce.mopp.SceReferenceResolveResult<ReferenceType>(false);
 			// set an initial default error message
 			result.setErrorMessage(getStdErrorMessage());
 			
-			org.emftext.language.Presentation.resource.sce.ISceReferenceResolver<ContainerType, ReferenceType> resolver = getResolver();
+			org.emftext.language.presentation.resource.sce.ISceReferenceResolver<ContainerType, ReferenceType> resolver = getResolver();
 			// do the actual resolving
 			resolver.resolve(getIdentifier(), getContainer(), getReference(), getPositionInReference(), false, result);
 			
@@ -61,36 +61,36 @@ public abstract class SceContextDependentURIFragment<ContainerType extends org.e
 		return result;
 	}
 	
-	public abstract org.emftext.language.Presentation.resource.sce.ISceReferenceResolver<ContainerType, ReferenceType> getResolver();
+	public abstract org.emftext.language.presentation.resource.sce.ISceReferenceResolver<ContainerType, ReferenceType> getResolver();
 	
 	private void handleMultipleResults() {
 		org.eclipse.emf.common.util.EList<org.eclipse.emf.ecore.EObject> list = null;
 		Object temp = container.eGet(reference);
 		if (temp instanceof org.eclipse.emf.common.util.EList<?>) {
-			list = org.emftext.language.Presentation.resource.sce.util.SceCastUtil.cast(temp);
+			list = org.emftext.language.presentation.resource.sce.util.SceCastUtil.cast(temp);
 		}
 		
 		boolean first = true;
-		for (org.emftext.language.Presentation.resource.sce.ISceReferenceMapping<ReferenceType> mapping : result.getMappings()) {
+		for (org.emftext.language.presentation.resource.sce.ISceReferenceMapping<ReferenceType> mapping : result.getMappings()) {
 			if (first) {
 				first = false;
 			} else if (list != null) {
 				addResultToList(mapping, proxy, list);
 			} else {
-				new org.emftext.language.Presentation.resource.sce.util.SceRuntimeUtil().logError(container.eClass().getName() + "." + reference.getName() + " has multiplicity 1 but was resolved to multiple elements", null);
+				new org.emftext.language.presentation.resource.sce.util.SceRuntimeUtil().logError(container.eClass().getName() + "." + reference.getName() + " has multiplicity 1 but was resolved to multiple elements", null);
 			}
 		}
 	}
 	
-	private void addResultToList(org.emftext.language.Presentation.resource.sce.ISceReferenceMapping<ReferenceType> mapping, org.eclipse.emf.ecore.EObject proxy, org.eclipse.emf.common.util.EList<org.eclipse.emf.ecore.EObject> list) {
+	private void addResultToList(org.emftext.language.presentation.resource.sce.ISceReferenceMapping<ReferenceType> mapping, org.eclipse.emf.ecore.EObject proxy, org.eclipse.emf.common.util.EList<org.eclipse.emf.ecore.EObject> list) {
 		org.eclipse.emf.ecore.EObject target = null;
 		int proxyPosition = list.indexOf(proxy);
 		
-		if (mapping instanceof org.emftext.language.Presentation.resource.sce.ISceElementMapping<?>) {
-			target = ((org.emftext.language.Presentation.resource.sce.ISceElementMapping<ReferenceType>) mapping).getTargetElement();
-		} else if (mapping instanceof org.emftext.language.Presentation.resource.sce.ISceURIMapping<?>) {
+		if (mapping instanceof org.emftext.language.presentation.resource.sce.ISceElementMapping<?>) {
+			target = ((org.emftext.language.presentation.resource.sce.ISceElementMapping<ReferenceType>) mapping).getTargetElement();
+		} else if (mapping instanceof org.emftext.language.presentation.resource.sce.ISceURIMapping<?>) {
 			target = org.eclipse.emf.ecore.util.EcoreUtil.copy(proxy);
-			org.eclipse.emf.common.util.URI uri = ((org.emftext.language.Presentation.resource.sce.ISceURIMapping<ReferenceType>) mapping).getTargetIdentifier();
+			org.eclipse.emf.common.util.URI uri = ((org.emftext.language.presentation.resource.sce.ISceURIMapping<ReferenceType>) mapping).getTargetIdentifier();
 			((org.eclipse.emf.ecore.InternalEObject) target).eSetProxyURI(uri);
 		} else {
 			assert false;

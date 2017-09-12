@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 public class SceResourceFactoryDelegator implements org.eclipse.emf.ecore.resource.Resource.Factory {
 	
@@ -18,11 +18,11 @@ public class SceResourceFactoryDelegator implements org.eclipse.emf.ecore.resour
 		if (factories == null) {
 			factories = new java.util.LinkedHashMap<String, org.eclipse.emf.ecore.resource.Resource.Factory>();
 		}
-		if (new org.emftext.language.Presentation.resource.sce.util.SceRuntimeUtil().isEclipsePlatformAvailable()) {
-			new org.emftext.language.Presentation.resource.sce.util.SceEclipseProxy().getResourceFactoryExtensions(factories);
+		if (new org.emftext.language.presentation.resource.sce.util.SceRuntimeUtil().isEclipsePlatformAvailable()) {
+			new org.emftext.language.presentation.resource.sce.util.SceEclipseProxy().getResourceFactoryExtensions(factories);
 		}
 		if (factories.get("") == null) {
-			factories.put("", new org.emftext.language.Presentation.resource.sce.mopp.SceResourceFactory());
+			factories.put("", new org.emftext.language.presentation.resource.sce.mopp.SceResourceFactory());
 		}
 	}
 	

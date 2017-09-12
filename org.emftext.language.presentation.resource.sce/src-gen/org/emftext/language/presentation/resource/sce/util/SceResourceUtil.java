@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.util;
+package org.emftext.language.presentation.resource.sce.util;
 
 /**
  * Class ResourceUtil can be used to perform common tasks on resources, such as
@@ -20,7 +20,7 @@ public class SceResourceUtil {
 	 * @return all proxy objects that are not resolvable
 	 */
 	public static java.util.Set<org.eclipse.emf.ecore.EObject> findUnresolvedProxies(org.eclipse.emf.ecore.resource.ResourceSet resourceSet) {
-		return new org.emftext.language.Presentation.resource.sce.util.SceInterruptibleEcoreResolver().findUnresolvedProxies(resourceSet);
+		return new org.emftext.language.presentation.resource.sce.util.SceInterruptibleEcoreResolver().findUnresolvedProxies(resourceSet);
 	}
 	
 	/**
@@ -31,7 +31,7 @@ public class SceResourceUtil {
 	 * @return all proxy objects that are not resolvable
 	 */
 	public static java.util.Set<org.eclipse.emf.ecore.EObject> findUnresolvedProxies(org.eclipse.emf.ecore.resource.Resource resource) {
-		return new org.emftext.language.Presentation.resource.sce.util.SceInterruptibleEcoreResolver().findUnresolvedProxies(resource);
+		return new org.emftext.language.presentation.resource.sce.util.SceInterruptibleEcoreResolver().findUnresolvedProxies(resource);
 	}
 	
 	/**
@@ -60,8 +60,8 @@ public class SceResourceUtil {
 				deresolvedReference = ((org.eclipse.emf.ecore.InternalEObject) eObjectToDeResolve).eProxyURI().fragment();
 				// If the proxy was created by EMFText, we can try to recover the identifier from
 				// the proxy URI
-				if (deresolvedReference != null && deresolvedReference.startsWith(org.emftext.language.Presentation.resource.sce.ISceContextDependentURIFragment.INTERNAL_URI_FRAGMENT_PREFIX)) {
-					deresolvedReference = deresolvedReference.substring(org.emftext.language.Presentation.resource.sce.ISceContextDependentURIFragment.INTERNAL_URI_FRAGMENT_PREFIX.length());
+				if (deresolvedReference != null && deresolvedReference.startsWith(org.emftext.language.presentation.resource.sce.ISceContextDependentURIFragment.INTERNAL_URI_FRAGMENT_PREFIX)) {
+					deresolvedReference = deresolvedReference.substring(org.emftext.language.presentation.resource.sce.ISceContextDependentURIFragment.INTERNAL_URI_FRAGMENT_PREFIX.length());
 					deresolvedReference = deresolvedReference.substring(deresolvedReference.indexOf("_") + 1);
 				}
 			}
@@ -69,33 +69,33 @@ public class SceResourceUtil {
 		return deresolvedReference;
 	}
 	
-	public static org.emftext.language.Presentation.resource.sce.mopp.SceResource getResource(java.io.File file) {
+	public static org.emftext.language.presentation.resource.sce.mopp.SceResource getResource(java.io.File file) {
 		return getResource(file, null);
 	}
 	
-	public static org.emftext.language.Presentation.resource.sce.mopp.SceResource getResource(java.io.File file, java.util.Map<?,?> options) {
+	public static org.emftext.language.presentation.resource.sce.mopp.SceResource getResource(java.io.File file, java.util.Map<?,?> options) {
 		return getResource(org.eclipse.emf.common.util.URI.createFileURI(file.getAbsolutePath()), options);
 	}
 	
-	public static org.emftext.language.Presentation.resource.sce.mopp.SceResource getResource(org.eclipse.emf.common.util.URI uri) {
+	public static org.emftext.language.presentation.resource.sce.mopp.SceResource getResource(org.eclipse.emf.common.util.URI uri) {
 		return getResource(uri, null);
 	}
 	
-	public static org.emftext.language.Presentation.resource.sce.mopp.SceResource getResource(org.eclipse.emf.common.util.URI uri, java.util.Map<?,?> options) {
-		new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation().registerResourceFactory();
+	public static org.emftext.language.presentation.resource.sce.mopp.SceResource getResource(org.eclipse.emf.common.util.URI uri, java.util.Map<?,?> options) {
+		new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation().registerResourceFactory();
 		org.eclipse.emf.ecore.resource.ResourceSet rs = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
 		if (options != null) {
 			rs.getLoadOptions().putAll(options);
 		}
 		org.eclipse.emf.ecore.resource.Resource resource = rs.getResource(uri, true);
-		return (org.emftext.language.Presentation.resource.sce.mopp.SceResource) resource;
+		return (org.emftext.language.presentation.resource.sce.mopp.SceResource) resource;
 	}
 	
 	/**
 	 * Returns the resource after parsing the given text.
 	 */
 	public static org.eclipse.emf.ecore.resource.Resource getResource(String text) {
-		org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation metaInformation = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation();
+		org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation metaInformation = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation();
 		metaInformation.registerResourceFactory();
 		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI("temp." + metaInformation.getSyntaxName());
 		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
@@ -115,14 +115,14 @@ public class SceResourceUtil {
 	/**
 	 * Returns the root element of the resource with the given URI.
 	 */
-	public static org.emftext.language.Presentation.Scenario getResourceContent(org.eclipse.emf.common.util.URI uri) {
+	public static org.emftext.language.presentation.scenario.Scenario getResourceContent(org.eclipse.emf.common.util.URI uri) {
 		return getResourceContent(uri, null);
 	}
 	
 	/**
 	 * Returns the root element of the resource with the given URI.
 	 */
-	public static org.emftext.language.Presentation.Scenario getResourceContent(org.eclipse.emf.common.util.URI uri, java.util.Map<?,?> options) {
+	public static org.emftext.language.presentation.scenario.Scenario getResourceContent(org.eclipse.emf.common.util.URI uri, java.util.Map<?,?> options) {
 		org.eclipse.emf.ecore.resource.Resource resource = getResource(uri, options);
 		if (resource == null) {
 			return null;
@@ -132,13 +132,13 @@ public class SceResourceUtil {
 			return null;
 		}
 		org.eclipse.emf.ecore.EObject root = contents.get(0);
-		return (org.emftext.language.Presentation.Scenario) root;
+		return (org.emftext.language.presentation.scenario.Scenario) root;
 	}
 	
 	/**
 	 * Returns the root element after parsing the given text.
 	 */
-	public static org.emftext.language.Presentation.Scenario getResourceContent(String text) {
+	public static org.emftext.language.presentation.scenario.Scenario getResourceContent(String text) {
 		org.eclipse.emf.ecore.resource.Resource resource = getResource(text);
 		if (resource == null) {
 			return null;
@@ -148,7 +148,7 @@ public class SceResourceUtil {
 			return null;
 		}
 		org.eclipse.emf.ecore.EObject root = contents.get(0);
-		return (org.emftext.language.Presentation.Scenario) root;
+		return (org.emftext.language.presentation.scenario.Scenario) root;
 	}
 	
 	public static void saveResource(java.io.File file, org.eclipse.emf.ecore.resource.Resource resource) throws java.io.IOException {
@@ -159,10 +159,10 @@ public class SceResourceUtil {
 	}
 	
 	public static String getText(org.eclipse.emf.ecore.EObject eObject) {
-		org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation metaInformation = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation();
+		org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation metaInformation = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation();
 		metaInformation.registerResourceFactory();
 		org.eclipse.emf.ecore.resource.ResourceSet rs = null;
-		org.emftext.language.Presentation.resource.sce.ISceTextResource resource = (org.emftext.language.Presentation.resource.sce.ISceTextResource) eObject.eResource();
+		org.emftext.language.presentation.resource.sce.ISceTextResource resource = (org.emftext.language.presentation.resource.sce.ISceTextResource) eObject.eResource();
 		if (resource != null) {
 			rs = resource.getResourceSet();
 		}
@@ -171,10 +171,10 @@ public class SceResourceUtil {
 		}
 		if (resource == null) {
 			org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI("temp." + metaInformation.getSyntaxName());
-			resource = (org.emftext.language.Presentation.resource.sce.ISceTextResource) rs.createResource(uri);
+			resource = (org.emftext.language.presentation.resource.sce.ISceTextResource) rs.createResource(uri);
 		}
 		java.io.ByteArrayOutputStream outputStream = new java.io.ByteArrayOutputStream();
-		org.emftext.language.Presentation.resource.sce.ISceTextPrinter printer = metaInformation.createPrinter(outputStream, resource);
+		org.emftext.language.presentation.resource.sce.ISceTextPrinter printer = metaInformation.createPrinter(outputStream, resource);
 		try {
 			printer.print(eObject);
 		} catch (java.io.IOException e) {

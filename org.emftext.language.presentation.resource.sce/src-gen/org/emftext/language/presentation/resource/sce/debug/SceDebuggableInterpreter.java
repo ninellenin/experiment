@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.debug;
+package org.emftext.language.presentation.resource.sce.debug;
 
 /**
  * A DebuggableInterpreter is a facade for interpreters that adds debug support.

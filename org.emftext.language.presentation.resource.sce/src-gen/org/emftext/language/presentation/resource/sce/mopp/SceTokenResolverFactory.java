@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * The SceTokenResolverFactory class provides access to all generated token
@@ -14,43 +14,43 @@ package org.emftext.language.Presentation.resource.sce.mopp;
  * resolver. Rather, this class maintains a map of all resolvers and creates each
  * resolver at most once.
  */
-public class SceTokenResolverFactory implements org.emftext.language.Presentation.resource.sce.ISceTokenResolverFactory {
+public class SceTokenResolverFactory implements org.emftext.language.presentation.resource.sce.ISceTokenResolverFactory {
 	
-	private java.util.Map<String, org.emftext.language.Presentation.resource.sce.ISceTokenResolver> tokenName2TokenResolver;
-	private java.util.Map<String, org.emftext.language.Presentation.resource.sce.ISceTokenResolver> featureName2CollectInTokenResolver;
-	private static org.emftext.language.Presentation.resource.sce.ISceTokenResolver defaultResolver = new org.emftext.language.Presentation.resource.sce.analysis.SceDefaultTokenResolver();
+	private java.util.Map<String, org.emftext.language.presentation.resource.sce.ISceTokenResolver> tokenName2TokenResolver;
+	private java.util.Map<String, org.emftext.language.presentation.resource.sce.ISceTokenResolver> featureName2CollectInTokenResolver;
+	private static org.emftext.language.presentation.resource.sce.ISceTokenResolver defaultResolver = new org.emftext.language.presentation.resource.sce.analysis.SceDefaultTokenResolver();
 	
 	public SceTokenResolverFactory() {
-		tokenName2TokenResolver = new java.util.LinkedHashMap<String, org.emftext.language.Presentation.resource.sce.ISceTokenResolver>();
-		featureName2CollectInTokenResolver = new java.util.LinkedHashMap<String, org.emftext.language.Presentation.resource.sce.ISceTokenResolver>();
-		registerTokenResolver("SIGNED_INTEGER", new org.emftext.language.Presentation.resource.sce.analysis.SceSIGNED_INTEGERTokenResolver());
-		registerTokenResolver("BOOLEAN", new org.emftext.language.Presentation.resource.sce.analysis.SceBOOLEANTokenResolver());
-		registerTokenResolver("QUOTED_NAME", new org.emftext.language.Presentation.resource.sce.analysis.SceQUOTED_NAMETokenResolver());
-		registerTokenResolver("VAR_NAME", new org.emftext.language.Presentation.resource.sce.analysis.SceVAR_NAMETokenResolver());
-		registerTokenResolver("QUOTED_TEXT", new org.emftext.language.Presentation.resource.sce.analysis.SceQUOTED_TEXTTokenResolver());
+		tokenName2TokenResolver = new java.util.LinkedHashMap<String, org.emftext.language.presentation.resource.sce.ISceTokenResolver>();
+		featureName2CollectInTokenResolver = new java.util.LinkedHashMap<String, org.emftext.language.presentation.resource.sce.ISceTokenResolver>();
+		registerTokenResolver("SIGNED_INTEGER", new org.emftext.language.presentation.resource.sce.analysis.SceSIGNED_INTEGERTokenResolver());
+		registerTokenResolver("BOOLEAN", new org.emftext.language.presentation.resource.sce.analysis.SceBOOLEANTokenResolver());
+		registerTokenResolver("QUOTED_NAME", new org.emftext.language.presentation.resource.sce.analysis.SceQUOTED_NAMETokenResolver());
+		registerTokenResolver("VAR_NAME", new org.emftext.language.presentation.resource.sce.analysis.SceVAR_NAMETokenResolver());
+		registerTokenResolver("QUOTED_TEXT", new org.emftext.language.presentation.resource.sce.analysis.SceQUOTED_TEXTTokenResolver());
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ISceTokenResolver createTokenResolver(String tokenName) {
+	public org.emftext.language.presentation.resource.sce.ISceTokenResolver createTokenResolver(String tokenName) {
 		return internalCreateResolver(tokenName2TokenResolver, tokenName);
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ISceTokenResolver createCollectInTokenResolver(String featureName) {
+	public org.emftext.language.presentation.resource.sce.ISceTokenResolver createCollectInTokenResolver(String featureName) {
 		return internalCreateResolver(featureName2CollectInTokenResolver, featureName);
 	}
 	
-	protected boolean registerTokenResolver(String tokenName, org.emftext.language.Presentation.resource.sce.ISceTokenResolver resolver){
+	protected boolean registerTokenResolver(String tokenName, org.emftext.language.presentation.resource.sce.ISceTokenResolver resolver){
 		return internalRegisterTokenResolver(tokenName2TokenResolver, tokenName, resolver);
 	}
 	
-	protected boolean registerCollectInTokenResolver(String featureName, org.emftext.language.Presentation.resource.sce.ISceTokenResolver resolver){
+	protected boolean registerCollectInTokenResolver(String featureName, org.emftext.language.presentation.resource.sce.ISceTokenResolver resolver){
 		return internalRegisterTokenResolver(featureName2CollectInTokenResolver, featureName, resolver);
 	}
 	
-	protected org.emftext.language.Presentation.resource.sce.ISceTokenResolver deRegisterTokenResolver(String tokenName){
+	protected org.emftext.language.presentation.resource.sce.ISceTokenResolver deRegisterTokenResolver(String tokenName){
 		return tokenName2TokenResolver.remove(tokenName);
 	}
 	
-	private org.emftext.language.Presentation.resource.sce.ISceTokenResolver internalCreateResolver(java.util.Map<String, org.emftext.language.Presentation.resource.sce.ISceTokenResolver> resolverMap, String key) {
+	private org.emftext.language.presentation.resource.sce.ISceTokenResolver internalCreateResolver(java.util.Map<String, org.emftext.language.presentation.resource.sce.ISceTokenResolver> resolverMap, String key) {
 		if (resolverMap.containsKey(key)){
 			return resolverMap.get(key);
 		} else {
@@ -58,7 +58,7 @@ public class SceTokenResolverFactory implements org.emftext.language.Presentatio
 		}
 	}
 	
-	private boolean internalRegisterTokenResolver(java.util.Map<String, org.emftext.language.Presentation.resource.sce.ISceTokenResolver> resolverMap, String key, org.emftext.language.Presentation.resource.sce.ISceTokenResolver resolver) {
+	private boolean internalRegisterTokenResolver(java.util.Map<String, org.emftext.language.presentation.resource.sce.ISceTokenResolver> resolverMap, String key, org.emftext.language.presentation.resource.sce.ISceTokenResolver resolver) {
 		if (!resolverMap.containsKey(key)) {
 			resolverMap.put(key,resolver);
 			return true;

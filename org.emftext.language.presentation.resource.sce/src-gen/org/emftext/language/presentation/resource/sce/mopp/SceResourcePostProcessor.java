@@ -4,11 +4,11 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
-public class SceResourcePostProcessor implements org.emftext.language.Presentation.resource.sce.ISceResourcePostProcessor {
+public class SceResourcePostProcessor implements org.emftext.language.presentation.resource.sce.ISceResourcePostProcessor {
 	
-	public void process(org.emftext.language.Presentation.resource.sce.mopp.SceResource resource) {
+	public void process(org.emftext.language.presentation.resource.sce.mopp.SceResource resource) {
 		// Set the overrideResourcePostProcessor option to false to customize resource
 		// post processing.
 	}

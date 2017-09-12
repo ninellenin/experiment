@@ -4,16 +4,16 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce;
+package org.emftext.language.presentation.resource.sce;
 
 /**
  * Implementors of this interface map identifiers to URIs. This is sometimes
  * necessary when resolving references depends on the resolution of others.
  * 
  * @param <ReferenceType> unused type parameter which is needed to implement
- * org.emftext.language.Presentation.resource.sce.ISceReferenceMapping.
+ * org.emftext.language.presentation.resource.sce.ISceReferenceMapping.
  */
-public interface ISceURIMapping<ReferenceType> extends org.emftext.language.Presentation.resource.sce.ISceReferenceMapping<ReferenceType> {
+public interface ISceURIMapping<ReferenceType> extends org.emftext.language.presentation.resource.sce.ISceReferenceMapping<ReferenceType> {
 	
 	/**
 	 * Returns an alternative proxy URI that should follow EMF's default naming scheme

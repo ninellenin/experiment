@@ -1,3 +1,5 @@
+import "utils.etl";
+
 rule DocumentRoot2Scenario
 transform root: PyExperiment!DocumentRoot
 to scenario: Presentation!Scenario {
@@ -11,16 +13,7 @@ to scenario: Presentation!Scenario {
 rule Settings2Header 
  transform settings : PyExperiment!Settings
  to header : Presentation!Header {
-  
-  	for (param in settings.param) {
-		var parameter: Presentation!Parameter;
-		parameter ::= param;
-		if (parameter.isDefined()) {
-			header.parameter.add(parameter);
-  		} else {
-  			("Unknown parameter '" + param.name + "'.").println();
-  		}
-  }
+  	settings.param.transformParameters(header.parameter);
 }
 
 @lazy
@@ -84,21 +77,15 @@ rule ImageComponent2PictureStimulusEvent
 transform component: PyExperiment!Component
 to pictureStimulusEvent: Presentation!PictureStimulusEvent {
 guard: 	component.eContainingFeature().getName() = "imageComponent"
-	//component.println();
 	pictureStimulusEvent.name = component.name;
-	pictureStimulusEvent.picture = new Presentation!Picture;
-	var bitmapStimulus = new Presentation!BitmapStimulus;
-	var bitmap = new Presentation!Bitmap;
-	bitmap.bitmap_parameters.add(new Presentation!FilenameParameter);
-	//bitmapStimulus.bitmap.filename_parameter ::= component.param[0];
-	//pictureStimulusEvent.picture.picture_part.add(bitmapStimulus);
+	var bitmapStimulus = pictureStimulusEvent.createBitmapStimulus();
+	//component.param.transformParameters(bitmap.bitmap_parameters);
 }
 
 @lazy
 rule Param2FilenameParameter
 transform parameter: PyExperiment!Param
 to fileName: Presentation!FilenameParameter {
-guard: parameter.name = "image" and parameter.type = PyExperiment!ValType#str
+guard: parameter.name = "image" //and parameter.type = PyExperiment!ValType#str
 	"Hello!".println();
 }
-

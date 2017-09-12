@@ -2,11 +2,11 @@
 <?eclipse version="3.2"?>
 <plugin>
 	<extension point="org.emftext.access.syntax">
-		<metaInformationProvider class="org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation" id="org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation">
+		<metaInformationProvider class="org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation" id="org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation">
 		</metaInformationProvider>
 	</extension>
 	
-	<extension id="org.emftext.language.Presentation.resource.sce.problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+	<extension id="org.emftext.language.presentation.resource.sce.problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
 		<persistent value="true">
 		</persistent>
 		<super type="org.eclipse.core.resources.problemmarker">
@@ -17,66 +17,66 @@
 		</super>
 	</extension>
 	
-	<extension id="org.emftext.language.Presentation.resource.sce.problem.syntax_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+	<extension id="org.emftext.language.presentation.resource.sce.problem.syntax_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
 		<persistent value="true">
 		</persistent>
-		<super type="org.emftext.language.Presentation.resource.sce.problem">
+		<super type="org.emftext.language.presentation.resource.sce.problem">
 		</super>
 	</extension>
 	
-	<extension id="org.emftext.language.Presentation.resource.sce.problem.print_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+	<extension id="org.emftext.language.presentation.resource.sce.problem.print_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
 		<persistent value="true">
 		</persistent>
-		<super type="org.emftext.language.Presentation.resource.sce.problem">
+		<super type="org.emftext.language.presentation.resource.sce.problem">
 		</super>
 	</extension>
 	
-	<extension id="org.emftext.language.Presentation.resource.sce.problem.unresolved_reference" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+	<extension id="org.emftext.language.presentation.resource.sce.problem.unresolved_reference" name="EMFText Problem" point="org.eclipse.core.resources.markers">
 		<persistent value="true">
 		</persistent>
-		<super type="org.emftext.language.Presentation.resource.sce.problem">
+		<super type="org.emftext.language.presentation.resource.sce.problem">
 		</super>
 	</extension>
 	
-	<extension id="org.emftext.language.Presentation.resource.sce.problem.analysis_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+	<extension id="org.emftext.language.presentation.resource.sce.problem.analysis_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
 		<persistent value="true">
 		</persistent>
-		<super type="org.emftext.language.Presentation.resource.sce.problem">
+		<super type="org.emftext.language.presentation.resource.sce.problem">
 		</super>
 	</extension>
 	
-	<extension id="org.emftext.language.Presentation.resource.sce.problem.builder_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+	<extension id="org.emftext.language.presentation.resource.sce.problem.builder_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
 		<persistent value="true">
 		</persistent>
-		<super type="org.emftext.language.Presentation.resource.sce.problem">
+		<super type="org.emftext.language.presentation.resource.sce.problem">
 		</super>
 	</extension>
 	
-	<extension id="org.emftext.language.Presentation.resource.sce.nature" name="sce nature" point="org.eclipse.core.resources.natures">
+	<extension id="org.emftext.language.presentation.resource.sce.nature" name="sce nature" point="org.eclipse.core.resources.natures">
 		<runtime>
-			<run class="org.emftext.language.Presentation.resource.sce.mopp.SceNature">
+			<run class="org.emftext.language.presentation.resource.sce.mopp.SceNature">
 			</run>
 		</runtime>
-		<builder id="org.emftext.language.Presentation.resource.sce.builder">
+		<builder id="org.emftext.language.presentation.resource.sce.builder">
 		</builder>
 	</extension>
 	
-	<extension point="org.eclipse.core.resources.builders" id="org.emftext.language.Presentation.resource.sce.builder" name="sce Builder">
+	<extension point="org.eclipse.core.resources.builders" id="org.emftext.language.presentation.resource.sce.builder" name="sce Builder">
 		<builder hasNature="true">
-			<run class="org.emftext.language.Presentation.resource.sce.mopp.SceBuilderAdapter">
+			<run class="org.emftext.language.presentation.resource.sce.mopp.SceBuilderAdapter">
 			</run>
 		</builder>
 	</extension>
 	
-	<extension-point id="org.emftext.language.Presentation.resource.sce.default_load_options" name="Default Load Options" schema="schema/default_load_options.exsd">
+	<extension-point id="org.emftext.language.presentation.resource.sce.default_load_options" name="Default Load Options" schema="schema/default_load_options.exsd">
 	</extension-point>
 	
 	<extension point="org.eclipse.emf.ecore.extension_parser">
-		<parser class="org.emftext.language.Presentation.resource.sce.mopp.SceResourceFactoryDelegator" type="sce">
+		<parser class="org.emftext.language.presentation.resource.sce.mopp.SceResourceFactoryDelegator" type="sce">
 		</parser>
 	</extension>
 	
-	<extension-point id="org.emftext.language.Presentation.resource.sce.additional_extension_parser" name="Additional Extension Parser" schema="schema/additional_extension_parser.exsd">
+	<extension-point id="org.emftext.language.presentation.resource.sce.additional_extension_parser" name="Additional Extension Parser" schema="schema/additional_extension_parser.exsd">
 	</extension-point>
 	
 </plugin>

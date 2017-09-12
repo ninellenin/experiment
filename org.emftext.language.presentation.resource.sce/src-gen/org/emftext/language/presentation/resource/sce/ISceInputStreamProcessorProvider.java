@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce;
+package org.emftext.language.presentation.resource.sce;
 
 /**
  * Implementors of this interface can provide InputStreamProcessors. These
@@ -21,5 +21,5 @@ public interface ISceInputStreamProcessorProvider {
 	 * 
 	 * @return a processor that pre-processes the input stream
 	 */
-	public org.emftext.language.Presentation.resource.sce.mopp.SceInputStreamProcessor getInputStreamProcessor(java.io.InputStream inputStream);
+	public org.emftext.language.presentation.resource.sce.mopp.SceInputStreamProcessor getInputStreamProcessor(java.io.InputStream inputStream);
 }

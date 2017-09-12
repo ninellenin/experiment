@@ -5,25 +5,7 @@
 	<projects>
 	</projects>
 	<buildSpec>
-		<buildCommand>
-			<name>org.emftext.language.presentation.resource.sce.builder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>org.emftext.language.presentation.resource.sce.nature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>out.xmi</name>
-			<type>1</type>
-			<location>C:/Users/Student_1/workspace/experiment/org.emftext.language.presentation/Test/out.model</location>
-		</link>
-		<link>
-			<name>output.xmi</name>
-			<type>1</type>
-			<location>C:/Users/Student_1/workspace/experiment/experiment/instances/out.model</location>
-		</link>
-	</linkedResources>
 </projectDescription>

@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.util;
+package org.emftext.language.presentation.resource.sce.util;
 
 /**
  * A UnicodeConverter can read an input stream and convert unicode escape
@@ -12,7 +12,7 @@ package org.emftext.language.Presentation.resource.sce.util;
  * unicode sequence (6 bytes) is replaced by the respective UTF-8 byte sequence (1
  * to 4 bytes).
  */
-public class SceUnicodeConverter extends org.emftext.language.Presentation.resource.sce.mopp.SceInputStreamProcessor {
+public class SceUnicodeConverter extends org.emftext.language.presentation.resource.sce.mopp.SceInputStreamProcessor {
 	
 	private int[] stack = new int[4];
 	private int stackPosition = -1;

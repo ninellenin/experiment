@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 public class SceResourceFactory implements org.eclipse.emf.ecore.resource.Resource.Factory {
 	
@@ -13,7 +13,7 @@ public class SceResourceFactory implements org.eclipse.emf.ecore.resource.Resour
 	}
 	
 	public org.eclipse.emf.ecore.resource.Resource createResource(org.eclipse.emf.common.util.URI uri) {
-		return new org.emftext.language.Presentation.resource.sce.mopp.SceResource(uri);
+		return new org.emftext.language.presentation.resource.sce.mopp.SceResource(uri);
 	}
 	
 }

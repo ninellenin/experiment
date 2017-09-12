@@ -4,11 +4,11 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * A SceContainedFeature represents a path element of a
- * org.emftext.language.Presentation.resource.sce.grammar.SceContainmentTrace
+ * org.emftext.language.presentation.resource.sce.grammar.SceContainmentTrace
  */
 public class SceContainedFeature {
 	

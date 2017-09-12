@@ -4,9 +4,9 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
-public abstract class SceQuickFix implements org.emftext.language.Presentation.resource.sce.ISceQuickFix {
+public abstract class SceQuickFix implements org.emftext.language.presentation.resource.sce.ISceQuickFix {
 	
 	private String displayString;
 	private String imageKey;
@@ -45,7 +45,7 @@ public abstract class SceQuickFix implements org.emftext.language.Presentation.r
 			getResource().save(output, null);
 			return output.toString();
 		} catch (java.io.IOException e) {
-			new org.emftext.language.Presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while applying quick fix", e);
+			new org.emftext.language.presentation.resource.sce.util.SceRuntimeUtil().logError("Exception while applying quick fix", e);
 		}
 		return null;
 	}

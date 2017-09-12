@@ -4,9 +4,9 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
-public abstract class SceANTLRParserBase extends org.antlr.runtime3_4_0.Parser implements org.emftext.language.Presentation.resource.sce.ISceTextParser {
+public abstract class SceANTLRParserBase extends org.antlr.runtime3_4_0.Parser implements org.emftext.language.presentation.resource.sce.ISceTextParser {
 	
 	/**
 	 * The index of the last token that was handled by retrieveLayoutInformation().
@@ -23,7 +23,7 @@ public abstract class SceANTLRParserBase extends org.antlr.runtime3_4_0.Parser i
 	 * collection is cleared before parsing starts and returned as part of the parse
 	 * result object.
 	 */
-	protected java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceCommand<org.emftext.language.Presentation.resource.sce.ISceTextResource>> postParseCommands;
+	protected java.util.Collection<org.emftext.language.presentation.resource.sce.ISceCommand<org.emftext.language.presentation.resource.sce.ISceTextResource>> postParseCommands;
 	
 	/**
 	 * A copy of the options that were used to load the text resource. This map is
@@ -60,9 +60,9 @@ public abstract class SceANTLRParserBase extends org.antlr.runtime3_4_0.Parser i
 	/**
 	 * A reusable container for the result of resolving tokens.
 	 */
-	private org.emftext.language.Presentation.resource.sce.mopp.SceTokenResolveResult tokenResolveResult = new org.emftext.language.Presentation.resource.sce.mopp.SceTokenResolveResult();
+	private org.emftext.language.presentation.resource.sce.mopp.SceTokenResolveResult tokenResolveResult = new org.emftext.language.presentation.resource.sce.mopp.SceTokenResolveResult();
 	
-	protected org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation metaInformation = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation();
+	protected org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation metaInformation = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation();
 	
 	public SceANTLRParserBase(org.antlr.runtime3_4_0.TokenStream input) {
 		super(input);
@@ -72,7 +72,7 @@ public abstract class SceANTLRParserBase extends org.antlr.runtime3_4_0.Parser i
 		super(input, state);
 	}
 	
-	protected void retrieveLayoutInformation(org.eclipse.emf.ecore.EObject element, org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement syntaxElement, Object object, boolean ignoreTokensAfterLastVisibleToken) {
+	protected void retrieveLayoutInformation(org.eclipse.emf.ecore.EObject element, org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement syntaxElement, Object object, boolean ignoreTokensAfterLastVisibleToken) {
 		if (disableLayoutRecording || element == null) {
 			return;
 		}
@@ -80,14 +80,14 @@ public abstract class SceANTLRParserBase extends org.antlr.runtime3_4_0.Parser i
 		// documents (just before the EOF character) is not associated with a particular
 		// syntax element.
 		boolean isElementToStore = syntaxElement == null;
-		isElementToStore |= syntaxElement instanceof org.emftext.language.Presentation.resource.sce.grammar.ScePlaceholder;
-		isElementToStore |= syntaxElement instanceof org.emftext.language.Presentation.resource.sce.grammar.SceKeyword;
-		isElementToStore |= syntaxElement instanceof org.emftext.language.Presentation.resource.sce.grammar.SceEnumerationTerminal;
-		isElementToStore |= syntaxElement instanceof org.emftext.language.Presentation.resource.sce.grammar.SceBooleanTerminal;
+		isElementToStore |= syntaxElement instanceof org.emftext.language.presentation.resource.sce.grammar.ScePlaceholder;
+		isElementToStore |= syntaxElement instanceof org.emftext.language.presentation.resource.sce.grammar.SceKeyword;
+		isElementToStore |= syntaxElement instanceof org.emftext.language.presentation.resource.sce.grammar.SceEnumerationTerminal;
+		isElementToStore |= syntaxElement instanceof org.emftext.language.presentation.resource.sce.grammar.SceBooleanTerminal;
 		if (!isElementToStore) {
 			return;
 		}
-		org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter layoutInformationAdapter = getLayoutInformationAdapter(element);
+		org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter layoutInformationAdapter = getLayoutInformationAdapter(element);
 		StringBuilder anonymousText = new StringBuilder();
 		for (org.antlr.runtime3_4_0.CommonToken anonymousToken : anonymousTokens) {
 			anonymousText.append(anonymousToken.getText());
@@ -129,23 +129,23 @@ public abstract class SceANTLRParserBase extends org.antlr.runtime3_4_0.Parser i
 		if (firstToken != null) {
 			offset = firstToken.getStartIndex();
 		}
-		layoutInformationAdapter.addLayoutInformation(new org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation(syntaxElement, object, offset, hiddenTokenText.toString(), visibleTokenText.toString()));
+		layoutInformationAdapter.addLayoutInformation(new org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation(syntaxElement, object, offset, hiddenTokenText.toString(), visibleTokenText.toString()));
 		this.lastPosition2 = (endPos < 0 ? 0 : endPos + 1);
 		anonymousTokens.clear();
 	}
 	
-	protected org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter getLayoutInformationAdapter(org.eclipse.emf.ecore.EObject element) {
+	protected org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter getLayoutInformationAdapter(org.eclipse.emf.ecore.EObject element) {
 		for (org.eclipse.emf.common.notify.Adapter adapter : element.eAdapters()) {
-			if (adapter instanceof org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter) {
-				return (org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter) adapter;
+			if (adapter instanceof org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter) {
+				return (org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter) adapter;
 			}
 		}
-		org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter newAdapter = new org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformationAdapter();
+		org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter newAdapter = new org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformationAdapter();
 		element.eAdapters().add(newAdapter);
 		return newAdapter;
 	}
 	
-	protected <ContainerType extends org.eclipse.emf.ecore.EObject, ReferenceType extends org.eclipse.emf.ecore.EObject> void registerContextDependentProxy(final org.emftext.language.Presentation.resource.sce.mopp.SceContextDependentURIFragmentFactory<ContainerType, ReferenceType> factory, final ContainerType container, final org.eclipse.emf.ecore.EReference reference, final String id, final org.eclipse.emf.ecore.EObject proxy) {
+	protected <ContainerType extends org.eclipse.emf.ecore.EObject, ReferenceType extends org.eclipse.emf.ecore.EObject> void registerContextDependentProxy(final org.emftext.language.presentation.resource.sce.mopp.SceContextDependentURIFragmentFactory<ContainerType, ReferenceType> factory, final ContainerType container, final org.eclipse.emf.ecore.EReference reference, final String id, final org.eclipse.emf.ecore.EObject proxy) {
 		final int position;
 		if (reference.isMany()) {
 			position = ((java.util.List<?>) container.eGet(reference)).size();
@@ -153,8 +153,8 @@ public abstract class SceANTLRParserBase extends org.antlr.runtime3_4_0.Parser i
 			position = -1;
 		}
 		
-		postParseCommands.add(new org.emftext.language.Presentation.resource.sce.ISceCommand<org.emftext.language.Presentation.resource.sce.ISceTextResource>() {
-			public boolean execute(org.emftext.language.Presentation.resource.sce.ISceTextResource resource) {
+		postParseCommands.add(new org.emftext.language.presentation.resource.sce.ISceCommand<org.emftext.language.presentation.resource.sce.ISceTextResource>() {
+			public boolean execute(org.emftext.language.presentation.resource.sce.ISceTextResource resource) {
 				if (resource == null) {
 					// the resource can be null if the parser is used for code completion
 					return true;
@@ -174,7 +174,7 @@ public abstract class SceANTLRParserBase extends org.antlr.runtime3_4_0.Parser i
 				return tokenName;
 			}
 			tokenName = getTokenNames()[tokenType];
-			tokenName = org.emftext.language.Presentation.resource.sce.util.SceStringUtil.formatTokenName(tokenName);
+			tokenName = org.emftext.language.presentation.resource.sce.util.SceStringUtil.formatTokenName(tokenName);
 		}
 		return tokenName;
 	}
@@ -188,10 +188,10 @@ public abstract class SceANTLRParserBase extends org.antlr.runtime3_4_0.Parser i
 		if (this.options == null) {
 			return;
 		}
-		if (this.options.containsKey(org.emftext.language.Presentation.resource.sce.ISceOptions.DISABLE_LOCATION_MAP)) {
+		if (this.options.containsKey(org.emftext.language.presentation.resource.sce.ISceOptions.DISABLE_LOCATION_MAP)) {
 			this.disableLocationMap = true;
 		}
-		if (this.options.containsKey(org.emftext.language.Presentation.resource.sce.ISceOptions.DISABLE_LAYOUT_INFORMATION_RECORDING)) {
+		if (this.options.containsKey(org.emftext.language.presentation.resource.sce.ISceOptions.DISABLE_LAYOUT_INFORMATION_RECORDING)) {
 			this.disableLayoutRecording = true;
 		}
 	}
@@ -241,12 +241,12 @@ public abstract class SceANTLRParserBase extends org.antlr.runtime3_4_0.Parser i
 		terminateParsing = true;
 	}
 	
-	protected void addMapEntry(org.eclipse.emf.ecore.EObject element, org.eclipse.emf.ecore.EStructuralFeature structuralFeature, org.emftext.language.Presentation.resource.sce.mopp.SceDummyEObject dummy) {
+	protected void addMapEntry(org.eclipse.emf.ecore.EObject element, org.eclipse.emf.ecore.EStructuralFeature structuralFeature, org.emftext.language.presentation.resource.sce.mopp.SceDummyEObject dummy) {
 		Object value = element.eGet(structuralFeature);
 		Object mapKey = dummy.getValueByName("key");
 		Object mapValue = dummy.getValueByName("value");
 		if (value instanceof org.eclipse.emf.common.util.EMap<?, ?>) {
-			org.eclipse.emf.common.util.EMap<Object, Object> valueMap = org.emftext.language.Presentation.resource.sce.util.SceMapUtil.castToEMap(value);
+			org.eclipse.emf.common.util.EMap<Object, Object> valueMap = org.emftext.language.presentation.resource.sce.util.SceMapUtil.castToEMap(value);
 			if (mapKey != null && mapValue != null) {
 				valueMap.put(mapKey, mapValue);
 			}
@@ -266,21 +266,21 @@ public abstract class SceANTLRParserBase extends org.antlr.runtime3_4_0.Parser i
 	protected org.eclipse.emf.ecore.EObject apply(org.eclipse.emf.ecore.EObject target, java.util.List<org.eclipse.emf.ecore.EObject> dummyEObjects) {
 		org.eclipse.emf.ecore.EObject currentTarget = target;
 		for (org.eclipse.emf.ecore.EObject object : dummyEObjects) {
-			assert(object instanceof org.emftext.language.Presentation.resource.sce.mopp.SceDummyEObject);
-			org.emftext.language.Presentation.resource.sce.mopp.SceDummyEObject dummy = (org.emftext.language.Presentation.resource.sce.mopp.SceDummyEObject) object;
+			assert(object instanceof org.emftext.language.presentation.resource.sce.mopp.SceDummyEObject);
+			org.emftext.language.presentation.resource.sce.mopp.SceDummyEObject dummy = (org.emftext.language.presentation.resource.sce.mopp.SceDummyEObject) object;
 			org.eclipse.emf.ecore.EObject newEObject = dummy.applyTo(currentTarget);
 			currentTarget = newEObject;
 		}
 		return currentTarget;
 	}
 	
-	protected org.emftext.language.Presentation.resource.sce.mopp.SceTokenResolveResult getFreshTokenResolveResult() {
+	protected org.emftext.language.presentation.resource.sce.mopp.SceTokenResolveResult getFreshTokenResolveResult() {
 		tokenResolveResult.clear();
 		return tokenResolveResult;
 	}
 	
-	protected org.emftext.language.Presentation.resource.sce.mopp.SceReferenceResolverSwitch getReferenceResolverSwitch() {
-		org.emftext.language.Presentation.resource.sce.mopp.SceReferenceResolverSwitch resolverSwitch = (org.emftext.language.Presentation.resource.sce.mopp.SceReferenceResolverSwitch) metaInformation.getReferenceResolverSwitch();
+	protected org.emftext.language.presentation.resource.sce.mopp.SceReferenceResolverSwitch getReferenceResolverSwitch() {
+		org.emftext.language.presentation.resource.sce.mopp.SceReferenceResolverSwitch resolverSwitch = (org.emftext.language.presentation.resource.sce.mopp.SceReferenceResolverSwitch) metaInformation.getReferenceResolverSwitch();
 		resolverSwitch.setOptions(options);
 		return resolverSwitch;
 	}

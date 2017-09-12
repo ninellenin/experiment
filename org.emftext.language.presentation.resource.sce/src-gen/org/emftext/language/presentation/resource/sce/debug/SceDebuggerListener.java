@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.debug;
+package org.emftext.language.presentation.resource.sce.debug;
 
 /**
  * The DebuggerListener receives commands from the Eclipse Debug framework and

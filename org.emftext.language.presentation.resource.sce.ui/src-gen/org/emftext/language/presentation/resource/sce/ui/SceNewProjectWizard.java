@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 /**
  * This class is based on:
@@ -23,7 +23,7 @@ public class SceNewProjectWizard extends org.eclipse.jface.wizard.Wizard impleme
 	/**
 	 * The name of the project creation page
 	 */
-	private String pageName = "New " + new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation().getSyntaxName() + " Project";
+	private String pageName = "New " + new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation().getSyntaxName() + " Project";
 	
 	/**
 	 * The title of the project creation page
@@ -87,7 +87,7 @@ public class SceNewProjectWizard extends org.eclipse.jface.wizard.Wizard impleme
 							projectFolderFile.mkdirs();
 							monitor.worked(10);
 							
-							org.osgi.framework.Bundle bundle = org.eclipse.core.runtime.Platform.getBundle("org.emftext.language.Presentation.resource.sce.ui");
+							org.osgi.framework.Bundle bundle = org.eclipse.core.runtime.Platform.getBundle("org.emftext.language.presentation.resource.sce.ui");
 							java.net.URL newProjectZipURL = bundle.getEntry(newProjectZip);
 							
 							if (newProjectZipURL != null) {
@@ -104,9 +104,9 @@ public class SceNewProjectWizard extends org.eclipse.jface.wizard.Wizard impleme
 								desc.setLocation(new org.eclipse.core.runtime.Path(projectFolder));
 							}
 							
-							String natureID = org.emftext.language.Presentation.resource.sce.mopp.SceNature.NATURE_ID;
+							String natureID = org.emftext.language.presentation.resource.sce.mopp.SceNature.NATURE_ID;
 							java.util.List<org.eclipse.core.resources.ICommand> buildCommands = new java.util.ArrayList<org.eclipse.core.resources.ICommand>();
-							for (String builderID : org.emftext.language.Presentation.resource.sce.mopp.SceNature.BUILDER_IDS) {
+							for (String builderID : org.emftext.language.presentation.resource.sce.mopp.SceNature.BUILDER_IDS) {
 								org.eclipse.core.resources.ICommand command = desc.newCommand();
 								command.setBuilderName(builderID);
 								buildCommands.add(command);
@@ -124,7 +124,7 @@ public class SceNewProjectWizard extends org.eclipse.jface.wizard.Wizard impleme
 								defaultNewFile.create(new java.io.ByteArrayInputStream(new byte[0]), true, null);
 							}
 							if (defaultNewFile.exists()) {
-								org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation info = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation();
+								org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation info = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation();
 								String fileName = "new_file." + info.getSyntaxName();
 								String content = info.getNewFileContentProvider().getNewFileContent("new_file." + info.getSyntaxName());
 								defaultNewFile.setContents(new java.io.ByteArrayInputStream(content.getBytes()), org.eclipse.core.resources.IFile.FORCE, null);
@@ -301,7 +301,7 @@ public class SceNewProjectWizard extends org.eclipse.jface.wizard.Wizard impleme
 	public void init(org.eclipse.ui.IWorkbench workbench, org.eclipse.jface.viewers.IStructuredSelection selection) {
 		// Set default image for all wizard pages
 		org.eclipse.core.runtime.IPath path = new org.eclipse.core.runtime.Path("icons/new_project_wizban.gif");
-		org.osgi.framework.Bundle bundle = org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.getDefault().getBundle();
+		org.osgi.framework.Bundle bundle = org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.getDefault().getBundle();
 		java.net.URL url = org.eclipse.core.runtime.FileLocator.find(bundle, path, null);
 		org.eclipse.jface.resource.ImageDescriptor descriptor = org.eclipse.jface.resource.ImageDescriptor.createFromURL(url);
 		setDefaultPageImageDescriptor(descriptor);

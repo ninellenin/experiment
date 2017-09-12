@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce;
+package org.emftext.language.presentation.resource.sce;
 
 /**
  * This interface is extended by some other generated classes. It provides access
@@ -16,6 +16,6 @@ public interface ISceTextResourcePluginPart {
 	 * Returns a meta information object for the language plug-in that contains this
 	 * part.
 	 */
-	public org.emftext.language.Presentation.resource.sce.ISceMetaInformation getMetaInformation();
+	public org.emftext.language.presentation.resource.sce.ISceMetaInformation getMetaInformation();
 	
 }

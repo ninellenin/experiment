@@ -4,9 +4,9 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
-public class SceTokenStyle implements org.emftext.language.Presentation.resource.sce.ISceTokenStyle {
+public class SceTokenStyle implements org.emftext.language.presentation.resource.sce.ISceTokenStyle {
 	
 	private int[] color;
 	private int[] backgroundColor;

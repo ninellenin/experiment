@@ -4,17 +4,17 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * A representation for a range in a document where a keyword (i.e., a static
  * string) is expected.
  */
-public class SceExpectedCsString extends org.emftext.language.Presentation.resource.sce.mopp.SceAbstractExpectedElement {
+public class SceExpectedCsString extends org.emftext.language.presentation.resource.sce.mopp.SceAbstractExpectedElement {
 	
-	private org.emftext.language.Presentation.resource.sce.grammar.SceKeyword keyword;
+	private org.emftext.language.presentation.resource.sce.grammar.SceKeyword keyword;
 	
-	public SceExpectedCsString(org.emftext.language.Presentation.resource.sce.grammar.SceKeyword keyword) {
+	public SceExpectedCsString(org.emftext.language.presentation.resource.sce.grammar.SceKeyword keyword) {
 		super(keyword.getMetaclass());
 		this.keyword = keyword;
 	}
@@ -26,7 +26,7 @@ public class SceExpectedCsString extends org.emftext.language.Presentation.resou
 	/**
 	 * Returns the expected keyword.
 	 */
-	public org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement getSymtaxElement() {
+	public org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement getSymtaxElement() {
 		return keyword;
 	}
 	

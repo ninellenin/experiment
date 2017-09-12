@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 public class ScePropertySheetPage extends org.eclipse.ui.views.properties.PropertySheetPage implements org.eclipse.jface.viewers.ISelectionChangedListener {
 	
@@ -16,8 +16,8 @@ public class ScePropertySheetPage extends org.eclipse.ui.views.properties.Proper
 		// This is a workaround for a bug in EMF (see
 		// https://bugs.eclipse.org/bugs/show_bug.cgi?id=291301).Unfortunately Ed Merks
 		// refuses to fix it, so we need to solve it here.
-		if (iSelection instanceof org.emftext.language.Presentation.resource.sce.ui.SceEObjectSelection) {
-			final org.emftext.language.Presentation.resource.sce.ui.SceEObjectSelection selection = (org.emftext.language.Presentation.resource.sce.ui.SceEObjectSelection) iSelection;
+		if (iSelection instanceof org.emftext.language.presentation.resource.sce.ui.SceEObjectSelection) {
+			final org.emftext.language.presentation.resource.sce.ui.SceEObjectSelection selection = (org.emftext.language.presentation.resource.sce.ui.SceEObjectSelection) iSelection;
 			final org.eclipse.emf.ecore.EObject selectedObject = selection.getSelectedObject();
 			// check whether the selected object or one of its children contains a proxy which
 			// is a GenXYZClass (e.g., GenFeature, GenClass, GenPackage)

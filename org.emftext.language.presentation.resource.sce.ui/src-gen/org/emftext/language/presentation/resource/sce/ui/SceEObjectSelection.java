@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 public class SceEObjectSelection implements org.eclipse.jface.viewers.IStructuredSelection {
 	

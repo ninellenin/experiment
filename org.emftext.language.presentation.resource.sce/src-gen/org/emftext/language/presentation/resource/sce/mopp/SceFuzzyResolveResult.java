@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * A FuzzyResolveResult is an implementation of the ISceReferenceResolveResult
@@ -14,11 +14,11 @@ package org.emftext.language.Presentation.resource.sce.mopp;
  * 
  * @param <ReferenceType> the type of the reference that is resolved
  */
-public class SceFuzzyResolveResult<ReferenceType extends org.eclipse.emf.ecore.EObject> implements org.emftext.language.Presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> {
+public class SceFuzzyResolveResult<ReferenceType extends org.eclipse.emf.ecore.EObject> implements org.emftext.language.presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> {
 	
-	private org.emftext.language.Presentation.resource.sce.ISceReferenceResolveResult<org.eclipse.emf.ecore.EObject> delegate;
+	private org.emftext.language.presentation.resource.sce.ISceReferenceResolveResult<org.eclipse.emf.ecore.EObject> delegate;
 	
-	public SceFuzzyResolveResult(org.emftext.language.Presentation.resource.sce.ISceReferenceResolveResult<org.eclipse.emf.ecore.EObject> delegate) {
+	public SceFuzzyResolveResult(org.emftext.language.presentation.resource.sce.ISceReferenceResolveResult<org.eclipse.emf.ecore.EObject> delegate) {
 		this.delegate = delegate;
 	}
 	
@@ -26,7 +26,7 @@ public class SceFuzzyResolveResult<ReferenceType extends org.eclipse.emf.ecore.E
 		return delegate.getErrorMessage();
 	}
 	
-	public java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceReferenceMapping<ReferenceType>> getMappings() {
+	public java.util.Collection<org.emftext.language.presentation.resource.sce.ISceReferenceMapping<ReferenceType>> getMappings() {
 		return null;
 	}
 	
@@ -62,11 +62,11 @@ public class SceFuzzyResolveResult<ReferenceType extends org.eclipse.emf.ecore.E
 		delegate.addMapping(identifier, uri, warning);
 	}
 	
-	public java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceQuickFix> getQuickFixes() {
+	public java.util.Collection<org.emftext.language.presentation.resource.sce.ISceQuickFix> getQuickFixes() {
 		return delegate.getQuickFixes();
 	}
 	
-	public void addQuickFix(org.emftext.language.Presentation.resource.sce.ISceQuickFix quickFix) {
+	public void addQuickFix(org.emftext.language.presentation.resource.sce.ISceQuickFix quickFix) {
 		delegate.addQuickFix(quickFix);
 	}
 	

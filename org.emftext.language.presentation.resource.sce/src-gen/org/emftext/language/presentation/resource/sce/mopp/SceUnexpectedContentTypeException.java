@@ -4,13 +4,13 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * An Excpetion to represent invalid content types for parser instances.
  * 
  * @see
- * org.emftext.language.Presentation.resource.sce.ISceOptions.RESOURCE_CONTENT_TYPE
+ * org.emftext.language.presentation.resource.sce.ISceOptions.RESOURCE_CONTENT_TYPE
  */
 public class SceUnexpectedContentTypeException extends org.antlr.runtime3_4_0.RecognitionException {
 	

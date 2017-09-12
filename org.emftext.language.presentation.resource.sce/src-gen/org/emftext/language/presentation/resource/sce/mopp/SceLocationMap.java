@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * A basic implementation of the ILocationMap interface. Instances store
@@ -20,7 +20,7 @@ package org.emftext.language.Presentation.resource.sce.mopp;
  * Start:  The lowest of all sources is used for target<br>
  * End:    The highest of all sources is used for target<br>
  */
-public class SceLocationMap implements org.emftext.language.Presentation.resource.sce.ISceLocationMap {
+public class SceLocationMap implements org.emftext.language.presentation.resource.sce.ISceLocationMap {
 	
 	/**
 	 * A basic interface that can be implemented to select EObjects based of their

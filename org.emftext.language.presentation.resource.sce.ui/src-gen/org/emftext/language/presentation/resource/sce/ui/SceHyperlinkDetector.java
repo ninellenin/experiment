@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 /**
  * A hyperlink detector returns hyperlink if the token, where the mouse cursor
@@ -12,7 +12,7 @@ package org.emftext.language.Presentation.resource.sce.ui;
  */
 public class SceHyperlinkDetector implements org.eclipse.jface.text.hyperlink.IHyperlinkDetector {
 	
-	private org.emftext.language.Presentation.resource.sce.ISceTextResource textResource;
+	private org.emftext.language.presentation.resource.sce.ISceTextResource textResource;
 	
 	/**
 	 * Creates a hyperlink detector.
@@ -20,11 +20,11 @@ public class SceHyperlinkDetector implements org.eclipse.jface.text.hyperlink.IH
 	 * @param resource the resource to use for calculating the locations.
 	 */
 	public SceHyperlinkDetector(org.eclipse.emf.ecore.resource.Resource resource) {
-		textResource = (org.emftext.language.Presentation.resource.sce.ISceTextResource) resource;
+		textResource = (org.emftext.language.presentation.resource.sce.ISceTextResource) resource;
 	}
 	
 	public org.eclipse.jface.text.hyperlink.IHyperlink[] detectHyperlinks(org.eclipse.jface.text.ITextViewer textViewer, org.eclipse.jface.text.IRegion region, boolean canShowMultipleHyperlinks) {
-		org.emftext.language.Presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
+		org.emftext.language.presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
 		java.util.List<org.eclipse.emf.ecore.EObject> elementsAtOffset = locationMap.getElementsAt(region.getOffset());
 		org.eclipse.emf.ecore.EObject resolvedEObject = null;
 		for (org.eclipse.emf.ecore.EObject eObject : elementsAtOffset) {
@@ -43,7 +43,7 @@ public class SceHyperlinkDetector implements org.eclipse.jface.text.hyperlink.IH
 				// we skipt elements that are not contained in a resource, because we cannot jump
 				// to them anyway
 				if (resolvedEObject.eResource() != null) {
-					org.eclipse.jface.text.hyperlink.IHyperlink hyperlink = new org.emftext.language.Presentation.resource.sce.ui.SceHyperlink(new org.eclipse.jface.text.Region(offset, length), resolvedEObject, text);
+					org.eclipse.jface.text.hyperlink.IHyperlink hyperlink = new org.emftext.language.presentation.resource.sce.ui.SceHyperlink(new org.eclipse.jface.text.Region(offset, length), resolvedEObject, text);
 					return new org.eclipse.jface.text.hyperlink.IHyperlink[] { hyperlink };
 				}
 			}

@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * A representation for a range in a document where a terminal (i.e., a
@@ -24,13 +24,13 @@ public class SceExpectedTerminal {
 	
 	private int followSetID;
 	private org.eclipse.emf.ecore.EObject container;
-	private org.emftext.language.Presentation.resource.sce.ISceExpectedElement terminal;
+	private org.emftext.language.presentation.resource.sce.ISceExpectedElement terminal;
 	private int startIncludingHiddenTokens;
 	private int startExcludingHiddenTokens;
 	private String prefix;
-	private org.emftext.language.Presentation.resource.sce.grammar.SceContainmentTrace containmentTrace;
+	private org.emftext.language.presentation.resource.sce.grammar.SceContainmentTrace containmentTrace;
 	
-	public SceExpectedTerminal(org.eclipse.emf.ecore.EObject container, org.emftext.language.Presentation.resource.sce.ISceExpectedElement terminal, int followSetID, org.emftext.language.Presentation.resource.sce.grammar.SceContainmentTrace containmentTrace) {
+	public SceExpectedTerminal(org.eclipse.emf.ecore.EObject container, org.emftext.language.presentation.resource.sce.ISceExpectedElement terminal, int followSetID, org.emftext.language.presentation.resource.sce.grammar.SceContainmentTrace containmentTrace) {
 		super();
 		this.container = container;
 		this.terminal = terminal;
@@ -50,7 +50,7 @@ public class SceExpectedTerminal {
 		return followSetID;
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ISceExpectedElement getTerminal() {
+	public org.emftext.language.presentation.resource.sce.ISceExpectedElement getTerminal() {
 		return terminal;
 	}
 	
@@ -102,7 +102,7 @@ public class SceExpectedTerminal {
 		this.prefix = prefix;
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.grammar.SceContainmentTrace getContainmentTrace() {
+	public org.emftext.language.presentation.resource.sce.grammar.SceContainmentTrace getContainmentTrace() {
 		return containmentTrace;
 	}
 	

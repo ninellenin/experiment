@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * The SceTaskItemBuilder is used to find task items in text documents. The
@@ -16,31 +16,31 @@ public class SceTaskItemBuilder {
 	
 	public void build(org.eclipse.core.resources.IFile resource, org.eclipse.emf.ecore.resource.ResourceSet resourceSet, org.eclipse.core.runtime.IProgressMonitor monitor) {
 		monitor.setTaskName("Searching for task items");
-		new org.emftext.language.Presentation.resource.sce.mopp.SceMarkerHelper().removeAllMarkers(resource, org.eclipse.core.resources.IMarker.TASK);
+		new org.emftext.language.presentation.resource.sce.mopp.SceMarkerHelper().removeAllMarkers(resource, org.eclipse.core.resources.IMarker.TASK);
 		if (isInBinFolder(resource)) {
 			return;
 		}
-		java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceTaskItem> taskItems = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.mopp.SceTaskItem>();
-		org.emftext.language.Presentation.resource.sce.mopp.SceTaskItemDetector taskItemDetector = new org.emftext.language.Presentation.resource.sce.mopp.SceTaskItemDetector();
+		java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceTaskItem> taskItems = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.mopp.SceTaskItem>();
+		org.emftext.language.presentation.resource.sce.mopp.SceTaskItemDetector taskItemDetector = new org.emftext.language.presentation.resource.sce.mopp.SceTaskItemDetector();
 		try {
 			java.io.InputStream inputStream = resource.getContents();
-			String content = org.emftext.language.Presentation.resource.sce.util.SceStreamUtil.getContent(inputStream);
-			org.emftext.language.Presentation.resource.sce.ISceTextScanner lexer = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation().createLexer();
+			String content = org.emftext.language.presentation.resource.sce.util.SceStreamUtil.getContent(inputStream);
+			org.emftext.language.presentation.resource.sce.ISceTextScanner lexer = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation().createLexer();
 			lexer.setText(content);
 			
-			org.emftext.language.Presentation.resource.sce.ISceTextToken nextToken = lexer.getNextToken();
+			org.emftext.language.presentation.resource.sce.ISceTextToken nextToken = lexer.getNextToken();
 			while (nextToken != null) {
 				String text = nextToken.getText();
 				taskItems.addAll(taskItemDetector.findTaskItems(text, nextToken.getLine(), nextToken.getOffset()));
 				nextToken = lexer.getNextToken();
 			}
 		} catch (java.io.IOException e) {
-			org.emftext.language.Presentation.resource.sce.mopp.ScePlugin.logError("Exception while searching for task items", e);
+			org.emftext.language.presentation.resource.sce.mopp.ScePlugin.logError("Exception while searching for task items", e);
 		} catch (org.eclipse.core.runtime.CoreException e) {
-			org.emftext.language.Presentation.resource.sce.mopp.ScePlugin.logError("Exception while searching for task items", e);
+			org.emftext.language.presentation.resource.sce.mopp.ScePlugin.logError("Exception while searching for task items", e);
 		}
 		
-		for (org.emftext.language.Presentation.resource.sce.mopp.SceTaskItem taskItem : taskItems) {
+		for (org.emftext.language.presentation.resource.sce.mopp.SceTaskItem taskItem : taskItems) {
 			java.util.Map<String, Object> markerAttributes = new java.util.LinkedHashMap<String, Object>();
 			markerAttributes.put(org.eclipse.core.resources.IMarker.USER_EDITABLE, false);
 			markerAttributes.put(org.eclipse.core.resources.IMarker.DONE, false);
@@ -48,7 +48,7 @@ public class SceTaskItemBuilder {
 			markerAttributes.put(org.eclipse.core.resources.IMarker.CHAR_START, taskItem.getCharStart());
 			markerAttributes.put(org.eclipse.core.resources.IMarker.CHAR_END, taskItem.getCharEnd());
 			markerAttributes.put(org.eclipse.core.resources.IMarker.MESSAGE, taskItem.getMessage());
-			new org.emftext.language.Presentation.resource.sce.mopp.SceMarkerHelper().createMarker(resource, org.eclipse.core.resources.IMarker.TASK, markerAttributes);
+			new org.emftext.language.presentation.resource.sce.mopp.SceMarkerHelper().createMarker(resource, org.eclipse.core.resources.IMarker.TASK, markerAttributes);
 		}
 	}
 	

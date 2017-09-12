@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * SceLayoutInformation objects are used to store layout information that is found
@@ -22,7 +22,7 @@ public class SceLayoutInformation {
 	 * This can be either an attribute, a non-containment reference (placeholder) or a
 	 * terminal (boolean or enumeration).
 	 */
-	private final org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement syntaxElement;
+	private final org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement syntaxElement;
 	
 	/**
 	 * The offset in the document where this piece of layout was found.
@@ -52,7 +52,7 @@ public class SceLayoutInformation {
 	 */
 	private boolean wasResolved;
 	
-	public SceLayoutInformation(org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement syntaxElement, Object object, int startOffset, String hiddenTokenText, String visibleTokenText) {
+	public SceLayoutInformation(org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement syntaxElement, Object object, int startOffset, String hiddenTokenText, String visibleTokenText) {
 		super();
 		this.syntaxElement = syntaxElement;
 		this.object = object;
@@ -61,7 +61,7 @@ public class SceLayoutInformation {
 		this.visibleTokenText = visibleTokenText;
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.grammar.SceSyntaxElement getSyntaxElement() {
+	public org.emftext.language.presentation.resource.sce.grammar.SceSyntaxElement getSyntaxElement() {
 		return syntaxElement;
 	}
 	

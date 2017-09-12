@@ -4,28 +4,28 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 /**
  * A manager class for the highlighting of occurrences and brackets.
  */
 public class SceHighlighting implements org.eclipse.jface.viewers.ISelectionProvider, org.eclipse.jface.viewers.ISelectionChangedListener {
 	
-	private final static org.emftext.language.Presentation.resource.sce.ui.ScePositionHelper positionHelper = new org.emftext.language.Presentation.resource.sce.ui.ScePositionHelper();
+	private final static org.emftext.language.presentation.resource.sce.ui.ScePositionHelper positionHelper = new org.emftext.language.presentation.resource.sce.ui.ScePositionHelper();
 	
 	private java.util.List<org.eclipse.jface.viewers.ISelectionChangedListener> selectionChangedListeners = new java.util.ArrayList<org.eclipse.jface.viewers.ISelectionChangedListener>();
 	private org.eclipse.jface.viewers.ISelection selection = null;
 	private boolean isHighlightBrackets = true;
-	private org.emftext.language.Presentation.resource.sce.ui.SceTokenScanner scanner;
-	private org.emftext.language.Presentation.resource.sce.ui.SceColorManager colorManager;
+	private org.emftext.language.presentation.resource.sce.ui.SceTokenScanner scanner;
+	private org.emftext.language.presentation.resource.sce.ui.SceColorManager colorManager;
 	private org.eclipse.swt.graphics.Color bracketColor;
 	private org.eclipse.swt.graphics.Color black;
 	private org.eclipse.swt.custom.StyledText textWidget;
 	private org.eclipse.jface.preference.IPreferenceStore preferenceStore;
-	private org.emftext.language.Presentation.resource.sce.ui.SceEditor editor;
+	private org.emftext.language.presentation.resource.sce.ui.SceEditor editor;
 	private org.eclipse.jface.text.source.projection.ProjectionViewer projectionViewer;
-	private org.emftext.language.Presentation.resource.sce.ui.SceOccurrence occurrence;
-	private org.emftext.language.Presentation.resource.sce.ui.SceBracketSet bracketSet;
+	private org.emftext.language.presentation.resource.sce.ui.SceOccurrence occurrence;
+	private org.emftext.language.presentation.resource.sce.ui.SceBracketSet bracketSet;
 	private org.eclipse.swt.widgets.Display display;
 	
 	/**
@@ -34,7 +34,7 @@ public class SceHighlighting implements org.eclipse.jface.viewers.ISelectionProv
 	 * increase the performance. Occurrences are not searched if the caret is still in
 	 * the same token to increase the performance.
 	 */
-	private final class UpdateHighlightingListener implements org.eclipse.swt.events.KeyListener, org.eclipse.swt.events.VerifyListener, org.eclipse.swt.events.MouseListener, org.emftext.language.Presentation.resource.sce.ISceBackgroundParsingListener {
+	private final class UpdateHighlightingListener implements org.eclipse.swt.events.KeyListener, org.eclipse.swt.events.VerifyListener, org.eclipse.swt.events.MouseListener, org.emftext.language.presentation.resource.sce.ISceBackgroundParsingListener {
 		
 		private boolean changed = false;
 		private int caret = -1;
@@ -106,25 +106,25 @@ public class SceHighlighting implements org.eclipse.jface.viewers.ISelectionProv
 	 * @param colorManager the color manager provides highlighting colors
 	 * @param editor
 	 */
-	public SceHighlighting(org.emftext.language.Presentation.resource.sce.ISceTextResource textResource, org.eclipse.jface.text.source.projection.ProjectionViewer sourceviewer, org.emftext.language.Presentation.resource.sce.ui.SceColorManager colorManager, org.emftext.language.Presentation.resource.sce.ui.SceEditor editor) {
+	public SceHighlighting(org.emftext.language.presentation.resource.sce.ISceTextResource textResource, org.eclipse.jface.text.source.projection.ProjectionViewer sourceviewer, org.emftext.language.presentation.resource.sce.ui.SceColorManager colorManager, org.emftext.language.presentation.resource.sce.ui.SceEditor editor) {
 		this.display = org.eclipse.swt.widgets.Display.getCurrent();
 		sourceviewer.getSelectionProvider();
-		preferenceStore = org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.getDefault().getPreferenceStore();
+		preferenceStore = org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.getDefault().getPreferenceStore();
 		this.editor = editor;
 		textWidget = sourceviewer.getTextWidget();
 		projectionViewer = sourceviewer;
-		scanner = new org.emftext.language.Presentation.resource.sce.ui.SceTokenScanner(textResource, colorManager);
-		occurrence = new org.emftext.language.Presentation.resource.sce.ui.SceOccurrence(textResource, sourceviewer, scanner);
-		bracketSet = new org.emftext.language.Presentation.resource.sce.ui.SceBracketSet(editor, sourceviewer);
+		scanner = new org.emftext.language.presentation.resource.sce.ui.SceTokenScanner(textResource, colorManager);
+		occurrence = new org.emftext.language.presentation.resource.sce.ui.SceOccurrence(textResource, sourceviewer, scanner);
+		bracketSet = new org.emftext.language.presentation.resource.sce.ui.SceBracketSet(editor, sourceviewer);
 		this.colorManager = colorManager;
-		isHighlightBrackets = preferenceStore.getBoolean(org.emftext.language.Presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_CHECKBOX);
-		bracketColor = colorManager.getColor(org.eclipse.jface.preference.PreferenceConverter.getColor(preferenceStore, org.emftext.language.Presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_COLOR));
+		isHighlightBrackets = preferenceStore.getBoolean(org.emftext.language.presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_CHECKBOX);
+		bracketColor = colorManager.getColor(org.eclipse.jface.preference.PreferenceConverter.getColor(preferenceStore, org.emftext.language.presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_COLOR));
 		black = colorManager.getColor(new org.eclipse.swt.graphics.RGB(0, 0, 0));
 		
 		addListeners(editor);
 	}
 	
-	private void addListeners(org.emftext.language.Presentation.resource.sce.ui.SceEditor editor) {
+	private void addListeners(org.emftext.language.presentation.resource.sce.ui.SceEditor editor) {
 		UpdateHighlightingListener hl = new UpdateHighlightingListener();
 		textWidget.addKeyListener(hl);
 		textWidget.addVerifyListener(hl);
@@ -143,7 +143,7 @@ public class SceHighlighting implements org.eclipse.jface.viewers.ISelectionProv
 	
 	private void setBracketHighlighting(org.eclipse.jface.text.IDocument document) {
 		org.eclipse.swt.custom.StyleRange styleRange = null;
-		org.eclipse.jface.text.Position[] positions = positionHelper.getPositions(document, org.emftext.language.Presentation.resource.sce.ui.ScePositionCategory.BRACKET.toString());
+		org.eclipse.jface.text.Position[] positions = positionHelper.getPositions(document, org.emftext.language.presentation.resource.sce.ui.ScePositionCategory.BRACKET.toString());
 		
 		for (org.eclipse.jface.text.Position position : positions) {
 			org.eclipse.jface.text.Position tmpPosition = convertToWidgetPosition(position);
@@ -162,12 +162,12 @@ public class SceHighlighting implements org.eclipse.jface.viewers.ISelectionProv
 	private void removeHighlighting() {
 		org.eclipse.jface.text.IDocument document = projectionViewer.getDocument();
 		// remove highlighted matching brackets
-		removeHighlightingCategory(document, org.emftext.language.Presentation.resource.sce.ui.ScePositionCategory.BRACKET.toString());
+		removeHighlightingCategory(document, org.emftext.language.presentation.resource.sce.ui.ScePositionCategory.BRACKET.toString());
 	}
 	
 	private void removeHighlightingCategory(org.eclipse.jface.text.IDocument document, String category) {
 		org.eclipse.jface.text.Position[] positions = positionHelper.getPositions(document, category);
-		if (category.equals(org.emftext.language.Presentation.resource.sce.ui.ScePositionCategory.BRACKET.toString())) {
+		if (category.equals(org.emftext.language.presentation.resource.sce.ui.ScePositionCategory.BRACKET.toString())) {
 			org.eclipse.swt.custom.StyleRange styleRange;
 			for (org.eclipse.jface.text.Position position : positions) {
 				org.eclipse.jface.text.Position tmpPosition = convertToWidgetPosition(position);
@@ -188,7 +188,7 @@ public class SceHighlighting implements org.eclipse.jface.viewers.ISelectionProv
 			public void run() {
 				org.eclipse.emf.ecore.EObject selectedEObject = occurrence.getEObjectAtCurrentPosition();
 				if (selectedEObject != null) {
-					setSelection(new org.emftext.language.Presentation.resource.sce.ui.SceEObjectSelection(selectedEObject, false));
+					setSelection(new org.emftext.language.presentation.resource.sce.ui.SceEObjectSelection(selectedEObject, false));
 				}
 			}
 		});
@@ -198,8 +198,8 @@ public class SceHighlighting implements org.eclipse.jface.viewers.ISelectionProv
 	 * Resets the changed values after setting the preference pages.
 	 */
 	public void resetValues() {
-		isHighlightBrackets = preferenceStore.getBoolean(org.emftext.language.Presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_CHECKBOX);
-		bracketColor = colorManager.getColor(org.eclipse.jface.preference.PreferenceConverter.getColor(preferenceStore, org.emftext.language.Presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_COLOR));
+		isHighlightBrackets = preferenceStore.getBoolean(org.emftext.language.presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_CHECKBOX);
+		bracketColor = colorManager.getColor(org.eclipse.jface.preference.PreferenceConverter.getColor(preferenceStore, org.emftext.language.presentation.resource.sce.ui.ScePreferenceConstants.EDITOR_MATCHING_BRACKETS_COLOR));
 		bracketSet.resetBrackets();
 	}
 	

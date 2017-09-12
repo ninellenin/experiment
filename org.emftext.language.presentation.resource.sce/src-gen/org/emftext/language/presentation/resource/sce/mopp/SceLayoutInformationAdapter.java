@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * A SceLayoutInformationAdapter is used to store layout information that is found
@@ -30,7 +30,7 @@ public class SceLayoutInformationAdapter implements org.eclipse.emf.common.notif
 	 * A list of LayoutInformation objects. one for each keyword, attribute and
 	 * reference.
 	 */
-	private java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation>();
+	private java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> layoutInformations = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation>();
 	
 	/**
 	 * Returns the EObject that this adapter is attached to.
@@ -53,11 +53,11 @@ public class SceLayoutInformationAdapter implements org.eclipse.emf.common.notif
 		this.target = newTarget;
 	}
 	
-	public java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation> getLayoutInformations() {
+	public java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation> getLayoutInformations() {
 		return layoutInformations;
 	}
 	
-	public void addLayoutInformation(org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation layoutInformation) {
+	public void addLayoutInformation(org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation layoutInformation) {
 		layoutInformations.add(layoutInformation);
 	}
 	
@@ -71,7 +71,7 @@ public class SceLayoutInformationAdapter implements org.eclipse.emf.common.notif
 	 * propagated to all attached layout information objects.
 	 */
 	public void replaceProxy(org.eclipse.emf.ecore.EObject proxy, org.eclipse.emf.ecore.EObject target) {
-		for (org.emftext.language.Presentation.resource.sce.mopp.SceLayoutInformation layoutInformation : layoutInformations) {
+		for (org.emftext.language.presentation.resource.sce.mopp.SceLayoutInformation layoutInformation : layoutInformations) {
 			layoutInformation.replaceProxy(proxy, target);
 		}
 	}

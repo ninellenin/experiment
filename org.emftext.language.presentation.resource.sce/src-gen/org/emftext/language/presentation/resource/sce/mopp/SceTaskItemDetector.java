@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * The SceTaskItemDetector is used to find task items in text documents. The
@@ -15,8 +15,8 @@ public class SceTaskItemDetector {
 	
 	public static String[] TASK_ITEM_KEYWORDS = new String[] {"TODO", "FIXME", "XXX"};
 	
-	public java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceTaskItem> findTaskItems(String text, int line, int charStart) {
-		java.util.List<org.emftext.language.Presentation.resource.sce.mopp.SceTaskItem> foundItems = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.mopp.SceTaskItem>();
+	public java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceTaskItem> findTaskItems(String text, int line, int charStart) {
+		java.util.List<org.emftext.language.presentation.resource.sce.mopp.SceTaskItem> foundItems = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.mopp.SceTaskItem>();
 		String remainingText = text;
 		boolean continueSearch = true;
 		int localCharStart = charStart;
@@ -58,7 +58,7 @@ public class SceTaskItemDetector {
 					int offset = index + localCharStart;
 					int end = offset + keyword.length();
 					int localLine = line + text.substring(0, offset - charStart).split("(\r\n|\r|\n)").length - 1;
-					foundItems.add(new org.emftext.language.Presentation.resource.sce.mopp.SceTaskItem(keyword, message, localLine, offset, end));
+					foundItems.add(new org.emftext.language.presentation.resource.sce.mopp.SceTaskItem(keyword, message, localLine, offset, end));
 					localCharStart += eolIndex;
 					// stop looping over the keywords, we've found one
 					break;

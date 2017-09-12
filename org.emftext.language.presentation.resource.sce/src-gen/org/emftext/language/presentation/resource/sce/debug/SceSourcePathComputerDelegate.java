@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.debug;
+package org.emftext.language.presentation.resource.sce.debug;
 
 public class SceSourcePathComputerDelegate {
 	// The generator for this class is currently disabled by option

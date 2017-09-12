@@ -4,12 +4,12 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
 /**
  * A basic implementation of the ITokenResolveResult interface.
  */
-public class SceTokenResolveResult implements org.emftext.language.Presentation.resource.sce.ISceTokenResolveResult {
+public class SceTokenResolveResult implements org.emftext.language.presentation.resource.sce.ISceTokenResolveResult {
 	
 	private String errorMessage;
 	private Object resolvedToken;

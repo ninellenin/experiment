@@ -4,40 +4,40 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 /**
  * A text editor for 'sce' models.
  * <p>
  * This editor has id
- * <code>org.emftext.language.Presentation.resource.sce.ui.SceEditor</code>
+ * <code>org.emftext.language.presentation.resource.sce.ui.SceEditor</code>
  * The editor's context menu has id
- * <code>org.emftext.language.Presentation.resource.sce.EditorContext</code>.
+ * <code>org.emftext.language.presentation.resource.sce.EditorContext</code>.
  * The editor's ruler context menu has id
- * <code>org.emftext.language.Presentation.resource.sce.EditorRuler</code>.
+ * <code>org.emftext.language.presentation.resource.sce.EditorRuler</code>.
  * </p>
  */
-public class SceEditor extends org.eclipse.ui.editors.text.TextEditor implements org.eclipse.emf.edit.domain.IEditingDomainProvider, org.eclipse.jface.viewers.ISelectionProvider, org.eclipse.jface.viewers.ISelectionChangedListener, org.eclipse.emf.common.ui.viewer.IViewerProvider, org.emftext.language.Presentation.resource.sce.ISceResourceProvider, org.emftext.language.Presentation.resource.sce.ui.ISceBracketHandlerProvider, org.emftext.language.Presentation.resource.sce.ui.ISceAnnotationModelProvider {
+public class SceEditor extends org.eclipse.ui.editors.text.TextEditor implements org.eclipse.emf.edit.domain.IEditingDomainProvider, org.eclipse.jface.viewers.ISelectionProvider, org.eclipse.jface.viewers.ISelectionChangedListener, org.eclipse.emf.common.ui.viewer.IViewerProvider, org.emftext.language.presentation.resource.sce.ISceResourceProvider, org.emftext.language.presentation.resource.sce.ui.ISceBracketHandlerProvider, org.emftext.language.presentation.resource.sce.ui.ISceAnnotationModelProvider {
 	
-	private org.emftext.language.Presentation.resource.sce.ui.SceHighlighting highlighting;
+	private org.emftext.language.presentation.resource.sce.ui.SceHighlighting highlighting;
 	private org.eclipse.jface.text.source.projection.ProjectionSupport projectionSupport;
-	private org.emftext.language.Presentation.resource.sce.ui.SceCodeFoldingManager codeFoldingManager;
-	private org.emftext.language.Presentation.resource.sce.ui.SceBackgroundParsingStrategy bgParsingStrategy = new org.emftext.language.Presentation.resource.sce.ui.SceBackgroundParsingStrategy();
-	private java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceBackgroundParsingListener> bgParsingListeners = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ISceBackgroundParsingListener>();
-	private org.emftext.language.Presentation.resource.sce.ui.SceColorManager colorManager = new org.emftext.language.Presentation.resource.sce.ui.SceColorManager();
-	private org.emftext.language.Presentation.resource.sce.ui.SceOutlinePage outlinePage;
-	private org.emftext.language.Presentation.resource.sce.ISceTextResource resource;
+	private org.emftext.language.presentation.resource.sce.ui.SceCodeFoldingManager codeFoldingManager;
+	private org.emftext.language.presentation.resource.sce.ui.SceBackgroundParsingStrategy bgParsingStrategy = new org.emftext.language.presentation.resource.sce.ui.SceBackgroundParsingStrategy();
+	private java.util.Collection<org.emftext.language.presentation.resource.sce.ISceBackgroundParsingListener> bgParsingListeners = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ISceBackgroundParsingListener>();
+	private org.emftext.language.presentation.resource.sce.ui.SceColorManager colorManager = new org.emftext.language.presentation.resource.sce.ui.SceColorManager();
+	private org.emftext.language.presentation.resource.sce.ui.SceOutlinePage outlinePage;
+	private org.emftext.language.presentation.resource.sce.ISceTextResource resource;
 	private org.eclipse.core.resources.IResourceChangeListener resourceChangeListener = new ModelResourceChangeListener();
-	private org.emftext.language.Presentation.resource.sce.ui.ScePropertySheetPage propertySheetPage;
+	private org.emftext.language.presentation.resource.sce.ui.ScePropertySheetPage propertySheetPage;
 	private org.eclipse.emf.edit.domain.EditingDomain editingDomain;
 	private org.eclipse.emf.edit.provider.ComposedAdapterFactory adapterFactory;
-	private org.emftext.language.Presentation.resource.sce.ui.ISceBracketHandler bracketHandler;
+	private org.emftext.language.presentation.resource.sce.ui.ISceBracketHandler bracketHandler;
 	private java.util.List<org.eclipse.jface.viewers.ISelectionChangedListener> selectionChangedListeners = new java.util.LinkedList<org.eclipse.jface.viewers.ISelectionChangedListener>();
 	private org.eclipse.jface.viewers.ISelection editorSelection;
 	
 	public SceEditor() {
 		super();
-		setSourceViewerConfiguration(new org.emftext.language.Presentation.resource.sce.ui.SceSourceViewerConfiguration(this, this, this, colorManager));
+		setSourceViewerConfiguration(new org.emftext.language.presentation.resource.sce.ui.SceSourceViewerConfiguration(this, this, this, colorManager));
 		initializeEditingDomain();
 		org.eclipse.core.resources.ResourcesPlugin.getWorkspace().addResourceChangeListener(resourceChangeListener, org.eclipse.core.resources.IResourceChangeEvent.POST_CHANGE);
 		addSelectionChangedListener(this);
@@ -79,7 +79,7 @@ public class SceEditor extends org.eclipse.ui.editors.text.TextEditor implements
 							org.eclipse.emf.ecore.resource.Resource changedResource = resourceSet.getResource(org.eclipse.emf.common.util.URI.createURI(delta.getFullPath().toString()), false);
 							if (changedResource != null) {
 								changedResource.unload();
-								org.emftext.language.Presentation.resource.sce.ISceTextResource currentResource = getResource();
+								org.emftext.language.presentation.resource.sce.ISceTextResource currentResource = getResource();
 								if (changedResource.equals(currentResource)) {
 									// reload the resource displayed in the editor
 									resourceSet.getResource(currentResource.getURI(), true);
@@ -101,15 +101,15 @@ public class SceEditor extends org.eclipse.ui.editors.text.TextEditor implements
 				ResourceDeltaVisitor visitor = new ResourceDeltaVisitor();
 				delta.accept(visitor);
 			} catch (org.eclipse.core.runtime.CoreException exception) {
-				org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.logError("Unexpected Error: ", exception);
+				org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.logError("Unexpected Error: ", exception);
 			}
 		}
 	}
 	
 	public void initializeEditor() {
 		super.initializeEditor();
-		setEditorContextMenuId("org.emftext.language.Presentation.resource.sce.EditorContext");
-		setRulerContextMenuId("org.emftext.language.Presentation.resource.sce.EditorRuler");
+		setEditorContextMenuId("org.emftext.language.presentation.resource.sce.EditorContext");
+		setRulerContextMenuId("org.emftext.language.presentation.resource.sce.EditorRuler");
 	}
 	
 	public Object getAdapter(@SuppressWarnings("rawtypes") Class required) {
@@ -127,14 +127,14 @@ public class SceEditor extends org.eclipse.ui.editors.text.TextEditor implements
 		// Code Folding
 		org.eclipse.jface.text.source.projection.ProjectionViewer viewer = (org.eclipse.jface.text.source.projection.ProjectionViewer) getSourceViewer();
 		// Occurrence initiation, need ITextResource and ISourceViewer.
-		highlighting = new org.emftext.language.Presentation.resource.sce.ui.SceHighlighting(getResource(), viewer, colorManager, this);
+		highlighting = new org.emftext.language.presentation.resource.sce.ui.SceHighlighting(getResource(), viewer, colorManager, this);
 		
 		projectionSupport = new org.eclipse.jface.text.source.projection.ProjectionSupport(viewer, getAnnotationAccess(), getSharedColors());
 		projectionSupport.install();
 		
 		// turn projection mode on
 		viewer.doOperation(org.eclipse.jface.text.source.projection.ProjectionViewer.TOGGLE);
-		codeFoldingManager = new org.emftext.language.Presentation.resource.sce.ui.SceCodeFoldingManager(viewer, this);
+		codeFoldingManager = new org.emftext.language.presentation.resource.sce.ui.SceCodeFoldingManager(viewer, this);
 	}
 	
 	protected void doSetInput(org.eclipse.ui.IEditorInput editorInput) throws org.eclipse.core.runtime.CoreException {
@@ -150,29 +150,29 @@ public class SceEditor extends org.eclipse.ui.editors.text.TextEditor implements
 		String path = inputFile.getFullPath().toString();
 		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createPlatformResourceURI(path, true);
 		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = editingDomain.getResourceSet();
-		org.emftext.language.Presentation.resource.sce.ISceTextResource loadedResource = (org.emftext.language.Presentation.resource.sce.ISceTextResource) resourceSet.getResource(uri, false);
+		org.emftext.language.presentation.resource.sce.ISceTextResource loadedResource = (org.emftext.language.presentation.resource.sce.ISceTextResource) resourceSet.getResource(uri, false);
 		if (loadedResource == null) {
 			try {
 				org.eclipse.emf.ecore.resource.Resource demandLoadedResource = null;
 				// here we do not use getResource(), because 'resource' might be null, which is ok
 				// when initializing the resource object
-				org.emftext.language.Presentation.resource.sce.ISceTextResource currentResource = this.resource;
+				org.emftext.language.presentation.resource.sce.ISceTextResource currentResource = this.resource;
 				if (currentResource != null && !currentResource.getURI().fileExtension().equals(uri.fileExtension())) {
 					// do not attempt to load if file extension has changed in a 'save as' operation	
 				}
 				else {
 					demandLoadedResource = resourceSet.getResource(uri, true);
 				}
-				if (demandLoadedResource instanceof org.emftext.language.Presentation.resource.sce.ISceTextResource) {
-					setResource((org.emftext.language.Presentation.resource.sce.ISceTextResource) demandLoadedResource);
+				if (demandLoadedResource instanceof org.emftext.language.presentation.resource.sce.ISceTextResource) {
+					setResource((org.emftext.language.presentation.resource.sce.ISceTextResource) demandLoadedResource);
 				} else {
 					// the resource was not loaded by an EMFText resource, but some other EMF resource
-					org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.showErrorDialog("No EMFText resource.", "The file '" + uri.lastSegment() + "' of type '" + uri.fileExtension() + "' can not be handled by the SceEditor.");
+					org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.showErrorDialog("No EMFText resource.", "The file '" + uri.lastSegment() + "' of type '" + uri.fileExtension() + "' can not be handled by the SceEditor.");
 					// close this editor because it can not present the resource
 					close(false);
 				}
 			} catch (Exception e) {
-				org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.logError("Exception while loading resource in " + this.getClass().getSimpleName() + ".", e);
+				org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.logError("Exception while loading resource in " + this.getClass().getSimpleName() + ".", e);
 			}
 		} else {
 			setResource(loadedResource);
@@ -255,11 +255,11 @@ public class SceEditor extends org.eclipse.ui.editors.text.TextEditor implements
 		return editingDomain.getResourceSet();
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ISceTextResource getResource() {
+	public org.emftext.language.presentation.resource.sce.ISceTextResource getResource() {
 		return resource;
 	}
 	
-	private void setResource(org.emftext.language.Presentation.resource.sce.ISceTextResource resource) {
+	private void setResource(org.emftext.language.presentation.resource.sce.ISceTextResource resource) {
 		assert resource != null;
 		this.resource = resource;
 		if (this.resource.getErrors().isEmpty()) {
@@ -269,7 +269,7 @@ public class SceEditor extends org.eclipse.ui.editors.text.TextEditor implements
 	
 	private Object getOutlinePage() {
 		if (outlinePage == null) {
-			outlinePage = new org.emftext.language.Presentation.resource.sce.ui.SceOutlinePage(this);
+			outlinePage = new org.emftext.language.presentation.resource.sce.ui.SceOutlinePage(this);
 			outlinePage.addSelectionChangedListener(highlighting);
 			highlighting.addSelectionChangedListener(outlinePage);
 		}
@@ -278,7 +278,7 @@ public class SceEditor extends org.eclipse.ui.editors.text.TextEditor implements
 	
 	public org.eclipse.ui.views.properties.IPropertySheetPage getPropertySheetPage() {
 		if (propertySheetPage == null) {
-			propertySheetPage = new org.emftext.language.Presentation.resource.sce.ui.ScePropertySheetPage();
+			propertySheetPage = new org.emftext.language.presentation.resource.sce.ui.ScePropertySheetPage();
 			// add a slightly modified adapter factory that does not return any editors for
 			// properties. this way, a model can never be modified through the properties view.
 			propertySheetPage.setPropertySourceProvider(new org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider(adapterFactory) {
@@ -326,15 +326,15 @@ public class SceEditor extends org.eclipse.ui.editors.text.TextEditor implements
 				return;
 			}
 			org.eclipse.jface.text.source.ISourceViewer viewer = getSourceViewer();
-			org.emftext.language.Presentation.resource.sce.ISceTextResource textResource = (org.emftext.language.Presentation.resource.sce.ISceTextResource) element.eResource();
-			org.emftext.language.Presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
+			org.emftext.language.presentation.resource.sce.ISceTextResource textResource = (org.emftext.language.presentation.resource.sce.ISceTextResource) element.eResource();
+			org.emftext.language.presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
 			int destination = locationMap.getCharStart(element);
 			int length = locationMap.getCharEnd(element) + 1 - destination;
 			
-			org.emftext.language.Presentation.resource.sce.ISceTextScanner lexer = getResource().getMetaInformation().createLexer();
+			org.emftext.language.presentation.resource.sce.ISceTextScanner lexer = getResource().getMetaInformation().createLexer();
 			try {
 				lexer.setText(viewer.getDocument().get(destination, length));
-				org.emftext.language.Presentation.resource.sce.ISceTextToken token = lexer.getNextToken();
+				org.emftext.language.presentation.resource.sce.ISceTextToken token = lexer.getNextToken();
 				String tokenText = token.getText();
 				while (tokenText != null) {
 					if (token.getText().equals(text)) {
@@ -355,7 +355,7 @@ public class SceEditor extends org.eclipse.ui.editors.text.TextEditor implements
 			}
 			viewer.getTextWidget().setSelection(destination);
 		} catch (Exception e) {
-			org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.logError("Exception in setCaret()", e);
+			org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.logError("Exception in setCaret()", e);
 		}
 	}
 	
@@ -374,21 +374,21 @@ public class SceEditor extends org.eclipse.ui.editors.text.TextEditor implements
 		return viewer;
 	}
 	
-	public void addBackgroundParsingListener(org.emftext.language.Presentation.resource.sce.ISceBackgroundParsingListener listener) {
+	public void addBackgroundParsingListener(org.emftext.language.presentation.resource.sce.ISceBackgroundParsingListener listener) {
 		bgParsingListeners.add(listener);
 	}
 	
 	public void notifyBackgroundParsingFinished() {
-		for (org.emftext.language.Presentation.resource.sce.ISceBackgroundParsingListener listener : bgParsingListeners) {
+		for (org.emftext.language.presentation.resource.sce.ISceBackgroundParsingListener listener : bgParsingListeners) {
 			listener.parsingCompleted(getResource());
 		}
 	}
 	
-	public org.emftext.language.Presentation.resource.sce.ui.ISceBracketHandler getBracketHandler() {
+	public org.emftext.language.presentation.resource.sce.ui.ISceBracketHandler getBracketHandler() {
 		return bracketHandler;
 	}
 	
-	public void setBracketHandler(org.emftext.language.Presentation.resource.sce.ui.ISceBracketHandler bracketHandler) {
+	public void setBracketHandler(org.emftext.language.presentation.resource.sce.ui.ISceBracketHandler bracketHandler) {
 		this.bracketHandler = bracketHandler;
 	}
 	
@@ -502,11 +502,11 @@ public class SceEditor extends org.eclipse.ui.editors.text.TextEditor implements
 				if (resource == null) {
 					return false;
 				}
-				if (!(resource instanceof org.emftext.language.Presentation.resource.sce.ISceTextResource)) {
+				if (!(resource instanceof org.emftext.language.presentation.resource.sce.ISceTextResource)) {
 					return false;
 				}
-				org.emftext.language.Presentation.resource.sce.ISceTextResource textResource = (org.emftext.language.Presentation.resource.sce.ISceTextResource) resource;
-				org.emftext.language.Presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
+				org.emftext.language.presentation.resource.sce.ISceTextResource textResource = (org.emftext.language.presentation.resource.sce.ISceTextResource) resource;
+				org.emftext.language.presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
 				int destination = locationMap.getCharStart(element);
 				if (destination < 0) {
 					destination = 0;

@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.analysis;
+package org.emftext.language.presentation.resource.sce.analysis;
 
 public class SceDefaultResolverDelegate<ContainerType extends org.eclipse.emf.ecore.EObject, ReferenceType extends org.eclipse.emf.ecore.EObject> {
 	
@@ -60,9 +60,9 @@ public class SceDefaultResolverDelegate<ContainerType extends org.eclipse.emf.ec
 	 */
 	private int oldProxyCount = -1;
 	
-	private static org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation metaInformation = new org.emftext.language.Presentation.resource.sce.mopp.SceMetaInformation();
+	private static org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation metaInformation = new org.emftext.language.presentation.resource.sce.mopp.SceMetaInformation();
 	
-	private org.emftext.language.Presentation.resource.sce.ISceNameProvider nameProvider = metaInformation.createNameProvider();
+	private org.emftext.language.presentation.resource.sce.ISceNameProvider nameProvider = metaInformation.createNameProvider();
 	
 	/**
 	 * This standard implementation searches for objects in the resource, which have
@@ -70,7 +70,7 @@ public class SceDefaultResolverDelegate<ContainerType extends org.eclipse.emf.ec
 	 * matching object is found, the identifier is used as URI. If the resource at
 	 * this URI has a root element of the correct type, this element is returned.
 	 */
-	protected void resolve(String identifier, ContainerType container, org.eclipse.emf.ecore.EReference reference, int position, boolean resolveFuzzy, org.emftext.language.Presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> result) {
+	protected void resolve(String identifier, ContainerType container, org.eclipse.emf.ecore.EReference reference, int position, boolean resolveFuzzy, org.emftext.language.presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> result) {
 		try {
 			org.eclipse.emf.ecore.EObject root = container;
 			if (!enableScoping) {
@@ -150,7 +150,7 @@ public class SceDefaultResolverDelegate<ContainerType extends org.eclipse.emf.ec
 	 * resolvers which require to search in a particular scope for referenced
 	 * elements, rather than in the whole resource as done by resolve().
 	 */
-	protected boolean tryToResolveIdentifierInObjectTree(String identifier, org.eclipse.emf.ecore.EObject container, org.eclipse.emf.ecore.EObject root, org.eclipse.emf.ecore.EReference reference, int position, boolean resolveFuzzy, org.emftext.language.Presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> result, boolean checkRootFirst) {
+	protected boolean tryToResolveIdentifierInObjectTree(String identifier, org.eclipse.emf.ecore.EObject container, org.eclipse.emf.ecore.EObject root, org.eclipse.emf.ecore.EReference reference, int position, boolean resolveFuzzy, org.emftext.language.presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> result, boolean checkRootFirst) {
 		org.eclipse.emf.ecore.EClass type = reference.getEReferenceType();
 		boolean continueSearch;
 		if (checkRootFirst) {
@@ -180,7 +180,7 @@ public class SceDefaultResolverDelegate<ContainerType extends org.eclipse.emf.ec
 		return true;
 	}
 	
-	protected boolean tryToResolveIdentifierAsURI(String identifier, ContainerType container, org.eclipse.emf.ecore.EReference reference, int position, boolean resolveFuzzy, org.emftext.language.Presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> result) {
+	protected boolean tryToResolveIdentifierAsURI(String identifier, ContainerType container, org.eclipse.emf.ecore.EReference reference, int position, boolean resolveFuzzy, org.emftext.language.presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> result) {
 		org.eclipse.emf.ecore.EClass type = reference.getEReferenceType();
 		org.eclipse.emf.ecore.resource.Resource resource = container.eResource();
 		if (resource != null) {
@@ -196,7 +196,7 @@ public class SceDefaultResolverDelegate<ContainerType extends org.eclipse.emf.ec
 		return true;
 	}
 	
-	protected boolean tryToResolveIdentifierInGenModelRegistry(String identifier, ContainerType container, org.eclipse.emf.ecore.EReference reference, int position, boolean resolveFuzzy, org.emftext.language.Presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> result) {
+	protected boolean tryToResolveIdentifierInGenModelRegistry(String identifier, ContainerType container, org.eclipse.emf.ecore.EReference reference, int position, boolean resolveFuzzy, org.emftext.language.presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> result) {
 		org.eclipse.emf.ecore.EClass type = reference.getEReferenceType();
 		
 		final java.util.Map<String, org.eclipse.emf.common.util.URI> packageNsURIToGenModelLocationMap = org.eclipse.emf.ecore.plugin.EcorePlugin.getEPackageNsURIToGenModelLocationMap();
@@ -224,7 +224,7 @@ public class SceDefaultResolverDelegate<ContainerType extends org.eclipse.emf.ec
 		return true;
 	}
 	
-	protected boolean checkElement(org.eclipse.emf.ecore.EObject container, org.eclipse.emf.ecore.EObject element, org.eclipse.emf.ecore.EReference reference, int position, org.eclipse.emf.ecore.EClass type, String identifier, boolean resolveFuzzy, boolean checkStringWise, org.emftext.language.Presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> result) {
+	protected boolean checkElement(org.eclipse.emf.ecore.EObject container, org.eclipse.emf.ecore.EObject element, org.eclipse.emf.ecore.EReference reference, int position, org.eclipse.emf.ecore.EClass type, String identifier, boolean resolveFuzzy, boolean checkStringWise, org.emftext.language.presentation.resource.sce.ISceReferenceResolveResult<ReferenceType> result) {
 		if (element.eIsProxy()) {
 			return true;
 		}
@@ -253,7 +253,7 @@ public class SceDefaultResolverDelegate<ContainerType extends org.eclipse.emf.ec
 				} else {
 					oldTarget = (org.eclipse.emf.ecore.EObject) container.eGet(reference, false);
 				}
-				result.addQuickFix(new org.emftext.language.Presentation.resource.sce.mopp.SceChangeReferenceQuickFix("Replace with " + similarMatch, "IMG_TOOL_FORWARD", container, reference, oldTarget, element));
+				result.addQuickFix(new org.emftext.language.presentation.resource.sce.mopp.SceChangeReferenceQuickFix("Replace with " + similarMatch, "IMG_TOOL_FORWARD", container, reference, oldTarget, element));
 			}
 			return true;
 		}
@@ -278,7 +278,7 @@ public class SceDefaultResolverDelegate<ContainerType extends org.eclipse.emf.ec
 		return (ReferenceType) element;
 	}
 	
-	protected String produceDeResolveErrorMessage(org.eclipse.emf.ecore.EObject refObject, org.eclipse.emf.ecore.EObject container, org.eclipse.emf.ecore.EReference reference, org.emftext.language.Presentation.resource.sce.ISceTextResource resource) {
+	protected String produceDeResolveErrorMessage(org.eclipse.emf.ecore.EObject refObject, org.eclipse.emf.ecore.EObject container, org.eclipse.emf.ecore.EReference reference, org.emftext.language.presentation.resource.sce.ISceTextResource resource) {
 		String msg = getClass().getSimpleName() + ": " + reference.getEType().getName() + " \"" + refObject.toString() + "\" not de-resolveable";
 		return msg;
 	}
@@ -335,8 +335,8 @@ public class SceDefaultResolverDelegate<ContainerType extends org.eclipse.emf.ec
 				deresolvedReference = ((org.eclipse.emf.ecore.InternalEObject) eObjectToDeResolve).eProxyURI().fragment();
 				// If the proxy was created by EMFText, we can try to recover the identifier from
 				// the proxy URI
-				if (deresolvedReference != null && deresolvedReference.startsWith(org.emftext.language.Presentation.resource.sce.ISceContextDependentURIFragment.INTERNAL_URI_FRAGMENT_PREFIX)) {
-					deresolvedReference = deresolvedReference.substring(org.emftext.language.Presentation.resource.sce.ISceContextDependentURIFragment.INTERNAL_URI_FRAGMENT_PREFIX.length());
+				if (deresolvedReference != null && deresolvedReference.startsWith(org.emftext.language.presentation.resource.sce.ISceContextDependentURIFragment.INTERNAL_URI_FRAGMENT_PREFIX)) {
+					deresolvedReference = deresolvedReference.substring(org.emftext.language.presentation.resource.sce.ISceContextDependentURIFragment.INTERNAL_URI_FRAGMENT_PREFIX.length());
 					deresolvedReference = deresolvedReference.substring(deresolvedReference.indexOf("_") + 1);
 				}
 			}
@@ -396,15 +396,15 @@ public class SceDefaultResolverDelegate<ContainerType extends org.eclipse.emf.ec
 		}
 	}
 	
-	protected org.emftext.language.Presentation.resource.sce.ISceReferenceCache getCache(org.eclipse.emf.ecore.EObject object) {
+	protected org.emftext.language.presentation.resource.sce.ISceReferenceCache getCache(org.eclipse.emf.ecore.EObject object) {
 		org.eclipse.emf.ecore.EObject root = org.eclipse.emf.ecore.util.EcoreUtil.getRootContainer(object);
-		org.eclipse.emf.common.notify.Adapter adapter = org.emftext.language.Presentation.resource.sce.util.SceEObjectUtil.getEAdapter(root, org.emftext.language.Presentation.resource.sce.analysis.SceReferenceCache.class);
-		org.emftext.language.Presentation.resource.sce.analysis.SceReferenceCache cache = org.emftext.language.Presentation.resource.sce.util.SceCastUtil.cast(adapter);
+		org.eclipse.emf.common.notify.Adapter adapter = org.emftext.language.presentation.resource.sce.util.SceEObjectUtil.getEAdapter(root, org.emftext.language.presentation.resource.sce.analysis.SceReferenceCache.class);
+		org.emftext.language.presentation.resource.sce.analysis.SceReferenceCache cache = org.emftext.language.presentation.resource.sce.util.SceCastUtil.cast(adapter);
 		if (cache != null) {
 			return cache;
 		} else {
 			// cache does not exist. create a new one.
-			cache = new org.emftext.language.Presentation.resource.sce.analysis.SceReferenceCache(nameProvider);
+			cache = new org.emftext.language.presentation.resource.sce.analysis.SceReferenceCache(nameProvider);
 			cache.initialize(root);
 			root.eAdapters().add(cache);
 			return cache;
@@ -422,7 +422,7 @@ public class SceDefaultResolverDelegate<ContainerType extends org.eclipse.emf.ec
 	protected boolean isSimilar(String identifier, Object attributeValue) {
 		if (attributeValue != null && attributeValue instanceof String) {
 			String name = (String) attributeValue;
-			if (org.emftext.language.Presentation.resource.sce.util.SceStringUtil.computeLevenshteinDistance(identifier, name) <= MAX_DISTANCE) {
+			if (org.emftext.language.presentation.resource.sce.util.SceStringUtil.computeLevenshteinDistance(identifier, name) <= MAX_DISTANCE) {
 				return true;
 			}
 		}

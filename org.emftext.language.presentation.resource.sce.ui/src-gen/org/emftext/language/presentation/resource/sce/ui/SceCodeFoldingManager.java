@@ -4,7 +4,7 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.ui;
+package org.emftext.language.presentation.resource.sce.ui;
 
 /**
  * This manager adds new projection annotations for the code folding and deletes
@@ -14,7 +14,7 @@ package org.emftext.language.Presentation.resource.sce.ui;
  */
 public class SceCodeFoldingManager {
 	
-	private class FoldingUpdateListener implements org.emftext.language.Presentation.resource.sce.ISceBackgroundParsingListener {
+	private class FoldingUpdateListener implements org.emftext.language.presentation.resource.sce.ISceBackgroundParsingListener {
 		public void parsingCompleted(org.eclipse.emf.ecore.resource.Resource resource) {
 			calculatePositions();
 		}
@@ -22,9 +22,9 @@ public class SceCodeFoldingManager {
 	
 	private class EditorOnCloseListener implements org.eclipse.ui.IPartListener2 {
 		
-		private org.emftext.language.Presentation.resource.sce.ui.SceEditor editor;
+		private org.emftext.language.presentation.resource.sce.ui.SceEditor editor;
 		
-		public EditorOnCloseListener(org.emftext.language.Presentation.resource.sce.ui.SceEditor editor) {
+		public EditorOnCloseListener(org.emftext.language.presentation.resource.sce.ui.SceEditor editor) {
 			this.editor = editor;
 		}
 		
@@ -39,8 +39,8 @@ public class SceCodeFoldingManager {
 				return;
 			}
 			org.eclipse.ui.IWorkbenchPart workbenchPart = partRef.getPart(false);
-			if (workbenchPart instanceof org.emftext.language.Presentation.resource.sce.ui.SceEditor) {
-				org.emftext.language.Presentation.resource.sce.ui.SceEditor editor = (org.emftext.language.Presentation.resource.sce.ui.SceEditor) workbenchPart;
+			if (workbenchPart instanceof org.emftext.language.presentation.resource.sce.ui.SceEditor) {
+				org.emftext.language.presentation.resource.sce.ui.SceEditor editor = (org.emftext.language.presentation.resource.sce.ui.SceEditor) workbenchPart;
 				org.eclipse.emf.ecore.resource.Resource editorResource = editor.getResource();
 				if (editorResource == null) {
 					return;
@@ -82,7 +82,7 @@ public class SceCodeFoldingManager {
 	protected java.util.Map<org.eclipse.jface.text.source.projection.ProjectionAnnotation, org.eclipse.jface.text.Position> additions = new java.util.LinkedHashMap<org.eclipse.jface.text.source.projection.ProjectionAnnotation, org.eclipse.jface.text.Position>();
 	protected org.eclipse.jface.text.source.projection.ProjectionAnnotationModel projectionAnnotationModel;
 	protected org.eclipse.jface.text.source.projection.ProjectionViewer sourceViewer;
-	protected org.emftext.language.Presentation.resource.sce.ui.SceEditor editor;
+	protected org.emftext.language.presentation.resource.sce.ui.SceEditor editor;
 	
 	/**
 	 * Creates a code folding manager to handle the
@@ -90,7 +90,7 @@ public class SceCodeFoldingManager {
 	 * 
 	 * @param sourceViewer the source viewer to calculate the element lines
 	 */
-	public SceCodeFoldingManager(org.eclipse.jface.text.source.projection.ProjectionViewer sourceViewer,org.emftext.language.Presentation.resource.sce.ui.SceEditor textEditor) {
+	public SceCodeFoldingManager(org.eclipse.jface.text.source.projection.ProjectionViewer sourceViewer,org.emftext.language.presentation.resource.sce.ui.SceEditor textEditor) {
 		this.projectionAnnotationModel = sourceViewer.getProjectionAnnotationModel();
 		this.sourceViewer = sourceViewer;
 		this.editor = textEditor;
@@ -102,7 +102,7 @@ public class SceCodeFoldingManager {
 		}
 	}
 	
-	private void addCloseListener(final org.emftext.language.Presentation.resource.sce.ui.SceEditor editor) {
+	private void addCloseListener(final org.emftext.language.presentation.resource.sce.ui.SceEditor editor) {
 		editor.getSite().getPage().addPartListener(new EditorOnCloseListener(editor));
 		editor.addBackgroundParsingListener(new FoldingUpdateListener());
 	}
@@ -302,7 +302,7 @@ public class SceCodeFoldingManager {
 	}
 	
 	private java.io.File getCodeFoldingStateFile(String uriString) {
-		org.osgi.framework.Bundle bundle = org.eclipse.core.runtime.Platform.getBundle(org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.PLUGIN_ID);
+		org.osgi.framework.Bundle bundle = org.eclipse.core.runtime.Platform.getBundle(org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.PLUGIN_ID);
 		org.eclipse.core.runtime.IPath path = org.eclipse.core.runtime.Platform.getStateLocation(bundle);
 		if (path == null) {
 			return null;
@@ -318,7 +318,7 @@ public class SceCodeFoldingManager {
 			md = java.security.MessageDigest.getInstance("MD5");
 			encryptMsg = md.digest(text.getBytes());
 		} catch (java.security.NoSuchAlgorithmException e) {
-			org.emftext.language.Presentation.resource.sce.ui.SceUIPlugin.logError("NoSuchAlgorithmException while creating MD5 checksum.", e);
+			org.emftext.language.presentation.resource.sce.ui.SceUIPlugin.logError("NoSuchAlgorithmException while creating MD5 checksum.", e);
 			return "";
 		}
 		String swap = "";
@@ -344,7 +344,7 @@ public class SceCodeFoldingManager {
 	}
 	
 	protected void calculatePositions() {
-		org.emftext.language.Presentation.resource.sce.ISceTextResource textResource = (org.emftext.language.Presentation.resource.sce.ISceTextResource) editor.getResource();
+		org.emftext.language.presentation.resource.sce.ISceTextResource textResource = (org.emftext.language.presentation.resource.sce.ISceTextResource) editor.getResource();
 		org.eclipse.jface.text.IDocument document = sourceViewer.getDocument();
 		if (textResource == null || document == null) {
 			return;
@@ -354,7 +354,7 @@ public class SceCodeFoldingManager {
 			return;
 		}
 		final java.util.List<org.eclipse.jface.text.Position> positions = new java.util.ArrayList<org.eclipse.jface.text.Position>();
-		org.emftext.language.Presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
+		org.emftext.language.presentation.resource.sce.ISceLocationMap locationMap = textResource.getLocationMap();
 		org.eclipse.emf.ecore.EClass[] foldableClasses = textResource.getMetaInformation().getFoldableClasses();
 		if (foldableClasses == null) {
 			return;

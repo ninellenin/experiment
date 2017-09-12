@@ -4,12 +4,12 @@
  *
  * 
  */
-package org.emftext.language.Presentation.resource.sce.mopp;
+package org.emftext.language.presentation.resource.sce.mopp;
 
-public class SceParseResult implements org.emftext.language.Presentation.resource.sce.ISceParseResult {
+public class SceParseResult implements org.emftext.language.presentation.resource.sce.ISceParseResult {
 	
 	private org.eclipse.emf.ecore.EObject root;
-	private java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceCommand<org.emftext.language.Presentation.resource.sce.ISceTextResource>> commands = new java.util.ArrayList<org.emftext.language.Presentation.resource.sce.ISceCommand<org.emftext.language.Presentation.resource.sce.ISceTextResource>>();
+	private java.util.Collection<org.emftext.language.presentation.resource.sce.ISceCommand<org.emftext.language.presentation.resource.sce.ISceTextResource>> commands = new java.util.ArrayList<org.emftext.language.presentation.resource.sce.ISceCommand<org.emftext.language.presentation.resource.sce.ISceTextResource>>();
 	
 	public SceParseResult() {
 		super();
@@ -23,7 +23,7 @@ public class SceParseResult implements org.emftext.language.Presentation.resourc
 		return root;
 	}
 	
-	public java.util.Collection<org.emftext.language.Presentation.resource.sce.ISceCommand<org.emftext.language.Presentation.resource.sce.ISceTextResource>> getPostParseCommands() {
+	public java.util.Collection<org.emftext.language.presentation.resource.sce.ISceCommand<org.emftext.language.presentation.resource.sce.ISceTextResource>> getPostParseCommands() {
 		return commands;
 	}
 	
