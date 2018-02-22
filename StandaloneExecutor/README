@@ -1,0 +1,6 @@
+configuration.ini file parameters:
+--------------------------------------------------------------
+EXPERIMENT - Platform Independent Model (PsychoPy ecore model) 
+SCENARIO - Platform Specific Model (Presentation ecore model)
+OUTPUT - Output file (in *.sce format)
+TRANSFORMATION - Transformation file
