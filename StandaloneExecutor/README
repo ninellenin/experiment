@@ -1,6 +1,6 @@
 configuration.ini file parameters:
 --------------------------------------------------------------
-EXPERIMENT - Platform Independent Model (PsychoPy ecore model) 
-SCENARIO - Platform Specific Model (Presentation ecore model)
+EXPERIMENT - PIM name (from *.etl file); Platform independent model instance(Experiment *.model file) 
+SCENARIO - PSM name; (*.xmi file)
 OUTPUT - Output file (in *.sce format)
 TRANSFORMATION - Transformation file
