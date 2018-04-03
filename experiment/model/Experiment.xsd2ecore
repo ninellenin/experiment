@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#/"
+    outputs="Experiment.ecore#/" topToBottom="true">
+  <nested inputs="bundleentry://862.fwk2041435954/cache/www.w3.org/2001/XMLSchema.xsd#//string;XSDSimpleTypeDefinition=9"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Updates;XSDSimpleTypeDefinition=2"
+      outputs="Experiment.ecore#//Updates">
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Updates;XSDSimpleTypeDefinition=2/XSDEnumerationFacet"
+        outputs="Experiment.ecore#//Updates/constant"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Updates;XSDSimpleTypeDefinition=2/XSDEnumerationFacet=1"
+        outputs="Experiment.ecore#//Updates/None"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Updates;XSDSimpleTypeDefinition=2/XSDEnumerationFacet=2"
+        outputs="Experiment.ecore#//Updates/setEveryFrame"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Updates;XSDSimpleTypeDefinition=2/XSDEnumerationFacet=3"
+        outputs="Experiment.ecore#//Updates/setEveryRepeat"/>
+  </nested>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ValType;XSDSimpleTypeDefinition=1"
+      outputs="Experiment.ecore#//ValType">
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ValType;XSDSimpleTypeDefinition=1/XSDEnumerationFacet"
+        outputs="Experiment.ecore#//ValType/bool"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ValType;XSDSimpleTypeDefinition=1/XSDEnumerationFacet=1"
+        outputs="Experiment.ecore#//ValType/code"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ValType;XSDSimpleTypeDefinition=1/XSDEnumerationFacet=2"
+        outputs="Experiment.ecore#//ValType/extendedCode"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ValType;XSDSimpleTypeDefinition=1/XSDEnumerationFacet=3"
+        outputs="Experiment.ecore#//ValType/num"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ValType;XSDSimpleTypeDefinition=1/XSDEnumerationFacet=4"
+        outputs="Experiment.ecore#//ValType/str"/>
+  </nested>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Param;XSDComplexTypeDefinition"
+      outputs="Experiment.ecore#//Param">
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Param;XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Experiment.ecore#//Param/name"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Param;XSDComplexTypeDefinition/XSDAttributeUse=3"
+        outputs="Experiment.ecore#//Param/updates"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Param;XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Experiment.ecore#//Param/val"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Param;XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="Experiment.ecore#//Param/valType"/>
+  </nested>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Settings;XSDComplexTypeDefinition=1"
+      outputs="Experiment.ecore#//Settings">
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Settings;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Experiment.ecore#//Settings/param"/>
+  </nested>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Name;XSDSimpleTypeDefinition"
+      outputs="Experiment.ecore#//Name"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Component;XSDComplexTypeDefinition=2"
+      outputs="Experiment.ecore#//Component">
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Component;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Experiment.ecore#//Component/param"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Component;XSDComplexTypeDefinition=2/XSDAttributeUse"
+        outputs="Experiment.ecore#//Component/name"/>
+  </nested>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ComponentGroup;XSDModelGroupDefinition/XSDModelGroup/XSDParticle"
+      outputs="Experiment.ecore#//Routine/apertureComponent"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ComponentGroup;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=1"
+      outputs="Experiment.ecore#//Routine/cedrusButtonBoxComponent"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ComponentGroup;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=2"
+      outputs="Experiment.ecore#//Routine/codeComponent"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ComponentGroup;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=3"
+      outputs="Experiment.ecore#//Routine/dotsComponent"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ComponentGroup;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=4"
+      outputs="Experiment.ecore#//Routine/gratingComponent"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ComponentGroup;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=5"
+      outputs="Experiment.ecore#//Routine/imageComponent"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ComponentGroup;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=6"
+      outputs="Experiment.ecore#//Routine/ioLabsButtonBoxComponent"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ComponentGroup;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=7"
+      outputs="Experiment.ecore#//Routine/keyboardComponent"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ComponentGroup;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=8"
+      outputs="Experiment.ecore#//Routine/microphoneComponent"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ComponentGroup;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=9"
+      outputs="Experiment.ecore#//Routine/mouseComponent"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ComponentGroup;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=10"
+      outputs="Experiment.ecore#//Routine/movieComponent"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ComponentGroup;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=11"
+      outputs="Experiment.ecore#//Routine/parallelOutComponent"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ComponentGroup;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=12"
+      outputs="Experiment.ecore#//Routine/polygonComponent"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ComponentGroup;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=13"
+      outputs="Experiment.ecore#//Routine/ratingScaleComponent"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ComponentGroup;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=14"
+      outputs="Experiment.ecore#//Routine/soundComponent"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ComponentGroup;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=15"
+      outputs="Experiment.ecore#//Routine/staticComponent"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//ComponentGroup;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=16"
+      outputs="Experiment.ecore#//Routine/textComponent"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Routine;XSDComplexTypeDefinition=3"
+      outputs="Experiment.ecore#//Routine">
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Routine;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Experiment.ecore#//Routine/componentGroup"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Routine;XSDComplexTypeDefinition=3/XSDAttributeUse"
+        outputs="Experiment.ecore#//Routine/name"/>
+  </nested>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Routines;XSDComplexTypeDefinition=4"
+      outputs="Experiment.ecore#//Routines">
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Routines;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Experiment.ecore#//Routines/routine"/>
+  </nested>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//FlowRoutine;XSDComplexTypeDefinition=5"
+      outputs="Experiment.ecore#//FlowRoutine">
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//FlowRoutine;XSDComplexTypeDefinition=5/XSDAttributeUse"
+        outputs="Experiment.ecore#//FlowRoutine/name"/>
+  </nested>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//FlowGroup;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle"
+      outputs="Experiment.ecore#//Flow/routine"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//LoopType;XSDSimpleTypeDefinition=3"
+      outputs="Experiment.ecore#//LoopType">
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//LoopType;XSDSimpleTypeDefinition=3/XSDEnumerationFacet"
+        outputs="Experiment.ecore#//LoopType/MultiStairHandler"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//LoopType;XSDSimpleTypeDefinition=3/XSDEnumerationFacet=1"
+        outputs="Experiment.ecore#//LoopType/StairHandler"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//LoopType;XSDSimpleTypeDefinition=3/XSDEnumerationFacet=2"
+        outputs="Experiment.ecore#//LoopType/TrialHandler"/>
+  </nested>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//LoopInitiator;XSDComplexTypeDefinition=6"
+      outputs="Experiment.ecore#//LoopInitiator">
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//LoopInitiator;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Experiment.ecore#//LoopInitiator/param"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//LoopInitiator;XSDComplexTypeDefinition=6/XSDAttributeUse"
+        outputs="Experiment.ecore#//LoopInitiator/loopType"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//LoopInitiator;XSDComplexTypeDefinition=6/XSDAttributeUse=1"
+        outputs="Experiment.ecore#//LoopInitiator/name"/>
+  </nested>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//FlowGroup;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle=1"
+      outputs="Experiment.ecore#//Flow/loopInitiator"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//LoopTerminator;XSDComplexTypeDefinition=7"
+      outputs="Experiment.ecore#//LoopTerminator">
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//LoopTerminator;XSDComplexTypeDefinition=7/XSDAttributeUse"
+        outputs="Experiment.ecore#//LoopTerminator/name"/>
+  </nested>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//FlowGroup;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle=2"
+      outputs="Experiment.ecore#//Flow/loopTerminator"/>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Flow;XSDComplexTypeDefinition=8"
+      outputs="Experiment.ecore#//Flow">
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Flow;XSDComplexTypeDefinition=8/XSDParticle/XSDModelGroup/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Experiment.ecore#//Flow/flowGroup"/>
+  </nested>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Experiment;XSDComplexTypeDefinition=9"
+      outputs="Experiment.ecore#//Experiment">
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Experiment;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Experiment.ecore#//Experiment/settings"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Experiment;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="Experiment.ecore#//Experiment/routines"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Experiment;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="Experiment.ecore#//Experiment/flow"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Experiment;XSDComplexTypeDefinition=9/XSDAttributeUse=1"
+        outputs="Experiment.ecore#//Experiment/encoding"/>
+    <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//Experiment;XSDComplexTypeDefinition=9/XSDAttributeUse"
+        outputs="Experiment.ecore#//Experiment/version"/>
+  </nested>
+  <nested inputs="file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd#//PsychoPy2experiment;XSDElementDeclaration"
+      outputs="Experiment.ecore#//DocumentRoot/psychoPy2experiment"/>
+</xsd2ecore:XSD2EcoreMappingRoot>

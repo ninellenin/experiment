@@ -1,4 +1,7 @@
 /.metadata/
+/experiment.design/
+/experiment.edit/
+/org.emftext.language.presentation.resource.sce.ui/
 *.class
 *.gif
 *.class
