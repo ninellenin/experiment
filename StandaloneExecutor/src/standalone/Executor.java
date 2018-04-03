@@ -6,10 +6,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.emftext.language.presentation.PresentationPackage;
+import org.emftext.language.presentation.scenario.scenarioPackage;
 import org.emftext.language.presentation.resource.sce.mopp.SceResourceFactory;
 
-import PyExperiment.PyExperimentPackage;
+import org.psychopy.experiment.experimentPackage;
 import standalone.emftext.DomainSpecificLanguage;
 import standalone.emftext.EmfTextExecutor;
 import standalone.epsilon.etl.EtlExecutor;
@@ -85,9 +85,9 @@ public class Executor {
 	
 	public void executePIM2PSMTransformation() {
 		String[] model  = getProperties(PIM);
-		platformIndependentModel = new Model(model[0], model[1], PyExperimentPackage.eINSTANCE);
+		platformIndependentModel = new Model(model[0], model[1], experimentPackage.eINSTANCE);
 		model = getProperties(PSM);
-		platformSpecificModel = new Model(model[0], model[1], PresentationPackage.eINSTANCE);
+		platformSpecificModel = new Model(model[0], model[1], scenarioPackage.eINSTANCE);
 		String transformation = getProperty(TRANSFORMATION);
 
 		try {

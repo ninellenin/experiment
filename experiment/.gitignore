@@ -1,5 +1,5 @@
 /bin/
-/src/
+/src-gen/
 /META-INF/
 plugin.xml
 plugin.properties
