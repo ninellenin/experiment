@@ -2,6 +2,16 @@ SYNTAXDEF sce
 FOR <http://www.emftext.org/language/presentation>
 START scenario.Scenario
 
+IMPORTS {
+	general: <http://www.emftext.org/language/presentation/general>
+	literal: <http://www.emftext.org/language/presentation/literal>
+	parameter: <http://www.emftext.org/language/presentation/parameter>
+	picture: <http://www.emftext.org/language/presentation/stimulus/picture>
+	scenario: <http://www.emftext.org/language/presentation/scenario>
+	sound: <http://www.emftext.org/language/presentation/stimulus/sound>
+	stimulus: <http://www.emftext.org/language/presentation/stimulus>
+}
+
 OPTIONS {
     reloadGeneratorModel = "true";
     usePredefinedTokens = "false";
@@ -96,21 +106,21 @@ RULES {
 		stimulus_list !0
 	"}" #1 name[VAR_NAME] ";" !0;
 	stimulus.StimulusList ::= (stimulus_event)*;
-	stimulus.picture.PictureStimulusEvent ::= picture !1
+	picture.PictureStimulusEvent ::= picture !1
 			(stimulus_event_parameter)* !0;
-	stimulus.picture.Picture ::= "picture" #1 "{" !1 
+	picture.Picture ::= "picture" #1 "{" !1 
 		//(picture_parameter)* !0 
 		(picture_part)* !0 "}" name[VAR_NAME] ";" !0;
 	parameter.TimeParameter ::= "time" #1 "=" #1 number_literal ";" !0;
 	//BackgroundColorParameter ::= "background_color" #1 "=" #1 number_literal "," number_literal "," number_literal ";" !0;
-	stimulus.picture.TextStimulus ::= text !0
+	picture.TextStimulus ::= text !0
 					x_definition !0
 					y_definition !0;
 	general.CoordinateDefinition ::= type[X: "x", Y: "y", CENTER_X: "center_x", CENTER_Y: "center_y", 
 		LEFT_X: "left_x", TOP_Y: "top_y"] #1 "=" #1 coordinate[SIGNED_INTEGER] ";"
 		(("rigth_x" | "bottom_y") #1 "=" #1 right_bottom[SIGNED_INTEGER] ";")? ;
 							
-	stimulus.picture.Text ::= "text" #1 "{" !1
+	picture.Text ::= "text" #1 "{" !1
 		caption !1
 		(text_parameter)* !1
 		"}" (#1 name[VAR_NAME])? ";" !0;

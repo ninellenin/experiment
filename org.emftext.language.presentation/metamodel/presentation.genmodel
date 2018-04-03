@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.emftext.language.presentation/src-gen" modelPluginID="org.emftext.language.presentation"
-    modelName="presentation" complianceLevel="5.0" copyrightFields="false">
-  <genPackages prefix="presentation" basePackage="org.emftext.language" disposableProviderFactory="true"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.emftext.language.presentation/src" modelPluginID="org.emftext.language.presentation"
+    forceOverwrite="true" modelName="presentation" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    language="" classNamePattern="" operationReflection="true" importOrganizing="true">
+  <foreignModel>presentation.ecore</foreignModel>
+  <genPackages prefix="presentation" disposableProviderFactory="true" fileExtensions="sce"
       ecorePackage="presentation.ecore#/">
     <nestedGenPackages prefix="literal" disposableProviderFactory="true" ecorePackage="presentation.ecore#//literal">
       <genClasses image="false" ecoreClass="presentation.ecore#//literal/Literal"/>
@@ -102,7 +105,7 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/Trial/trial_parameter"/>
       </genClasses>
       <genClasses image="false" ecoreClass="presentation.ecore#//stimulus/ScenarioObject"/>
-      <nestedGenPackages prefix="picture" resource="XML" disposableProviderFactory="true"
+      <nestedGenPackages prefix="Picture" resource="XML" disposableProviderFactory="true"
           ecorePackage="presentation.ecore#//stimulus/picture">
         <genClasses ecoreClass="presentation.ecore#//stimulus/picture/Picture">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/picture/Picture/picture_part"/>
@@ -136,7 +139,7 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//stimulus/picture/TextStimulus/text"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages prefix="sound" disposableProviderFactory="true" ecorePackage="presentation.ecore#//stimulus/sound">
+      <nestedGenPackages prefix="Sound" disposableProviderFactory="true" ecorePackage="presentation.ecore#//stimulus/sound">
         <genClasses ecoreClass="presentation.ecore#//stimulus/sound/Sound"/>
       </nestedGenPackages>
     </nestedGenPackages>

@@ -115,7 +115,7 @@
       <eLiterals name="TOP_Y" value="5"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="stimulus" nsURI="http://www.emftext.org/language/presentation/scenario/object/stimulus"
+  <eSubpackages name="stimulus" nsURI="http://www.emftext.org/language/presentation/stimulus"
       nsPrefix="stimulus">
     <eClassifiers xsi:type="ecore:EClass" name="Stimulus" abstract="true" eSuperTypes="#//stimulus/ScenarioObject"/>
     <eClassifiers xsi:type="ecore:EClass" name="StimulusEvent" abstract="true" eSuperTypes="#//stimulus/ScenarioObject">
