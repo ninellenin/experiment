@@ -1,6 +1,8 @@
 /.metadata/
-/experiment.design/
 /experiment.edit/
+/experiment.editor/
+/experiment.design/
+/experiment.tests/
 /org.emftext.commons.antlr3_4_0/
 /org.emftext.language.presentation.resource.sce/
 /org.emftext.language.presentation.resource.sce.ui/
