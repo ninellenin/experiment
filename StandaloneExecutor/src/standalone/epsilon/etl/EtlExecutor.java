@@ -9,8 +9,9 @@ import org.eclipse.epsilon.etl.EtlModule;
 
 import standalone.Model;
 import standalone.epsilon.EpsilonStandalone;
+import standalone.utils.Utils;
 
-public class EtlExecutor  extends EpsilonStandalone {
+public class EtlExecutor extends EpsilonStandalone {
 	protected Model source;
 	protected Model target;
 	protected String transformation;
@@ -37,7 +38,8 @@ public class EtlExecutor  extends EpsilonStandalone {
 
 	@Override
 	public String getSource() throws Exception {
-		return transformation;
+		String path = Utils.getAbsolutePath(transformation);
+		return path;
 	}
 
 	@Override

@@ -99,7 +99,7 @@ public class Executor {
 	}
 
 	public void executeTextGeneration() {
-		DomainSpecificLanguage presentationDsl = new DomainSpecificLanguage("sce", new SceResourceFactory(), PresentationPackage.eINSTANCE);
+		DomainSpecificLanguage presentationDsl = new DomainSpecificLanguage("sce", new SceResourceFactory(), scenarioPackage.eINSTANCE);
 		String text = configuration.getProperty(TEXT);
 		text = Model.class.getResource(text).getPath();
 		try {

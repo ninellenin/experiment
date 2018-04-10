@@ -1,13 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2008 The University of York.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     Dimitrios Kolovos - initial API and implementation
- ******************************************************************************/
 package standalone.epsilon;
 
 import java.util.ArrayList;
@@ -23,6 +13,7 @@ import org.eclipse.epsilon.eol.execute.context.Variable;
 import org.eclipse.epsilon.eol.models.IModel;
 
 import standalone.Model;
+import standalone.utils.Utils;
 
 public abstract class EpsilonStandalone {
 	
@@ -44,7 +35,8 @@ public abstract class EpsilonStandalone {
 	public void execute() throws Exception {
 		
 		module = createModule();
-		module.parse(Model.class.getResource(getSource()).toURI());
+		// parse Epsilon transformation with URI
+		module.parse(Utils.getURI(getSource()));
 		
 		if (module.getParseProblems().size() > 0) {
 			System.err.println("Parse errors occured...");

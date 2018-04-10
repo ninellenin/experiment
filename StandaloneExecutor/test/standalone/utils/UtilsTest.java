@@ -25,24 +25,38 @@ class UtilsTest {
 	}
 
 	@Test
-	void testGetFileURIWithExistingFile() {
+	void testGetEmfURIWithExistingFile() {
 		try {
 			String fileName = createFile();
 			//get URI
-			URI uri = Utils.getFileURI(fileName);
+			URI uri = Utils.getEmfURI(fileName);
 			//check URI
 			assertTrue(uri.isFile() && !uri.isRelative());
 		} catch (IOException e) {
 			fail(e.toString());
 		}
 	}
+	
 	@Test
-	void testGetFileURIWithAbsentFile() {
+	void testGetEmfURIWithAbsentFile() {
 		String absentFileName = UUID.randomUUID().toString();
 		//get URI
-		URI uri = Utils.getFileURI(absentFileName);
+		URI uri = Utils.getEmfURI(absentFileName);
 		//check URI
 		assertTrue(uri.isRelative());
+	}
+	
+	@Test
+	void testGetURIWithExistingFile() {
+		try {
+			String fileName = createFile();
+			//get URI
+			java.net.URI uri = Utils.getURI(fileName);
+			//check URI
+			assertTrue(uri != null && uri.isAbsolute());
+		} catch (IOException e) {
+			fail(e.toString());
+		}
 	}
 
 	@Test

@@ -1,6 +1,11 @@
 package standalone;
 
+import java.io.File;
+
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
+
+import standalone.utils.Utils;
 
 public class Model {
 	protected String name;
@@ -13,16 +18,19 @@ public class Model {
 		EPackage.Registry.INSTANCE.put(ePackage.getNsURI(), ePackage);
 		setMetamodelUri(ePackage.getNsURI());
 	}
-	
+	/*
 	public String toAbsolutePath(String relativePath) {
-		return getClass().getResource(relativePath).getPath();
-	}
+		File file = new File(relativePath);
+		URI uri = file.isFile() ? URI.createFileURI(file.getAbsolutePath()): URI.createURI(relativePath);
+		//String absolutePath = getClass().getResource(relativePath).getPath();
+		return uri.path();
+	}*/
 	
 	protected void setName(String name) {
 		this.name = name;
 	}
 	protected void setModel(String model) {
-		this.model = toAbsolutePath(model);
+		this.model = Utils.getAbsolutePath(model);
 	}
 	protected void setMetamodelUri(String metamodel) {
 		this.metamodelUri = metamodel;
