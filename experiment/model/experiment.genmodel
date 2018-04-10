@@ -1,102 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/experiment/src" modelPluginID="experiment" modelName="Experiment"
-    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.xsd.ecore.importer"
-    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/experiment/src-gen" editDirectory="/experiment.edit/src-gen"
+    editorDirectory="/experiment.editor/src-gen" modelPluginID="experiment" modelName="experiment"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testsDirectory="/experiment.tests/src-gen"
+    importerID="org.eclipse.xsd.ecore.importer" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.xsd.ecore.importer">
     <details key="createMap" value="true"/>
   </genAnnotations>
   <foreignModel>file:/C:/Users/Yulya/experiment-workspace/experiment/experiment-models/experiment.xsd</foreignModel>
-  <genPackages prefix="Experiment" resource="XML" disposableProviderFactory="true"
-      ecorePackage="Experiment.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Experiment.ecore#//LoopType">
-      <genEnumLiterals ecoreEnumLiteral="Experiment.ecore#//LoopType/MultiStairHandler"/>
-      <genEnumLiterals ecoreEnumLiteral="Experiment.ecore#//LoopType/StairHandler"/>
-      <genEnumLiterals ecoreEnumLiteral="Experiment.ecore#//LoopType/TrialHandler"/>
+  <genPackages prefix="experiment" basePackage="org.psychopy" resource="XML" disposableProviderFactory="true"
+      ecorePackage="experiment.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="experiment.ecore#//LoopType">
+      <genEnumLiterals ecoreEnumLiteral="experiment.ecore#//LoopType/MultiStairHandler"/>
+      <genEnumLiterals ecoreEnumLiteral="experiment.ecore#//LoopType/StairHandler"/>
+      <genEnumLiterals ecoreEnumLiteral="experiment.ecore#//LoopType/TrialHandler"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Experiment.ecore#//Updates">
-      <genEnumLiterals ecoreEnumLiteral="Experiment.ecore#//Updates/constant"/>
-      <genEnumLiterals ecoreEnumLiteral="Experiment.ecore#//Updates/None"/>
-      <genEnumLiterals ecoreEnumLiteral="Experiment.ecore#//Updates/setEveryFrame"/>
-      <genEnumLiterals ecoreEnumLiteral="Experiment.ecore#//Updates/setEveryRepeat"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="experiment.ecore#//Updates">
+      <genEnumLiterals ecoreEnumLiteral="experiment.ecore#//Updates/constant"/>
+      <genEnumLiterals ecoreEnumLiteral="experiment.ecore#//Updates/None"/>
+      <genEnumLiterals ecoreEnumLiteral="experiment.ecore#//Updates/setEveryFrame"/>
+      <genEnumLiterals ecoreEnumLiteral="experiment.ecore#//Updates/setEveryRepeat"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Experiment.ecore#//ValType">
-      <genEnumLiterals ecoreEnumLiteral="Experiment.ecore#//ValType/bool"/>
-      <genEnumLiterals ecoreEnumLiteral="Experiment.ecore#//ValType/code"/>
-      <genEnumLiterals ecoreEnumLiteral="Experiment.ecore#//ValType/extendedCode"/>
-      <genEnumLiterals ecoreEnumLiteral="Experiment.ecore#//ValType/num"/>
-      <genEnumLiterals ecoreEnumLiteral="Experiment.ecore#//ValType/str"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="experiment.ecore#//ValType">
+      <genEnumLiterals ecoreEnumLiteral="experiment.ecore#//ValType/bool"/>
+      <genEnumLiterals ecoreEnumLiteral="experiment.ecore#//ValType/code"/>
+      <genEnumLiterals ecoreEnumLiteral="experiment.ecore#//ValType/extendedCode"/>
+      <genEnumLiterals ecoreEnumLiteral="experiment.ecore#//ValType/num"/>
+      <genEnumLiterals ecoreEnumLiteral="experiment.ecore#//ValType/str"/>
     </genEnums>
-    <genDataTypes ecoreDataType="Experiment.ecore#//LoopTypeObject"/>
-    <genDataTypes ecoreDataType="Experiment.ecore#//Name"/>
-    <genDataTypes ecoreDataType="Experiment.ecore#//UpdatesObject"/>
-    <genDataTypes ecoreDataType="Experiment.ecore#//ValTypeObject"/>
-    <genClasses ecoreClass="Experiment.ecore#//Component">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Experiment.ecore#//Component/param"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Experiment.ecore#//Component/name"/>
+    <genDataTypes ecoreDataType="experiment.ecore#//LoopTypeObject"/>
+    <genDataTypes ecoreDataType="experiment.ecore#//Name"/>
+    <genDataTypes ecoreDataType="experiment.ecore#//UpdatesObject"/>
+    <genDataTypes ecoreDataType="experiment.ecore#//ValTypeObject"/>
+    <genClasses ecoreClass="experiment.ecore#//Component">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experiment.ecore#//Component/param"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experiment.ecore#//Component/name"/>
     </genClasses>
-    <genClasses ecoreClass="Experiment.ecore#//DocumentRoot">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute Experiment.ecore#//DocumentRoot/mixed"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//DocumentRoot/xMLNSPrefixMap"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//DocumentRoot/xSISchemaLocation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Experiment.ecore#//DocumentRoot/psychoPy2experiment"/>
+    <genClasses ecoreClass="experiment.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute experiment.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experiment.ecore#//DocumentRoot/psychoPy2experiment"/>
     </genClasses>
-    <genClasses ecoreClass="Experiment.ecore#//Experiment">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Experiment.ecore#//Experiment/settings"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Experiment.ecore#//Experiment/routines"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Experiment.ecore#//Experiment/flow"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Experiment.ecore#//Experiment/encoding"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Experiment.ecore#//Experiment/version"/>
+    <genClasses ecoreClass="experiment.ecore#//Experiment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experiment.ecore#//Experiment/settings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experiment.ecore#//Experiment/routines"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experiment.ecore#//Experiment/flow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experiment.ecore#//Experiment/encoding"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experiment.ecore#//Experiment/version"/>
     </genClasses>
-    <genClasses ecoreClass="Experiment.ecore#//Flow">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute Experiment.ecore#//Flow/flowGroup"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Flow/routine"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Flow/loopInitiator"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Flow/loopTerminator"/>
+    <genClasses ecoreClass="experiment.ecore#//Flow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute experiment.ecore#//Flow/flowGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Flow/routine"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Flow/loopInitiator"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Flow/loopTerminator"/>
     </genClasses>
-    <genClasses ecoreClass="Experiment.ecore#//FlowRoutine">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Experiment.ecore#//FlowRoutine/name"/>
+    <genClasses ecoreClass="experiment.ecore#//FlowRoutine">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experiment.ecore#//FlowRoutine/name"/>
     </genClasses>
-    <genClasses ecoreClass="Experiment.ecore#//LoopInitiator">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Experiment.ecore#//LoopInitiator/param"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Experiment.ecore#//LoopInitiator/loopType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Experiment.ecore#//LoopInitiator/name"/>
+    <genClasses ecoreClass="experiment.ecore#//LoopInitiator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experiment.ecore#//LoopInitiator/param"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experiment.ecore#//LoopInitiator/loopType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experiment.ecore#//LoopInitiator/name"/>
     </genClasses>
-    <genClasses ecoreClass="Experiment.ecore#//LoopTerminator">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Experiment.ecore#//LoopTerminator/name"/>
+    <genClasses ecoreClass="experiment.ecore#//LoopTerminator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experiment.ecore#//LoopTerminator/name"/>
     </genClasses>
-    <genClasses ecoreClass="Experiment.ecore#//Param">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Experiment.ecore#//Param/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Experiment.ecore#//Param/updates"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Experiment.ecore#//Param/val"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Experiment.ecore#//Param/valType"/>
+    <genClasses ecoreClass="experiment.ecore#//Param">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experiment.ecore#//Param/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experiment.ecore#//Param/updates"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experiment.ecore#//Param/val"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experiment.ecore#//Param/valType"/>
     </genClasses>
-    <genClasses ecoreClass="Experiment.ecore#//Routine">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute Experiment.ecore#//Routine/componentGroup"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Routine/apertureComponent"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Routine/cedrusButtonBoxComponent"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Routine/codeComponent"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Routine/dotsComponent"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Routine/gratingComponent"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Routine/imageComponent"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Routine/ioLabsButtonBoxComponent"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Routine/keyboardComponent"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Routine/microphoneComponent"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Routine/mouseComponent"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Routine/movieComponent"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Routine/parallelOutComponent"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Routine/polygonComponent"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Routine/ratingScaleComponent"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Routine/soundComponent"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Routine/staticComponent"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Experiment.ecore#//Routine/textComponent"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Experiment.ecore#//Routine/name"/>
+    <genClasses ecoreClass="experiment.ecore#//Routine">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute experiment.ecore#//Routine/componentGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Routine/apertureComponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Routine/cedrusButtonBoxComponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Routine/codeComponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Routine/dotsComponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Routine/gratingComponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Routine/imageComponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Routine/ioLabsButtonBoxComponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Routine/keyboardComponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Routine/microphoneComponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Routine/mouseComponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Routine/movieComponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Routine/parallelOutComponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Routine/polygonComponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Routine/ratingScaleComponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Routine/soundComponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Routine/staticComponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference experiment.ecore#//Routine/textComponent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experiment.ecore#//Routine/name"/>
     </genClasses>
-    <genClasses ecoreClass="Experiment.ecore#//Routines">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Experiment.ecore#//Routines/routine"/>
+    <genClasses ecoreClass="experiment.ecore#//Routines">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experiment.ecore#//Routines/routine"/>
     </genClasses>
-    <genClasses ecoreClass="Experiment.ecore#//Settings">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Experiment.ecore#//Settings/param"/>
+    <genClasses ecoreClass="experiment.ecore#//Settings">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experiment.ecore#//Settings/param"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
