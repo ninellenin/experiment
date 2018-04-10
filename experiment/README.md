@@ -1,0 +1,21 @@
+Import set for project:
+__________________________________________________________________
+	/experiment
+	/org.emftext.language.presentation
+	/org.emftext.language.presentation.resource.sce
+	org.eclipse.emf.common_2.13.0.v20170609-0707.jar
+	org.eclipse.emf.ecore_2.13.0.v20170609-0707.jar
+	org.eclipse.emf.ecore.xmi_2.13.0.v20170609-0707.jar
+	org.eclipse.epsilon.common_1.4.0.201611012202.jar
+	org.eclipse.epsilon.emc.emf_1.4.0.201611012202.jar
+	org.eclipse.epsilon.eol.engine_1.4.0.201611012202.jar
+	org.eclipse.epsilon.etl.engine_1.4.0.201611012202.jar
+	org.eclipse.epsilon.etl.dt_1.4.0.201611012202.jar
+	org.eclipse.epsilon.eol.dt_1.4.0.201611012202.jar
+	org.eclipse.epsilon.erl.engine_1.4.0.201611012202.jar
+	org.eclipse.epsilon.erl.dt_1.4.0.201611012202.jar
+	org.eclipse.epsilon.eol.tools_1.4.0.201611012202.jar
+	org.emftext.commons.antlr3_4_0"
+	org.antlr.runtime_3.1.b1_3.1.0.jar
+	org.eclipse.jdt.junit.JUNIT_CONTAINER/5
+__________________________________________________________________
