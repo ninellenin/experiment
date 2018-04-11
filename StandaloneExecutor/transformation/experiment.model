@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<experiment:DocumentRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:experiment="psychopy/app/builder/experiment.xsd" xmi:id="_73ItQD13EeiSFKtQ0xQ_jw">
+  <psychoPy2experiment xmi:id="_-NcdUD13EeiSFKtQ0xQ_jw">
+    <settings xmi:id="__896MD13EeiSFKtQ0xQ_jw">
+      <param xmi:id="_AS8xQD14EeiSFKtQ0xQ_jw" name="expName" val="Simple" valType="str"/>
+      <param xmi:id="_UFknMD14EeiSFKtQ0xQ_jw" name="active_buttons" val="1" valType="num"/>
+    </settings>
+    <routines xmi:id="__jylMD13EeiSFKtQ0xQ_jw">
+      <routine xmi:id="_az3EID14EeiSFKtQ0xQ_jw" name="rout"/>
+    </routines>
+    <flow xmi:id="__Gp9QD13EeiSFKtQ0xQ_jw"/>
+  </psychoPy2experiment>
+</experiment:DocumentRoot>

@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.epsilon.common.parse.problem.ParseProblem;
 import org.eclipse.epsilon.emc.emf.EmfModel;
+import org.eclipse.epsilon.emc.emf.InMemoryEmfModel;
 import org.eclipse.epsilon.eol.IEolExecutableModule;
 import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;
 import org.eclipse.epsilon.eol.exceptions.models.EolModelLoadingException;
@@ -70,28 +72,53 @@ public abstract class EpsilonStandalone {
 		return module.execute();
 	}
 	
-	protected EmfModel createEmfModel(Model model, boolean readOnLoad, boolean storedOnDisposal) {
-		EmfModel emfModel = new EmfModel();
-		emfModel.setName(model.getName());
-		emfModel.setModelFileUri(URI.createFileURI(model.getModel()));
-		emfModel.setMetamodelUri(model.getMetamodelUri());
+	protected EmfModel loadEmfModel(EmfModel emfModel, boolean readOnLoad, boolean storedOnDisposal) { 
 		emfModel.setReadOnLoad(readOnLoad);
 		emfModel.setStoredOnDisposal(storedOnDisposal);
 		try {
 			emfModel.load();
 		} catch (EolModelLoadingException e1) {
-			System.err.println(String.format("Error loading model \"%s\".", model.getModel()));
+			System.err.println(String.format("Error loading model \"%s\".", emfModel.getName()));
 			e1.printStackTrace();
 		}
 		
 		return emfModel;
 	}
 	
-	protected EmfModel createInputEmfModel(Model model) {
-		return createEmfModel(model, true, false);
+	protected EmfModel createEmfModel(Model model) {
+		EmfModel emfModel = new EmfModel();
+		emfModel.setName(model.getName());
+		emfModel.setModelFileUri(URI.createFileURI(model.getModel()));
+		emfModel.setMetamodelUri(model.getMetamodelUri());
+		
+		return emfModel;
 	}
 	
+	protected EmfModel createInMemoryEmfModel(Model model, Resource modelImpl) {
+		InMemoryEmfModel emfModel = new InMemoryEmfModel(model.getModel(), modelImpl);
+		emfModel.setMetamodelUri(model.getMetamodelUri());
+		
+		return emfModel;
+	}
+	
+	protected EmfModel createInputEmfModel(Model model) {
+		EmfModel emfModel = createEmfModel(model);
+		loadEmfModel(emfModel, true, false);
+		
+		return emfModel;
+	}	
+	
 	protected EmfModel createOutputEmfModel(Model model) {
-		return createEmfModel(model, false, true);
+		EmfModel emfModel = createEmfModel(model);
+		loadEmfModel(emfModel, false, true);
+		
+		return emfModel;
+	}
+	
+	protected EmfModel createInputInMemoryEmfModel(Model model, Resource resource) {
+		EmfModel emfModel = createInMemoryEmfModel(model, resource);
+		loadEmfModel(emfModel, true, false);
+		
+		return emfModel;
 	}
 }
