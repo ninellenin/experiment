@@ -53,7 +53,7 @@
         <details key="name" value="xsi:schemaLocation"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="psychoPy2experiment" upperBound="-2"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="psychoPy2experiment" lowerBound="1"
         eType="#//Experiment" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
