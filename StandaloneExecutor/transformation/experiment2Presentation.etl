@@ -1,24 +1,24 @@
 import "utils.etl";
 
 rule DocumentRoot2Scenario
-transform root: PyExperiment!DocumentRoot
+transform root: Experiment!DocumentRoot
 to scenario: Presentation!Scenario {
-  	scenario.header ::= root.Experiment.settings;
-  	var sdl ::= root.Experiment.routines;
+  	scenario.header ::= root.psychoPy2experiment.settings;
+  	var sdl ::= root.psychoPy2experiment.routines;
   	scenario.sdl.add(sdl);
   	scenario.pcl.add(new Presentation!PCL);
 }
 
 @lazy
 rule Settings2Header 
- transform settings : PyExperiment!Settings
+ transform settings : Experiment!Settings
  to header : Presentation!Header {
   	settings.param.transformParameters(header.parameter);
 }
 
 @lazy
 rule Param2ScenarioNameParameter
-transform parameter: PyExperiment!Param
+transform parameter: Experiment!Param
 to scenarioName: Presentation!ScenarioNameParameter {
 guard : parameter.name = "scenario"
 	scenarioName.name_literal = new Presentation!NameLiteral;
@@ -27,7 +27,7 @@ guard : parameter.name = "scenario"
 
 @lazy
 rule Param2ActiveButtonsParameter
-transform parameter: PyExperiment!Param
+transform parameter: Experiment!Param
 to activeButtons: Presentation!ActiveButtonsParameter {
 guard : parameter.name = "active_buttons"
 	activeButtons.number_literal = new Presentation!NumberLiteral;
@@ -36,7 +36,7 @@ guard : parameter.name = "active_buttons"
 
 @lazy
 rule Param2ButtonCodesParameter
-transform parameter: PyExperiment!Param
+transform parameter: Experiment!Param
 to buttonCodes: Presentation!ButtonCodesParameter {
 guard : parameter.name = "button_codes"
 	var codes = parameter.val.split(", ");
@@ -49,7 +49,7 @@ guard : parameter.name = "button_codes"
 
 @lazy
 rule Routines2SDL
-transform routines: PyExperiment!Routines
+transform routines: Experiment!Routines
 to sdl: Presentation!SDL {
 	for (routine in routines.routine) {
 		var trial ::= routine;
@@ -59,7 +59,7 @@ to sdl: Presentation!SDL {
 
 @lazy
 rule Routine2Trial
-transform routine: PyExperiment!Routine
+transform routine: Experiment!Routine
 to trial: Presentation!Trial {
 	trial.stimulus_list = new Presentation!StimulusList;
 	trial.name = routine.name;
@@ -74,7 +74,7 @@ to trial: Presentation!Trial {
 
 @lazy
 rule ImageComponent2PictureStimulusEvent
-transform component: PyExperiment!Component
+transform component: Experiment!Component
 to pictureStimulusEvent: Presentation!PictureStimulusEvent {
 guard: 	component.eContainingFeature().getName() = "imageComponent"
 	pictureStimulusEvent.name = component.name;
@@ -84,8 +84,8 @@ guard: 	component.eContainingFeature().getName() = "imageComponent"
 
 @lazy
 rule Param2FilenameParameter
-transform parameter: PyExperiment!Param
+transform parameter: Experiment!Param
 to fileName: Presentation!FilenameParameter {
-guard: parameter.name = "image" //and parameter.type = PyExperiment!ValType#str
+guard: parameter.name = "image" //and parameter.type = Experiment!ValType#str
 	"Hello!".println();
 }

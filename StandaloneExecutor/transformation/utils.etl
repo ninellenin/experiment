@@ -1,0 +1,20 @@
+operation OrderedSet<PyExperiment!Param> transformParameters(target: OrderedSet<Presentation!Parameter>) {
+	for (param in self) {
+		var parameter: Presentation!Parameter;
+		parameter ::= param;
+		if (parameter.isDefined()) {
+			target.add(parameter);
+		} else {
+			("Unknown parameter '" + param.name + "'.").println();
+		}
+	}
+}
+
+operation Presentation!PictureStimulusEvent createBitmapStimulus(): Presentation!BitmapStimulus {
+	self.picture = new Presentation!Picture;
+	var bitmapStimulus = new Presentation!BitmapStimulus;
+	self.picture.picture_part.add(bitmapStimulus);
+	bitmapStimulus.bitmap = new Presentation!Bitmap;
+	
+	return bitmapStimulus;
+}

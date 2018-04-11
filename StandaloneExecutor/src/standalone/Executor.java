@@ -13,6 +13,7 @@ import org.psychopy.experiment.experimentPackage;
 import standalone.emftext.DomainSpecificLanguage;
 import standalone.emftext.EmfTextExecutor;
 import standalone.epsilon.etl.EtlExecutor;
+import standalone.utils.Utils;
 
 public class Executor {
 	protected static String CONFIGURATION_NOT_FOUND_MESSAGE = "Configuration file \"%s\" not found.";
@@ -101,7 +102,7 @@ public class Executor {
 	public void executeTextGeneration() {
 		DomainSpecificLanguage presentationDsl = new DomainSpecificLanguage("sce", new SceResourceFactory(), scenarioPackage.eINSTANCE);
 		String text = configuration.getProperty(TEXT);
-		text = Model.class.getResource(text).getPath();
+		text = Utils.getAbsolutePath(text);
 		try {
 			new EmfTextExecutor().generateText(platformSpecificModel, text, presentationDsl);
 		} catch (IOException e) {
