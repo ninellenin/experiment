@@ -1,11 +1,13 @@
 package standalone.utils;
 
 import java.io.File;
+import java.io.PrintStream;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 
 public class Utils {
 	/*
@@ -41,5 +43,17 @@ public class Utils {
 		Path base = Paths.get(System.getProperty("user.dir"));
 		
 		return base.resolve(relativePath).toString();
+	}
+	
+	public static void printContent(EObject object, PrintStream output) {
+		output.println(object.toString());
+		for (EObject content: object.eContents()) {
+			output.println(content.toString());
+			printContent(content, output);
+		}
+	}
+	
+	public static void printContent(EObject object) {
+		printContent(object, System.out);
 	}
 }
