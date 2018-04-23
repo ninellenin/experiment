@@ -31,7 +31,9 @@
       <genClasses ecoreClass="presentation.ecore#//scenario/SDL">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//scenario/SDL/scenario_object"/>
       </genClasses>
-      <genClasses ecoreClass="presentation.ecore#//scenario/PCL"/>
+      <genClasses ecoreClass="presentation.ecore#//scenario/PCL">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//scenario/PCL/newAttribute"/>
+      </genClasses>
       <genClasses ecoreClass="presentation.ecore#//scenario/Scenario">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//scenario/Scenario/header"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//scenario/Scenario/sdl"/>
@@ -142,6 +144,66 @@
       <nestedGenPackages prefix="Sound" disposableProviderFactory="true" ecorePackage="presentation.ecore#//stimulus/sound">
         <genClasses ecoreClass="presentation.ecore#//stimulus/sound/Sound"/>
       </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Control" disposableProviderFactory="true" ecorePackage="presentation.ecore#//control">
+      <genClasses image="false" ecoreClass="presentation.ecore#//control/Statement"/>
+      <genClasses image="false" ecoreClass="presentation.ecore#//control/Expression"/>
+      <genClasses ecoreClass="presentation.ecore#//control/BooleanExpression"/>
+      <genClasses ecoreClass="presentation.ecore#//control/OrExpression">
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference presentation.ecore#//control/OrExpression/argument"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//control/AndExpression">
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference presentation.ecore#//control/AndExpression/argument"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//control/NotExpression">
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference presentation.ecore#//control/NotExpression/argument"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//control/Inclusion"/>
+      <genClasses ecoreClass="presentation.ecore#//control/Declaration">
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference presentation.ecore#//control/Declaration/variable"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//control/Variable">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//control/Variable/name"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//control/BasicType"/>
+      <genClasses ecoreClass="presentation.ecore#//control/IntVariable">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//control/IntVariable/value"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//control/DoubleVariable">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//control/DoubleVariable/value"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//control/StringVariable">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//control/StringVariable/value"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//control/BoolVariable">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//control/BoolVariable/value"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//control/Assignment">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference presentation.ecore#//control/Assignment/variable"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//control/Assignment/expression"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//control/AtomExpression"/>
+      <genClasses ecoreClass="presentation.ecore#//control/BoolExpression">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference presentation.ecore#//control/BoolExpression/value"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//control/EqualsExpression">
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference presentation.ecore#//control/EqualsExpression/arguments"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//control/Loop">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//control/Loop/init"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//control/Loop/body"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//control/Loop/condition"/>
+      </genClasses>
+      <genClasses ecoreClass="presentation.ecore#//control/StatementList">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//control/StatementList/statement"/>
+      </genClasses>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

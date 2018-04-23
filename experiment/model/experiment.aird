@@ -1264,6 +1264,7 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_kWrh0ERVEeiiNtQ7wdd6Og" description="_kWq6wERVEeiiNtQ7wdd6Og" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="114,159,207">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_kWrh0URVEeiiNtQ7wdd6Og" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_kWrh0kRVEeiiNtQ7wdd6Og" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
@@ -1277,6 +1278,7 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_kWt-EkRVEeiiNtQ7wdd6Og" description="_kWtXAERVEeiiNtQ7wdd6Og" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_kWt-E0RVEeiiNtQ7wdd6Og" showIcon="false">
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_kWt-FERVEeiiNtQ7wdd6Og" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
@@ -1290,6 +1292,7 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_kWwaUERVEeiiNtQ7wdd6Og" description="_kWtXAERVEeiiNtQ7wdd6Og" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_kWwaUURVEeiiNtQ7wdd6Og" showIcon="false">
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_kWwaUkRVEeiiNtQ7wdd6Og" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
@@ -1303,6 +1306,7 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_kWyPgERVEeiiNtQ7wdd6Og" description="_kWtXAERVEeiiNtQ7wdd6Og" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_kWyPgURVEeiiNtQ7wdd6Og" showIcon="false">
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_kWyPgkRVEeiiNtQ7wdd6Og" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
