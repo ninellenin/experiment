@@ -1,20 +1,47 @@
 operation OrderedSet<PyExperiment!Param> transformParameters(target: OrderedSet<Presentation!Parameter>) {
+	var lowLevelParameters = new Set();
+	lowLevelParameters.add("Show mouse");
+	lowLevelParameters.add("Data filename");
+	lowLevelParameters.add("Monitor");
+	lowLevelParameters.add("Enable Escape");
+	lowLevelParameters.add("color");
+	lowLevelParameters.add("Window size (pixels)");
+	lowLevelParameters.add("Full-screen window");
+	lowLevelParameters.add("colorSpace");
+	
 	for (param in self) {
 		var parameter: Presentation!Parameter;
 		parameter ::= param;
 		if (parameter.isDefined()) {
 			target.add(parameter);
-		} else {
+		} else if (not lowLevelParameters.includes(param.name)) {
 			("Unknown parameter '" + param.name + "'.").println();
 		}
 	}
+}
+
+operation Presentation!TextStimulusEvent createTextStimulus(): Presentation!TextStimulus {
+	self.text = new Presentation!Text;
+	var textStimulus = new Presentation!TextStimulus;
+	
+	return textStimulus;
 }
 
 operation Presentation!PictureStimulusEvent createBitmapStimulus(): Presentation!BitmapStimulus {
 	self.picture = new Presentation!Picture;
 	var bitmapStimulus = new Presentation!BitmapStimulus;
 	self.picture.picture_part.add(bitmapStimulus);
-	bitmapStimulus.bitmap = new Presentation!Bitmap;
+	"Hi!".println();
+	bitmapStimulus.bitmap.println();// = new Presentation!Bitmap;
+	
+	var filename = new Presentation!FilenameParameter;
+	"Hello!".println();
+	var filename_literal = new Presentation!FilenameLiteral;
+	filename_literal.value = self.name;
+	"Hello!".println();
+	bitmapStimulus.bitmap.isDefined().println();
+	bitmapStimulus.bitmap.filename_parameter = filename;
+	"Hello!".println();
 	
 	return bitmapStimulus;
 }

@@ -22,7 +22,7 @@ transform parameter: Experiment!Param
 to scenarioName: Presentation!ScenarioNameParameter {
 guard : parameter.name = "expName"
 	scenarioName.name_literal = new Presentation!NameLiteral;
-	scenarioName.name_literal.value = parameter.val;
+	scenarioName.name_literal.value = "\"" + parameter.val + "\"";
 }
 
 @lazy
