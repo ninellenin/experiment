@@ -10,11 +10,16 @@ IMPORTS {
 	scenario: <http://www.emftext.org/language/presentation/scenario>
 	sound: <http://www.emftext.org/language/presentation/stimulus/sound>
 	stimulus: <http://www.emftext.org/language/presentation/stimulus>
+	common: <http://www.emftext.org/language/presentation/control/common>
+	types: <http://www.emftext.org/language/presentation/control/types>
+	statements: <http://www.emftext.org/language/presentation/control/statements>
+	expressions: <http://www.emftext.org/language/presentation/control/expressions>
+	operators: <http://www.emftext.org/language/presentation/control/operators>
 }
 
 OPTIONS {
     reloadGeneratorModel = "true";
-    usePredefinedTokens = "false";
+    //usePredefinedTokens = "false";
     disableBuilder = "true";
     disableDebugSupport = "true";
     disableLaunchSupport = "true";
@@ -26,9 +31,9 @@ OPTIONS {
 
 TOKENS {
 	DEFINE LINEBREAK $('\r\n' | '\r' | '\n')$;
-  	DEFINE WHITESPACE $('\u0009'|'\u000A'|'\u000B'|'\u000C'|'\u000D'|'\u0020'|'\u00A0'|'\u2000'|'\u2001'$ +
-                      $|'\u2002'|'\u2003'|'\u2004'|'\u2005'|'\u2006'|'\u2007'|'\u2008'|'\u2009'|'\u200A'$ +
-                      $|'\u200B'|'\u200C'|'\u200D'|'\u200E'|'\u200F'|'\u2028'|'\u2029'|'\u3000'|'\uFEFF')$;
+  //	DEFINE WHITESPACE $('\u0009'|'\u000A'|'\u000B'|'\u000C'|'\u000D'|'\u0020'|'\u00A0'|'\u2000'|'\u2001'$ +
+  //                    $|'\u2002'|'\u2003'|'\u2004'|'\u2005'|'\u2006'|'\u2007'|'\u2008'|'\u2009'|'\u200A'$ +
+  //                    $|'\u200B'|'\u200C'|'\u200D'|'\u200E'|'\u200F'|'\u2028'|'\u2029'|'\u3000'|'\uFEFF')$;
 
     DEFINE FRAGMENT LATIN_LETTER $($ + LATIN_UPPER_CASE_LETTER + $|$ + LATIN_LOWER_CASE_LETTER + $)$;
     DEFINE FRAGMENT LATIN_UPPER_CASE_LETTER $'A'..'Z'$;
@@ -82,49 +87,111 @@ TOKENSTYLES {
 }
 
 RULES {
-	// General
-	scenario.Scenario ::= header sdl* pcl*;
-	scenario.Header ::= (parameter)* !0!0;
-	scenario.SDL ::= "begin" ";" !0
+		// ---General---
+	scenario.Scenario ::= 
+		header sdl* pcl*;
+		
+	scenario.Header ::= 
+		(parameter)* !0!0;
+		
+	scenario.SDL ::= 
+		"begin" ";" !0
 		(scenario_object)* !0;
-	scenario.PCL ::= "begin_pcl" ";" !0;
+		
+	scenario.PCL ::= 
+		"begin_pcl" ";" !0
+		(statement)* !0;
+		
+	// ---Header parameters---
+	parameter.ScenarioNameParameter ::= 
+		"scenario" #1 "=" #1 name_literal ";" !0;
+		
+	parameter.ActiveButtonsParameter ::= 
+		"active_buttons" #1 "=" #1 number_literal ";" !0;
 	
-	// Header parameters
-	parameter.ScenarioNameParameter ::= "scenario" #1 "=" #1 name_literal ";" !0;
-	parameter.ActiveButtonsParameter ::= "active_buttons" #1 "=" #1 number_literal ";" !0;
-	parameter.ButtonCodesParameter ::= "button_codes" #1 "=" #1 number_literal ("," #1 number_literal)* ";" !0;
+	parameter.ButtonCodesParameter ::= 
+		"button_codes" #1 "=" #1 number_literal ("," #1 number_literal)* ";" !0;
 	
-	// Literals
+	// ---SDL---
+	
+	// ---Literals---
 	literal.NumberLiteral ::= value[SIGNED_INTEGER];
 	literal.NameLiteral ::= value[QUOTED_NAME];
 	literal.BooleanLiteral ::= value[BOOLEAN];
 	literal.TextLiteral ::= value[QUOTED_TEXT];
 	
-	//SDL
-	stimulus.Trial ::= "trial" #1 "{" !1
-		//(trial_parameter)* !0
-		stimulus_list !0
-	"}" #1 name[VAR_NAME] ";" !0;
-	stimulus.StimulusList ::= (stimulus_event)*;
-	picture.PictureStimulusEvent ::= picture !1
-			(stimulus_event_parameter)* !0;
-	picture.Picture ::= "picture" #1 "{" !1 
-		//(picture_parameter)* !0 
-		(picture_part)* !0 "}" name[VAR_NAME] ";" !0;
-	parameter.TimeParameter ::= "time" #1 "=" #1 number_literal ";" !0;
+	// ---Stimulus---
+	stimulus.Trial ::= 
+		"trial" #1 "{" !1
+			//(trial_parameter)* !0
+			stimulus_list !0
+		"}" #1 name[VAR_NAME] ";" !0;
+		
+	stimulus.StimulusList ::= 
+		(stimulus_event)*;
+	
+	// ---Picture---
+	picture.PictureStimulusEvent ::= 
+		picture !1
+		(stimulus_event_parameter)* !0;
+		
+	picture.Picture ::= 
+		"picture" #1 "{" !1 
+			//(picture_parameter)* !0 
+			(picture_part)* !0 "}" name[VAR_NAME] ";" !0;
+			
+	parameter.TimeParameter ::= 
+		"time" #1 "=" #1 number_literal ";" !0;
+		
 	//BackgroundColorParameter ::= "background_color" #1 "=" #1 number_literal "," number_literal "," number_literal ";" !0;
-	picture.TextStimulus ::= text !0
+	
+	picture.TextStimulus ::= 
+			text !0
 					x_definition !0
 					y_definition !0;
-	general.CoordinateDefinition ::= type[X: "x", Y: "y", CENTER_X: "center_x", CENTER_Y: "center_y", 
-		LEFT_X: "left_x", TOP_Y: "top_y"] #1 "=" #1 coordinate[SIGNED_INTEGER] ";"
+					
+	general.CoordinateDefinition ::= 
+		//type[
+		//general/CoordinateType/X: "x", //general/CoordinateType/Y: "y", //general/CoordinateType/CENTER_X: "center_x", //general/CoordinateType/CENTER_Y: "center_y", 
+		//general/CoordinateType/LEFT_X: "left_x", //general/CoordinateType/TOP_Y: "top_y"] #1 "=" #1 coordinate[SIGNED_INTEGER] ";"
 		(("rigth_x" | "bottom_y") #1 "=" #1 right_bottom[SIGNED_INTEGER] ";")? ;
 							
-	picture.Text ::= "text" #1 "{" !1
+	picture.Text ::= 
+		"text" #1 "{" !1
 		caption !1
 		(text_parameter)* !1
 		"}" (#1 name[VAR_NAME])? ";" !0;
-	parameter.CaptionParameter ::= "caption" #1 "=" #1 text_literal ";" #0; 
+		
+	parameter.CaptionParameter ::= 
+		"caption" #1 "=" #1 text_literal ";" #0; 
 	
-
+	//---PCL---
+	
+	//---Common---
+	common.Identifier ::= 
+		name[];
+	
+	//---Types---
+	types.Bool ::= "bool";
+	types.Int ::= "int";
+	types.Double ::= "double";
+	types.String ::= "string";
+	
+	//---Operators---
+	operators.Assignment ::= "=";	
+	
+	//---Statements---
+	statements.Loop ::= "loop";	
+			
+	statements.VariableDeclaration ::=
+		type variableDeclarator+;	
+		
+	statements.VariableDeclarator ::= 
+		name[] ("=" variableInitializer)?;
+	
+	//--Expressions---
+	expressions.AssignmentExpression ::=
+		assignmentOperator expression;
+	
+		
 }

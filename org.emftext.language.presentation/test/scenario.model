@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<scenario:Scenario xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expressions="http://www.emftext.org/language/presentation/control/expressions" xmlns:parameter="http://www.emftext.org/language/presentation/parameter" xmlns:picture="http://www.emftext.org/language/presentation/stimulus/picture" xmlns:scenario="http://www.emftext.org/language/presentation/scenario" xmlns:statements="http://www.emftext.org/language/presentation/control/statements" xmlns:stimulus="http://www.emftext.org/language/presentation/stimulus" xmlns:types="http://www.emftext.org/language/presentation/control/types" xmi:id="_O757AEh2Eeiob5OnDW22Kg">
+  <header xmi:id="_Rff5IEh2Eeiob5OnDW22Kg">
+    <parameter xsi:type="parameter:ScenarioNameParameter" xmi:id="_TQWywEh2Eeiob5OnDW22Kg">
+      <name_literal xmi:id="_UZ50wEh2Eeiob5OnDW22Kg" value="hello!"/>
+    </parameter>
+    <parameter xsi:type="parameter:ActiveButtonsParameter" xmi:id="_WRPJ0Eh2Eeiob5OnDW22Kg">
+      <number_literal xmi:id="_WvRwsEh2Eeiob5OnDW22Kg" value="1"/>
+    </parameter>
+  </header>
+  <sdl xmi:id="_SPz7wEh2Eeiob5OnDW22Kg">
+    <scenario_object xsi:type="stimulus:Trial" xmi:id="_YOgHwEh2Eeiob5OnDW22Kg" name="tr">
+      <stimulus_list xmi:id="_ZFvRwEh2Eeiob5OnDW22Kg">
+        <stimulus_event xsi:type="picture:PictureStimulusEvent" xmi:id="_ZmZHwEh2Eeiob5OnDW22Kg" name="picEvent">
+          <picture xmi:id="_Z80qwEh2Eeiob5OnDW22Kg" name="pic">
+            <picture_part xsi:type="picture:TextStimulus" xmi:id="_ahI4wEh2Eeiob5OnDW22Kg" name="textStimulus">
+              <text xmi:id="_bQc10Eh2Eeiob5OnDW22Kg" name="text1">
+                <text_parameter xsi:type="parameter:CaptionParameter" xmi:id="_cEdssEh2Eeiob5OnDW22Kg">
+                  <text_literal xmi:id="_dp71sEh2Eeiob5OnDW22Kg" value="some text"/>
+                </text_parameter>
+              </text>
+            </picture_part>
+          </picture>
+        </stimulus_event>
+      </stimulus_list>
+    </scenario_object>
+  </sdl>
+  <pcl xmi:id="_R8c64Eh2Eeiob5OnDW22Kg">
+    <statement xsi:type="statements:DeclarationStatement" xmi:id="_khimsEh2Eeiob5OnDW22Kg">
+      <variableDeclaration xmi:id="_lcSXsEh2Eeiob5OnDW22Kg">
+        <type xsi:type="types:Bool" xmi:id="_mSTZsEh2Eeiob5OnDW22Kg"/>
+        <variableDeclarator xmi:id="_mtKJsEh2Eeiob5OnDW22Kg">
+          <variableInitializer xsi:type="expressions:BoolExpression" xmi:id="_oAn8sEh2Eeiob5OnDW22Kg"/>
+        </variableDeclarator>
+      </variableDeclaration>
+    </statement>
+  </pcl>
+</scenario:Scenario>
