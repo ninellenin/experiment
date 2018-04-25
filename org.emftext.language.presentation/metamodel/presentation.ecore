@@ -228,7 +228,10 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="AtomExpression" abstract="true"
           eSuperTypes="#//control/expressions/BooleanExpression"/>
-      <eClassifiers xsi:type="ecore:EClass" name="BoolExpression" eSuperTypes="#//control/expressions/AtomExpression"/>
+      <eClassifiers xsi:type="ecore:EClass" name="BoolExpression" eSuperTypes="#//control/expressions/AtomExpression">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="value" unique="false"
+            lowerBound="1" eType="#//literal/BooleanLiteral" containment="true"/>
+      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="EqualsExpression" eSuperTypes="#//control/expressions/AtomExpression">
         <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" lowerBound="2"
             upperBound="2" eType="#//control/expressions/Expression" containment="true"/>
@@ -262,6 +265,8 @@
       <eClassifiers xsi:type="ecore:EClass" name="Less" eSuperTypes="#//control/operators/RelationOperator"/>
       <eClassifiers xsi:type="ecore:EClass" name="GreaterOrEqual" eSuperTypes="#//control/operators/RelationOperator"/>
       <eClassifiers xsi:type="ecore:EClass" name="LessOrEqual" eSuperTypes="#//control/operators/RelationOperator"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Equal" eSuperTypes="#//control/operators/EqualityOperator"/>
+      <eClassifiers xsi:type="ecore:EClass" name="NotEqual" eSuperTypes="#//control/operators/EqualityOperator"/>
     </eSubpackages>
     <eSubpackages name="statements" nsURI="http://www.emftext.org/language/presentation/control/statements"
         nsPrefix="statements">
@@ -291,7 +296,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="DeclarationStatement" eSuperTypes="#//control/statements/Statement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="variableDeclaration"
-            upperBound="-1" eType="#//control/statements/VariableDeclaration" containment="true"/>
+            eType="#//control/statements/VariableDeclaration" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ForInitializer" abstract="true"/>
       <eClassifiers xsi:type="ecore:EClass" name="ResourceAcquisition" abstract="true"/>
@@ -306,7 +311,7 @@
       <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-            changeable="false" defaultValueLiteral=""/>
+            defaultValueLiteral=""/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Identifier" eSuperTypes="#//control/common/NamedElement"/>
     </eSubpackages>

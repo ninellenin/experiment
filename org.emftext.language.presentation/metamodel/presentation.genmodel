@@ -167,7 +167,9 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//control/expressions/NotExpression/argument"/>
         </genClasses>
         <genClasses image="false" ecoreClass="presentation.ecore#//control/expressions/AtomExpression"/>
-        <genClasses ecoreClass="presentation.ecore#//control/expressions/BoolExpression"/>
+        <genClasses ecoreClass="presentation.ecore#//control/expressions/BoolExpression">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//control/expressions/BoolExpression/value"/>
+        </genClasses>
         <genClasses ecoreClass="presentation.ecore#//control/expressions/EqualsExpression">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//control/expressions/EqualsExpression/arguments"/>
         </genClasses>
@@ -192,6 +194,8 @@
         <genClasses ecoreClass="presentation.ecore#//control/operators/Less"/>
         <genClasses ecoreClass="presentation.ecore#//control/operators/GreaterOrEqual"/>
         <genClasses ecoreClass="presentation.ecore#//control/operators/LessOrEqual"/>
+        <genClasses ecoreClass="presentation.ecore#//control/operators/Equal"/>
+        <genClasses ecoreClass="presentation.ecore#//control/operators/NotEqual"/>
       </nestedGenPackages>
       <nestedGenPackages prefix="Statements" disposableProviderFactory="true" ecorePackage="presentation.ecore#//control/statements">
         <genClasses image="false" ecoreClass="presentation.ecore#//control/statements/Statement"/>
@@ -223,7 +227,7 @@
       <nestedGenPackages prefix="Common" disposableProviderFactory="true" ecorePackage="presentation.ecore#//control/common">
         <genClasses image="false" ecoreClass="presentation.ecore#//control/common/VariableInitializer"/>
         <genClasses image="false" ecoreClass="presentation.ecore#//control/common/NamedElement">
-          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//control/common/NamedElement/name"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//control/common/NamedElement/name"/>
         </genClasses>
         <genClasses ecoreClass="presentation.ecore#//control/common/Identifier"/>
       </nestedGenPackages>

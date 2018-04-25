@@ -23,10 +23,10 @@ OPTIONS {
     disableBuilder = "true";
     disableDebugSupport = "true";
     disableLaunchSupport = "true";
- //   disableTokenSorting = "true";
-//    overrideProposalPostProcessor = "false";
-//    overrideManifest = "false";
-//    overrideUIManifest = "false";
+	//disableTokenSorting = "true";
+	//overrideProposalPostProcessor = "false";
+	//overrideManifest = "false";
+	//overrideUIManifest = "false";
 }
 
 TOKENS {
@@ -60,7 +60,7 @@ TOKENS {
     // Literals
     DEFINE FRAGMENT UNSIGNED_INTEGER $($ + DIGIT + $)+$;
     DEFINE SIGNED_INTEGER $($ + SIGN + $?$ + UNSIGNED_INTEGER + $)$;
-	DEFINE BOOLEAN $('true' | 'false')$;
+	DEFINE BOOLEAN_LITERAL $('true' | 'false')$;
 
 	// Name
 	DEFINE FRAGMENT NAME_BODY $($ + LATIN_LETTER + $|$ + DIGIT + $|$ + MINUS_SIGN + $|$ + UNDERSCORE + $)$;
@@ -68,7 +68,7 @@ TOKENS {
 	DEFINE QUOTED_NAME $($ + DOUBLE_QUOTE + NAME + DOUBLE_QUOTE + $)$;
 	DEFINE VAR_NAME NAME;
 	
-	DEFINE FRAGMENT SYMBOL $($ + LATIN_LETTER + $|$ + DIGIT + $|$ + MINUS_SIGN + $|$ + UNDERSCORE + $|$ + COLON +  $|$ + WHITESPACE +  $|$ + SLASH + $)$;
+	DEFINE FRAGMENT SYMBOL $($ + LATIN_LETTER + $|$ + DIGIT + $|$ + MINUS_SIGN + $|$ + UNDERSCORE + $|$ + COLON +  $|$ + WHITESPACE + $|$ + DOT + $|$ + SLASH + $)$;
 	DEFINE QUOTED_TEXT DOUBLE_QUOTE  + SYMBOL + $*$ + DOUBLE_QUOTE;
 }
 
@@ -117,7 +117,7 @@ RULES {
 	// ---Literals---
 	literal.NumberLiteral ::= value[SIGNED_INTEGER];
 	literal.NameLiteral ::= value[QUOTED_NAME];
-	literal.BooleanLiteral ::= value[BOOLEAN];
+	literal.BooleanLiteral ::= value[BOOLEAN_LITERAL];
 	literal.TextLiteral ::= value[QUOTED_TEXT];
 	
 	// ---Stimulus---
@@ -181,7 +181,8 @@ RULES {
 	operators.Assignment ::= "=";	
 	
 	//---Statements---
-	statements.Loop ::= "loop";	
+	statements.DeclarationStatement ::=
+		variableDeclaration ";" !0;
 			
 	statements.VariableDeclaration ::=
 		type variableDeclarator+;	
@@ -191,7 +192,8 @@ RULES {
 	
 	//--Expressions---
 	expressions.AssignmentExpression ::=
-		assignmentOperator expression;
+		#1 assignmentOperator #1 expression;
 	
-		
+	expressions.BoolExpression ::=
+		value;
 }
